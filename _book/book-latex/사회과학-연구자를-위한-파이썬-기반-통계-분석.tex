@@ -1,0 +1,598 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  letterpaper,
+]{book}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{5}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+  \setmainfont[]{Spoqa-Han-Sans-Neo}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
+
+\makeatletter
+\@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={사회과학 연구자를 위한 파이썬 기반 통계 분석},
+  pdfauthor={당신의 이름},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{사회과학 연구자를 위한 파이썬 기반 통계 분석}
+\author{당신의 이름}
+\date{2025-04-21}
+\begin{document}
+\frontmatter
+\maketitle
+
+\renewcommand*\contentsname{Table of contents}
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+
+\mainmatter
+\bookmarksetup{startatroot}
+
+\chapter*{맞이하는 글}\label{uxb9deuxc774uxd558uxb294-uxae00}
+\addcontentsline{toc}{chapter}{맞이하는 글}
+
+\markboth{맞이하는 글}{맞이하는 글}
+
+사회과학 연구는 복잡다단한 사회 현상의 심층적 이해와 과학적 설명을
+목표로 끊임없이 정진해 왔습니다. 급증하는 데이터의 양과 비약적으로
+발전하는 정보 기술은 사회과학 연구의 새로운 패러다임을 제시하며,
+그중에서도 파이썬은 고성능 데이터 분석 도구와 광범위한 라이브러리
+생태계를 기반으로 사회과학 연구자에게 필수적인 분석 역량으로 부상하고
+있습니다.
+
+본 저서는 \textbf{인문 사회 분야 연구자}들이 기존의 상용 통계 패키지의
+제한적인 환경에서 벗어나, \textbf{파이썬을 활용하여 보다 유연하고
+효율적인 분석 체계를 구축}하고, \textbf{표준화된 코드를 통해 분석 전
+과정을 체계적으로 관리하며, 시각화된 결과물을 논문 작성의 근거 자료로
+활용}하는 데 실질적인 도움을 제공하고자 기획되었습니다.
+
+기존의 통계학 교재들이 이론적 논의에 치중하거나, 특정 통계 패키지의
+조작법만을 단편적으로 기술한 데 반하여, 본 저서는 가상 데이터를 기반으로
+각 통계 분석 기법의 \textbf{이론적 토대}와 \textbf{파이썬 라이브러리를
+이용한 실제 분석 절차}를 통합적으로 제시합니다. 독자들은 다양한 형태의
+가상 데이터를 직접 조작하고, 파이썬 코드를 실행하여 도출된 결과를
+해석하는 실습 과정을 통해 통계 분석 능력을 체계적으로 함양할 수
+있습니다. 더불어, 각 분석 방법론이 사회과학 연구의 다양한 영역에서
+어떻게 적용될 수 있는지 구체적인 사례를 제시함으로써 학습의 응용
+가능성을 제고하였습니다.
+
+본 저서를 통해 독자들이 파이썬 기반의 통계 분석에 대한 확신을 얻고,
+\textbf{데이터 기반의 객관적이고 과학적인 사회과학 연구를 수행하며
+학문적 성과의 완성도를 제고하는 데 필요한 핵심 역량을 확보}하게 되기를
+기대하는 바입니다.
+
+선행학습 : 파이썬 문법 기초 및 자료형
+
+\bookmarksetup{startatroot}
+
+\chapter*{목차}\label{uxbaa9uxcc28}
+\addcontentsline{toc}{chapter}{목차}
+
+\markboth{목차}{목차}
+
+\textbf{제1부: 파이썬 기반 사회과학 데이터 분석 준비}
+
+\begin{itemize}
+\tightlist
+\item
+  제1장: 사회과학 연구와 데이터의 이해
+
+  \begin{itemize}
+  \tightlist
+  \item
+    과학적 연구 방법론의 기초
+  \item
+    사회과학 데이터의 유형과 특성 (설문, 실험, 관찰 데이터 등)
+  \item
+    가상 데이터의 효용성과 장점
+  \item
+    파이썬 통계 분석 환경 구축 (Anaconda, Jupyter Notebook 소개)
+  \item
+    주요 파이썬 라이브러리 개요 (Pandas, NumPy, Matplotlib, Seaborn)
+  \end{itemize}
+\item
+  제2장: 파이썬을 이용한 데이터 핸들링 및 탐색
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Pandas DataFrame 기초: 데이터 로딩, 저장, 구조 이해
+  \item
+    데이터 전처리: 결측값 처리, 이상치 탐지 및 조정, 변수 변환
+  \item
+    기술 통계 분석: 평균, 표준편차, 빈도 분석 등
+  \item
+    데이터 시각화: Matplotlib, Seaborn 활용 (히스토그램, 산점도, 막대
+    그래프 등)
+  \item
+    \textbf{가상 데이터 예시:} 설문조사 응답 데이터 (개인 속성, 태도,
+    행위 관련 변수 포함)
+  \end{itemize}
+\end{itemize}
+
+\textbf{제2부: 집단 간 차이 검증 및 관계 분석}
+
+\begin{itemize}
+\tightlist
+\item
+  제3장: 집단 간 평균 차이 검증
+
+  \begin{itemize}
+  \tightlist
+  \item
+    독립표본 t-검정: 두 독립 집단의 평균 비교
+  \item
+    대응표본 t-검정: 동일 집단의 사전-사후 평균 비교
+  \item
+    일원분산분석 (ANOVA): 세 개 이상 집단의 평균 비교
+  \item
+    사후 검정 (Post-hoc test)
+  \item
+    \textbf{가상 데이터 예시:}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      상이한 교육 방식의 효과 비교 (학업 성취도 데이터)
+    \item
+      특정 사건 전후의 태도 변화 측정 데이터
+    \item
+      복수 지역 간 소득 수준 비교 데이터
+    \end{itemize}
+  \end{itemize}
+\item
+  제4장: 범주형 데이터 분석 및 연관성 분석
+
+  \begin{itemize}
+  \tightlist
+  \item
+    교차 분석 (Cross-tabulation): 범주형 변수 간 빈도 분석
+  \item
+    카이제곱 검정: 범주형 변수 간 독립성 검증
+  \item
+    피셔의 정확 검정
+  \item
+    \textbf{가상 데이터 예시:}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      성별과 특정 정치적 성향 간의 관계 분석 (설문 데이터)
+    \item
+      광고 노출 여부와 제품 구매 여부 간의 관계 분석
+    \end{itemize}
+  \end{itemize}
+\item
+  제5장: 변수 간 상관관계 분석
+
+  \begin{itemize}
+  \tightlist
+  \item
+    피어슨 상관분석: 연속형 변수 간 선형적 관계 측정
+  \item
+    스피어만 상관분석: 순위형 변수 간 관계 측정
+  \item
+    편상관분석: 통제 변수 고려 하 두 변수 간 순수 상관관계 분석
+  \item
+    \textbf{가상 데이터 예시:}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      소득 수준과 주관적 행복감 간의 관계 분석 (설문 데이터)
+    \item
+      광고 지출액과 매출액 간의 관계 분석 (시계열 또는 횡단면 데이터)
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\textbf{제3부: 예측 및 설명 모형화}
+
+\begin{itemize}
+\tightlist
+\item
+  제6장: 선형 회귀분석
+
+  \begin{itemize}
+  \tightlist
+  \item
+    단순 선형 회귀분석: 단일 독립변수의 종속변수에 대한 영향 분석
+  \item
+    다중 선형 회귀분석: 복수 독립변수의 종속변수에 대한 영향 분석
+  \item
+    회귀 모형 평가 (결정 계수, F-통계량)
+  \item
+    회귀 진단 (잔차 분석, 다중공선성)
+  \item
+    \textbf{가상 데이터 예시:}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      광고비, 소득 수준의 제품 구매량에 대한 영향 분석
+    \item
+      학습 시간, 학습 방법의 시험 성적에 대한 영향 분석
+    \end{itemize}
+  \end{itemize}
+\item
+  제7장: 로지스틱 회귀분석
+
+  \begin{itemize}
+  \tightlist
+  \item
+    이항 로지스틱 회귀분석: 이분형 종속변수 예측
+  \item
+    다항 로지스틱 회귀분석: 다범주 종속변수 예측
+  \item
+    오즈비 (Odds Ratio) 해석
+  \item
+    모형 평가 (정확도, ROC 곡선)
+  \item
+    \textbf{가상 데이터 예시:}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      개인 속성이 특정 정치 후보 지지 여부에 미치는 영향 분석
+    \item
+      마케팅 캠페인 요소가 고객의 구매 전환 여부에 미치는 영향 분석
+    \end{itemize}
+  \end{itemize}
+\item
+  제8장: 의사결정나무 모형
+
+  \begin{itemize}
+  \tightlist
+  \item
+    분류 나무 (Classification Tree): 범주형 종속변수 예측
+  \item
+    회귀 나무 (Regression Tree): 연속형 종속변수 예측
+  \item
+    가지치기 (Pruning)
+  \item
+    변수 중요도 분석
+  \item
+    \textbf{가상 데이터 예시:}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      고객 특성에 따른 상품 추천 모형 개발
+    \item
+      학생 성적 예측 모형 개발
+    \end{itemize}
+  \end{itemize}
+\item
+  제9장: 군집 분석
+
+  \begin{itemize}
+  \tightlist
+  \item
+    비계층적 군집 분석 (K-평균 군집)
+  \item
+    계층적 군집 분석 (병합적, 분할적 방법)
+  \item
+    군집 평가
+  \item
+    \textbf{가상 데이터 예시:}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      소비자 행태 패턴 기반 시장 세분화
+    \item
+      지역별 사회 경제적 특성 기반 군집화
+    \end{itemize}
+  \end{itemize}
+\item
+  제10장: 요인 분석
+
+  \begin{itemize}
+  \tightlist
+  \item
+    탐색적 요인 분석: 잠재 변수 (요인) 추출
+  \item
+    확인적 요인 분석 (간략히 소개)
+  \item
+    요인 회전
+  \item
+    요인 점수
+  \item
+    \textbf{가상 데이터 예시:}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      소비자 브랜드 태도 측정 설문 데이터의 주요 요인 추출
+    \item
+      직무 만족도 설문 데이터의 하위 요인 구조 파악
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\textbf{제4부: 심화 분석 기법 (선택적)}
+
+\begin{itemize}
+\tightlist
+\item
+  제11장: 구조방정식 모형 (SEM) 개요
+
+  \begin{itemize}
+  \tightlist
+  \item
+    경로 분석
+  \item
+    잠재 변수 모형
+  \item
+    모형 식별 및 적합도 평가 (개략적 소개)
+  \item
+    \textbf{가상 데이터 예시:} 사회적 지지와 우울증 간 관계에서 자존감의
+    매개 효과 분석 (가상 경로 모형 제시)
+  \end{itemize}
+\item
+  제12장: 다차원 척도법 (MDS)
+
+  \begin{itemize}
+  \tightlist
+  \item
+    객체 간 유사성/비유사성 데이터 분석
+  \item
+    저차원 공간에서의 객체 시각화
+  \item
+    \textbf{가상 데이터 예시:} 다양한 브랜드 간 이미지 유사성 평가
+    데이터 분석
+  \end{itemize}
+\item
+  제13장: 상응 분석
+
+  \begin{itemize}
+  \tightlist
+  \item
+    범주형 변수 간 관계 시각화
+  \item
+    행 및 열 프로필 분석
+  \item
+    \textbf{가상 데이터 예시:} 제품 범주와 소비자 특성 간 관계 분석
+  \end{itemize}
+\item
+  제14장: 컨조인트 분석 (Conjoint Analysis)
+
+  \begin{itemize}
+  \tightlist
+  \item
+    속성 수준 조합에 대한 선호도 분석
+  \item
+    각 속성 수준의 중요도 파악
+  \item
+    \textbf{가상 데이터 예시:} 신제품의 다양한 속성 조합에 대한 소비자
+    선호도 분석
+  \end{itemize}
+\item
+  제15장: 시계열 분석 기초 (선택적)
+
+  \begin{itemize}
+  \tightlist
+  \item
+    시계열 데이터의 이해
+  \item
+    추세 및 계절성 분석 (개략적 소개)
+  \item
+    ARIMA 모형 기초 (개략적 소개)
+  \item
+    \textbf{가상 데이터 예시:} 월별 판매량 데이터 분석
+  \end{itemize}
+\end{itemize}
+
+\textbf{부록:}
+
+\begin{itemize}
+\tightlist
+\item
+  주요 파이썬 라이브러리 함수 요약
+\item
+  통계 용어 해설
+\item
+  연습 문제 및 해답
+\end{itemize}
+
+\part{제1부 - 파이썬을 활용한 사회과학 데이터 분석 준비}
+
+\chapter{}\label{section}
+
+\chapter{}\label{section-1}
+
+\part{제2부 - 집단 간 차이 분석 및 관계 분석}
+
+\chapter{}\label{section-2}
+
+\chapter{}\label{section-3}
+
+\chapter{}\label{section-4}
+
+\part{제3부 - 예측 및 설명 모델링}
+
+\chapter{}\label{section-5}
+
+\chapter{}\label{section-6}
+
+\chapter{}\label{section-7}
+
+\chapter{}\label{section-8}
+
+\chapter{}\label{section-9}
+
+\part{제4부 - 심화 분석 기법 (선택적)}
+
+\chapter{}\label{section-10}
+
+\chapter{}\label{section-11}
+
+\chapter{}\label{section-12}
+
+\chapter{}\label{section-13}
+
+\chapter{}\label{section-14}
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{part}{Appendices}
+\appendix
+
+\chapter{}\label{section-15}
+
+\chapter{}\label{section-16}
+
+\chapter{}\label{section-17}
+
+
+\backmatter
+
+
+\end{document}

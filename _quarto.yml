@@ -1,0 +1,51 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "사회과학 연구자를 위한 파이썬 기반 통계 분석"
+  author: "당신의 이름"
+  date: "2025-04-21"
+  chapters:
+    - index.qmd  # 소개 또는 서문 역할을 하는 파일
+    - intro.qmd
+    - part: 제1부 - 파이썬을 활용한 사회과학 데이터 분석 준비
+      chapters:
+        - 01-research-data.qmd # 제1장 파일명
+        - 02-data-handling-exploration.qmd # 제2장 파일명
+    - part: 제2부 - 집단 간 차이 분석 및 관계 분석
+      chapters:
+        - 03-group-difference-tests.qmd # 제3장 파일명
+        - 04-categorical-data-analysis.qmd # 제4장 파일명
+        - 05-correlation-analysis.qmd # 제5장 파일명
+    - part: 제3부 - 예측 및 설명 모델링
+      chapters:
+        - 06-linear-regression.qmd # 제6장 파일명
+        - 07-logistic-regression.qmd # 제7장 파일명
+        - 08-decision-tree.qmd # 제8장 파일명
+        - 09-cluster-analysis.qmd # 제9장 파일명
+        - 10-factor-analysis.qmd # 제10장 파일명
+    - part: 제4부 - 심화 분석 기법 (선택적)
+      chapters:
+        - 11-structural-equation-modeling.qmd # 제11장 파일명
+        - 12-multidimensional-scaling.qmd # 제12장 파일명
+        - 13-correspondence-analysis.qmd # 제13장 파일명
+        - 14-conjoint-analysis.qmd # 제14장 파일명
+        - 15-time-series-analysis.qmd # 제15장 파일명
+  appendices:
+    - appendix-libraries.qmd # 부록 - 주요 파이썬 라이브러리 함수 요약
+    - appendix-glossary.qmd # 부록 - 통계 용어 해설
+    - appendix-exercises.qmd # 부록 - 연습문제 및 해답
+
+format:
+  html:
+    theme: default # 또는 다른 테마
+    css: styles.css # 사용자 정의 CSS 파일 (선택 사항)
+   # include-in-header: <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    mainfont: "Spoqa-Han-Sans-Neo" # CSS에서 정의한 폰트 이름
+    mathjax: default # 또는 katex
+
+  latex:
+    documentclass: book
+    mainfont: "Spoqa-Han-Sans-Neo" # LaTeX에서도 동일한 폰트 사용 (시스템에 설치 필요)
+
