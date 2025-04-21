@@ -64,6 +64,46 @@
 \fi
 \makeatother
 
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{241,243,245}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
 
 \usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
@@ -105,6 +145,22 @@
  
 
 
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
+\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
+\definecolor{quarto-callout-color}{HTML}{909090}
+\definecolor{quarto-callout-note-color}{HTML}{0758E5}
+\definecolor{quarto-callout-important-color}{HTML}{CC1914}
+\definecolor{quarto-callout-warning-color}{HTML}{EB9113}
+\definecolor{quarto-callout-tip-color}{HTML}{00A047}
+\definecolor{quarto-callout-caution-color}{HTML}{FC5300}
+\definecolor{quarto-callout-color-frame}{HTML}{acacac}
+\definecolor{quarto-callout-note-color-frame}{HTML}{4582ec}
+\definecolor{quarto-callout-important-color-frame}{HTML}{d9534f}
+\definecolor{quarto-callout-warning-color-frame}{HTML}{f0ad4e}
+\definecolor{quarto-callout-tip-color-frame}{HTML}{02b875}
+\definecolor{quarto-callout-caution-color-frame}{HTML}{fd7e14}
+\makeatother
 \makeatletter
 \@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
 \makeatother
@@ -544,19 +600,1967 @@
 
 \part{제1부 - 파이썬을 활용한 사회과학 데이터 분석 준비}
 
+\chapter{제1장: 사회과학 연구와 데이터의
+이해}\label{uxc81c1uxc7a5-uxc0acuxd68cuxacfcuxd559-uxc5f0uxad6cuxc640-uxb370uxc774uxd130uxc758-uxc774uxd574}
+
+\section{과학적 연구 방법론의
+기초}\label{uxacfcuxd559uxc801-uxc5f0uxad6c-uxbc29uxbc95uxb860uxc758-uxae30uxcd08}
+
+사회과학 연구는 인간 사회의 다양한 측면을 과학적인 원리와 절차에 따라
+탐구하여 체계적이고 신뢰할 수 있는 지식을 구축하고자 하는 학문적
+노력입니다. 이러한 연구의 핵심에는 \textbf{과학적 연구 방법론(Scientific
+Research Methodology)}이 자리 잡고 있으며, 이는 우리가 사회 현상을
+이해하고 설명하는 방식을 규정하는 중요한 틀을 제공합니다.
+
+\subsection{과학적 방법의 핵심
+원리}\label{uxacfcuxd559uxc801-uxbc29uxbc95uxc758-uxd575uxc2ec-uxc6d0uxb9ac}
+
+과학적 연구는 몇 가지 기본적인 원리에 기반합니다. 이 원리들은 과학적
+탐구의 방향을 제시하고, 비과학적인 접근 방식과 차별화되는 특징을
+나타냅니다.
+
+\textbf{1. 경험주의 (Empiricism): 관찰 가능한 증거를 통한 지식 획득}
+
+경험주의는 \textbf{실제 세계에 대한 체계적인 관찰과 감각적 경험}을 통해
+지식을 획득하는 것을 강조하는 철학적 입장입니다. 과학적 연구는 추상적인
+이론이나 개인적인 직관에 의존하기보다는, \textbf{객관적으로 측정하고
+기록할 수 있는 실증적 증거(Empirical Evidence)}를 토대로 결론을
+도출합니다.
+
+\begin{itemize}
+\item
+  \textbf{(시각 자료 예시: ``경험주의적 지식 획득 과정''을 나타내는
+  간단한 흐름도. 관찰 → 측정 → 기록 → 분석 → 결론 의 순서)}
+
+  사회 현상에 대한 과학적 주장은 단순히 논리적인 주장이나 개인적인
+  의견만으로는 충분하지 않습니다. 예를 들어, ``텔레비전 폭력 프로그램
+  시청이 아동의 공격성을 증가시킨다''는 주장은 실제 아동들의 텔레비전
+  시청 행태와 공격성 수준을 다양한 방법으로 측정하고 분석한 경험적
+  자료를 통해 뒷받침되어야 과학적인 근거를 확보할 수 있습니다.
+\item
+  \textbf{예시:} 연구자는 실험 집단과 통제 집단으로 아동을 나누어 실험
+  집단에게 폭력적인 텔레비전 프로그램을 시청하게 한 후, 두 집단의 공격성
+  수준을 표준화된 행동 관찰 도구를 사용하여 측정하고 그 결과를 비교
+  분석합니다. 이 과정에서 얻어진 행동 관찰 데이터가 경험적 증거에
+  해당합니다.
+\end{itemize}
+
+\textbf{2. 객관성 (Objectivity): 연구자의 주관적 편견 배제}
+
+객관성은 연구자의 개인적인 가치관, 선호, 기대, 또는 편견이 연구의 모든
+단계(문제 제기, 가설 설정, 자료 수집, 분석, 결론 도출)에 영향을 미치지
+않도록 엄격하게 통제하는 원리입니다. 과학적 연구는
+\textbf{사실(Facts)}에 기반해야 하며, 연구자의 주관적인 해석이나 감정에
+따라 결과가 왜곡되어서는 안 됩니다.
+
+\begin{itemize}
+\item
+  \textbf{(시각 자료 예시: ``주관적인 해석 vs.~객관적인 관찰''을
+  대비시키는 그림. 한쪽에는 연구자가 자신의 믿음에 따라 현상을 해석하는
+  모습, 다른 쪽에는 표준화된 도구를 사용하여 현상을 측정하는 모습)}
+
+  연구자는 자신의 주관적인 입장을 끊임없이 인식하고, 이를 통제하기 위한
+  노력을 기울여야 합니다. 이를 위해 명확하게 정의된 개념, 표준화된 측정
+  도구, 그리고 통계적 분석과 같이 객관적인 절차와 방법을 사용하는 것이
+  중요합니다.
+\item
+  \textbf{예시:} 특정 사회 정책의 효과를 연구하는 경우, 연구자의
+  개인적인 정치적 성향이 설문 문항 설계, 응답 해석, 또는 결과 보고에
+  영향을 미치지 않도록 주의해야 합니다. 객관적인 연구는 다양한
+  이해관계자의 관점을 고려하고, 편향되지 않은 방법론을 사용하여 데이터를
+  분석하며, 결과에 대한 균형 잡힌 해석을 제시합니다.
+\end{itemize}
+
+\textbf{3. 체계성 (Systematicity): 계획적이고 논리적인 연구 과정}
+
+과학적 연구는 즉흥적이거나 임의적인 탐색이 아니라, \textbf{사전에
+치밀하게 계획된 체계적인 절차}에 따라 진행됩니다. 각 연구 단계는 명확한
+목표를 가지고 있으며, 이전 단계의 결과와 논리적으로 연결되어 최종 결론에
+이르기까지 일관성을 유지해야 합니다.
+
+\begin{itemize}
+\item
+  \textbf{(시각 자료 예시: ``과학적 연구의 체계적인 단계''를 나타내는
+  순환형 다이어그램. 문제 제기 → 문헌 고찰 → 가설 설정 → 연구 설계 →
+  자료 수집 → 자료 분석 → 결론 도출 및 보고 의 단계가 순환적으로 연결된
+  모습)}
+
+  체계적인 연구는 연구 질문을 명확히 정의하는 것에서 시작하여, 그 질문에
+  답하기 위한 최적의 방법을 신중하게 선택하고, 계획된 절차에 따라
+  데이터를 수집하고 분석합니다. 각 단계의 결과는 다음 단계의 방향을
+  제시하며, 전체 연구 과정은 논리적인 흐름을 따라 진행됩니다.
+\item
+  \textbf{예시:} ``사회적 지지가 개인의 스트레스 해소에 미치는 영향''을
+  연구할 때, 연구자는 먼저 관련 이론을 검토하고, 사회적 지지와 스트레스
+  해소의 개념을 명확히 정의한 후, 연구 대상 선정, 자료 수집 방법(설문
+  조사, 사회적 지지 척도, 스트레스 척도), 분석 방법(상관분석, 회귀분석)
+  등을 포함하는 상세한 연구 설계를 수립합니다. 이후 설계에 따라 데이터를
+  수집하고 분석하여 결론을 도출하는 체계적인 과정을 따릅니다.
+\end{itemize}
+
+\textbf{4. 일반성 (Generality): 특정 사례를 넘어 보편적인 설명 추구}
+
+과학적 연구의 중요한 목표 중 하나는 특정 개인, 집단, 또는 상황에 대한
+제한적인 설명을 넘어, \textbf{더 넓은 범위의 유사한 현상에 적용될 수
+있는 일반적인 원리, 법칙, 또는 이론을 발견}하는 것입니다. 일반적인
+설명력을 갖는 지식은 사회 현상을 더 깊이 이해하고 예측하는 데
+기여합니다.
+
+\begin{itemize}
+\item
+  \textbf{(시각 자료 예시: ``일반성의 확장''을 나타내는 그림. 특정
+  사례에 대한 연구 결과가 더 큰 집단이나 유사한 상황에 적용될 수 있음을
+  화살표로 나타내는 모습)}
+
+  연구 결과의 일반성을 확보하기 위해서는 연구 대상을 신중하게 선정하고,
+  통계적으로 대표성 있는 표본을 추출하는 것이 중요합니다. 또한, 다양한
+  맥락에서 연구 결과를 반복적으로 검증하여 그 적용 범위를 확인하는
+  노력이 필요합니다.
+\item
+  \textbf{예시:} 특정 연령대의 스마트폰 중독 연구에서 밝혀진 원인이 다른
+  연령대나 다른 문화권의 스마트폰 중독 현상에도 유사하게 적용될 수
+  있다면, 해당 연구 결과는 높은 수준의 일반성을 갖는다고 평가할 수
+  있습니다.
+\end{itemize}
+
+\textbf{5. 간결성 (Parsimony): 경제적이고 명료한 이론 구성}
+
+간결성의 원리, 또는 \textbf{오컴의 면도날(Occam's Razor)}은 동일한 사회
+현상을 설명할 수 있는 여러 경쟁적인 이론이 존재할 때, \textbf{가장 적은
+수의 가정으로 이루어진 가장 단순하고 명료한 이론}을 선호하는 원리입니다.
+단순한 이론은 이해하기 쉽고, 검증 가능성이 높으며, 새로운 예측을
+생성하고 다른 현상을 설명하는 데 더 유용할 수 있습니다.
+
+\begin{itemize}
+\item
+  \textbf{(시각 자료 예시: ``복잡한 설명 vs.~간결한 설명''을 비교하는
+  그림. 복잡한 설명은 여러 개의 화살표와 상자로 연결되어 있고, 간결한
+  설명은 몇 개의 핵심 요소만으로 명확하게 연결된 모습)}
+
+  과학자는 현상을 설명하기 위해 불필요하게 많은 변수나 복잡한 관계를
+  가정하는 것을 피해야 합니다. 핵심적인 요인과 그들 간의 명확한 관계를
+  제시하는 간결한 이론이 과학적 설명으로서 더 큰 가치를 지닙니다.
+\item
+  \textbf{예시:} 청소년 비행의 원인을 설명하는 다양한 이론 중에서,
+  가정하는 요인의 수가 적고 그 관계가 명확하게 제시된 이론이, 다른
+  조건이 동일하다면 더 선호됩니다.
+\end{itemize}
+
+\textbf{6. 검증 가능성 (Verifiability): 경험적 증거를 통한 반복적 확인}
+
+과학적 주장은 \textbf{경험적인 증거를 통해 반복적으로 검증 가능}해야
+합니다. 이는 다른 연구자들이 동일한 이론적 틀과 방법론을 사용하여 연구를
+수행했을 때, 유사한 결과를 얻을 수 있어야 함을 의미합니다. 검증 가능성은
+과학적 지식의 신뢰성과 객관성을 확보하는 데 필수적인 조건입니다.
+
+\begin{itemize}
+\item
+  \textbf{(시각 자료 예시: ``검증 과정''을 나타내는 그림. 하나의 연구
+  결과가 다른 연구자들에 의해 반복적으로 확인되는 과정을 화살표로
+  나타내는 모습)}
+
+  검증 가능성을 확보하기 위해서는 연구 과정과 결과를 투명하게 공개하고,
+  연구 방법을 상세하게 기술하여 다른 연구자들이 이를 따라 할 수 있도록
+  해야 합니다. 또한, 연구 결과에 대한 비판적인 검토와 토론을 통해 지식의
+  신뢰성을 높이는 과정이 중요합니다.
+\item
+  \textbf{예시:} 특정 사회 복지 프로그램의 효과를 평가하는 연구 결과가
+  발표되었을 때, 다른 연구자들이 동일한 프로그램과 유사한 연구 설계를
+  사용하여 연구를 반복했을 때 유사한 효과가 나타난다면, 해당 연구 결과의
+  검증 가능성이 높다고 할 수 있습니다.
+\end{itemize}
+
+\subsection{과학적 연구 방법의 순환적
+성격}\label{uxacfcuxd559uxc801-uxc5f0uxad6c-uxbc29uxbc95uxc758-uxc21cuxd658uxc801-uxc131uxaca9}
+
+과학적 연구는 일반적으로 문제 제기, 문헌 고찰, 가설 설정, 연구 설계,
+자료 수집, 자료 분석, 결론 도출 및 보고의 단계를 따르지만, 이 과정은
+\textbf{선형적인 진행이라기보다는 순환적인 성격}을 갖습니다. 연구의
+결과는 기존 이론을 지지하거나 수정할 수 있으며, 때로는 새로운 연구
+질문이나 탐구 방향을 제시하기도 합니다.
+
+\begin{itemize}
+\item
+  \textbf{(시각 자료 예시: ``과학적 연구의 순환 과정''을 나타내는
+  다이어그램. 결론 도출 단계에서 다시 문제 제기 단계로 화살표가 이어지는
+  순환적인 흐름을 보여주는 모습)}
+
+  하나의 연구 프로젝트가 완결되더라도, 그 결과는 새로운 연구의 출발점이
+  될 수 있습니다. 기존 이론에 대한 비판적인 검토, 예상치 못한 발견, 또는
+  해결되지 않은 질문들은 후속 연구의 중요한 주제가 됩니다. 이러한
+  순환적인 과정을 통해 사회과학 지식은 점진적으로 발전하고 심화됩니다.
+\item
+  \textbf{예시:} 청소년의 온라인 커뮤니티 활동이 사회성에 미치는 영향을
+  연구한 결과, 긍정적인 영향과 부정적인 영향이 동시에 발견되었다면, 후속
+  연구는 이러한 상반된 결과를 설명하기 위해 특정 조건이나 매개 변수를
+  탐색하는 방향으로 진행될 수 있습니다.
+\end{itemize}
+
+결론적으로, 과학적 연구 방법론은 사회 현상을 이해하기 위한 강력한
+도구이며, 경험주의, 객관성, 체계성, 일반성, 간결성, 그리고 검증 가능성과
+같은 핵심 원리들을 바탕으로 지식을 탐구하고 구축합니다. 이러한 원리들을
+이해하고 연구 과정에 적용하는 것은 사회과학 연구의 신뢰성과 타당성을
+높이는 데 필수적입니다. 다음 섹션에서는 사회과학 연구에서 활용되는
+다양한 형태의 데이터와 그 특징에 대해 자세히 살펴보겠습니다.
+
+알겠습니다. 교재의 1.2절 ``사회과학 데이터의 유형과 특성'' 부분을
+교과서적인 어투로 더욱 자세하게 설명하고, 다양한 예시와 시각 자료 활용
+방안을 제시하여 독자의 이해를 돕도록 하겠습니다.
+
+\section{1.2 사회과학 데이터의 유형과
+특성}\label{uxc0acuxd68cuxacfcuxd559-uxb370uxc774uxd130uxc758-uxc720uxd615uxacfc-uxd2b9uxc131}
+
+사회과학 연구는 인간의 행동, 사회적 관계, 문화, 제도 등 사회 현상의
+다양한 측면을 탐구합니다. 이러한 연구 과정에서 수집되고 분석되는
+데이터는 연구의 기초 자료로서, 연구 질문에 대한 답을 찾는 데 핵심적인
+역할을 합니다. 사회과학 데이터는 그 형태, 내용, 그리고 수집 방법에 따라
+다양하게 분류될 수 있으며, 각 유형의 데이터는 고유한 특성과 분석 방법을
+요구합니다.
+
+\subsection{1.2.1 데이터의 형태에 따른
+분류}\label{uxb370uxc774uxd130uxc758-uxd615uxd0dcuxc5d0-uxb530uxb978-uxbd84uxb958}
+
+사회과학 데이터는 크게 \textbf{양적 데이터(Quantitative Data)}와
+\textbf{질적 데이터(Qualitative Data)}로 구분할 수 있습니다.
+
+\textbf{1. 양적 데이터 (Quantitative Data): 수치로 표현되는 정보}
+
+양적 데이터는 \textbf{수치(Numerical Values)}로 표현될 수 있는 데이터를
+의미합니다. 이는 측정, 계수, 또는 순위 부여를 통해 얻어지며, 통계 분석을
+통해 패턴, 관계, 차이 등을 파악하는 데 주로 활용됩니다.
+
+\begin{itemize}
+\item
+  \textbf{(시각 자료 예시: ``양적 데이터의 예''를 보여주는 표 또는
+  그래프. 표에는 설문조사 응답, 실험 결과, 통계 자료 등이 나열되고,
+  그래프에는 막대 그래프, 꺾은선 그래프, 산점도 등이 제시됨)}
+
+  양적 데이터는 다음과 같은 특징을 가집니다.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{수치화 가능성:} 데이터의 속성을 숫자로 나타낼 수 있습니다.
+  \item
+    \textbf{측정 가능성:} 표준화된 도구나 방법을 사용하여 데이터를
+    측정할 수 있습니다.
+  \item
+    \textbf{통계 분석 용이성:} 다양한 통계적 기법을 적용하여 데이터를
+    분석하고 해석할 수 있습니다.
+  \end{itemize}
+\item
+  \textbf{1.2.1.1 양적 데이터의 종류}
+
+  양적 데이터는 그 측정 수준에 따라 더욱 세분화될 수 있습니다. 측정
+  수준은 데이터 분석 방법 선택에 중요한 영향을 미칩니다.
+
+  \begin{longtable}[]{@{}
+    >{\centering\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1354}}
+    >{\centering\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1458}}
+    >{\centering\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.4792}}
+    >{\centering\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2396}}@{}}
+  \toprule\noalign{}
+  \begin{minipage}[b]{\linewidth}\centering
+  측정 수준
+  \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+  설명
+  \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+  예시
+  \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+  주요 통계 분석
+  \end{minipage} \\
+  \midrule\noalign{}
+  \endhead
+  \bottomrule\noalign{}
+  \endlastfoot
+  명목 척도 & 범주 구분 & 성별, 종교, 거주 지역, 혈액형 & 빈도 분석,
+  최빈값 \\
+  서열 척도 & 순서 관계 & 만족도, 선호도 순위, 사회경제적 계층 & 중앙값,
+  분위수, 순위 상관 \\
+  등간 척도 & 동일 간격, 영점 부재 & 온도, 시간, 시험 점수 & 평균,
+  표준편차, 상관 \\
+  비율 척도 & 동일 간격, 절대 영점 & 소득, 나이, 키, 몸무게 & 평균,
+  표준편차, 비율 비교 \\
+  \end{longtable}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{명목 척도(Nominal Scale):}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      데이터를 상호 배타적인 \textbf{범주(Category)}로 구분하는
+      척도입니다.
+    \item
+      범주 간에는 순서나 크기의 의미가 없습니다.
+    \item
+      예시: 성별(남, 여), 종교(기독교, 불교, 이슬람교 등), 거주
+      지역(서울, 경기, 강원 등), 혈액형(A, B, AB, O)
+    \item
+      통계 분석: 빈도 분석, 최빈값, 카이제곱 검정 등
+    \end{itemize}
+  \item
+    \textbf{서열 척도(Ordinal Scale):}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      범주 간에 \textbf{순서 관계(Order)}는 존재하지만, \textbf{간격의
+      크기는 일정하지 않은} 척도입니다.
+    \item
+      `더 크다' 또는 '더 작다'와 같은 비교는 가능하지만, 그 차이가
+      얼마나 되는지는 알 수 없습니다.
+    \item
+      예시: 만족도(매우 불만족 \textless{} 불만족 \textless{} 보통
+      \textless{} 만족 \textless{} 매우 만족), 선호도 순위(1순위, 2순위,
+      3순위 등), 사회경제적 계층(하 \textless{} 중 \textless{} 상)
+    \item
+      통계 분석: 중앙값, 분위수, 순위 상관분석 등
+    \end{itemize}
+  \item
+    \textbf{등간 척도(Interval Scale):}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      범주 간에 \textbf{순서 관계가 존재하고, 간격의 크기가 동일한}
+      척도입니다.
+    \item
+      범주 간의 차이를 정확하게 측정할 수 있지만, \textbf{절대적인
+      영점(Absolute Zero)}은 존재하지 않습니다.
+    \item
+      예시: 온도(섭씨, 화씨), 시간(기원전/기원후), 시험 점수(일부 논란
+      있음)
+    \item
+      통계 분석: 평균, 표준편차, 상관분석, 회귀분석 등
+    \end{itemize}
+  \item
+    \textbf{비율 척도(Ratio Scale):}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      등간 척도의 모든 특징을 가지면서 \textbf{절대적인 영점}이 존재하는
+      척도입니다.
+    \item
+      영점은 측정 속성이 완전히 '없음'을 의미하며, 따라서 측정 값들의
+      비율 비교가 가능합니다.
+    \item
+      예시: 소득, 나이, 키, 몸무게, 반응 시간
+    \item
+      통계 분석: 평균, 표준편차, 비율 비교, 곱 상관분석, 회귀분석 등
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\textbf{2. 질적 데이터 (Qualitative Data): 언어, 텍스트, 이미지 등}
+
+질적 데이터는 \textbf{언어(Text), 이미지(Image), 음성(Audio),
+비디오(Video)} 등 수치화하기 어려운 형태의 데이터를 의미합니다. 이는
+심층적인 이해, 맥락 파악, 그리고 현상의 다양한 측면을 탐구하는 데
+유용합니다.
+
+\begin{itemize}
+\item
+  \textbf{(시각 자료 예시: ``질적 데이터의 예''를 보여주는 다양한 자료.
+  인터뷰 녹취록, 관찰 노트, 사진, 영상 캡처 화면 등이 제시됨)}
+
+  질적 데이터는 다음과 같은 특징을 가집니다.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{비수치적 정보:} 데이터의 속성을 숫자로 나타내기 어렵습니다.
+  \item
+    \textbf{맥락적 이해 중시:} 데이터의 의미를 파악하기 위해 맥락을
+    고려하는 것이 중요합니다.
+  \item
+    \textbf{심층적 분석:} 데이터의 심층적인 의미와 다양한 측면을
+    탐구하는 데 활용됩니다.
+  \end{itemize}
+\item
+  \textbf{1.2.1.2 질적 데이터의 종류}
+
+  질적 데이터는 그 형태와 수집 방법에 따라 다양하게 분류될 수 있습니다.
+
+  \begin{longtable}[]{@{}
+    >{\centering\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.1204}}
+    >{\centering\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.4259}}
+    >{\centering\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.4537}}@{}}
+  \toprule\noalign{}
+  \begin{minipage}[b]{\linewidth}\centering
+  데이터 유형
+  \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+  설명
+  \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+  분석 방법
+  \end{minipage} \\
+  \midrule\noalign{}
+  \endhead
+  \bottomrule\noalign{}
+  \endlastfoot
+  텍스트 데이터 & 인터뷰 녹취록, 문서 자료, 소셜 미디어 게시글 & 텍스트
+  분석, 담화 분석 \\
+  이미지 데이터 & 사진, 그림, 도표 등 시각 자료 & 시각적 내용 분석 \\
+  음성 데이터 & 인터뷰 녹음, 회의 녹음 & 음성 분석 \\
+  비디오 데이터 & 관찰 기록, 영상 자료 등 시간 정보 & 영상 분석 \\
+  \end{longtable}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{텍스트 데이터(Text Data):}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      인터뷰 녹취록, 문서 자료, 소셜 미디어 게시글, 뉴스 기사 등 언어로
+      기록된 데이터입니다.
+    \item
+      텍스트 분석(Text Analysis), 담화 분석(Discourse Analysis) 등을
+      통해 분석됩니다.
+    \end{itemize}
+  \item
+    \textbf{이미지 데이터(Image Data):}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      사진, 그림, 도표 등 시각적인 정보를 담고 있는 데이터입니다.
+    \item
+      시각적 내용 분석(Visual Content Analysis) 등을 통해 분석됩니다.
+    \end{itemize}
+  \item
+    \textbf{음성 데이터(Audio Data):}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      인터뷰 녹음, 회의 녹음 등 음성 정보를 담고 있는 데이터입니다.
+    \item
+      음성 분석(Speech Analysis) 등을 통해 분석됩니다.
+    \end{itemize}
+  \item
+    \textbf{비디오 데이터(Video Data):}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      관찰 기록, 영상 자료 등 시간의 흐름에 따른 정보를 담고 있는
+      데이터입니다.
+    \item
+      영상 분석(Video Analysis) 등을 통해 분석됩니다.
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\subsection{1.2.2 사회과학 데이터의 수집
+방법}\label{uxc0acuxd68cuxacfcuxd559-uxb370uxc774uxd130uxc758-uxc218uxc9d1-uxbc29uxbc95}
+
+사회과학 데이터는 다양한 방법을 통해 수집될 수 있으며, 각 방법은
+데이터의 특성과 연구 목적에 따라 선택됩니다.
+
+\begin{itemize}
+\item
+  \textbf{(시각 자료 예시: ``사회과학 데이터 수집 방법''을 나타내는
+  인포그래픽. 설문 조사, 실험, 관찰, 문헌 연구 등의 방법이 그림과 함께
+  제시됨)}
+
+  \begin{longtable}[]{@{}
+    >{\centering\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.0812}}
+    >{\centering\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2875}}
+    >{\centering\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.3125}}
+    >{\centering\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.3188}}@{}}
+  \toprule\noalign{}
+  \begin{minipage}[b]{\linewidth}\centering
+  수집 방법
+  \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+  설명
+  \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+  장단점
+  \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+  주요 활용 분야
+  \end{minipage} \\
+  \midrule\noalign{}
+  \endhead
+  \bottomrule\noalign{}
+  \endlastfoot
+  설문 조사 & 질문지를 통해 연구 대상에게 정보 획득 & 대규모 표본 정보
+  수집 용이, 구조화된 정보 & 정치 여론 조사, 소비자 만족도 조사, 사회
+  의식 조사 \\
+  실험 & 변수 조작을 통해 다른 변수에 미치는 영향 파악 & 인과 관계
+  명확하게 규명 & 광고 효과 실험, 교육 프로그램 효과 실험 \\
+  관찰 & 연구 대상의 행동이나 현상 직접 관찰 & 현장 맥락 이해, 심층 정보
+  획득 용이, 자연스러움 & 조직 문화 연구, 소비자 행동 연구 \\
+  문헌 연구 & 기존 문헌 자료(기록, 문서, 통계 자료) 분석 & 역사적 분석,
+  정책 분석 등에 활용 & 역사 연구, 정책 연구 \\
+  \end{longtable}
+\end{itemize}
+
+\textbf{1. 설문 조사(Survey):}
+
+\begin{itemize}
+\tightlist
+\item
+  연구 대상에게 질문지를 통해 정보를 얻는 방법입니다.
+\item
+  구조화된 질문(Closed-ended questions)과 개방형 질문(Open-ended
+  questions)을 모두 사용할 수 있습니다.
+\item
+  대규모 표본을 대상으로 정보를 수집하는 데 효율적입니다.
+\item
+  예시: 정치적 태도 조사, 소비자 만족도 조사, 사회 의식 조사
+\end{itemize}
+
+\textbf{2. 실험(Experiment):}
+
+\begin{itemize}
+\tightlist
+\item
+  특정 변수를 조작하여 다른 변수에 미치는 영향을 알아보는 방법입니다.
+\item
+  인과 관계(Causality)를 명확하게 밝히는 데 유용합니다.
+\item
+  실험실 실험(Laboratory experiment)과 현장 실험(Field experiment)으로
+  구분됩니다.
+\item
+  예시: 광고 효과 실험, 교육 프로그램 효과 실험, 사회적 영향력 실험
+\end{itemize}
+
+\textbf{3. 관찰(Observation):}
+
+\begin{itemize}
+\tightlist
+\item
+  연구 대상의 행동이나 현상을 직접 관찰하여 정보를 얻는 방법입니다.
+\item
+  참여 관찰(Participant observation)과 비참여 관찰(Non-participant
+  observation)으로 구분됩니다.
+\item
+  현장의 맥락을 이해하고 심층적인 정보를 얻는 데 유용합니다.
+\item
+  예시: 조직 문화 연구, 소비자 행동 연구, 사회 운동 연구
+\end{itemize}
+
+\textbf{4. 문헌 연구(Document Study):}
+
+\begin{itemize}
+\tightlist
+\item
+  기존의 문헌 자료(기록, 문서, 통계 자료 등)를 분석하여 정보를 얻는
+  방법입니다.
+\item
+  역사 연구, 정책 연구, 내용 분석 등에 활용됩니다.
+\item
+  예시: 역사적 사건 분석, 정책 변화 분석, 미디어 내용 분석
+\end{itemize}
+
+\subsection{1.2.3 사회과학 데이터의 윤리적 고려
+사항}\label{uxc0acuxd68cuxacfcuxd559-uxb370uxc774uxd130uxc758-uxc724uxb9acuxc801-uxace0uxb824-uxc0acuxd56d}
+
+사회과학 연구에서 데이터를 수집하고 분석하는 과정은 연구 대상의 권리와
+이익을 보호하는 윤리적 책임을 수반합니다.
+
+\begin{itemize}
+\item
+  \textbf{(시각 자료 예시: ``연구 윤리''를 강조하는 그림. 연구자와 연구
+  대상이 서로 존중하고 협력하는 모습)}
+
+  \begin{longtable}[]{@{}
+    >{\centering\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.1182}}
+    >{\centering\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.4182}}
+    >{\centering\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.4636}}@{}}
+  \toprule\noalign{}
+  \begin{minipage}[b]{\linewidth}\centering
+  윤리적 원칙
+  \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+  설명
+  \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+  구체적 실천 방안
+  \end{minipage} \\
+  \midrule\noalign{}
+  \endhead
+  \bottomrule\noalign{}
+  \endlastfoot
+  자발적 참여 & 연구 대상은 참여 여부를 자유롭게 결정 & 강요나 압력
+  배제, 참여 철회 권리 보장 \\
+  사전 동의 & 연구 목적, 절차, 위험, 이익 등에 대한 충분한 설명 후 동의
+  & 서면 동의 획득, 미성년자/취약 계층의 경우 법적 대리인 동의 \\
+  익명성 보장 & 연구 대상의 개인 정보 보호 & 자료 분석 및 결과 보고
+  과정에서 신원 노출 방지 \\
+  비밀 보장 & 연구 대상 정보의 비밀 유지 & 연구 목적 외 사용 금지, 자료
+  보관 및 관리 보안 유지 \\
+  연구 결과 공정성 & 연구 결과의 객관적이고 공정한 제시 & 연구자 편견
+  배제, 연구 대상 집단에 대한 부정적 낙인/차별 조장 금지 \\
+  \end{longtable}
+\end{itemize}
+
+\textbf{1. 연구 대상의 자발적 참여(Voluntary Participation):}
+
+\begin{itemize}
+\tightlist
+\item
+  연구 대상은 연구 참여 여부를 자유롭게 결정할 권리가 있습니다.
+\item
+  강요나 압력에 의한 참여는 윤리적으로 허용되지 않습니다.
+\end{itemize}
+
+\textbf{2. 사전 동의(Informed Consent):}
+
+\begin{itemize}
+\tightlist
+\item
+  연구 대상은 연구의 목적, 절차, 위험, 이익 등에 대해 충분히 설명을
+  듣고, 연구 참여에 대한 동의를 서면으로 제공해야 합니다.
+\item
+  미성년자나 취약 계층의 경우, 법적 대리인의 동의가 필요합니다.
+\end{itemize}
+
+\textbf{3. 익명성 보장(Anonymity):}
+
+\begin{itemize}
+\tightlist
+\item
+  연구 대상의 개인 정보는 철저히 보호되어야 합니다.
+\item
+  자료 분석 및 결과 보고 과정에서 연구 대상의 신원이 노출되지 않도록
+  주의해야 합니다.
+\end{itemize}
+
+\textbf{4. 비밀 보장(Confidentiality):}
+
+\begin{itemize}
+\tightlist
+\item
+  연구 대상이 제공한 정보는 비밀로 유지되어야 하며, 연구 목적 외에 다른
+  용도로 사용되어서는 안 됩니다.
+\item
+  자료 보관 및 관리 과정에서 보안을 철저히 유지해야 합니다.
+\end{itemize}
+
+\textbf{5. 연구 결과의 공정성(Fairness):}
+
+\begin{itemize}
+\tightlist
+\item
+  연구 결과는 객관적이고 공정하게 제시되어야 하며, 연구자의 편견이나
+  이해관계에 따라 왜곡되어서는 안 됩니다.
+\item
+  연구 대상 집단에 대한 부정적인 낙인이나 차별을 조장하는 내용은
+  포함되어서는 안 됩니다.
+\end{itemize}
+
+\subsection{1.2.4 사회과학 데이터의
+중요성}\label{uxc0acuxd68cuxacfcuxd559-uxb370uxc774uxd130uxc758-uxc911uxc694uxc131}
+
+사회과학 데이터는 사회 현상을 이해하고 설명하며, 사회 문제를 해결하고
+사회 정책을 수립하는 데 중요한 역할을 합니다. 데이터 기반의 연구는
+객관적이고 신뢰할 수 있는 정보를 제공함으로써, 사회과학 지식의 발전에
+기여하고, 더 나은 사회를 만들어가는 데 도움을 줄 수 있습니다.
+
+\section{1.3 가상 데이터의 효용성과
+장점}\label{uxac00uxc0c1-uxb370uxc774uxd130uxc758-uxd6a8uxc6a9uxc131uxacfc-uxc7a5uxc810}
+
+사회과학 연구에서 실제 데이터를 수집하고 분석하는 것은 시간, 비용,
+윤리적 제약 등 다양한 어려움을 수반할 수 있습니다. 이러한 문제를
+해결하고, 연구 및 교육 목적을 달성하기 위해 \textbf{가상
+데이터(Simulated Data)}가 활용될 수 있습니다. 가상 데이터는 실제
+데이터를 모방하여 인위적으로 생성된 데이터로서, 특정 통계적 속성을
+갖도록 설계될 수 있습니다.
+
+\subsection{1.3.1 가상 데이터의 정의 및
+유형}\label{uxac00uxc0c1-uxb370uxc774uxd130uxc758-uxc815uxc758-uxbc0f-uxc720uxd615}
+
+가상 데이터는 실제 데이터의 통계적 특성(평균, 표준편차, 분포, 변수 간
+관계 등)을 유지하면서 인위적으로 생성된 데이터입니다. 이는 연구 및 교육
+과정에서 실제 데이터를 대신하여 활용될 수 있으며, 다양한 유형으로 생성될
+수 있습니다.
+
+\begin{itemize}
+\item
+  \textbf{(시각 자료 예시: ``가상 데이터 생성 과정''을 나타내는 흐름도.
+  실제 데이터 분석 → 가상 데이터 생성 알고리즘 설계 → 가상 데이터 생성 →
+  가상 데이터 검증의 순서)}
+
+  가상 데이터는 생성 목적과 방법에 따라 다양한 유형으로 분류될 수
+  있습니다.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{모의 실험 데이터(Simulated Experimental Data):}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      실험 연구의 결과를 모방하여 생성된 데이터입니다.
+    \item
+      실험 조건, 처리 효과, 오차 등을 제어하여 생성할 수 있습니다.
+    \item
+      예시: 약물 효과 실험 데이터, 교육 프로그램 효과 실험 데이터
+    \end{itemize}
+  \item
+    \textbf{설문 조사 데이터(Simulated Survey Data):}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      설문 조사의 응답 패턴을 모방하여 생성된 데이터입니다.
+    \item
+      응답자의 특성, 태도, 행동 등을 반영하여 생성할 수 있습니다.
+    \item
+      예시: 정치적 태도 조사 데이터, 소비자 만족도 조사 데이터
+    \end{itemize}
+  \item
+    \textbf{시계열 데이터(Simulated Time Series Data):}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      시간의 흐름에 따라 변화하는 데이터를 모방하여 생성된 데이터입니다.
+    \item
+      추세, 계절성, 주기성 등을 반영하여 생성할 수 있습니다.
+    \item
+      예시: 경제 성장률 데이터, 주가 변동 데이터
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\subsection{1.3.2 가상 데이터의
+효용성}\label{uxac00uxc0c1-uxb370uxc774uxd130uxc758-uxd6a8uxc6a9uxc131}
+
+가상 데이터는 사회과학 연구 및 교육의 다양한 측면에서 유용하게 활용될 수
+있습니다.
+
+\begin{itemize}
+\item
+  \textbf{(시각 자료 예시: ``가상 데이터의 활용''을 보여주는 다양한
+  상황. 통계 분석 교육, 연구 방법론 실습, 윤리적 제약 극복 등이 제시됨)}
+
+  \begin{longtable}[]{@{}
+    >{\centering\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.0935}}
+    >{\centering\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.4299}}
+    >{\centering\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.4766}}@{}}
+  \toprule\noalign{}
+  \begin{minipage}[b]{\linewidth}\centering
+  효용성
+  \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+  설명
+  \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+  구체적 예시
+  \end{minipage} \\
+  \midrule\noalign{}
+  \endhead
+  \bottomrule\noalign{}
+  \endlastfoot
+  접근 용이성 & 실제 데이터 획득의 시간/비용 절감 & 통계 분석 교육 자료
+  제공 \\
+  통제 가능성 & 특정 분석 방법 설명/강조 용이 & 회귀 분석 설명 위한
+  이상치 없는 데이터 생성 \\
+  반복 학습 & 다양한 분석 방법 적용/결과 비교 용이 & 군집 분석 방법 비교
+  위한 동일 데이터 활용 \\
+  개인 정보 보호 & 민감한 개인 정보 유출 위험 없이 안전한 실습 & 개인
+  정보 포함된 설문 조사 데이터 대신 활용 \\
+  윤리적 문제 해결 & 윤리적 제약 있는 연구 주제 탐구 가능 & 가상 실험
+  데이터 활용한 비윤리적 실험 재현 방지 \\
+  \end{longtable}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{접근 용이성(Accessibility):}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      실제 데이터를 획득하는 데는 시간, 비용, 그리고 노력이 요구될 수
+      있습니다.
+    \item
+      가상 데이터는 필요에 따라 쉽게 생성하고 활용할 수 있어, 연구 및
+      교육 자료로 활용하기에 용이합니다.
+    \item
+      예시: 통계 분석 교육 과정에서 다양한 예제 데이터를 제공하여 학습
+      효과를 높일 수 있습니다.
+    \end{itemize}
+  \item
+    \textbf{통제 가능성(Controllability):}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      가상 데이터는 특정 분석 방법을 설명하거나, 특정 통계적 개념을
+      강조하기 위해 데이터의 특성을 의도적으로 설계하고 통제할 수
+      있습니다.
+    \item
+      예시: 회귀 분석을 설명하기 위해 이상치가 없는 가상 데이터를
+      생성하여 모델의 적합도를 명확하게 보여줄 수 있습니다.
+    \end{itemize}
+  \item
+    \textbf{반복 학습(Ease of Repetition):}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      가상 데이터는 동일한 데이터를 반복적으로 분석하고, 다양한 분석
+      방법을 적용해 보면서 결과를 비교하고 이해하는 데 유용합니다.
+    \item
+      예시: 군집 분석 방법의 차이를 비교하기 위해 동일한 가상 데이터를
+      사용하여 각 방법의 결과를 시각적으로 비교할 수 있습니다.
+    \end{itemize}
+  \item
+    \textbf{개인 정보 보호(Privacy Protection):}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      실제 연구 데이터는 개인의 민감한 정보를 포함할 수 있으며, 데이터
+      공유 및 분석 과정에서 개인 정보 유출의 위험이 존재합니다.
+    \item
+      가상 데이터는 개인 정보를 포함하지 않으므로, 안전하게 분석 실습을
+      진행할 수 있습니다.
+    \item
+      예시: 개인의 소비 습관, 건강 정보 등이 포함된 설문 조사 데이터를
+      대신하여 가상 데이터를 활용하여 데이터 분석 기법을 학습할 수
+      있습니다.
+    \end{itemize}
+  \item
+    \textbf{윤리적 문제 해결(Ethical Issue Resolution):}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      일부 사회과학 연구는 윤리적인 문제로 인해 실제 데이터를 수집하기
+      어려운 경우가 있습니다.
+    \item
+      가상 데이터를 활용하면 이러한 윤리적 제약 없이 연구 주제를 탐구할
+      수 있습니다.
+    \item
+      예시: 인간에게 심각한 고통을 줄 수 있는 실험 연구는 가상 데이터를
+      활용하여 모의 실험을 진행함으로써 윤리적 문제를 해결할 수
+      있습니다.
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\subsection{1.3.3 가상 데이터 활용 시 고려
+사항}\label{uxac00uxc0c1-uxb370uxc774uxd130-uxd65cuxc6a9-uxc2dc-uxace0uxb824-uxc0acuxd56d}
+
+가상 데이터는 다양한 장점을 제공하지만, 활용 시 몇 가지 고려 사항을
+염두에 두어야 합니다.
+
+\begin{itemize}
+\item
+  \textbf{(시각 자료 예시: ``가상 데이터 활용 시 주의사항''을 강조하는
+  그림. 가상 데이터의 한계점을 인식하고, 적절한 활용 방안을 모색하는
+  연구자의 모습)}
+
+  \begin{longtable}[]{@{}
+    >{\centering\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.1182}}
+    >{\centering\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.4182}}
+    >{\centering\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.4636}}@{}}
+  \toprule\noalign{}
+  \begin{minipage}[b]{\linewidth}\centering
+  고려 사항
+  \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+  설명
+  \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+  구체적 예시
+  \end{minipage} \\
+  \midrule\noalign{}
+  \endhead
+  \bottomrule\noalign{}
+  \endlastfoot
+  현실 반영성 & 실제 데이터의 복잡성/다양성 반영 어려움 & 실제 데이터와
+  가상 데이터 간 분석 결과 차이 발생 가능성 \\
+  일반화 제한 & 가상 데이터 분석 결과의 일반화에 주의 & 특정 목적 위해
+  생성된 데이터는 일반적 결론 도출 어려움 \\
+  데이터 생성 과정 명확화 & 데이터 생성 과정 및 가정 명확히 제시 & 가상
+  데이터 활용 연구 결과 해석 시 주의 \\
+  \end{longtable}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{현실 반영성(Reality Reflection):}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      가상 데이터는 실제 데이터의 복잡성과 다양성을 완벽하게 반영하기
+      어려울 수 있습니다.
+    \item
+      가상 데이터 분석 결과는 실제 데이터 분석 결과와 차이가 있을 수
+      있다는 점을 염두에 두어야 합니다.
+    \item
+      예시: 실제 경제 데이터는 다양한 외부 요인에 의해 영향을 받지만,
+      가상 경제 데이터는 이러한 복잡성을 모두 반영하기 어려울 수
+      있습니다.
+    \end{itemize}
+  \item
+    \textbf{일반화 제한(Generalization Limitation):}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      가상 데이터는 특정 목적을 위해 생성되므로, 분석 결과를 실제 사회
+      현상에 일반화하는 데 주의가 필요합니다.
+    \item
+      가상 데이터 분석 결과는 특정 상황에 국한될 수 있으며, 일반적인
+      결론을 도출하기 어려울 수 있습니다.
+    \item
+      예시: 특정 마케팅 전략의 효과를 분석하기 위해 생성된 가상 데이터는
+      다른 상황에서의 마케팅 효과를 예측하는 데 한계가 있을 수 있습니다.
+    \end{itemize}
+  \item
+    \textbf{데이터 생성 과정 명확화(Data Generation Process
+    Clarification):}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      가상 데이터의 생성 과정과 가정은 명확하게 제시되어야 합니다.
+    \item
+      가상 데이터 활용 연구 결과를 해석할 때, 데이터 생성 과정의
+      한계점을 고려해야 합니다.
+    \item
+      예시: 가상 데이터의 분포, 변수 간 관계, 이상치 생성 여부 등을
+      명확하게 밝혀, 연구 결과 해석의 타당성을 높여야 합니다.
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\subsection{1.3.4 가상 데이터 활용의
+미래}\label{uxac00uxc0c1-uxb370uxc774uxd130-uxd65cuxc6a9uxc758-uxbbf8uxb798}
+
+가상 데이터는 사회과학 연구 및 교육에서 점점 더 중요한 역할을 할 것으로
+예상됩니다. 인공지능, 머신러닝 등 기술 발전에 따라 더욱 정교하고
+현실적인 가상 데이터 생성이 가능해짐에 따라, 가상 데이터 활용의 범위는
+더욱 확대될 것입니다.
+
+\begin{itemize}
+\item
+  \textbf{(시각 자료 예시: ``가상 데이터 활용의 미래''를 보여주는 그림.
+  인공지능 기술을 활용하여 더욱 현실적인 가상 데이터를 생성하고, 이를
+  사회과학 연구에 적용하는 미래 사회의 모습)}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{인공지능 기반 가상 데이터 생성:}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      인공지능, 머신러닝 기술을 활용하여 실제 데이터의 복잡한 패턴과
+      구조를 학습하고, 이를 반영한 더욱 현실적인 가상 데이터를 생성할 수
+      있습니다.
+    \end{itemize}
+  \item
+    \textbf{가상 현실(VR)/증강 현실(AR) 연계:}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      가상 현실, 증강 현실 기술과 연계하여 몰입형 데이터 환경을
+      구축하고, 사회 현상을 더욱 생생하게 모의 실험할 수 있습니다.
+    \end{itemize}
+  \item
+    \textbf{윤리적 문제 해결 및 연구 혁신:}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      가상 데이터 활용은 윤리적 문제 해결을 넘어, 사회과학 연구 방법론의
+      혁신을 가져올 수 있습니다.
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+결론적으로, 가상 데이터는 사회과학 연구 및 교육의 효율성과 효과성을
+높이는 데 기여할 수 있는 유용한 도구입니다. 가상 데이터의 효용성과
+한계점을 명확히 인식하고, 적절한 활용 방안을 모색함으로써, 사회과학
+연구의 발전에 기여할 수 있을 것입니다.
+
+\section{1.4 파이썬 통계 분석 환경
+구축}\label{uxd30cuxc774uxc36c-uxd1b5uxacc4-uxbd84uxc11d-uxd658uxacbd-uxad6cuxcd95}
+
+파이썬(Python)은 강력한 데이터 분석 및 통계 분석 기능을 제공하는
+프로그래밍 언어입니다. 다양한 라이브러리(Library)를 통해 통계 분석,
+데이터 처리, 시각화 등 사회과학 연구에 필요한 다양한 기능을 지원합니다.
+본 절에서는 파이썬을 활용한 효율적인 통계 분석 환경을 구축하는 데 필요한
+주요 도구와 플랫폼을 소개합니다.
+
+\subsection{1.4.1 파이썬 및 주요
+라이브러리}\label{uxd30cuxc774uxc36c-uxbc0f-uxc8fcuxc694-uxb77cuxc774uxbe0cuxb7ecuxb9ac}
+
+파이썬은 간결한 문법과 풍부한 라이브러리 생태계를 바탕으로, 데이터 과학
+및 통계 분석 분야에서 널리 활용되고 있습니다.
+
+\begin{itemize}
+\item
+  \textbf{(시각 자료 예시: ``파이썬 데이터 분석 생태계''를 보여주는
+  그림. 파이썬 로고와 함께 주요 라이브러리(Pandas, NumPy, Matplotlib,
+  Seaborn 등)의 관계를 나타내는 그림)}
+
+  파이썬의 주요 라이브러리는 다음과 같습니다.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{Pandas:}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      구조화된 데이터(Structured Data), 특히 테이블 형태의 데이터를
+      효율적으로 처리하고 분석하기 위한 라이브러리입니다.
+    \item
+      DataFrame이라는 강력한 2차원 데이터 구조를 제공하며, 데이터
+      불러오기, 저장하기, 필터링, 정렬, 병합, 그룹화, 결측치 처리, 변수
+      변환 등 다양한 데이터 전처리 및 조작 기능을 제공합니다.
+    \end{itemize}
+  \item
+    \textbf{NumPy(Numerical Python):}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      파이썬에서 수치 계산(Numerical Computation)을 위한 핵심
+      라이브러리입니다.
+    \item
+      다차원 배열 객체인 ndarray를 제공하며, 배열 기반의 효율적인 수학
+      함수, 선형대수 연산, 통계 함수 등을 지원합니다.
+    \end{itemize}
+  \item
+    \textbf{SciPy(Scientific Python):}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      과학 및 기술 계산을 위한 광범위한 기능을 제공하는
+      라이브러리입니다.
+    \item
+      통계 검정(Statistical Tests), 최적화(Optimization),
+      선형대수(Linear Algebra), 신호 처리(Signal Processing),
+      보간(Interpolation), 미적분(Integration) 등 다양한 과학 기술
+      분야에서 활용되는 함수들을 포함하고 있습니다.
+    \end{itemize}
+  \item
+    \textbf{Statsmodels:}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      통계 모델링을 위한 라이브러리입니다.
+    \item
+      회귀 분석, 분산 분석, 시계열 분석 등 다양한 통계 모델을 구축하고
+      평가하는 기능을 제공합니다.
+    \end{itemize}
+  \item
+    \textbf{Matplotlib:}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      다양한 형태의 그래프와 플롯을 생성하여 데이터를 시각화하기 위한
+      라이브러리입니다.
+    \item
+      데이터의 패턴을 파악하고 분석 결과를 효과적으로 전달하는 데 도움을
+      줍니다.
+    \end{itemize}
+  \item
+    \textbf{Seaborn:}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Matplotlib을 기반으로 통계적인 시각화 기능을 향상시킨
+      라이브러리입니다.
+    \item
+      더 세련되고 정보 전달력이 높은 그래프를 쉽게 생성할 수 있도록
+      지원합니다.
+    \end{itemize}
+  \item
+    \textbf{Scikit-learn:}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      머신러닝을 위한 포괄적인 라이브러리입니다.
+    \item
+      분류, 회귀, 군집 분석, 차원 축소 등 다양한 머신러닝 알고리즘과
+      데이터 전처리, 모델 평가 도구를 제공합니다.
+    \end{itemize}
+  \end{itemize}
+
+  \begin{longtable}[]{@{}
+    >{\centering\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.1182}}
+    >{\centering\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.4182}}
+    >{\centering\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.4636}}@{}}
+  \toprule\noalign{}
+  \begin{minipage}[b]{\linewidth}\centering
+  라이브러리
+  \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+  설명
+  \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+  주요 기능
+  \end{minipage} \\
+  \midrule\noalign{}
+  \endhead
+  \bottomrule\noalign{}
+  \endlastfoot
+  Pandas & 구조화된 데이터 처리 및 분석 & DataFrame, 데이터 전처리,
+  데이터 조작 \\
+  NumPy & 수치 계산 및 배열 연산 & ndarray, 수학 함수, 선형대수, 통계
+  함수 \\
+  SciPy & 과학 및 기술 계산 함수 제공 & 통계 검정, 최적화, 선형대수,
+  신호 처리, 미적분 \\
+  Statsmodels & 통계 모델링 & 회귀 분석, 분산 분석, 시계열 분석 \\
+  Matplotlib & 데이터 시각화 & 다양한 그래프 및 플롯 생성 \\
+  Seaborn & 통계적 데이터 시각화 기능 향상 & 세련되고 정보 전달력 높은
+  그래프 생성 \\
+  Scikit-learn & 머신러닝 & 분류, 회귀, 군집 분석, 차원 축소, 모델
+  평가 \\
+  \end{longtable}
+\end{itemize}
+
+\subsection{1.4.2 파이썬 통계 분석 환경 구축
+도구}\label{uxd30cuxc774uxc36c-uxd1b5uxacc4-uxbd84uxc11d-uxd658uxacbd-uxad6cuxcd95-uxb3c4uxad6c}
+
+파이썬을 활용한 통계 분석을 위해서는 효율적인 개발 환경을 구축하는 것이
+중요합니다.
+
+\begin{itemize}
+\item
+  \textbf{(시각 자료 예시: ``파이썬 통계 분석 환경 구축 도구''를
+  소개하는 그림. Anaconda, Jupyter Notebook, Google Colab 등의 로고와
+  함께 각 도구의 특징을 설명하는 그림)}
+
+  주요 환경 구축 도구는 다음과 같습니다.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{Anaconda:}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      데이터 과학, 머신러닝, 그리고 과학 기술 컴퓨팅을 위한 오픈 소스
+      플랫폼입니다.
+    \item
+      파이썬 인터프리터와 함께 NumPy, Pandas, Matplotlib, SciPy, Jupyter
+      Notebook 등 데이터 분석에 필수적인 다수의 패키지를 통합적으로
+      제공하므로, 개별적인 패키지 설치의 번거로움을 줄여줍니다.
+    \item
+      가상 환경(Virtual Environment) 관리 기능을 통해 프로젝트별로
+      독립적인 패키지 버전을 관리할 수 있도록 지원합니다.
+    \end{itemize}
+  \item
+    \textbf{Jupyter Notebook(또는 JupyterLab):}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      웹 브라우저 기반의 대화형 컴퓨팅 환경(Interactive Computing
+      Environment)입니다.
+    \item
+      코드 작성 및 실행, 텍스트 설명, 수식 입력, 시각화 결과 등을 하나의
+      문서 형태로 통합하여 관리할 수 있어, 데이터 분석 과정 기록, 학습
+      자료 제작, 연구 결과 공유 등에 매우 효과적입니다.
+    \item
+      JupyterLab은 Jupyter Notebook의 차세대 버전으로, 향상된 사용자
+      인터페이스와 추가 기능을 제공합니다.
+    \end{itemize}
+  \item
+    \textbf{Google Colaboratory(Colab):}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Google에서 제공하는 클라우드 기반의 Jupyter Notebook 환경입니다.
+    \item
+      별도의 설치 없이 웹 브라우저만으로 파이썬 코드를 작성하고 실행할
+      수 있으며, GPU 및 TPU와 같은 하드웨어 자원을 무료로 활용할 수
+      있다는 장점이 있습니다.
+    \end{itemize}
+  \end{itemize}
+
+  \begin{longtable}[]{@{}
+    >{\centering\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.1261}}
+    >{\centering\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.4144}}
+    >{\centering\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.4595}}@{}}
+  \toprule\noalign{}
+  \begin{minipage}[b]{\linewidth}\centering
+  도구
+  \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+  설명
+  \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+  주요 특징
+  \end{minipage} \\
+  \midrule\noalign{}
+  \endhead
+  \bottomrule\noalign{}
+  \endlastfoot
+  Anaconda & 데이터 과학 플랫폼, 패키지 관리 및 가상 환경 지원 & 파이썬,
+  주요 라이브러리, Jupyter Notebook 통합 제공 \\
+  Jupyter Notebook & 웹 기반 대화형 컴퓨팅 환경 & 코드, 텍스트, 수식,
+  시각화 결과 통합 관리 \\
+  Google Colaboratory & 클라우드 기반 Jupyter Notebook & 별도 설치
+  불필요, GPU/TPU 지원 \\
+  \end{longtable}
+\end{itemize}
+
+\subsection{1.4.3 파이썬 통계 분석 환경 구축
+절차}\label{uxd30cuxc774uxc36c-uxd1b5uxacc4-uxbd84uxc11d-uxd658uxacbd-uxad6cuxcd95-uxc808uxcc28}
+
+효율적인 파이썬 통계 분석 환경을 구축하기 위한 일반적인 절차는 다음과
+같습니다.
+
+\begin{itemize}
+\item
+  \textbf{(시각 자료 예시: ``파이썬 통계 분석 환경 구축 절차''를
+  나타내는 순서도. Anaconda 설치 → Jupyter Notebook 실행 → 라이브러리
+  불러오기 → 데이터 분석 수행 → 결과 확인의 순서)}
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \tightlist
+  \item
+    \textbf{Anaconda 설치:}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Anaconda 공식 웹사이트(\url{https://www.anaconda.com/})에서
+      운영체제에 맞는 버전을 다운로드하여 설치합니다.
+    \item
+      Anaconda를 설치하면 파이썬 인터프리터와 함께 주요 데이터 분석
+      라이브러리, Jupyter Notebook 등이 자동으로 설치됩니다.
+    \end{itemize}
+  \item
+    \textbf{Jupyter Notebook 실행:}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Anaconda Navigator 또는 명령 프롬프트/터미널에서
+      \texttt{jupyter\ notebook} 또는 \texttt{jupyter\ lab} 명령어를
+      실행하여 Jupyter Notebook 또는 JupyterLab을 실행합니다.
+    \item
+      웹 브라우저가 자동으로 열리고, 파일 탐색기 또는 실행 화면이
+      표시됩니다.
+    \end{itemize}
+  \item
+    \textbf{새로운 Notebook 생성:}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Jupyter Notebook 또는 JupyterLab 화면에서 ``New'' 버튼을 클릭하고,
+      ``Python 3 (ipykernel)'' 또는 유사한 옵션을 선택하여 새로운
+      Notebook 파일을 생성합니다.
+    \end{itemize}
+  \item
+    \textbf{라이브러리 불러오기:}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Notebook의 코드 셀(Code Cell)에서 \texttt{import} 문을 사용하여
+      필요한 라이브러리를 불러옵니다.
+    \item
+      예시: \texttt{import\ pandas\ as\ pd},
+      \texttt{import\ numpy\ as\ np},
+      \texttt{import\ matplotlib.pyplot\ as\ plt}
+    \end{itemize}
+  \item
+    \textbf{데이터 분석 수행:}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Notebook의 코드 셀에서 파이썬 코드를 작성하여 데이터를 불러오고,
+      전처리하고, 분석하고, 시각화합니다.
+    \item
+      코드 셀을 실행하려면 Shift + Enter 키를 누릅니다.
+    \end{itemize}
+  \item
+    \textbf{결과 확인 및 문서화:}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      코드 실행 결과는 코드 셀 바로 아래에 표시됩니다.
+    \item
+      텍스트 셀(Markdown Cell)을 사용하여 분석 과정, 결과 해석, 결론
+      등을 문서화합니다.
+    \end{itemize}
+  \end{enumerate}
+\end{itemize}
+
+\subsection{1.4.4 파이썬 통계 분석 환경 활용
+팁}\label{uxd30cuxc774uxc36c-uxd1b5uxacc4-uxbd84uxc11d-uxd658uxacbd-uxd65cuxc6a9-uxd301}
+
+파이썬 통계 분석 환경을 더욱 효율적으로 활용하기 위한 몇 가지 팁은
+다음과 같습니다.
+
+\begin{itemize}
+\item
+  \textbf{(시각 자료 예시: ``파이썬 통계 분석 환경 활용 팁''을 제시하는
+  그림. 코드 재사용, 주석 활용, 시각화 활용 등을 강조하는 그림)}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{코드 재사용(Code Reusability):}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      자주 사용하는 코드는 함수(Function) 또는 클래스(Class)로 정의하여
+      재사용성을 높입니다.
+    \end{itemize}
+  \item
+    \textbf{주석 활용(Comment Utilization):}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      코드의 목적, 기능, 작동 방식 등을 주석으로 상세하게 설명하여
+      코드의 가독성을 높입니다.
+    \end{itemize}
+  \item
+    \textbf{시각화 활용(Visualization Utilization):}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      다양한 그래프와 플롯을 활용하여 데이터의 패턴을 파악하고, 분석
+      결과를 효과적으로 전달합니다.
+    \end{itemize}
+  \item
+    \textbf{온라인 자료 활용(Online Resource Utilization):}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      파이썬 및 라이브러리 관련 온라인 자료(공식 문서, 튜토리얼,
+      커뮤니티 등)를 적극적으로 활용하여 문제 해결 능력을 향상시킵니다.
+    \end{itemize}
+  \item
+    \textbf{가상 환경 활용(Virtual Environment Utilization):}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      프로젝트별로 독립적인 가상 환경을 생성하여 패키지 버전 충돌을
+      방지하고, 프로젝트의 독립성을 확보합니다.
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\subsection{1.4.5 파이썬 통계 분석 환경의
+장점}\label{uxd30cuxc774uxc36c-uxd1b5uxacc4-uxbd84uxc11d-uxd658uxacbduxc758-uxc7a5uxc810}
+
+파이썬 통계 분석 환경은 다음과 같은 장점을 제공합니다.
+
+\begin{itemize}
+\item
+  \textbf{(시각 자료 예시: ``파이썬 통계 분석 환경의 장점''을 보여주는
+  그림. 유연성, 확장성, 생산성, 접근성 등을 강조하는 그림)}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{유연성(Flexibility):}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      다양한 라이브러리를 통해 통계 분석뿐만 아니라 데이터 처리, 시각화,
+      머신러닝 등 다양한 작업을 수행할 수 있습니다.
+    \end{itemize}
+  \item
+    \textbf{확장성(Extensibility):}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      사용자 정의 함수 및 클래스를 통해 기능을 확장하고, 특정 분석
+      목적에 맞는 도구를 개발할 수 있습니다.
+    \end{itemize}
+  \item
+    \textbf{생산성(Productivity):}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      간결하고 가독성이 높은 문법을 통해 코드 작성 시간을 단축하고, 개발
+      효율성을 높일 수 있습니다.
+    \end{itemize}
+  \item
+    \textbf{접근성(Accessibility):}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      오픈 소스이므로 무료로 사용할 수 있으며, 다양한 운영체제에서
+      동일하게 작동합니다.
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+결론적으로, 파이썬은 강력하고 유연한 통계 분석 도구이며, Anaconda,
+Jupyter Notebook, Google Colab 등 다양한 도구를 통해 효율적인 개발
+환경을 구축할 수 있습니다. 파이썬 및 관련 라이브러리의 기능을 익히고,
+효과적인 개발 환경을 활용함으로써, 사회과학 연구자는 데이터 분석의
+생산성과 효율성을 크게 향상시킬 수 있습니다.
+
+\chapter{파이썬을 이용한 데이터 핸들링 및 탐색: Pandas DataFrame
+기초}\label{uxd30cuxc774uxc36cuxc744-uxc774uxc6a9uxd55c-uxb370uxc774uxd130-uxd578uxb4e4uxb9c1-uxbc0f-uxd0d0uxc0c9-pandas-dataframe-uxae30uxcd08}
+
+\begin{tcolorbox}[enhanced jigsaw, colbacktitle=quarto-callout-note-color!10!white, toprule=.15mm, bottomrule=.15mm, coltitle=black, breakable, bottomtitle=1mm, opacityback=0, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{📌 핵심 요약}, colframe=quarto-callout-note-color-frame, rightrule=.15mm, leftrule=.75mm, colback=white, titlerule=0mm, arc=.35mm, toptitle=1mm, left=2mm, opacitybacktitle=0.6]
+
+Pandas DataFrame은 파이썬에서 표 형태의 데이터를 다루는 데 필수적인 자료
+구조입니다. 이 절에서는 DataFrame 생성, 정보 확인, 인덱싱, 슬라이싱,
+데이터 조작 등 기본적인 사용법을 학습합니다.
+
+\end{tcolorbox}
+
+\section{2.1 파이썬을 이용한 데이터 핸들링 및 탐색: Pandas DataFrame
+기초}\label{uxd30cuxc774uxc36cuxc744-uxc774uxc6a9uxd55c-uxb370uxc774uxd130-uxd578uxb4e4uxb9c1-uxbc0f-uxd0d0uxc0c9-pandas-dataframe-uxae30uxcd08-1}
+
+사회과학 연구에서 데이터를 수집하고 분석하는 과정은 종종 복잡하고 방대한
+양의 데이터를 다루는 것을 포함합니다. 파이썬의 Pandas 라이브러리는
+이러한 데이터를 효율적으로 처리하고 분석하는 데 필수적인 도구입니다. 본
+절에서는 Pandas의 핵심 자료 구조인 DataFrame을 중심으로, 데이터 핸들링
+및 탐색의 기초를 다룹니다.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{(시각 자료 예시:} Pandas DataFrame의 구조를 보여주는 그림.
+  행과 열, 열 이름, 인덱스 등을 명확하게 표시한 표 형태의 그림)
+\end{itemize}
+
+\subsection{2.1.1 Pandas DataFrame의
+개념}\label{pandas-dataframeuxc758-uxac1cuxb150}
+
+Pandas DataFrame은 2차원 테이블 형태의 데이터 구조로서, 행(Row)과
+열(Column)로 구성됩니다. 각 열은 서로 다른 데이터 유형(숫자, 문자열,
+날짜 등)을 가질 수 있으며, 스프레드시트나 SQL 테이블과 유사한 구조를
+갖습니다.
+
+DataFrame은 다음과 같은 특징을 가집니다.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{다양한 데이터 유형 처리:} 각 열은 서로 다른 데이터 유형을 가질
+  수 있습니다.
+\item
+  \textbf{레이블 기반 인덱싱:} 행과 열에 레이블(이름)을 사용하여
+  데이터에 접근할 수 있습니다.
+\item
+  \textbf{결측치 처리:} 결측치(Missing Data)를 효율적으로 처리하는
+  기능을 제공합니다.
+\item
+  \textbf{데이터 조작 기능:} 데이터 필터링, 정렬, 그룹화, 병합 등 다양한
+  데이터 조작 기능을 제공합니다.
+\end{itemize}
+
+\subsection{2.1.2 DataFrame 생성}\label{dataframe-uxc0dduxc131}
+
+DataFrame은 다양한 방법으로 생성할 수 있습니다.
+
+\begin{itemize}
+\item
+  \textbf{(시각 자료 예시:} DataFrame 생성 방법을 보여주는 그림. 리스트,
+  딕셔너리, CSV 파일 등 다양한 입력 소스로부터 DataFrame을 생성하는
+  과정을 간략하게 보여주는 그림)
+\item
+  \textbf{리스트(List)로부터 생성:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    2차원 리스트를 사용하여 DataFrame을 생성할 수 있습니다.
+  \item
+    각 내부 리스트는 DataFrame의 한 행을 나타냅니다.
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+    \ImportTok{import}\NormalTok{ pandas }\ImportTok{as}\NormalTok{ pd}
+
+\NormalTok{    data }\OperatorTok{=}\NormalTok{ [[}\StringTok{\textquotesingle{}Alice\textquotesingle{}}\NormalTok{, }\DecValTok{25}\NormalTok{, }\StringTok{\textquotesingle{}Female\textquotesingle{}}\NormalTok{], [}\StringTok{\textquotesingle{}Bob\textquotesingle{}}\NormalTok{, }\DecValTok{30}\NormalTok{, }\StringTok{\textquotesingle{}Male\textquotesingle{}}\NormalTok{], [}\StringTok{\textquotesingle{}Charlie\textquotesingle{}}\NormalTok{, }\DecValTok{28}\NormalTok{, }\StringTok{\textquotesingle{}Male\textquotesingle{}}\NormalTok{]]}
+\NormalTok{    df }\OperatorTok{=}\NormalTok{ pd.DataFrame(data, columns}\OperatorTok{=}\NormalTok{[}\StringTok{\textquotesingle{}Name\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Age\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Gender\textquotesingle{}}\NormalTok{])}
+    \BuiltInTok{print}\NormalTok{(df)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+      Name  Age  Gender
+0    Alice   25  Female
+1      Bob   30    Male
+2  Charlie   28    Male
+\end{verbatim}
+
+\begin{itemize}
+\item
+  \textbf{딕셔너리(Dictionary)로부터 생성:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    딕셔너리를 사용하여 DataFrame을 생성할 수 있습니다.
+  \item
+    딕셔너리의 키(Key)는 DataFrame의 열 이름이 되고, 값(Value)은 열
+    데이터가 됩니다.
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{    data }\OperatorTok{=}\NormalTok{ \{}\StringTok{\textquotesingle{}Name\textquotesingle{}}\NormalTok{: [}\StringTok{\textquotesingle{}Alice\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Bob\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Charlie\textquotesingle{}}\NormalTok{], }\StringTok{\textquotesingle{}Age\textquotesingle{}}\NormalTok{: [}\DecValTok{25}\NormalTok{, }\DecValTok{30}\NormalTok{, }\DecValTok{28}\NormalTok{], }\StringTok{\textquotesingle{}Gender\textquotesingle{}}\NormalTok{: [}\StringTok{\textquotesingle{}Female\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Male\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Male\textquotesingle{}}\NormalTok{]\}}
+\NormalTok{    df }\OperatorTok{=}\NormalTok{ pd.DataFrame(data)}
+    \BuiltInTok{print}\NormalTok{(df)}
+\NormalTok{    df.to\_csv(}\StringTok{\textquotesingle{}data.csv\textquotesingle{}}\NormalTok{, index}\OperatorTok{=}\VariableTok{False}\NormalTok{) }\CommentTok{\# DataFrame을 data.csv 파일로 저장 (index 제외)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+      Name  Age  Gender
+0    Alice   25  Female
+1      Bob   30    Male
+2  Charlie   28    Male
+\end{verbatim}
+
+\begin{itemize}
+\item
+  \textbf{CSV 파일로부터 생성:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    CSV(Comma Separated Values) 파일로부터 DataFrame을 생성할 수
+    있습니다.
+  \item
+    \texttt{pd.read\_csv()} 함수를 사용합니다.
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{    df }\OperatorTok{=}\NormalTok{ pd.read\_csv(}\StringTok{\textquotesingle{}data.csv\textquotesingle{}}\NormalTok{) }\CommentTok{\# data.csv 파일로부터 DataFrame 생성}
+    \BuiltInTok{print}\NormalTok{(df)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+      Name  Age  Gender
+0    Alice   25  Female
+1      Bob   30    Male
+2  Charlie   28    Male
+\end{verbatim}
+
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.1193}}
+  >{\centering\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.4220}}
+  >{\centering\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.4587}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\centering
+생성 방법
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+설명
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+예시
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+리스트 생성 & 2차원 리스트를 사용하여 생성 &
+\texttt{pd.DataFrame(data,\ columns={[}\textquotesingle{}Name\textquotesingle{},\ \textquotesingle{}Age\textquotesingle{},\ \textquotesingle{}Gender\textquotesingle{}{]})} \\
+딕셔너리 생성 & 딕셔너리를 사용하여 생성 &
+\texttt{pd.DataFrame(data)} \\
+CSV 파일 생성 & CSV 파일로부터 생성 &
+\texttt{pd.read\_csv(\textquotesingle{}data.csv\textquotesingle{})} \\
+\end{longtable}
+
+\subsection{2.1.3 DataFrame 정보
+확인}\label{dataframe-uxc815uxbcf4-uxd655uxc778}
+
+DataFrame의 구조, 데이터 유형, 결측치 정보 등을 확인하는 것은 데이터
+분석의 첫 단계입니다.
+
+\begin{itemize}
+\item
+  \textbf{(시각 자료 예시:} DataFrame 정보 확인 방법을 보여주는 그림.
+  \texttt{head()}, \texttt{info()}, \texttt{describe()} 등의 함수를
+  사용하여 DataFrame의 일부 데이터, 구조, 통계량 등을 확인하는 과정을
+  간략하게 보여주는 그림)
+\item
+  \textbf{\texttt{head()}:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    DataFrame의 처음 몇 행을 표시합니다.
+  \item
+    기본적으로 처음 5행을 표시하며, 괄호 안에 숫자를 넣어 표시할 행 수를
+    지정할 수 있습니다.
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+    \BuiltInTok{print}\NormalTok{(df.head()) }\CommentTok{\# 처음 5행 표시}
+    \BuiltInTok{print}\NormalTok{(df.head(}\DecValTok{10}\NormalTok{)) }\CommentTok{\# 처음 10행 표시}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+      Name  Age  Gender
+0    Alice   25  Female
+1      Bob   30    Male
+2  Charlie   28    Male
+      Name  Age  Gender
+0    Alice   25  Female
+1      Bob   30    Male
+2  Charlie   28    Male
+\end{verbatim}
+
+\begin{itemize}
+\item
+  \textbf{\texttt{info()}:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    DataFrame의 구조, 열 이름, 데이터 유형, 결측치 개수 등을 요약하여
+    표시합니다.
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+    \BuiltInTok{print}\NormalTok{(df.info())}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 3 entries, 0 to 2
+Data columns (total 3 columns):
+ #   Column  Non-Null Count  Dtype 
+---  ------  --------------  ----- 
+ 0   Name    3 non-null      object
+ 1   Age     3 non-null      int64 
+ 2   Gender  3 non-null      object
+dtypes: int64(1), object(2)
+memory usage: 204.0+ bytes
+None
+\end{verbatim}
+
+\begin{itemize}
+\item
+  \textbf{\texttt{describe()}:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    수치형 열에 대한 기술 통계량(평균, 표준편차, 최소값, 최대값,
+    사분위수 등)을 요약하여 표시합니다.
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+    \BuiltInTok{print}\NormalTok{(df.describe())}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+             Age
+count   3.000000
+mean   27.666667
+std     2.516611
+min    25.000000
+25%    26.500000
+50%    28.000000
+75%    29.000000
+max    30.000000
+\end{verbatim}
+
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.1193}}
+  >{\centering\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.4220}}
+  >{\centering\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.4587}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\centering
+확인 함수
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+설명
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+예시
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\texttt{head()} & DataFrame의 처음 몇 행 표시 & \texttt{df.head()} \\
+\texttt{info()} & DataFrame의 구조, 데이터 유형, 결측치 정보 확인 &
+\texttt{df.info()} \\
+\texttt{describe()} & 수치형 열의 기술 통계량 요약 &
+\texttt{df.describe()} \\
+\end{longtable}
+
+\subsection{2.1.4 DataFrame 인덱싱 및
+슬라이싱}\label{dataframe-uxc778uxb371uxc2f1-uxbc0f-uxc2acuxb77cuxc774uxc2f1}
+
+DataFrame에서 특정 데이터에 접근하거나, 특정 행 또는 열을 선택하는 것을
+인덱싱(Indexing) 및 슬라이싱(Slicing)이라고 합니다.
+
+\begin{itemize}
+\item
+  \textbf{(시각 자료 예시:} DataFrame 인덱싱 및 슬라이싱 방법을 보여주는
+  그림. \texttt{{[}{]}}, \texttt{loc{[}{]}}, \texttt{iloc{[}{]}} 등을
+  사용하여 특정 데이터에 접근하거나, 행/열을 선택하는 과정을 간략하게
+  보여주는 그림)
+\item
+  \textbf{\texttt{{[}{]}} 연산자:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    열 이름을 사용하여 열을 선택합니다.
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+    \BuiltInTok{print}\NormalTok{(df[}\StringTok{\textquotesingle{}Name\textquotesingle{}}\NormalTok{]) }\CommentTok{\# \textquotesingle{}Name\textquotesingle{} 열 선택}
+    \BuiltInTok{print}\NormalTok{(df[[}\StringTok{\textquotesingle{}Name\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Age\textquotesingle{}}\NormalTok{]]) }\CommentTok{\# \textquotesingle{}Name\textquotesingle{}과 \textquotesingle{}Age\textquotesingle{} 열 선택}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+0      Alice
+1        Bob
+2    Charlie
+Name: Name, dtype: object
+      Name  Age
+0    Alice   25
+1      Bob   30
+2  Charlie   28
+\end{verbatim}
+
+\begin{itemize}
+\item
+  \textbf{\texttt{loc{[}{]}} 메서드:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    행과 열의 레이블을 사용하여 데이터에 접근합니다.
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+    \BuiltInTok{print}\NormalTok{(df.loc[}\DecValTok{0}\NormalTok{]) }\CommentTok{\# 0번 행 선택}
+    \BuiltInTok{print}\NormalTok{(df.loc[}\DecValTok{0}\NormalTok{:}\DecValTok{2}\NormalTok{, }\StringTok{\textquotesingle{}Name\textquotesingle{}}\NormalTok{]) }\CommentTok{\# 0번부터 2번 행까지, \textquotesingle{}Name\textquotesingle{} 열 선택}
+    \BuiltInTok{print}\NormalTok{(df.loc[:, [}\StringTok{\textquotesingle{}Name\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Age\textquotesingle{}}\NormalTok{]]) }\CommentTok{\# 모든 행, \textquotesingle{}Name\textquotesingle{}과 \textquotesingle{}Age\textquotesingle{} 열 선택}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Name       Alice
+Age           25
+Gender    Female
+Name: 0, dtype: object
+0      Alice
+1        Bob
+2    Charlie
+Name: Name, dtype: object
+      Name  Age
+0    Alice   25
+1      Bob   30
+2  Charlie   28
+\end{verbatim}
+
+\begin{itemize}
+\item
+  \textbf{\texttt{iloc{[}{]}} 메서드:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    행과 열의 정수 인덱스를 사용하여 데이터에 접근합니다.
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+    \BuiltInTok{print}\NormalTok{(df.iloc[}\DecValTok{0}\NormalTok{]) }\CommentTok{\# 0번 행 선택}
+    \BuiltInTok{print}\NormalTok{(df.iloc[}\DecValTok{0}\NormalTok{:}\DecValTok{2}\NormalTok{, }\DecValTok{0}\NormalTok{]) }\CommentTok{\# 0번부터 2번 행까지, 0번 열 선택}
+    \BuiltInTok{print}\NormalTok{(df.iloc[:, [}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{]]) }\CommentTok{\# 모든 행, 0번과 1번 열 선택}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Name       Alice
+Age           25
+Gender    Female
+Name: 0, dtype: object
+0    Alice
+1      Bob
+Name: Name, dtype: object
+      Name  Age
+0    Alice   25
+1      Bob   30
+2  Charlie   28
+\end{verbatim}
+
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.1795}}
+  >{\centering\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3932}}
+  >{\centering\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.4274}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\centering
+인덱싱/슬라이싱 방법
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+설명
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+예시
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\texttt{{[}{]}} & 열 이름으로 열 선택 &
+\texttt{df{[}\textquotesingle{}Name\textquotesingle{}{]}} \\
+\texttt{loc{[}{]}} & 행/열 레이블로 데이터 접근 &
+\texttt{df.loc{[}0:2,\ \textquotesingle{}Name\textquotesingle{}{]}} \\
+\texttt{iloc{[}{]}} & 행/열 정수 인덱스로 데이터 접근 &
+\texttt{df.iloc{[}:,\ {[}0,\ 1{]}{]}} \\
+\end{longtable}
+
+\subsection{2.1.5 DataFrame 데이터
+조작}\label{dataframe-uxb370uxc774uxd130-uxc870uxc791}
+
+DataFrame은 다양한 데이터 조작 기능을 제공합니다.
+
+\begin{itemize}
+\item
+  \textbf{(시각 자료 예시:} DataFrame 데이터 조작 방법을 보여주는 그림.
+  새로운 열 추가, 열 삭제, 데이터 필터링, 정렬 등을 수행하는 과정을
+  간략하게 보여주는 그림)
+\item
+  \textbf{새로운 열 추가:}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{    df[}\StringTok{\textquotesingle{}Salary\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ [}\DecValTok{50000}\NormalTok{, }\DecValTok{60000}\NormalTok{, }\DecValTok{55000}\NormalTok{] }\CommentTok{\# \textquotesingle{}Salary\textquotesingle{} 열 추가}
+\NormalTok{    df[}\StringTok{\textquotesingle{}Age\_Plus\_10\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ df[}\StringTok{\textquotesingle{}Age\textquotesingle{}}\NormalTok{] }\OperatorTok{+} \DecValTok{10} \CommentTok{\# \textquotesingle{}Age\textquotesingle{} 열을 이용하여 \textquotesingle{}Age\_Plus\_10\textquotesingle{} 열 추가}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{데이터 필터링:}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{    df\_filtered }\OperatorTok{=}\NormalTok{ df[df[}\StringTok{\textquotesingle{}Age\textquotesingle{}}\NormalTok{] }\OperatorTok{\textgreater{}} \DecValTok{28}\NormalTok{] }\CommentTok{\# \textquotesingle{}Age\textquotesingle{} 열이 28보다 큰 행만 선택}
+\NormalTok{    df\_filtered }\OperatorTok{=}\NormalTok{ df[(df[}\StringTok{\textquotesingle{}Age\textquotesingle{}}\NormalTok{] }\OperatorTok{\textgreater{}} \DecValTok{25}\NormalTok{) }\OperatorTok{\&}\NormalTok{ (df[}\StringTok{\textquotesingle{}Gender\textquotesingle{}}\NormalTok{] }\OperatorTok{==} \StringTok{\textquotesingle{}Male\textquotesingle{}}\NormalTok{)] }\CommentTok{\# \textquotesingle{}Age\textquotesingle{} 열이 25보다 크고 \textquotesingle{}Gender\textquotesingle{} 열이 \textquotesingle{}Male\textquotesingle{}인 행만 선택}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{데이터 정렬:}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{    df\_sorted }\OperatorTok{=}\NormalTok{ df.sort\_values(by}\OperatorTok{=}\StringTok{\textquotesingle{}Age\textquotesingle{}}\NormalTok{, ascending}\OperatorTok{=}\VariableTok{True}\NormalTok{) }\CommentTok{\# \textquotesingle{}Age\textquotesingle{} 열을 기준으로 오름차순 정렬}
+\NormalTok{    df\_sorted }\OperatorTok{=}\NormalTok{ df.sort\_values(by}\OperatorTok{=}\NormalTok{[}\StringTok{\textquotesingle{}Gender\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Age\textquotesingle{}}\NormalTok{], ascending}\OperatorTok{=}\NormalTok{[}\VariableTok{True}\NormalTok{, }\VariableTok{False}\NormalTok{]) }\CommentTok{\# \textquotesingle{}Gender\textquotesingle{} 열을 기준으로 오름차순 정렬 후, \textquotesingle{}Age\textquotesingle{} 열을 기준으로 내림차순 정렬}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.1193}}
+  >{\centering\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.4220}}
+  >{\centering\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.4587}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\centering
+조작 방법
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+설명
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+예시
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+새로운 열 추가 & DataFrame에 새로운 열 추가 &
+\texttt{df{[}\textquotesingle{}Salary\textquotesingle{}{]}\ =\ {[}50000,\ 60000,\ 55000{]}} \\
+열 삭제 & DataFrame에서 열 삭제 &
+\texttt{df\ =\ df.drop(columns={[}\textquotesingle{}Gender\textquotesingle{}{]})} \\
+데이터 필터링 & 특정 조건을 만족하는 행만 선택 &
+\texttt{df{[}df{[}\textquotesingle{}Age\textquotesingle{}{]}\ \textgreater{}\ 28{]}} \\
+데이터 정렬 & DataFrame의 행을 특정 열을 기준으로 정렬 &
+\texttt{df.sort\_values(by=\textquotesingle{}Age\textquotesingle{})} \\
+\end{longtable}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{열 삭제:}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{    df }\OperatorTok{=}\NormalTok{ df.drop(columns}\OperatorTok{=}\NormalTok{[}\StringTok{\textquotesingle{}Gender\textquotesingle{}}\NormalTok{]) }\CommentTok{\# \textquotesingle{}Gender\textquotesingle{} 열 삭제}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{2.1.6 DataFrame 활용의
+중요성}\label{dataframe-uxd65cuxc6a9uxc758-uxc911uxc694uxc131}
+
+Pandas DataFrame은 사회과학 연구 데이터를 효율적으로 관리하고 분석하는
+데 필수적인 도구입니다. DataFrame을 통해 데이터를 구조화하고, 다양한
+데이터 조작 기능을 활용함으로써, 연구자는 데이터 분석 과정을 체계적으로
+수행하고, 연구 결과의 신뢰성을 높일 수 있습니다.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+코드 셀 포맷을 변경하여 2.1절을 다시 작성했습니다.
+
+\part{제2부 - 집단 간 차이 분석 및 관계 분석}
+
 \chapter{}\label{section}
 
 \chapter{}\label{section-1}
 
-\part{제2부 - 집단 간 차이 분석 및 관계 분석}
-
 \chapter{}\label{section-2}
+
+\part{제3부 - 예측 및 설명 모델링}
 
 \chapter{}\label{section-3}
 
 \chapter{}\label{section-4}
-
-\part{제3부 - 예측 및 설명 모델링}
 
 \chapter{}\label{section-5}
 
@@ -564,11 +2568,11 @@
 
 \chapter{}\label{section-7}
 
+\part{제4부 - 심화 분석 기법 (선택적)}
+
 \chapter{}\label{section-8}
 
 \chapter{}\label{section-9}
-
-\part{제4부 - 심화 분석 기법 (선택적)}
 
 \chapter{}\label{section-10}
 
@@ -576,20 +2580,16 @@
 
 \chapter{}\label{section-12}
 
-\chapter{}\label{section-13}
-
-\chapter{}\label{section-14}
-
 \cleardoublepage
 \phantomsection
 \addcontentsline{toc}{part}{Appendices}
 \appendix
 
+\chapter{}\label{section-13}
+
+\chapter{}\label{section-14}
+
 \chapter{}\label{section-15}
-
-\chapter{}\label{section-16}
-
-\chapter{}\label{section-17}
 
 
 \backmatter
