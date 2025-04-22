@@ -2022,7 +2022,7 @@ Jupyter Notebook, Google Colab 등 다양한 도구를 통해 효율적인 개�
 \chapter{파이썬을 이용한 데이터 핸들링 및 탐색: Pandas DataFrame
 기초}\label{uxd30cuxc774uxc36cuxc744-uxc774uxc6a9uxd55c-uxb370uxc774uxd130-uxd578uxb4e4uxb9c1-uxbc0f-uxd0d0uxc0c9-pandas-dataframe-uxae30uxcd08}
 
-\begin{tcolorbox}[enhanced jigsaw, colbacktitle=quarto-callout-note-color!10!white, toprule=.15mm, bottomrule=.15mm, coltitle=black, breakable, bottomtitle=1mm, opacityback=0, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{📌 핵심 요약}, colframe=quarto-callout-note-color-frame, rightrule=.15mm, leftrule=.75mm, colback=white, titlerule=0mm, arc=.35mm, toptitle=1mm, left=2mm, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, colframe=quarto-callout-note-color-frame, coltitle=black, opacitybacktitle=0.6, rightrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, arc=.35mm, colback=white, toptitle=1mm, breakable, titlerule=0mm, opacityback=0, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{📌 핵심 요약}, bottomrule=.15mm, bottomtitle=1mm, leftrule=.75mm, toprule=.15mm]
 
 Pandas DataFrame은 파이썬에서 표 형태의 데이터를 다루는 데 필수적인 자료
 구조입니다. 이 절에서는 DataFrame 생성, 정보 확인, 인덱싱, 슬라이싱,
@@ -2544,9 +2544,1153 @@ Pandas DataFrame은 사회과학 연구 데이터를 효율적으로 관리하�
 데이터 조작 기능을 활용함으로써, 연구자는 데이터 분석 과정을 체계적으로
 수행하고, 연구 결과의 신뢰성을 높일 수 있습니다.
 
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+\section{2.2 파이썬을 이용한 데이터 핸들링 및 탐색: 데이터
+전처리}\label{uxd30cuxc774uxc36cuxc744-uxc774uxc6a9uxd55c-uxb370uxc774uxd130-uxd578uxb4e4uxb9c1-uxbc0f-uxd0d0uxc0c9-uxb370uxc774uxd130-uxc804uxcc98uxb9ac}
 
-코드 셀 포맷을 변경하여 2.1절을 다시 작성했습니다.
+사회과학 연구에서 수집된 데이터는 종종 결측치, 이상치, 불일치 등 다양한
+문제점을 포함하고 있습니다. 이러한 데이터 문제를 해결하고 분석에 적합한
+형태로 데이터를 변환하는 과정을 \textbf{데이터 전처리(Data
+Preprocessing)}라고 합니다. 본 절에서는 파이썬 Pandas 라이브러리를
+이용하여 데이터 전처리를 수행하는 주요 방법에 대해 설명합니다.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{(시각 자료 예시:} 데이터 전처리 과정을 보여주는 흐름도. 결측치
+  처리, 이상치 처리, 변수 변환 등의 단계를 포함하는 그림)
+\end{itemize}
+
+\subsection{2.2.1 결측치 처리}\label{uxacb0uxce21uxce58-uxcc98uxb9ac}
+
+\textbf{결측치(Missing Data)}는 데이터에 값이 존재하지 않는 경우를
+의미합니다. 결측치는 데이터 분석 결과의 왜곡을 초래할 수 있으므로,
+적절한 방법으로 처리해야 합니다.
+
+\begin{itemize}
+\item
+  \textbf{(시각 자료 예시:} 결측치 처리 방법을 비교하는 표. 삭제, 대체,
+  예측 등 다양한 방법의 장단점을 비교하는 표)
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{결측치 확인:}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \texttt{isnull()} 또는 \texttt{isna()} 함수를 사용하여 결측치를
+      확인할 수 있습니다.
+    \item
+      \texttt{sum()} 함수와 함께 사용하여 결측치의 개수를 확인할 수
+      있습니다.
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+    \ImportTok{import}\NormalTok{ pandas }\ImportTok{as}\NormalTok{ pd}
+
+    \CommentTok{\# 예시 DataFrame 생성}
+\NormalTok{    data }\OperatorTok{=}\NormalTok{ \{}\StringTok{\textquotesingle{}A\textquotesingle{}}\NormalTok{: [}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\VariableTok{None}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{], }\StringTok{\textquotesingle{}B\textquotesingle{}}\NormalTok{: [}\DecValTok{6}\NormalTok{, }\VariableTok{None}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{9}\NormalTok{, }\DecValTok{10}\NormalTok{], }\StringTok{\textquotesingle{}C\textquotesingle{}}\NormalTok{: [}\StringTok{\textquotesingle{}a\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}b\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}c\textquotesingle{}}\NormalTok{, }\VariableTok{None}\NormalTok{, }\StringTok{\textquotesingle{}e\textquotesingle{}}\NormalTok{]\}}
+\NormalTok{    df }\OperatorTok{=}\NormalTok{ pd.DataFrame(data)}
+
+    \BuiltInTok{print}\NormalTok{(df.isnull())}
+    \BuiltInTok{print}\NormalTok{(df.isnull().}\BuiltInTok{sum}\NormalTok{())}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+       A      B      C
+0  False  False  False
+1  False   True  False
+2   True  False  False
+3  False  False   True
+4  False  False  False
+A    1
+B    1
+C    1
+dtype: int64
+\end{verbatim}
+
+\begin{verbatim}
+* **결측치 삭제:**
+    * `dropna()` 함수를 사용하여 결측치를 포함하는 행 또는 열을 삭제할 수 있습니다.
+    * `axis` 매개변수를 사용하여 행(0) 또는 열(1) 삭제를 지정할 수 있습니다.
+    * `how` 매개변수를 사용하여 모든 값이 결측치인 경우(`'all'`) 또는 하나라도 결측치가 있는 경우(`'any'`)를 지정할 수 있습니다.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{    df\_dropped\_row }\OperatorTok{=}\NormalTok{ df.dropna(axis}\OperatorTok{=}\DecValTok{0}\NormalTok{)}
+\NormalTok{    df\_dropped\_col }\OperatorTok{=}\NormalTok{ df.dropna(axis}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
+\NormalTok{    df\_dropped\_all }\OperatorTok{=}\NormalTok{ df.dropna(axis}\OperatorTok{=}\DecValTok{0}\NormalTok{, how}\OperatorTok{=}\StringTok{\textquotesingle{}all\textquotesingle{}}\NormalTok{)}
+    \BuiltInTok{print}\NormalTok{(df\_dropped\_row)}
+    \BuiltInTok{print}\NormalTok{(df\_dropped\_col)}
+    \BuiltInTok{print}\NormalTok{(df\_dropped\_all)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+     A     B  C
+0  1.0   6.0  a
+4  5.0  10.0  e
+Empty DataFrame
+Columns: []
+Index: [0, 1, 2, 3, 4]
+     A     B     C
+0  1.0   6.0     a
+1  2.0   NaN     b
+2  NaN   8.0     c
+3  4.0   9.0  None
+4  5.0  10.0     e
+\end{verbatim}
+
+\begin{verbatim}
+* **결측치 대체:**
+    * `fillna()` 함수를 사용하여 결측치를 특정 값으로 대체할 수 있습니다.
+    * `value` 매개변수를 사용하여 대체할 값을 지정할 수 있습니다.
+    * `method` 매개변수를 사용하여 이전 값(`'ffill'`) 또는 다음 값(`'bfill'`)으로 대체할 수 있습니다.
+    * `mean()`, `median()`, `mode()` 등 통계 함수를 사용하여 대체값을 계산할 수 있습니다.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{    df\_filled\_0 }\OperatorTok{=}\NormalTok{ df.fillna(}\DecValTok{0}\NormalTok{)}
+\NormalTok{    df\_filled\_mean }\OperatorTok{=}\NormalTok{ df.fillna(df.mean(numeric\_only}\OperatorTok{=}\VariableTok{True}\NormalTok{))}
+\NormalTok{    df\_filled\_ffill }\OperatorTok{=}\NormalTok{ df.fillna(method}\OperatorTok{=}\StringTok{\textquotesingle{}ffill\textquotesingle{}}\NormalTok{)}
+    \BuiltInTok{print}\NormalTok{(df\_filled\_0)}
+    \BuiltInTok{print}\NormalTok{(df\_filled\_mean)}
+    \BuiltInTok{print}\NormalTok{(df\_filled\_ffill)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+     A     B  C
+0  1.0   6.0  a
+1  2.0   0.0  b
+2  0.0   8.0  c
+3  4.0   9.0  0
+4  5.0  10.0  e
+     A      B     C
+0  1.0   6.00     a
+1  2.0   8.25     b
+2  3.0   8.00     c
+3  4.0   9.00  None
+4  5.0  10.00     e
+     A     B  C
+0  1.0   6.0  a
+1  2.0   6.0  b
+2  2.0   8.0  c
+3  4.0   9.0  c
+4  5.0  10.0  e
+\end{verbatim}
+
+\begin{verbatim}
+C:\Users\voidm\AppData\Local\Temp\ipykernel_12432\912558651.py:3: FutureWarning:
+
+DataFrame.fillna with 'method' is deprecated and will raise in a future version. Use obj.ffill() or obj.bfill() instead.
+\end{verbatim}
+
+\begin{verbatim}
+|   처리 방법   |                       설명                       |                       예시                       |
+| :-----------: | :--------------------------------------------: | :------------------------------------------------: |
+|   결측치 확인   |               `isnull()`, `isna()`               |                   `df.isnull()`                   |
+|   결측치 삭제   |                  `dropna()`                  |                 `df.dropna()`                 |
+|   결측치 대체   |                  `fillna()`                  |                 `df.fillna(0)`                 |
+\end{verbatim}
+
+\subsection{2.2.2 이상치 처리}\label{uxc774uxc0c1uxce58-uxcc98uxb9ac}
+
+\textbf{이상치(Outlier)}는 다른 데이터와 확연히 구분되는 극단적인 값을
+의미합니다. 이상치는 데이터 분석 결과의 왜곡을 초래할 수 있으므로,
+탐지하고 적절하게 처리해야 합니다.
+
+\begin{itemize}
+\item
+  \textbf{(시각 자료 예시:} 이상치 탐지 방법을 보여주는 그림. 상자 그림,
+  산점도 등을 사용하여 이상치를 시각적으로 탐지하는 그림)
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{이상치 탐지:}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \textbf{시각적 방법:} 상자 그림(\texttt{boxplot()}),
+      산점도(\texttt{scatter()}) 등을 사용하여 이상치를 시각적으로
+      탐지할 수 있습니다.
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+    \ImportTok{import}\NormalTok{ matplotlib.pyplot }\ImportTok{as}\NormalTok{ plt}
+    \ImportTok{import}\NormalTok{ seaborn }\ImportTok{as}\NormalTok{ sns}
+
+\NormalTok{    sns.boxplot(x}\OperatorTok{=}\NormalTok{df[}\StringTok{\textquotesingle{}B\textquotesingle{}}\NormalTok{])}
+\NormalTok{    plt.show()}
+
+\NormalTok{    sns.scatterplot(x}\OperatorTok{=}\NormalTok{df.index, y}\OperatorTok{=}\NormalTok{df[}\StringTok{\textquotesingle{}B\textquotesingle{}}\NormalTok{])}
+\NormalTok{    plt.show()}
+\end{Highlighting}
+\end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{02-data-handling-exploration_files/figure-latex/cell-18-output-1.png}}
+
+\pandocbounded{\includegraphics[keepaspectratio]{02-data-handling-exploration_files/figure-latex/cell-18-output-2.png}}
+
+\begin{verbatim}
+    * **통계적 방법:** Z-점수, 사분위 범위(Interquartile Range, IQR) 등을 사용하여 이상치를 탐지할 수 있습니다.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{    Q1 }\OperatorTok{=}\NormalTok{ df[}\StringTok{\textquotesingle{}B\textquotesingle{}}\NormalTok{].quantile(}\FloatTok{0.25}\NormalTok{)}
+\NormalTok{    Q3 }\OperatorTok{=}\NormalTok{ df[}\StringTok{\textquotesingle{}B\textquotesingle{}}\NormalTok{].quantile(}\FloatTok{0.75}\NormalTok{)}
+\NormalTok{    IQR }\OperatorTok{=}\NormalTok{ Q3 }\OperatorTok{{-}}\NormalTok{ Q1}
+\NormalTok{    lower\_bound }\OperatorTok{=}\NormalTok{ Q1 }\OperatorTok{{-}} \FloatTok{1.5} \OperatorTok{*}\NormalTok{ IQR}
+\NormalTok{    upper\_bound }\OperatorTok{=}\NormalTok{ Q3 }\OperatorTok{+} \FloatTok{1.5} \OperatorTok{*}\NormalTok{ IQR}
+\NormalTok{    outliers }\OperatorTok{=}\NormalTok{ df[(df[}\StringTok{\textquotesingle{}B\textquotesingle{}}\NormalTok{] }\OperatorTok{\textless{}}\NormalTok{ lower\_bound) }\OperatorTok{|}\NormalTok{ (df[}\StringTok{\textquotesingle{}B\textquotesingle{}}\NormalTok{] }\OperatorTok{\textgreater{}}\NormalTok{ upper\_bound)]}
+    \BuiltInTok{print}\NormalTok{(outliers)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Empty DataFrame
+Columns: [A, B, C]
+Index: []
+\end{verbatim}
+
+\begin{verbatim}
+* **이상치 처리:**
+    * **삭제:** 이상치를 포함하는 행 또는 열을 삭제합니다.
+    * **대체:** 이상치를 특정 값(평균, 중앙값, 최빈값 등)으로 대체하거나, 상한/하한 값으로 제한합니다.
+    * **변환:** 로그 변환, 제곱근 변환 등을 통해 이상치의 영향을 줄입니다.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{    df\_clipped }\OperatorTok{=}\NormalTok{ df.copy()}
+\NormalTok{    df\_clipped[}\StringTok{\textquotesingle{}B\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ df\_clipped[}\StringTok{\textquotesingle{}B\textquotesingle{}}\NormalTok{].clip(lower}\OperatorTok{=}\NormalTok{lower\_bound, upper}\OperatorTok{=}\NormalTok{upper\_bound)}
+    \BuiltInTok{print}\NormalTok{(df\_clipped)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+     A     B     C
+0  1.0   6.0     a
+1  2.0   NaN     b
+2  NaN   8.0     c
+3  4.0   9.0  None
+4  5.0  10.0     e
+\end{verbatim}
+
+\begin{verbatim}
+|   처리 방법   |                       설명                       |                       예시                       |
+| :-----------: | :--------------------------------------------: | :------------------------------------------------: |
+|   이상치 탐지   |         시각적/통계적 방법으로 이상치 확인         |                   상자 그림, IQR                   |
+|     삭제     |                 이상치를 포함하는 행/열 삭제                 |                 `df.dropna()`                 |
+|     대체     |            이상치를 특정 값으로 대체/제한            |                   `df.fillna()`                   |
+|     변환     |                로그 변환, 제곱근 변환 등                |                  `np.log()`                  |
+\end{verbatim}
+
+\subsection{2.2.3 변수 변환}\label{uxbcc0uxc218-uxbcc0uxd658}
+
+\textbf{변수 변환(Variable Transformation)}은 변수의 형태나 분포를
+변경하여 데이터 분석의 효율성을 높이거나, 특정 분석 방법에 적합하도록
+데이터를 만드는 과정입니다.
+
+\begin{itemize}
+\item
+  \textbf{(시각 자료 예시:} 변수 변환 방법을 보여주는 그림. 로그 변환,
+  표준화, 정규화 등을 통해 변수의 분포나 척도를 변경하는 그림)
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{척도 변환(Scaling):}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      변수의 척도를 변경하여 서로 다른 변수 간의 비교를 용이하게 하거나,
+      특정 알고리즘의 성능을 향상시킵니다.
+    \item
+      \textbf{표준화(Standardization):} 변수의 평균을 0, 표준편차를 1로
+      변환합니다.
+    \end{itemize}
+
+    \(Z = \frac{X - \mu}{\sigma}\)
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+    \ImportTok{from}\NormalTok{ sklearn.preprocessing }\ImportTok{import}\NormalTok{ StandardScaler}
+
+\NormalTok{    scaler }\OperatorTok{=}\NormalTok{ StandardScaler()}
+\NormalTok{    df[}\StringTok{\textquotesingle{}A\_scaled\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ scaler.fit\_transform(df[[}\StringTok{\textquotesingle{}A\textquotesingle{}}\NormalTok{]])}
+    \BuiltInTok{print}\NormalTok{(df[[}\StringTok{\textquotesingle{}A\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}A\_scaled\textquotesingle{}}\NormalTok{]].head())}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+     A  A_scaled
+0  1.0 -1.264911
+1  2.0 -0.632456
+2  NaN       NaN
+3  4.0  0.632456
+4  5.0  1.264911
+\end{verbatim}
+
+\begin{verbatim}
+    * **정규화(Normalization):** 변수의 값을 0과 1 사이의 범위로 변환합니다.
+
+    $X_{scaled} = \frac{X - X_{min}}{X_{max} - X_{min}}$
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+    \ImportTok{from}\NormalTok{ sklearn.preprocessing }\ImportTok{import}\NormalTok{ MinMaxScaler}
+
+\NormalTok{    scaler }\OperatorTok{=}\NormalTok{ MinMaxScaler()}
+\NormalTok{    df[}\StringTok{\textquotesingle{}B\_scaled\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ scaler.fit\_transform(df[[}\StringTok{\textquotesingle{}B\textquotesingle{}}\NormalTok{]])}
+    \BuiltInTok{print}\NormalTok{(df[[}\StringTok{\textquotesingle{}B\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}B\_scaled\textquotesingle{}}\NormalTok{]].head())}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+      B  B_scaled
+0   6.0      0.00
+1   NaN       NaN
+2   8.0      0.50
+3   9.0      0.75
+4  10.0      1.00
+\end{verbatim}
+
+\begin{verbatim}
+* **분포 변환(Distribution Transformation):**
+    * 변수의 분포를 변경하여 특정 분석 방법에 적합하도록 만듭니다.
+    * **로그 변환(Log Transformation):** 오른쪽으로 꼬리가 긴 분포(Right-Skewed Distribution)를 정규 분포에 가깝게 만듭니다.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+    \ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np}
+
+\NormalTok{    df\_log }\OperatorTok{=}\NormalTok{ df.copy()}
+\NormalTok{    df\_log[}\StringTok{\textquotesingle{}A\_log\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ np.log(df\_log[}\StringTok{\textquotesingle{}A\textquotesingle{}}\NormalTok{][df\_log[}\StringTok{\textquotesingle{}A\textquotesingle{}}\NormalTok{] }\OperatorTok{\textgreater{}} \DecValTok{0}\NormalTok{]) }\CommentTok{\# 0 또는 음수 값을 제외하고 로그 변환}
+    \BuiltInTok{print}\NormalTok{(df\_log[[}\StringTok{\textquotesingle{}A\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}A\_log\textquotesingle{}}\NormalTok{]].head())}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+     A     A_log
+0  1.0  0.000000
+1  2.0  0.693147
+2  NaN       NaN
+3  4.0  1.386294
+4  5.0  1.609438
+\end{verbatim}
+
+\begin{verbatim}
+    * **제곱근 변환(Square Root Transformation):** 로그 변환과 유사한 효과를 가지며, 0을 포함하는 데이터에 적용할 수 있습니다.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{    df\_sqrt }\OperatorTok{=}\NormalTok{ df.copy()}
+\NormalTok{    df\_sqrt[}\StringTok{\textquotesingle{}B\_sqrt\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ np.sqrt(df\_sqrt[}\StringTok{\textquotesingle{}B\textquotesingle{}}\NormalTok{][df\_sqrt[}\StringTok{\textquotesingle{}B\textquotesingle{}}\NormalTok{] }\OperatorTok{\textgreater{}=} \DecValTok{0}\NormalTok{]) }\CommentTok{\# 음수 값을 제외하고 제곱근 변환}
+    \BuiltInTok{print}\NormalTok{(df\_sqrt[[}\StringTok{\textquotesingle{}B\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}B\_sqrt\textquotesingle{}}\NormalTok{]].head())}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+      B    B_sqrt
+0   6.0  2.449490
+1   NaN       NaN
+2   8.0  2.828427
+3   9.0  3.000000
+4  10.0  3.162278
+\end{verbatim}
+
+\begin{verbatim}
+* **범주형 변수 처리:**
+    * 범주형 변수를 분석에 활용하기 위해 수치형 변수로 변환합니다.
+    * **더미 변수화(Dummy Variable Encoding):** 각 범주를 0 또는 1로 표현하는 새로운 변수를 생성합니다.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{    df\_encoded }\OperatorTok{=}\NormalTok{ pd.get\_dummies(df, columns}\OperatorTok{=}\NormalTok{[}\StringTok{\textquotesingle{}C\textquotesingle{}}\NormalTok{], drop\_first}\OperatorTok{=}\VariableTok{True}\NormalTok{) }\CommentTok{\# \textquotesingle{}C\textquotesingle{} 열을 더미 변수화 (첫 번째 범주 제외)}
+    \BuiltInTok{print}\NormalTok{(df\_encoded.head())}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+     A     B  A_scaled  B_scaled    C_b    C_c    C_e
+0  1.0   6.0 -1.264911      0.00  False  False  False
+1  2.0   NaN -0.632456       NaN   True  False  False
+2  NaN   8.0       NaN      0.50  False   True  False
+3  4.0   9.0  0.632456      0.75  False  False  False
+4  5.0  10.0  1.264911      1.00  False  False   True
+\end{verbatim}
+
+\begin{verbatim}
+    * **원-핫 인코딩(One-Hot Encoding):** 더미 변수화와 유사하지만, 첫 번째 범주를 제외하지 않습니다.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{    df\_onehot }\OperatorTok{=}\NormalTok{ pd.get\_dummies(df, columns}\OperatorTok{=}\NormalTok{[}\StringTok{\textquotesingle{}C\textquotesingle{}}\NormalTok{]) }\CommentTok{\# \textquotesingle{}C\textquotesingle{} 열을 원{-}핫 인코딩}
+    \BuiltInTok{print}\NormalTok{(df\_onehot.head())}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+     A     B  A_scaled  B_scaled    C_a    C_b    C_c    C_e
+0  1.0   6.0 -1.264911      0.00   True  False  False  False
+1  2.0   NaN -0.632456       NaN  False   True  False  False
+2  NaN   8.0       NaN      0.50  False  False   True  False
+3  4.0   9.0  0.632456      0.75  False  False  False  False
+4  5.0  10.0  1.264911      1.00  False  False  False   True
+\end{verbatim}
+
+\begin{verbatim}
+|   변환 방법   |                       설명                       |                       예시                       |
+| :-----------: | :--------------------------------------------: | :------------------------------------------------: |
+|   척도 변환   |               변수의 척도를 변경               |         표준화, 정규화         |
+|   분포 변환   |               변수의 분포를 변경               |         로그 변환, 제곱근 변환         |
+| 범주형 변수 처리 |             범주형 변수를 수치형으로 변환             | 더미 변수화, 원-핫 인코딩 |
+\end{verbatim}
+
+\subsection{2.2.4 데이터 전처리 과정의
+중요성}\label{uxb370uxc774uxd130-uxc804uxcc98uxb9ac-uxacfcuxc815uxc758-uxc911uxc694uxc131}
+
+데이터 전처리는 데이터 분석의 정확성과 신뢰성을 높이는 데 필수적인
+과정입니다. 적절한 전처리 과정을 통해 데이터의 품질을 향상시키고, 분석에
+적합한 형태로 데이터를 변환함으로써, 연구자는 더욱 정확하고 의미 있는
+결과를 얻을 수 있습니다.
+
+\section{2.3 기술 통계 분석}\label{sec-descriptive-stats}
+
+데이터 전처리를 통해 데이터를 분석에 적합한 형태로 정제했다면, 다음
+단계는 데이터의 기본적인 특성을 파악하는 것입니다. \textbf{기술 통계
+분석(Descriptive Statistics Analysis)}은 수집된 데이터를 요약하고
+설명하여 데이터가 가진 정보를 효과적으로 전달하는 통계적 방법입니다.
+이는 데이터의 중심 경향성(Central Tendency), 산포도(Dispersion), 분포
+형태(Distribution Shape) 등을 파악하여 데이터에 대한 깊이 있는 이해를
+돕고, 이어질 추론 통계 분석의 기초를 마련합니다.
+
+본 절에서는 파이썬 Pandas 라이브러리를 활용하여 주요 기술 통계량을
+계산하고 해석하는 방법을 학습합니다.
+
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, colframe=quarto-callout-note-color-frame, coltitle=black, opacitybacktitle=0.6, rightrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, arc=.35mm, colback=white, toptitle=1mm, breakable, titlerule=0mm, opacityback=0, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{📌 핵심 요약}, bottomrule=.15mm, bottomtitle=1mm, leftrule=.75mm, toprule=.15mm]
+
+기술 통계 분석은 데이터의 기본적인 특성을 요약하고 설명하는 과정입니다.
+Pandas를 이용하여 평균, 중앙값, 최빈값 등 중심 경향성 지표와 분산,
+표준편차, 범위, 사분위수 등 산포도 지표를 계산하고 해석하는 방법을
+배웁니다. 또한, 범주형 데이터의 빈도 분석 방법과 \texttt{.describe()}
+함수를 활용한 요약 통계량 확인 방법을 익힙니다.
+
+\end{tcolorbox}
+
+\emph{(시각 자료 예시: 기술 통계 분석의 주요 목표(중심 경향성, 산포도,
+분포 형태 파악)를 보여주는 다이어그램)}
+
+\subsection{가상 데이터
+생성}\label{uxac00uxc0c1-uxb370uxc774uxd130-uxc0dduxc131}
+
+기술 통계 분석 실습을 위해 가상의 설문조사 응답 데이터를 담은 Pandas
+DataFrame을 생성해 보겠습니다. 이 데이터는 `ID', `Age', `Gender',
+`EducationLevel', `SatisfactionScore', `Income' 열을 포함합니다.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ pandas }\ImportTok{as}\NormalTok{ pd}
+\ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np}
+
+\CommentTok{\# 가상 데이터 생성}
+\NormalTok{data }\OperatorTok{=}\NormalTok{ \{}
+    \StringTok{\textquotesingle{}ID\textquotesingle{}}\NormalTok{: }\BuiltInTok{range}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{11}\NormalTok{),}
+    \StringTok{\textquotesingle{}Age\textquotesingle{}}\NormalTok{: [}\DecValTok{25}\NormalTok{, }\DecValTok{30}\NormalTok{, }\DecValTok{28}\NormalTok{, }\DecValTok{35}\NormalTok{, }\DecValTok{42}\NormalTok{, }\DecValTok{29}\NormalTok{, }\DecValTok{31}\NormalTok{, }\DecValTok{45}\NormalTok{, }\DecValTok{22}\NormalTok{, }\DecValTok{38}\NormalTok{],}
+    \StringTok{\textquotesingle{}Gender\textquotesingle{}}\NormalTok{: [}\StringTok{\textquotesingle{}Female\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Male\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Male\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Female\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Male\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Female\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Male\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Female\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Female\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Male\textquotesingle{}}\NormalTok{],}
+    \StringTok{\textquotesingle{}EducationLevel\textquotesingle{}}\NormalTok{: [}\StringTok{\textquotesingle{}Bachelor\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Master\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Bachelor\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}PhD\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Master\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Bachelor\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Master\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}PhD\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}High School\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Master\textquotesingle{}}\NormalTok{],}
+    \StringTok{\textquotesingle{}SatisfactionScore\textquotesingle{}}\NormalTok{: [}\DecValTok{7}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{6}\NormalTok{, }\DecValTok{9}\NormalTok{, }\DecValTok{7}\NormalTok{, np.nan, }\DecValTok{8}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{7}\NormalTok{], }\CommentTok{\# 결측치(NaN) 포함}
+    \StringTok{\textquotesingle{}Income\textquotesingle{}}\NormalTok{: [}\DecValTok{5000}\NormalTok{, }\DecValTok{6000}\NormalTok{, }\DecValTok{5500}\NormalTok{, }\DecValTok{7500}\NormalTok{, }\DecValTok{8000}\NormalTok{, }\DecValTok{5200}\NormalTok{, }\DecValTok{6100}\NormalTok{, }\DecValTok{9000}\NormalTok{, }\DecValTok{4000}\NormalTok{, }\DecValTok{7000}\NormalTok{]}
+\NormalTok{\}}
+\NormalTok{df\_survey }\OperatorTok{=}\NormalTok{ pd.DataFrame(data)}
+
+\BuiltInTok{print}\NormalTok{(}\StringTok{"가상 설문조사 데이터:"}\NormalTok{)}
+\BuiltInTok{print}\NormalTok{(df\_survey.head()) }\CommentTok{\# 데이터 일부 확인}
+\BuiltInTok{print}\NormalTok{(}\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{데이터 정보 요약:"}\NormalTok{)}
+\BuiltInTok{print}\NormalTok{(df\_survey.info()) }\CommentTok{\# 데이터 구조 및 결측치 확인}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+가상 설문조사 데이터:
+   ID  Age  Gender EducationLevel  SatisfactionScore  Income
+0   1   25  Female       Bachelor                7.0    5000
+1   2   30    Male         Master                8.0    6000
+2   3   28    Male       Bachelor                6.0    5500
+3   4   35  Female            PhD                9.0    7500
+4   5   42    Male         Master                7.0    8000
+
+데이터 정보 요약:
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 10 entries, 0 to 9
+Data columns (total 6 columns):
+ #   Column             Non-Null Count  Dtype  
+---  ------             --------------  -----  
+ 0   ID                 10 non-null     int64  
+ 1   Age                10 non-null     int64  
+ 2   Gender             10 non-null     object 
+ 3   EducationLevel     10 non-null     object 
+ 4   SatisfactionScore  9 non-null      float64
+ 5   Income             10 non-null     int64  
+dtypes: float64(1), int64(3), object(2)
+memory usage: 612.0+ bytes
+None
+\end{verbatim}
+
+\textbf{참고:} Pandas의 대부분 기술 통계 함수는 기본적으로
+결측치(\texttt{NaN})를 제외하고 계산합니다. 이는 \texttt{skipna=True}
+(기본값) 설정 때문입니다.
+
+\subsection{2.3.1 중심 경향성 측정 (Measures of Central
+Tendency)}\label{uxc911uxc2ec-uxacbduxd5a5uxc131-uxce21uxc815-measures-of-central-tendency}
+
+데이터의 중심 경향성은 데이터 값들이 어떤 값을 중심으로 분포하는 경향이
+있는지를 나타내는 척도입니다. 대표적인 중심 경향성 측정 지표로는 평균,
+중앙값, 최빈값이 있습니다.
+
+\begin{itemize}
+\item
+  \textbf{(시각 자료 예시:} 정규분포 곡선 위에 평균, 중앙값, 최빈값이
+  일치하는 모습을 보여주고, 비대칭 분포(skewed distribution)에서 세 값이
+  달라지는 모습을 비교하는 그림)
+\item
+  \textbf{평균 (Mean):}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    모든 데이터 값을 더한 후 데이터 개수로 나눈 값입니다.
+  \item
+    데이터 전체의 값을 반영하지만, 극단적인 값(이상치)에 영향을 받기
+    쉽습니다.
+  \item
+    Pandas에서는 \texttt{.mean()} 메서드를 사용합니다.
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+    \CommentTok{\# Age와 Income 열의 평균 계산}
+\NormalTok{    mean\_age }\OperatorTok{=}\NormalTok{ df\_survey[}\StringTok{\textquotesingle{}Age\textquotesingle{}}\NormalTok{].mean()}
+\NormalTok{    mean\_income }\OperatorTok{=}\NormalTok{ df\_survey[}\StringTok{\textquotesingle{}Income\textquotesingle{}}\NormalTok{].mean()}
+\NormalTok{    mean\_satisfaction }\OperatorTok{=}\NormalTok{ df\_survey[}\StringTok{\textquotesingle{}SatisfactionScore\textquotesingle{}}\NormalTok{].mean() }\CommentTok{\# NaN은 자동 제외}
+
+    \BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f"평균 나이: }\SpecialCharTok{\{}\NormalTok{mean\_age}\SpecialCharTok{:.2f\}}\SpecialStringTok{"}\NormalTok{)}
+    \BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f"평균 소득: }\SpecialCharTok{\{}\NormalTok{mean\_income}\SpecialCharTok{:.2f\}}\SpecialStringTok{"}\NormalTok{)}
+    \BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f"평균 만족도 점수: }\SpecialCharTok{\{}\NormalTok{mean\_satisfaction}\SpecialCharTok{:.2f\}}\SpecialStringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+평균 나이: 32.50
+평균 소득: 6330.00
+평균 만족도 점수: 7.44
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{중앙값 (Median):}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    데이터를 크기 순서대로 정렬했을 때 중앙에 위치하는 값입니다.
+  \item
+    데이터 개수가 짝수일 경우, 중앙에 위치한 두 값의 평균을 사용합니다.
+  \item
+    평균과 달리 극단적인 값(이상치)에 영향을 덜 받습니다 (Robust).
+  \item
+    Pandas에서는 \texttt{.median()} 메서드를 사용합니다.
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+    \CommentTok{\# Age와 Income 열의 중앙값 계산}
+\NormalTok{    median\_age }\OperatorTok{=}\NormalTok{ df\_survey[}\StringTok{\textquotesingle{}Age\textquotesingle{}}\NormalTok{].median()}
+\NormalTok{    median\_income }\OperatorTok{=}\NormalTok{ df\_survey[}\StringTok{\textquotesingle{}Income\textquotesingle{}}\NormalTok{].median()}
+\NormalTok{    median\_satisfaction }\OperatorTok{=}\NormalTok{ df\_survey[}\StringTok{\textquotesingle{}SatisfactionScore\textquotesingle{}}\NormalTok{].median() }\CommentTok{\# NaN은 자동 제외}
+
+    \BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f"나이 중앙값: }\SpecialCharTok{\{}\NormalTok{median\_age}\SpecialCharTok{\}}\SpecialStringTok{"}\NormalTok{)}
+    \BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f"소득 중앙값: }\SpecialCharTok{\{}\NormalTok{median\_income}\SpecialCharTok{\}}\SpecialStringTok{"}\NormalTok{)}
+    \BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f"만족도 점수 중앙값: }\SpecialCharTok{\{}\NormalTok{median\_satisfaction}\SpecialCharTok{\}}\SpecialStringTok{"}\NormalTok{)}
+
+    \CommentTok{\# 평균과 중앙값 비교 (소득 분포가 비대칭적일 경우 차이가 발생할 수 있음)}
+    \BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f"}\CharTok{\textbackslash{}n}\SpecialStringTok{소득 {-} 평균: }\SpecialCharTok{\{}\NormalTok{mean\_income}\SpecialCharTok{:.2f\}}\SpecialStringTok{, 중앙값: }\SpecialCharTok{\{}\NormalTok{median\_income}\SpecialCharTok{\}}\SpecialStringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+나이 중앙값: 30.5
+소득 중앙값: 6050.0
+만족도 점수 중앙값: 7.0
+
+소득 - 평균: 6330.00, 중앙값: 6050.0
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{최빈값 (Mode):}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    데이터에서 가장 빈번하게 나타나는 값입니다.
+  \item
+    연속형 데이터보다는 범주형 데이터나 이산형 데이터에서 주로
+    사용됩니다.
+  \item
+    최빈값은 여러 개 존재할 수 있습니다.
+  \item
+    Pandas에서는 \texttt{.mode()} 메서드를 사용합니다.
+    \texttt{.mode()}는 최빈값이 여러 개일 경우 모든 값을 Series 형태로
+    반환합니다.
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+    \CommentTok{\# Gender와 EducationLevel 열의 최빈값 계산}
+\NormalTok{    mode\_gender }\OperatorTok{=}\NormalTok{ df\_survey[}\StringTok{\textquotesingle{}Gender\textquotesingle{}}\NormalTok{].mode()}
+\NormalTok{    mode\_education }\OperatorTok{=}\NormalTok{ df\_survey[}\StringTok{\textquotesingle{}EducationLevel\textquotesingle{}}\NormalTok{].mode()}
+\NormalTok{    mode\_satisfaction }\OperatorTok{=}\NormalTok{ df\_survey[}\StringTok{\textquotesingle{}SatisfactionScore\textquotesingle{}}\NormalTok{].mode() }\CommentTok{\# 최빈값은 여러 개일 수 있음}
+
+    \BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f"성별 최빈값:}\CharTok{\textbackslash{}n}\SpecialCharTok{\{}\NormalTok{mode\_gender}\SpecialCharTok{\}}\SpecialStringTok{"}\NormalTok{)}
+    \BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f"}\CharTok{\textbackslash{}n}\SpecialStringTok{학력 최빈값:}\CharTok{\textbackslash{}n}\SpecialCharTok{\{}\NormalTok{mode\_education}\SpecialCharTok{\}}\SpecialStringTok{"}\NormalTok{)}
+    \BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f"}\CharTok{\textbackslash{}n}\SpecialStringTok{만족도 점수 최빈값:}\CharTok{\textbackslash{}n}\SpecialCharTok{\{}\NormalTok{mode\_satisfaction}\SpecialCharTok{\}}\SpecialStringTok{"}\NormalTok{) }\CommentTok{\# 7점이 3번으로 가장 많음}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+성별 최빈값:
+0    Female
+1      Male
+Name: Gender, dtype: object
+
+학력 최빈값:
+0    Master
+Name: EducationLevel, dtype: object
+
+만족도 점수 최빈값:
+0    7.0
+Name: SatisfactionScore, dtype: float64
+\end{verbatim}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1176}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.4000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1529}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.3294}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+측정 지표
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+설명
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Pandas 메서드
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+특징
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+평균 (Mean) & 모든 값의 합 / 개수 & \texttt{.mean()} & 이상치에 민감 \\
+중앙값 (Median) & 정렬 시 중앙에 위치하는 값 & \texttt{.median()} &
+이상치에 덜 민감 (Robust) \\
+최빈값 (Mode) & 가장 빈번하게 나타나는 값 & \texttt{.mode()} & 범주형
+데이터에 유용, 여러 개 가능 \\
+\end{longtable}
+
+\subsection{2.3.2 산포도 측정 (Measures of
+Dispersion)}\label{uxc0b0uxd3ecuxb3c4-uxce21uxc815-measures-of-dispersion}
+
+산포도는 데이터 값들이 중심 경향성 값(주로 평균)으로부터 얼마나 흩어져
+있는지를 나타내는 척도입니다. 데이터의 변동성이나 다양성을 파악하는 데
+중요합니다.
+
+\begin{itemize}
+\item
+  \textbf{(시각 자료 예시:} 평균은 같지만 분산(표준편차)이 다른 두
+  분포를 비교하는 그림. 좁고 뾰족한 분포와 넓고 평평한 분포)
+\item
+  \textbf{범위 (Range):}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    데이터의 최댓값과 최솟값의 차이입니다.
+  \item
+    계산이 간단하지만, 양 극단의 값에만 의존하므로 데이터 전체의 흩어짐
+    정도를 충분히 반영하지 못할 수 있습니다.
+  \item
+    Pandas에서는 \texttt{.max()}와 \texttt{.min()}을 이용하여
+    계산합니다.
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+    \CommentTok{\# Age의 범위 계산}
+\NormalTok{    range\_age }\OperatorTok{=}\NormalTok{ df\_survey[}\StringTok{\textquotesingle{}Age\textquotesingle{}}\NormalTok{].}\BuiltInTok{max}\NormalTok{() }\OperatorTok{{-}}\NormalTok{ df\_survey[}\StringTok{\textquotesingle{}Age\textquotesingle{}}\NormalTok{].}\BuiltInTok{min}\NormalTok{()}
+    \BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f"나이 범위: }\SpecialCharTok{\{}\NormalTok{range\_age}\SpecialCharTok{\}}\SpecialStringTok{ (최소: }\SpecialCharTok{\{}\NormalTok{df\_survey[}\StringTok{\textquotesingle{}Age\textquotesingle{}}\NormalTok{]}\SpecialCharTok{.}\BuiltInTok{min}\NormalTok{()}\SpecialCharTok{\}}\SpecialStringTok{, 최대: }\SpecialCharTok{\{}\NormalTok{df\_survey[}\StringTok{\textquotesingle{}Age\textquotesingle{}}\NormalTok{]}\SpecialCharTok{.}\BuiltInTok{max}\NormalTok{()}\SpecialCharTok{\}}\SpecialStringTok{)"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+나이 범위: 23 (최소: 22, 최대: 45)
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{분산 (Variance) 및 표준편차 (Standard Deviation):}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{분산:} 각 데이터 값이 평균으로부터 얼마나 떨어져
+    있는지(편차)를 제곱하여 평균 낸 값입니다. 데이터의 퍼짐 정도를
+    나타냅니다. 단위가 원래 데이터 단위의 제곱이 됩니다.
+  \item
+    \textbf{표준편차:} 분산에 제곱근을 취한 값입니다. 분산과 동일하게
+    데이터의 퍼짐 정도를 나타내지만, 단위가 원래 데이터와 동일하여
+    해석이 용이합니다.
+  \item
+    Pandas에서는 \texttt{.var()} (분산)와 \texttt{.std()} (표준편차)
+    메서드를 사용합니다. 기본적으로 표본 분산/표준편차 (n-1로 나눔,
+    \texttt{ddof=1})를 계산합니다.
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+    \CommentTok{\# Age와 Income의 분산 및 표준편차 계산}
+\NormalTok{    var\_age }\OperatorTok{=}\NormalTok{ df\_survey[}\StringTok{\textquotesingle{}Age\textquotesingle{}}\NormalTok{].var()}
+\NormalTok{    std\_age }\OperatorTok{=}\NormalTok{ df\_survey[}\StringTok{\textquotesingle{}Age\textquotesingle{}}\NormalTok{].std()}
+\NormalTok{    var\_income }\OperatorTok{=}\NormalTok{ df\_survey[}\StringTok{\textquotesingle{}Income\textquotesingle{}}\NormalTok{].var()}
+\NormalTok{    std\_income }\OperatorTok{=}\NormalTok{ df\_survey[}\StringTok{\textquotesingle{}Income\textquotesingle{}}\NormalTok{].std()}
+\NormalTok{    std\_satisfaction }\OperatorTok{=}\NormalTok{ df\_survey[}\StringTok{\textquotesingle{}SatisfactionScore\textquotesingle{}}\NormalTok{].std()}
+
+    \BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f"나이 분산: }\SpecialCharTok{\{}\NormalTok{var\_age}\SpecialCharTok{:.2f\}}\SpecialStringTok{, 표준편차: }\SpecialCharTok{\{}\NormalTok{std\_age}\SpecialCharTok{:.2f\}}\SpecialStringTok{"}\NormalTok{)}
+    \BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f"소득 분산: }\SpecialCharTok{\{}\NormalTok{var\_income}\SpecialCharTok{:.2f\}}\SpecialStringTok{, 표준편차: }\SpecialCharTok{\{}\NormalTok{std\_income}\SpecialCharTok{:.2f\}}\SpecialStringTok{"}\NormalTok{)}
+    \BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f"만족도 점수 표준편차: }\SpecialCharTok{\{}\NormalTok{std\_satisfaction}\SpecialCharTok{:.2f\}}\SpecialStringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+나이 분산: 54.50, 표준편차: 7.38
+소득 분산: 2340111.11, 표준편차: 1529.74
+만족도 점수 표준편차: 1.51
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{사분위수 (Quartiles) 및 사분위 범위 (Interquartile Range,
+  IQR):}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{사분위수:} 데이터를 크기 순으로 정렬했을 때, 4등분하는
+    위치에 있는 값입니다.
+
+    \begin{itemize}
+    \tightlist
+    \item
+      제1사분위수 (Q1): 하위 25\% 지점의 값
+    \item
+      제2사분위수 (Q2): 50\% 지점의 값 (중앙값과 동일)
+    \item
+      제3사분위수 (Q3): 하위 75\% 지점의 값
+    \end{itemize}
+  \item
+    \textbf{사분위 범위 (IQR):} 제3사분위수(Q3)와 제1사분위수(Q1)의 차이
+    (IQR = Q3 - Q1)입니다. 데이터의 중간 50\%가 분포하는 범위이며,
+    이상치 탐지에도 활용됩니다 (2.2.2절 참고).
+  \item
+    Pandas에서는 \texttt{.quantile()} 메서드를 사용하여 특정 분위수를
+    계산할 수 있습니다. (예:
+    \texttt{df{[}\textquotesingle{}col\textquotesingle{}{]}.quantile(0.25)}는
+    Q1)
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+    \CommentTok{\# Income의 사분위수 및 IQR 계산}
+\NormalTok{    Q1\_income }\OperatorTok{=}\NormalTok{ df\_survey[}\StringTok{\textquotesingle{}Income\textquotesingle{}}\NormalTok{].quantile(}\FloatTok{0.25}\NormalTok{)}
+\NormalTok{    Q2\_income }\OperatorTok{=}\NormalTok{ df\_survey[}\StringTok{\textquotesingle{}Income\textquotesingle{}}\NormalTok{].quantile(}\FloatTok{0.50}\NormalTok{) }\CommentTok{\# 중앙값과 동일}
+\NormalTok{    Q3\_income }\OperatorTok{=}\NormalTok{ df\_survey[}\StringTok{\textquotesingle{}Income\textquotesingle{}}\NormalTok{].quantile(}\FloatTok{0.75}\NormalTok{)}
+\NormalTok{    IQR\_income }\OperatorTok{=}\NormalTok{ Q3\_income }\OperatorTok{{-}}\NormalTok{ Q1\_income}
+
+    \BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f"소득 제1사분위수 (Q1): }\SpecialCharTok{\{}\NormalTok{Q1\_income}\SpecialCharTok{\}}\SpecialStringTok{"}\NormalTok{)}
+    \BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f"소득 제2사분위수 (Q2/Median): }\SpecialCharTok{\{}\NormalTok{Q2\_income}\SpecialCharTok{\}}\SpecialStringTok{"}\NormalTok{)}
+    \BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f"소득 제3사분위수 (Q3): }\SpecialCharTok{\{}\NormalTok{Q3\_income}\SpecialCharTok{\}}\SpecialStringTok{"}\NormalTok{)}
+    \BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f"소득 사분위 범위 (IQR): }\SpecialCharTok{\{}\NormalTok{IQR\_income}\SpecialCharTok{\}}\SpecialStringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+소득 제1사분위수 (Q1): 5275.0
+소득 제2사분위수 (Q2/Median): 6050.0
+소득 제3사분위수 (Q3): 7375.0
+소득 사분위 범위 (IQR): 2100.0
+\end{verbatim}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1356}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.3220}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2542}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2881}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+측정 지표
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+설명
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Pandas 메서드 / 계산
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+특징
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+범위 (Range) & 최댓값 - 최솟값 & \texttt{.max()} - \texttt{.min()} &
+계산 간편, 이상치에 민감 \\
+분산 (Variance) & 편차 제곱의 평균 & \texttt{.var()} & 퍼짐 정도 측정,
+단위가 제곱됨 \\
+표준편차 (Std Dev) & 분산의 제곱근 & \texttt{.std()} & 퍼짐 정도 측정,
+원래 단위와 동일 \\
+사분위수 (Quartile) & 데이터를 4등분하는 지점의 값 &
+\texttt{.quantile()} & 데이터 분포 위치 파악 \\
+IQR & Q3 - Q1 & \texttt{.quantile(0.75)} - \texttt{.quantile(0.25)} &
+중앙 50\% 데이터 범위, 이상치 영향 적음 \\
+\end{longtable}
+
+\subsection{2.3.3 분포 형태 파악 (Understanding Distribution
+Shape)}\label{uxbd84uxd3ec-uxd615uxd0dc-uxd30cuxc545-understanding-distribution-shape}
+
+기술 통계는 데이터 분포의 형태에 대한 정보도 제공합니다. 왜도와 첨도는
+분포의 비대칭성과 뾰족한 정도를 나타내는 지표입니다.
+
+\begin{itemize}
+\item
+  \textbf{(시각 자료 예시:} 좌측으로 치우친 분포, 우측으로 치우친 분포,
+  대칭 분포(정규분포)의 히스토그램과 함께 왜도 값을 보여주는 그림)
+\item
+  \textbf{(시각 자료 예시:} 뾰족한 분포(첨도 \textgreater{} 0),
+  정규분포(첨도 = 0), 평평한 분포(첨도 \textless{} 0)의 히스토그램과
+  함께 첨도 값을 보여주는 그림)
+\item
+  \textbf{왜도 (Skewness):}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    분포의 비대칭 정도를 나타냅니다.
+  \item
+    왜도 = 0: 좌우 대칭 (예: 정규분포)
+  \item
+    왜도 \textgreater{} 0: 오른쪽 꼬리가 긴 분포 (Right-skewed, Positive
+    skew) - 평균 \textgreater{} 중앙값
+  \item
+    왜도 \textless{} 0: 왼쪽 꼬리가 긴 분포 (Left-skewed, Negative skew)
+    - 평균 \textless{} 중앙값
+  \item
+    Pandas에서는 \texttt{.skew()} 메서드를 사용합니다.
+  \end{itemize}
+\item
+  \textbf{첨도 (Kurtosis):}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    분포의 뾰족한 정도와 꼬리 두께를 나타냅니다 (정규분포 대비).
+  \item
+    첨도 = 0: 정규분포와 유사한 뾰족함 (Mesokurtic)
+  \item
+    첨도 \textgreater{} 0: 정규분포보다 더 뾰족하고 꼬리가 두꺼운 분포
+    (Leptokurtic)
+  \item
+    첨도 \textless{} 0: 정규분포보다 더 평평하고 꼬리가 얇은 분포
+    (Platykurtic)
+  \item
+    Pandas에서는 \texttt{.kurt()} 또는 \texttt{.kurtosis()} 메서드를
+    사용합니다.
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+    \CommentTok{\# Age와 Income의 왜도 및 첨도 계산}
+\NormalTok{    skew\_age }\OperatorTok{=}\NormalTok{ df\_survey[}\StringTok{\textquotesingle{}Age\textquotesingle{}}\NormalTok{].skew()}
+\NormalTok{    kurt\_age }\OperatorTok{=}\NormalTok{ df\_survey[}\StringTok{\textquotesingle{}Age\textquotesingle{}}\NormalTok{].kurt()}
+\NormalTok{    skew\_income }\OperatorTok{=}\NormalTok{ df\_survey[}\StringTok{\textquotesingle{}Income\textquotesingle{}}\NormalTok{].skew()}
+\NormalTok{    kurt\_income }\OperatorTok{=}\NormalTok{ df\_survey[}\StringTok{\textquotesingle{}Income\textquotesingle{}}\NormalTok{].kurt()}
+
+    \BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f"나이 왜도: }\SpecialCharTok{\{}\NormalTok{skew\_age}\SpecialCharTok{:.2f\}}\SpecialStringTok{, 첨도: }\SpecialCharTok{\{}\NormalTok{kurt\_age}\SpecialCharTok{:.2f\}}\SpecialStringTok{"}\NormalTok{)}
+    \BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f"소득 왜도: }\SpecialCharTok{\{}\NormalTok{skew\_income}\SpecialCharTok{:.2f\}}\SpecialStringTok{, 첨도: }\SpecialCharTok{\{}\NormalTok{kurt\_income}\SpecialCharTok{:.2f\}}\SpecialStringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+나이 왜도: 0.43, 첨도: -0.71
+소득 왜도: 0.33, 첨도: -0.54
+\end{verbatim}
+
+\begin{verbatim}
+**참고:** 왜도와 첨도는 값 자체만으로 분포 형태를 단정하기 어려울 수 있으며, 히스토그램 등 시각화(2.4절에서 다룸)를 통해 함께 확인하는 것이 좋습니다.
+\end{verbatim}
+
+\subsection{2.3.4 범주형 데이터 기술 통계 (Descriptive Statistics for
+Categorical
+Data)}\label{uxbc94uxc8fcuxd615-uxb370uxc774uxd130-uxae30uxc220-uxd1b5uxacc4-descriptive-statistics-for-categorical-data}
+
+범주형 데이터(성별, 학력 등)는 평균이나 표준편차 같은 수치적 요약보다는
+각 범주의 빈도(Frequency)나 비율(Proportion)을 파악하는 것이 중요합니다.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{빈도표 (Frequency Table):}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    각 범주에 속하는 데이터의 개수(빈도)를 나타내는 표입니다.
+  \item
+    Pandas에서는 \texttt{.value\_counts()} 메서드를 사용하여 쉽게 생성할
+    수 있습니다.
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+    \CommentTok{\# Gender와 EducationLevel의 빈도표 생성}
+\NormalTok{    freq\_gender }\OperatorTok{=}\NormalTok{ df\_survey[}\StringTok{\textquotesingle{}Gender\textquotesingle{}}\NormalTok{].value\_counts()}
+\NormalTok{    freq\_education }\OperatorTok{=}\NormalTok{ df\_survey[}\StringTok{\textquotesingle{}EducationLevel\textquotesingle{}}\NormalTok{].value\_counts()}
+
+    \BuiltInTok{print}\NormalTok{(}\StringTok{"성별 빈도:"}\NormalTok{)}
+    \BuiltInTok{print}\NormalTok{(freq\_gender)}
+    \BuiltInTok{print}\NormalTok{(}\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{학력 빈도:"}\NormalTok{)}
+    \BuiltInTok{print}\NormalTok{(freq\_education)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+성별 빈도:
+Gender
+Female    5
+Male      5
+Name: count, dtype: int64
+
+학력 빈도:
+EducationLevel
+Master         4
+Bachelor       3
+PhD            2
+High School    1
+Name: count, dtype: int64
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{비율 (Proportions):}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    각 범주의 빈도를 전체 데이터 개수로 나눈 값입니다. 전체에서 각
+    범주가 차지하는 비중을 백분율 등으로 나타낼 수 있습니다.
+  \item
+    \texttt{.value\_counts(normalize=True)}를 사용하면 비율을 계산할 수
+    있습니다.
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+    \CommentTok{\# Gender와 EducationLevel의 비율 계산}
+\NormalTok{    prop\_gender }\OperatorTok{=}\NormalTok{ df\_survey[}\StringTok{\textquotesingle{}Gender\textquotesingle{}}\NormalTok{].value\_counts(normalize}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+\NormalTok{    prop\_education }\OperatorTok{=}\NormalTok{ df\_survey[}\StringTok{\textquotesingle{}EducationLevel\textquotesingle{}}\NormalTok{].value\_counts(normalize}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+
+    \BuiltInTok{print}\NormalTok{(}\StringTok{"성별 비율:"}\NormalTok{)}
+    \BuiltInTok{print}\NormalTok{(prop\_gender)}
+    \BuiltInTok{print}\NormalTok{(}\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{학력 비율:"}\NormalTok{)}
+    \BuiltInTok{print}\NormalTok{(prop\_education)}
+
+    \CommentTok{\# 백분율로 표시}
+    \BuiltInTok{print}\NormalTok{(}\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{학력 백분율:"}\NormalTok{)}
+    \BuiltInTok{print}\NormalTok{((prop\_education }\OperatorTok{*} \DecValTok{100}\NormalTok{).}\BuiltInTok{round}\NormalTok{(}\DecValTok{2}\NormalTok{).astype(}\BuiltInTok{str}\NormalTok{) }\OperatorTok{+} \StringTok{\textquotesingle{}\%\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+성별 비율:
+Gender
+Female    0.5
+Male      0.5
+Name: proportion, dtype: float64
+
+학력 비율:
+EducationLevel
+Master         0.4
+Bachelor       0.3
+PhD            0.2
+High School    0.1
+Name: proportion, dtype: float64
+
+학력 백분율:
+EducationLevel
+Master         40.0%
+Bachelor       30.0%
+PhD            20.0%
+High School    10.0%
+Name: proportion, dtype: object
+\end{verbatim}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.2025}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3797}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.4177}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+분석 방법
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+설명
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Pandas 메서드
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+빈도표 (Frequency) & 각 범주의 개수 & \texttt{.value\_counts()} \\
+비율 (Proportion) & 각 범주의 비율 (전체 대비) &
+\texttt{.value\_counts(normalize=True)} \\
+\end{longtable}
+
+\subsection{\texorpdfstring{2.3.5 모든 변수 요약: \texttt{.describe()}
+메서드
+활용}{2.3.5 모든 변수 요약: .describe() 메서드 활용}}\label{uxbaa8uxb4e0-uxbcc0uxc218-uxc694uxc57d-.describe-uxba54uxc11cuxb4dc-uxd65cuxc6a9}
+
+Pandas의 \texttt{.describe()} 메서드는 DataFrame의 수치형 변수에 대한
+주요 기술 통계량(개수, 평균, 표준편차, 최소값, 사분위수, 최댓값)을 한
+번에 계산하여 보여줍니다. 이는 데이터 탐색 초기 단계에서 매우
+유용합니다.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 수치형 변수에 대한 기술 통계 요약}
+\NormalTok{numeric\_summary }\OperatorTok{=}\NormalTok{ df\_survey.describe()}
+\BuiltInTok{print}\NormalTok{(}\StringTok{"수치형 변수 요약 통계:"}\NormalTok{)}
+\BuiltInTok{print}\NormalTok{(numeric\_summary)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+수치형 변수 요약 통계:
+             ID        Age  SatisfactionScore       Income
+count  10.00000  10.000000           9.000000    10.000000
+mean    5.50000  32.500000           7.444444  6330.000000
+std     3.02765   7.382412           1.509231  1529.742171
+min     1.00000  22.000000           5.000000  4000.000000
+25%     3.25000  28.250000           7.000000  5275.000000
+50%     5.50000  30.500000           7.000000  6050.000000
+75%     7.75000  37.250000           8.000000  7375.000000
+max    10.00000  45.000000          10.000000  9000.000000
+\end{verbatim}
+
+\texttt{include=\textquotesingle{}all\textquotesingle{}} 옵션을 사용하면
+수치형 변수뿐만 아니라 범주형 변수에 대한 요약 정보(개수, 고유값 개수,
+최빈값, 최빈값 빈도)도 함께 확인할 수 있습니다.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 모든 변수에 대한 기술 통계 요약 (범주형 포함)}
+\NormalTok{all\_summary }\OperatorTok{=}\NormalTok{ df\_survey.describe(include}\OperatorTok{=}\StringTok{\textquotesingle{}all\textquotesingle{}}\NormalTok{)}
+\BuiltInTok{print}\NormalTok{(}\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{모든 변수 요약 통계:"}\NormalTok{)}
+\BuiltInTok{print}\NormalTok{(all\_summary)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+모든 변수 요약 통계:
+              ID        Age  Gender EducationLevel  SatisfactionScore  \
+count   10.00000  10.000000      10             10           9.000000   
+unique       NaN        NaN       2              4                NaN   
+top          NaN        NaN  Female         Master                NaN   
+freq         NaN        NaN       5              4                NaN   
+mean     5.50000  32.500000     NaN            NaN           7.444444   
+std      3.02765   7.382412     NaN            NaN           1.509231   
+min      1.00000  22.000000     NaN            NaN           5.000000   
+25%      3.25000  28.250000     NaN            NaN           7.000000   
+50%      5.50000  30.500000     NaN            NaN           7.000000   
+75%      7.75000  37.250000     NaN            NaN           8.000000   
+max     10.00000  45.000000     NaN            NaN          10.000000   
+
+             Income  
+count     10.000000  
+unique          NaN  
+top             NaN  
+freq            NaN  
+mean    6330.000000  
+std     1529.742171  
+min     4000.000000  
+25%     5275.000000  
+50%     6050.000000  
+75%     7375.000000  
+max     9000.000000  
+\end{verbatim}
+
+\textbf{참고:}
+\texttt{.describe(include=\textquotesingle{}all\textquotesingle{})}
+결과에서 수치형 변수의 `unique', `top', `freq'는 NaN으로 표시되고,
+범주형 변수의 'mean', `std', `min', `25\%', `50\%', `75\%', 'max'는
+NaN으로 표시됩니다. 'count'는 모든 변수 유형에 대해 유효한 값(non-null
+개수)을 보여줍니다.
+
+\subsection{2.3.6 기술 통계 분석의
+중요성}\label{uxae30uxc220-uxd1b5uxacc4-uxbd84uxc11duxc758-uxc911uxc694uxc131}
+
+기술 통계 분석은 복잡한 데이터를 이해하기 쉬운 형태로 요약하고, 데이터의
+숨겨진 패턴이나 특징을 발견하는 첫걸음입니다. 사회과학 연구에서 연구
+가설을 설정하거나, 분석 방법을 선택하거나, 분석 결과를 해석하는 데 있어
+데이터의 기본적인 특성을 파악하는 것은 필수적입니다. Pandas를 활용한
+기술 통계 분석은 이러한 과정을 효율적이고 체계적으로 수행할 수 있도록
+돕습니다. 다음 절에서는 이러한 데이터를 시각적으로 탐색하는 방법에 대해
+알아보겠습니다.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \part{제2부 - 집단 간 차이 분석 및 관계 분석}
 
