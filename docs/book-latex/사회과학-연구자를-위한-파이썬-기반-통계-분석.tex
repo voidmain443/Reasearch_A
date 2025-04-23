@@ -2022,7 +2022,7 @@ Jupyter Notebook, Google Colab 등 다양한 도구를 통해 효율적인 개�
 \chapter{파이썬을 이용한 데이터 핸들링 및 탐색: Pandas DataFrame
 기초}\label{uxd30cuxc774uxc36cuxc744-uxc774uxc6a9uxd55c-uxb370uxc774uxd130-uxd578uxb4e4uxb9c1-uxbc0f-uxd0d0uxc0c9-pandas-dataframe-uxae30uxcd08}
 
-\begin{tcolorbox}[enhanced jigsaw, left=2mm, colframe=quarto-callout-note-color-frame, coltitle=black, opacitybacktitle=0.6, rightrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, arc=.35mm, colback=white, toptitle=1mm, breakable, titlerule=0mm, opacityback=0, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{📌 핵심 요약}, bottomrule=.15mm, bottomtitle=1mm, leftrule=.75mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, breakable, rightrule=.15mm, bottomrule=.15mm, coltitle=black, colback=white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{📌 핵심 요약}, leftrule=.75mm, bottomtitle=1mm, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, colframe=quarto-callout-note-color-frame, opacitybacktitle=0.6, toprule=.15mm, titlerule=0mm, arc=.35mm, toptitle=1mm, left=2mm]
 
 Pandas DataFrame은 파이썬에서 표 형태의 데이터를 다루는 데 필수적인 자료
 구조입니다. 이 절에서는 DataFrame 생성, 정보 확인, 인덱싱, 슬라이싱,
@@ -2688,7 +2688,7 @@ Index: [0, 1, 2, 3, 4]
 \end{verbatim}
 
 \begin{verbatim}
-C:\Users\voidm\AppData\Local\Temp\ipykernel_12432\912558651.py:3: FutureWarning:
+C:\Users\voidm\AppData\Local\Temp\ipykernel_5996\912558651.py:3: FutureWarning:
 
 DataFrame.fillna with 'method' is deprecated and will raise in a future version. Use obj.ffill() or obj.bfill() instead.
 \end{verbatim}
@@ -2990,7 +2990,7 @@ Index: []
 본 절에서는 파이썬 Pandas 라이브러리를 활용하여 주요 기술 통계량을
 계산하고 해석하는 방법을 학습합니다.
 
-\begin{tcolorbox}[enhanced jigsaw, left=2mm, colframe=quarto-callout-note-color-frame, coltitle=black, opacitybacktitle=0.6, rightrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, arc=.35mm, colback=white, toptitle=1mm, breakable, titlerule=0mm, opacityback=0, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{📌 핵심 요약}, bottomrule=.15mm, bottomtitle=1mm, leftrule=.75mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, breakable, rightrule=.15mm, bottomrule=.15mm, coltitle=black, colback=white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{📌 핵심 요약}, leftrule=.75mm, bottomtitle=1mm, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, colframe=quarto-callout-note-color-frame, opacitybacktitle=0.6, toprule=.15mm, titlerule=0mm, arc=.35mm, toptitle=1mm, left=2mm]
 
 기술 통계 분석은 데이터의 기본적인 특성을 요약하고 설명하는 과정입니다.
 Pandas를 이용하여 평균, 중앙값, 최빈값 등 중심 경향성 지표와 분산,
@@ -3690,7 +3690,1288 @@ NaN으로 표시됩니다. 'count'는 모든 변수 유형에 대해 유효한 �
 돕습니다. 다음 절에서는 이러한 데이터를 시각적으로 탐색하는 방법에 대해
 알아보겠습니다.
 
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+\section{2.4 데이터 시각화: Matplotlib와 Seaborn
+활용}\label{sec-visualization}
+
+기술 통계 분석을 통해 데이터의 요약된 수치를 파악했다면, \textbf{데이터
+시각화(Data Visualization)}는 이러한 정보를 그래프 형태로 표현하여
+데이터의 패턴, 추세, 관계, 이상치 등을 직관적으로 이해하도록 돕는
+과정입니다. 사회과학 연구에서 시각화는 데이터를 탐색하는 강력한 도구일
+뿐만 아니라, 연구 결과를 효과적으로 전달하는 데 필수적입니다.
+
+본 절에서는 파이썬의 대표적인 시각화 라이브러리인 \textbf{Matplotlib}와
+이를 기반으로 더 사용하기 쉽고 미려한 그래프를 제공하는
+\textbf{Seaborn}을 활용하여 다양한 종류의 그래프를 생성하고 해석하는
+방법을 학습합니다.
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, rightrule=.15mm, bottomrule=.15mm, coltitle=black, colback=white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{📌 핵심 요약}, leftrule=.75mm, bottomtitle=1mm, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, colframe=quarto-callout-note-color-frame, opacitybacktitle=0.6, toprule=.15mm, titlerule=0mm, arc=.35mm, toptitle=1mm, left=2mm]
+
+데이터 시각화는 데이터의 패턴과 관계를 직관적으로 파악하고 결과를
+효과적으로 전달하는 데 중요합니다. Matplotlib와 Seaborn 라이브러리를
+사용하여 히스토그램, KDE 플롯, 박스 플롯, 카운트 플롯(단일 변수 시각화),
+산점도, 라인 플롯, 비교 박스 플롯/바이올린 플롯, 비교 막대 플롯(다변수
+관계 시각화) 등을 그리는 방법을 배웁니다. 또한, Pair Plot과 Heatmap을
+이용한 다변수 탐색 및 그래프 꾸미기 기초를 익힙니다.
+
+\end{tcolorbox}
+
+\subsection{시각화 라이브러리
+준비}\label{uxc2dcuxac01uxd654-uxb77cuxc774uxbe0cuxb7ecuxb9ac-uxc900uxbe44}
+
+시각화를 위해 Matplotlib의 \texttt{pyplot} 모듈과 Seaborn 라이브러리를
+임포트합니다. Seaborn의 스타일을 설정하면 더 보기 좋은 그래프를 쉽게
+그릴 수 있습니다.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ matplotlib.pyplot }\ImportTok{as}\NormalTok{ plt}
+\ImportTok{import}\NormalTok{ seaborn }\ImportTok{as}\NormalTok{ sns}
+\ImportTok{import}\NormalTok{ pandas }\ImportTok{as}\NormalTok{ pd}
+\ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np }\CommentTok{\# 이전 섹션의 데이터 생성 코드 재실행 (혹은 저장된 데이터 로드)}
+
+\CommentTok{\# 이전 섹션(2.3)에서 사용한 df\_survey 데이터가 메모리에 없다면 재생성}
+\NormalTok{data }\OperatorTok{=}\NormalTok{ \{}
+    \StringTok{\textquotesingle{}ID\textquotesingle{}}\NormalTok{: }\BuiltInTok{range}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{11}\NormalTok{),}
+    \StringTok{\textquotesingle{}Age\textquotesingle{}}\NormalTok{: [}\DecValTok{25}\NormalTok{, }\DecValTok{30}\NormalTok{, }\DecValTok{28}\NormalTok{, }\DecValTok{35}\NormalTok{, }\DecValTok{42}\NormalTok{, }\DecValTok{29}\NormalTok{, }\DecValTok{31}\NormalTok{, }\DecValTok{45}\NormalTok{, }\DecValTok{22}\NormalTok{, }\DecValTok{38}\NormalTok{],}
+    \StringTok{\textquotesingle{}Gender\textquotesingle{}}\NormalTok{: [}\StringTok{\textquotesingle{}Female\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Male\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Male\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Female\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Male\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Female\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Male\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Female\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Female\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Male\textquotesingle{}}\NormalTok{],}
+    \StringTok{\textquotesingle{}EducationLevel\textquotesingle{}}\NormalTok{: [}\StringTok{\textquotesingle{}Bachelor\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Master\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Bachelor\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}PhD\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Master\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Bachelor\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Master\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}PhD\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}High School\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Master\textquotesingle{}}\NormalTok{],}
+    \StringTok{\textquotesingle{}SatisfactionScore\textquotesingle{}}\NormalTok{: [}\DecValTok{7}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{6}\NormalTok{, }\DecValTok{9}\NormalTok{, }\DecValTok{7}\NormalTok{, np.nan, }\DecValTok{8}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{7}\NormalTok{], }\CommentTok{\# 결측치(NaN) 포함}
+    \StringTok{\textquotesingle{}Income\textquotesingle{}}\NormalTok{: [}\DecValTok{5000}\NormalTok{, }\DecValTok{6000}\NormalTok{, }\DecValTok{5500}\NormalTok{, }\DecValTok{7500}\NormalTok{, }\DecValTok{8000}\NormalTok{, }\DecValTok{5200}\NormalTok{, }\DecValTok{6100}\NormalTok{, }\DecValTok{9000}\NormalTok{, }\DecValTok{4000}\NormalTok{, }\DecValTok{7000}\NormalTok{]}
+\NormalTok{\}}
+\NormalTok{df\_survey }\OperatorTok{=}\NormalTok{ pd.DataFrame(data)}
+
+\CommentTok{\# Seaborn 스타일 설정 (예: \textquotesingle{}whitegrid\textquotesingle{}, \textquotesingle{}darkgrid\textquotesingle{}, \textquotesingle{}ticks\textquotesingle{} 등)}
+\NormalTok{sns.set\_style(}\StringTok{\textquotesingle{}whitegrid\textquotesingle{}}\NormalTok{)}
+
+\CommentTok{\# Matplotlib 한글 폰트 설정 (Windows/Mac/Linux 환경에 맞게 설정 필요)}
+\CommentTok{\# 예시 (Windows {-} Malgun Gothic):}
+\CommentTok{\# plt.rcParams[\textquotesingle{}font.family\textquotesingle{}] = \textquotesingle{}Malgun Gothic\textquotesingle{}}
+\CommentTok{\# 예시 (Mac {-} AppleGothic):}
+\CommentTok{\# plt.rcParams[\textquotesingle{}font.family\textquotesingle{}] = \textquotesingle{}AppleGothic\textquotesingle{}}
+\CommentTok{\# plt.rcParams[\textquotesingle{}axes.unicode\_minus\textquotesingle{}] = False \# 마이너스 부호 깨짐 방지}
+
+\CommentTok{\# (참고) Jupyter Notebook 환경에서는 \%matplotlib inline 매직 명령어로 그래프가 출력됨}
+\CommentTok{\# 별도 환경에서는 plt.show()를 호출해야 그래프가 나타남}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{참고:} 시스템에 따라 한글 폰트 설정이 필요할 수 있습니다. 사용
+중인 운영체제에 맞는 폰트 이름을
+\texttt{plt.rcParams{[}\textquotesingle{}font.family\textquotesingle{}{]}}에
+지정해야 그래프의 제목이나 축 레이블에 한글이 깨지지 않고 표시됩니다.
+
+\subsection{2.4.1 단일 변수 시각화 (Univariate
+Visualization)}\label{uxb2e8uxc77c-uxbcc0uxc218-uxc2dcuxac01uxd654-univariate-visualization}
+
+단일 변수 시각화는 개별 변수의 분포 특성(분포 형태, 중심 경향성, 산포도
+등)을 파악하는 데 사용됩니다.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{히스토그램 (Histogram):}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    연속형 변수의 분포를 시각화하는 가장 기본적인 방법입니다. 데이터
+    범위를 여러 구간(bin)으로 나누고 각 구간에 속하는 데이터의
+    빈도(frequency)를 막대로 나타냅니다.
+  \item
+    Seaborn의 \texttt{histplot()} 또는
+    \texttt{displot(kind=\textquotesingle{}hist\textquotesingle{})}
+    함수를 사용하면 편리합니다.
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Age 변수의 히스토그램}
+\NormalTok{plt.figure(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{8}\NormalTok{, }\DecValTok{5}\NormalTok{)) }\CommentTok{\# 그래프 크기 조절}
+\NormalTok{sns.histplot(data}\OperatorTok{=}\NormalTok{df\_survey, x}\OperatorTok{=}\StringTok{\textquotesingle{}Age\textquotesingle{}}\NormalTok{, bins}\OperatorTok{=}\DecValTok{5}\NormalTok{, kde}\OperatorTok{=}\VariableTok{True}\NormalTok{) }\CommentTok{\# kde=True는 밀도 곡선 추가}
+\NormalTok{plt.title(}\StringTok{\textquotesingle{}Age Distribution Histogram\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.xlabel(}\StringTok{\textquotesingle{}Age\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.ylabel(}\StringTok{\textquotesingle{}Frequency\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.show()}
+
+\CommentTok{\# Income 변수의 히스토그램}
+\NormalTok{plt.figure(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{8}\NormalTok{, }\DecValTok{5}\NormalTok{))}
+\NormalTok{sns.histplot(data}\OperatorTok{=}\NormalTok{df\_survey, x}\OperatorTok{=}\StringTok{\textquotesingle{}Income\textquotesingle{}}\NormalTok{, kde}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+\NormalTok{plt.title(}\StringTok{\textquotesingle{}Income Distribution Histogram\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.xlabel(}\StringTok{\textquotesingle{}Income\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.ylabel(}\StringTok{\textquotesingle{}Frequency\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.show()}
+\end{Highlighting}
+\end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{02-data-handling-exploration_files/figure-latex/cell-40-output-1.png}}
+
+\pandocbounded{\includegraphics[keepaspectratio]{02-data-handling-exploration_files/figure-latex/cell-40-output-2.png}}
+
+\begin{verbatim}
+* **해석:** 히스토그램을 통해 데이터가 어떤 값 범위에 집중되어 있는지, 분포가 대칭적인지, 치우쳐 있는지(왜도) 등을 시각적으로 확인할 수 있습니다. `bins` 개수에 따라 모양이 달라질 수 있으므로 적절한 값 설정이 중요합니다.
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{커널 밀도 추정 플롯 (Kernel Density Estimate Plot, KDE Plot):}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    히스토그램을 부드러운 곡선 형태로 나타낸 것으로, 변수의 확률 밀도
+    함수(Probability Density Function)를 추정하여 시각화합니다.
+  \item
+    Seaborn의 \texttt{kdeplot()} 또는
+    \texttt{displot(kind=\textquotesingle{}kde\textquotesingle{})}
+    함수를 사용합니다.
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Age 변수의 KDE 플롯}
+\NormalTok{plt.figure(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{8}\NormalTok{, }\DecValTok{5}\NormalTok{))}
+\NormalTok{sns.kdeplot(data}\OperatorTok{=}\NormalTok{df\_survey, x}\OperatorTok{=}\StringTok{\textquotesingle{}Age\textquotesingle{}}\NormalTok{, fill}\OperatorTok{=}\VariableTok{True}\NormalTok{) }\CommentTok{\# fill=True는 곡선 아래 영역 채우기}
+\NormalTok{plt.title(}\StringTok{\textquotesingle{}Age Distribution KDE Plot\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.xlabel(}\StringTok{\textquotesingle{}Age\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.ylabel(}\StringTok{\textquotesingle{}Density\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.show()}
+\end{Highlighting}
+\end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{02-data-handling-exploration_files/figure-latex/cell-41-output-1.png}}
+
+\begin{verbatim}
+* **해석:** KDE 플롯은 히스토그램보다 분포의 형태를 더 매끄럽게 보여주지만, `bins` 설정이 없는 대신 대역폭(bandwidth) 파라미터에 따라 곡선의 평활도(smoothness)가 달라질 수 있습니다.
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{박스 플롯 (Box Plot):}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    데이터의 사분위수(Q1, Q2/중앙값, Q3), 최소/최대값(IQR 기준),
+    이상치를 시각적으로 표현합니다. 데이터의 분포와 이상치 존재 여부를
+    빠르게 파악하는 데 유용합니다 (2.2.2절, 2.3.2절 참고).
+  \item
+    Seaborn의 \texttt{boxplot()} 함수를 사용합니다.
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Income 변수의 박스 플롯}
+\NormalTok{plt.figure(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{6}\NormalTok{, }\DecValTok{6}\NormalTok{))}
+\NormalTok{sns.boxplot(data}\OperatorTok{=}\NormalTok{df\_survey, y}\OperatorTok{=}\StringTok{\textquotesingle{}Income\textquotesingle{}}\NormalTok{) }\CommentTok{\# y축에 변수 지정 시 세로 박스 플롯}
+\NormalTok{plt.title(}\StringTok{\textquotesingle{}Income Distribution Box Plot\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.ylabel(}\StringTok{\textquotesingle{}Income\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.show()}
+
+\CommentTok{\# SatisfactionScore 변수의 박스 플롯 (NaN 값은 자동으로 제외됨)}
+\NormalTok{plt.figure(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{6}\NormalTok{, }\DecValTok{6}\NormalTok{))}
+\NormalTok{sns.boxplot(data}\OperatorTok{=}\NormalTok{df\_survey, y}\OperatorTok{=}\StringTok{\textquotesingle{}SatisfactionScore\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.title(}\StringTok{\textquotesingle{}Satisfaction Score Distribution Box Plot\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.ylabel(}\StringTok{\textquotesingle{}Satisfaction Score\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.show()}
+\end{Highlighting}
+\end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{02-data-handling-exploration_files/figure-latex/cell-42-output-1.png}}
+
+\pandocbounded{\includegraphics[keepaspectratio]{02-data-handling-exploration_files/figure-latex/cell-42-output-2.png}}
+
+\begin{verbatim}
+* **해석:** 상자의 하단/상단 선은 각각 Q1/Q3, 상자 안의 선은 중앙값(Q2)을 나타냅니다. 상자 길이는 IQR입니다. 상자 밖의 선(whisker)은 보통 IQR의 1.5배 범위 내의 데이터를 나타내며, 그 밖의 점들은 이상치(outlier)로 간주됩니다.
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{카운트 플롯 (Count Plot):}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    범주형 변수의 각 범주별 빈도를 막대 그래프로 시각화합니다.
+  \item
+    Seaborn의 \texttt{countplot()} 함수를 사용합니다.
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Gender 변수의 카운트 플롯}
+\NormalTok{plt.figure(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{6}\NormalTok{, }\DecValTok{5}\NormalTok{))}
+\NormalTok{sns.countplot(data}\OperatorTok{=}\NormalTok{df\_survey, x}\OperatorTok{=}\StringTok{\textquotesingle{}Gender\textquotesingle{}}\NormalTok{, palette}\OperatorTok{=}\StringTok{\textquotesingle{}viridis\textquotesingle{}}\NormalTok{) }\CommentTok{\# palette로 색상 지정}
+\NormalTok{plt.title(}\StringTok{\textquotesingle{}Gender Count Plot\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.xlabel(}\StringTok{\textquotesingle{}Gender\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.ylabel(}\StringTok{\textquotesingle{}Count\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.show()}
+
+\CommentTok{\# EducationLevel 변수의 카운트 플롯}
+\NormalTok{plt.figure(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{8}\NormalTok{, }\DecValTok{5}\NormalTok{))}
+\NormalTok{sns.countplot(data}\OperatorTok{=}\NormalTok{df\_survey, y}\OperatorTok{=}\StringTok{\textquotesingle{}EducationLevel\textquotesingle{}}\NormalTok{, order}\OperatorTok{=}\NormalTok{df\_survey[}\StringTok{\textquotesingle{}EducationLevel\textquotesingle{}}\NormalTok{].value\_counts().index) }\CommentTok{\# 빈도순 정렬}
+\NormalTok{plt.title(}\StringTok{\textquotesingle{}Education Level Count Plot\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.xlabel(}\StringTok{\textquotesingle{}Count\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.ylabel(}\StringTok{\textquotesingle{}Education Level\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.tight\_layout() }\CommentTok{\# 레이블 잘림 방지}
+\NormalTok{plt.show()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+C:\Users\voidm\AppData\Local\Temp\ipykernel_5996\3407003983.py:3: FutureWarning:
+
+
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+\end{verbatim}
+
+\pandocbounded{\includegraphics[keepaspectratio]{02-data-handling-exploration_files/figure-latex/cell-43-output-2.png}}
+
+\pandocbounded{\includegraphics[keepaspectratio]{02-data-handling-exploration_files/figure-latex/cell-43-output-3.png}}
+
+\begin{verbatim}
+* **해석:** 각 막대의 길이는 해당 범주의 빈도를 나타냅니다. 범주별 상대적인 크기를 쉽게 비교할 수 있습니다.
+\end{verbatim}
+
+\subsection{2.4.2 이변량 시각화 (Bivariate
+Visualization)}\label{uxc774uxbcc0uxb7c9-uxc2dcuxac01uxd654-bivariate-visualization}
+
+이변량 시각화는 두 변수 간의 관계를 탐색하는 데 사용됩니다. 변수의
+종류(연속형/범주형)에 따라 적합한 그래프 유형이 다릅니다.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{산점도 (Scatter Plot):}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    두 연속형 변수 간의 관계를 시각화하는 데 가장 널리 사용됩니다. 각
+    데이터 포인트를 2차원 평면 위에 점으로 나타냅니다.
+  \item
+    변수 간 선형 관계, 비선형 관계, 군집, 이상치 등을 파악할 수
+    있습니다.
+  \item
+    Seaborn의 \texttt{scatterplot()} 또는
+    \texttt{relplot(kind=\textquotesingle{}scatter\textquotesingle{})}
+    함수를 사용합니다.
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Age와 Income 간의 산점도}
+\NormalTok{plt.figure(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{8}\NormalTok{, }\DecValTok{6}\NormalTok{))}
+\NormalTok{sns.scatterplot(data}\OperatorTok{=}\NormalTok{df\_survey, x}\OperatorTok{=}\StringTok{\textquotesingle{}Age\textquotesingle{}}\NormalTok{, y}\OperatorTok{=}\StringTok{\textquotesingle{}Income\textquotesingle{}}\NormalTok{, hue}\OperatorTok{=}\StringTok{\textquotesingle{}Gender\textquotesingle{}}\NormalTok{, style}\OperatorTok{=}\StringTok{\textquotesingle{}EducationLevel\textquotesingle{}}\NormalTok{, s}\OperatorTok{=}\DecValTok{100}\NormalTok{) }\CommentTok{\# hue/style/size로 추가 변수 표현 가능}
+\NormalTok{plt.title(}\StringTok{\textquotesingle{}Scatter Plot of Age vs Income\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.xlabel(}\StringTok{\textquotesingle{}Age\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.ylabel(}\StringTok{\textquotesingle{}Income\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.legend(bbox\_to\_anchor}\OperatorTok{=}\NormalTok{(}\FloatTok{1.05}\NormalTok{, }\DecValTok{1}\NormalTok{), loc}\OperatorTok{=}\StringTok{\textquotesingle{}upper left\textquotesingle{}}\NormalTok{) }\CommentTok{\# 범례 위치 조정}
+\NormalTok{plt.tight\_layout()}
+\NormalTok{plt.show()}
+\end{Highlighting}
+\end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{02-data-handling-exploration_files/figure-latex/cell-44-output-1.png}}
+
+\begin{verbatim}
+* **해석:** 점들의 분포 패턴을 통해 두 변수 간의 관계 방향(양의 관계, 음의 관계)과 강도를 추측할 수 있습니다. `hue`, `style`, `size` 등의 옵션을 활용하면 추가적인 범주형 또는 연속형 변수의 정보를 함께 표현할 수 있습니다 (다변량 시각화의 기초).
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{라인 플롯 (Line Plot):}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    주로 시간의 흐름에 따른 연속형 변수의 변화 추세를 시각화하는 데
+    사용됩니다. (현재 \texttt{df\_survey} 데이터는 시계열이 아니므로
+    예시는 생략하지만, 개념 설명)
+  \item
+    x축이 순서(시간, 단계 등)를 나타내는 경우 유용합니다.
+  \item
+    Seaborn의 \texttt{lineplot()} 또는
+    \texttt{relplot(kind=\textquotesingle{}line\textquotesingle{})}
+    함수를 사용합니다.
+  \item
+    \textbf{사용 예시:} 연도별 평균 소득 변화, 실험 단계별 반응 시간
+    변화 등.
+  \end{itemize}
+\item
+  \textbf{비교 박스 플롯 / 바이올린 플롯 (Box Plot / Violin Plot for
+  Comparison):}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    범주형 변수의 각 범주에 따른 연속형 변수의 분포를 비교할 때
+    유용합니다.
+  \item
+    \textbf{박스 플롯:} 여러 그룹의 분포를 사분위수 기준으로 간결하게
+    비교합니다.
+  \item
+    \textbf{바이올린 플롯:} 박스 플롯에 KDE(커널 밀도 추정)를 결합하여
+    분포의 형태까지 함께 보여줍니다.
+  \item
+    Seaborn의 \texttt{boxplot()}, \texttt{violinplot()} 함수를
+    사용합니다.
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# EducationLevel 별 Income 분포 비교 (박스 플롯)}
+\NormalTok{plt.figure(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{10}\NormalTok{, }\DecValTok{6}\NormalTok{))}
+\NormalTok{sns.boxplot(data}\OperatorTok{=}\NormalTok{df\_survey, x}\OperatorTok{=}\StringTok{\textquotesingle{}EducationLevel\textquotesingle{}}\NormalTok{, y}\OperatorTok{=}\StringTok{\textquotesingle{}Income\textquotesingle{}}\NormalTok{, order}\OperatorTok{=}\NormalTok{[}\StringTok{\textquotesingle{}High School\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Bachelor\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Master\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}PhD\textquotesingle{}}\NormalTok{]) }\CommentTok{\# 순서 지정}
+\NormalTok{plt.title(}\StringTok{\textquotesingle{}Income Distribution by Education Level (Box Plot)\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.xlabel(}\StringTok{\textquotesingle{}Education Level\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.ylabel(}\StringTok{\textquotesingle{}Income\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.xticks(rotation}\OperatorTok{=}\DecValTok{15}\NormalTok{) }\CommentTok{\# x축 레이블 회전}
+\NormalTok{plt.tight\_layout()}
+\NormalTok{plt.show()}
+
+\CommentTok{\# Gender 별 SatisfactionScore 분포 비교 (바이올린 플롯)}
+\NormalTok{plt.figure(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{8}\NormalTok{, }\DecValTok{6}\NormalTok{))}
+\NormalTok{sns.violinplot(data}\OperatorTok{=}\NormalTok{df\_survey.dropna(subset}\OperatorTok{=}\NormalTok{[}\StringTok{\textquotesingle{}SatisfactionScore\textquotesingle{}}\NormalTok{]), x}\OperatorTok{=}\StringTok{\textquotesingle{}Gender\textquotesingle{}}\NormalTok{, y}\OperatorTok{=}\StringTok{\textquotesingle{}SatisfactionScore\textquotesingle{}}\NormalTok{, inner}\OperatorTok{=}\StringTok{\textquotesingle{}quartile\textquotesingle{}}\NormalTok{) }\CommentTok{\# inner=\textquotesingle{}quartile\textquotesingle{}은 사분위수 표시}
+\NormalTok{plt.title(}\StringTok{\textquotesingle{}Satisfaction Score Distribution by Gender (Violin Plot)\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.xlabel(}\StringTok{\textquotesingle{}Gender\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.ylabel(}\StringTok{\textquotesingle{}Satisfaction Score\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.show()}
+\end{Highlighting}
+\end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{02-data-handling-exploration_files/figure-latex/cell-45-output-1.png}}
+
+\pandocbounded{\includegraphics[keepaspectratio]{02-data-handling-exploration_files/figure-latex/cell-45-output-2.png}}
+
+\begin{verbatim}
+* **해석:** 그룹 간 중심 경향성(중앙값), 퍼짐 정도(IQR, 바이올린의 폭), 이상치 유무 등을 비교하여 집단 간 차이를 시각적으로 탐색할 수 있습니다.
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{비교 막대 플롯 (Bar Plot for Comparison):}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    범주형 변수의 각 범주에 따른 연속형 변수의 \textbf{대표값(기본값:
+    평균)}을 막대로 비교하여 시각화합니다. 막대 위의 선(오차 막대)은
+    보통 신뢰 구간(Confidence Interval)을 나타냅니다.
+  \item
+    Seaborn의 \texttt{barplot()} 함수를 사용합니다. \texttt{estimator}
+    인자를 통해 평균 외 다른 통계량(중앙값 등)을 지정할 수 있습니다.
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# EducationLevel 별 평균 Income 비교 (막대 플롯)}
+\NormalTok{plt.figure(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{10}\NormalTok{, }\DecValTok{6}\NormalTok{))}
+\CommentTok{\# np.mean 대신 다른 estimator 사용 가능 (예: estimator=np.median)}
+\NormalTok{sns.barplot(data}\OperatorTok{=}\NormalTok{df\_survey, x}\OperatorTok{=}\StringTok{\textquotesingle{}EducationLevel\textquotesingle{}}\NormalTok{, y}\OperatorTok{=}\StringTok{\textquotesingle{}Income\textquotesingle{}}\NormalTok{, order}\OperatorTok{=}\NormalTok{[}\StringTok{\textquotesingle{}High School\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Bachelor\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Master\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}PhD\textquotesingle{}}\NormalTok{], ci}\OperatorTok{=}\StringTok{\textquotesingle{}sd\textquotesingle{}}\NormalTok{) }\CommentTok{\# ci=\textquotesingle{}sd\textquotesingle{}는 표준편차 표시}
+\NormalTok{plt.title(}\StringTok{\textquotesingle{}Average Income by Education Level (Bar Plot)\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.xlabel(}\StringTok{\textquotesingle{}Education Level\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.ylabel(}\StringTok{\textquotesingle{}Average Income\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.xticks(rotation}\OperatorTok{=}\DecValTok{15}\NormalTok{)}
+\NormalTok{plt.tight\_layout()}
+\NormalTok{plt.show()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+C:\Users\voidm\AppData\Local\Temp\ipykernel_5996\1340021530.py:4: FutureWarning:
+
+
+
+The `ci` parameter is deprecated. Use `errorbar='sd'` for the same effect.
+
+\end{verbatim}
+
+\pandocbounded{\includegraphics[keepaspectratio]{02-data-handling-exploration_files/figure-latex/cell-46-output-2.png}}
+
+\begin{verbatim}
+* **해석:** 그룹 간 평균값의 차이를 직관적으로 비교할 수 있습니다. 오차 막대를 통해 값의 불확실성(분산 정도)도 함께 고려해야 합니다. (`countplot`은 단순히 빈도를 세는 반면, `barplot`은 y축 변수의 통계량을 계산하여 보여준다는 차이가 있습니다.)
+\end{verbatim}
+
+\subsection{2.4.3 다변수 시각화 간략 소개 (Brief Introduction to
+Multivariate
+Visualization)}\label{uxb2e4uxbcc0uxc218-uxc2dcuxac01uxd654-uxac04uxb7b5-uxc18cuxac1c-brief-introduction-to-multivariate-visualization}
+
+세 개 이상의 변수 간 관계를 동시에 탐색하기 위한 시각화 기법입니다.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Pair Plot:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    데이터프레임 내 여러 수치형 변수들 간의 모든 쌍(pair)에 대한
+    산점도를 그리고, 대각선에는 각 변수의 분포(히스토그램 또는 KDE)를
+    보여줍니다. 변수 간 관계를 전반적으로 빠르게 파악하는 데 매우
+    유용합니다.
+  \item
+    Seaborn의 \texttt{pairplot()} 함수를 사용합니다.
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Age, SatisfactionScore, Income 변수 간 Pair Plot}
+\CommentTok{\# 결측치가 있으면 오류 발생 가능하므로 제거하거나 처리 후 사용}
+\NormalTok{sns.pairplot(df\_survey.dropna(subset}\OperatorTok{=}\NormalTok{[}\StringTok{\textquotesingle{}SatisfactionScore\textquotesingle{}}\NormalTok{])[[}\StringTok{\textquotesingle{}Age\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}SatisfactionScore\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Income\textquotesingle{}}\NormalTok{]], diag\_kind}\OperatorTok{=}\StringTok{\textquotesingle{}kde\textquotesingle{}}\NormalTok{, corner}\OperatorTok{=}\VariableTok{True}\NormalTok{) }\CommentTok{\# corner=True는 중복되는 위쪽 삼각형 제외}
+\NormalTok{plt.suptitle(}\StringTok{\textquotesingle{}Pair Plot of Key Numerical Variables\textquotesingle{}}\NormalTok{, y}\OperatorTok{=}\FloatTok{1.02}\NormalTok{) }\CommentTok{\# 전체 제목 추가}
+\NormalTok{plt.show()}
+\end{Highlighting}
+\end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{02-data-handling-exploration_files/figure-latex/cell-47-output-1.png}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{히트맵 (Heatmap):}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    매트릭스 형태의 데이터를 색상을 이용하여 시각화합니다. 주로 변수 간
+    상관계수 행렬(Correlation Matrix)을 시각화하는 데 많이 사용됩니다.
+  \item
+    Seaborn의 \texttt{heatmap()} 함수를 사용합니다.
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 수치형 변수 간 상관계수 계산}
+\NormalTok{correlation\_matrix }\OperatorTok{=}\NormalTok{ df\_survey[[}\StringTok{\textquotesingle{}Age\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}SatisfactionScore\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Income\textquotesingle{}}\NormalTok{]].corr()}
+
+\CommentTok{\# 상관계수 행렬 히트맵 시각화}
+\NormalTok{plt.figure(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{7}\NormalTok{, }\DecValTok{5}\NormalTok{))}
+\NormalTok{sns.heatmap(correlation\_matrix, annot}\OperatorTok{=}\VariableTok{True}\NormalTok{, cmap}\OperatorTok{=}\StringTok{\textquotesingle{}coolwarm\textquotesingle{}}\NormalTok{, fmt}\OperatorTok{=}\StringTok{\textquotesingle{}.2f\textquotesingle{}}\NormalTok{, linewidths}\OperatorTok{=}\FloatTok{.5}\NormalTok{) }\CommentTok{\# annot=True는 값 표시, cmap은 색상 맵, fmt는 소수점 자리}
+\NormalTok{plt.title(}\StringTok{\textquotesingle{}Correlation Matrix Heatmap\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.show()}
+\end{Highlighting}
+\end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{02-data-handling-exploration_files/figure-latex/cell-48-output-1.png}}
+
+\begin{verbatim}
+* **해석:** 색상의 진하기나 종류를 통해 변수 간 상관관계의 강도와 방향(양/음)을 시각적으로 파악할 수 있습니다. (상관계수 자체에 대한 자세한 내용은 5장에서 다룹니다.)
+\end{verbatim}
+
+\subsection{2.4.4 그래프 꾸미기 및 저장 (Customization and Saving
+Plots)}\label{uxadf8uxb798uxd504-uxafb8uxbbf8uxae30-uxbc0f-uxc800uxc7a5-customization-and-saving-plots}
+
+Matplotlib와 Seaborn은 그래프의 제목, 축 레이블, 범례, 색상, 폰트 크기
+등 다양한 요소를 사용자가 원하는 대로 조정할 수 있는 기능을 제공합니다.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{주요 꾸미기 함수:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{plt.title()}: 그래프 제목 설정
+  \item
+    \texttt{plt.xlabel()}, \texttt{plt.ylabel()}: x축, y축 레이블 설정
+  \item
+    \texttt{plt.xticks()}, \texttt{plt.yticks()}: 축 눈금 설정 (값,
+    레이블, 회전 등)
+  \item
+    \texttt{plt.legend()}: 범례 표시 및 위치/스타일 조정
+  \item
+    \texttt{plt.grid()}: 그리드(격자) 표시
+  \item
+    \texttt{plt.figure(figsize=(width,\ height))}: 그래프 크기 조절
+  \item
+    \texttt{plt.tight\_layout()}: 그래프 요소들이 겹치지 않게 자동으로
+    레이아웃 조정
+  \end{itemize}
+\item
+  \textbf{그래프 저장:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{plt.savefig(\textquotesingle{}filename.png\textquotesingle{},\ dpi=300)}:
+    생성된 그래프를 파일로 저장합니다. 파일 형식(png, jpg, pdf 등)과
+    해상도(dpi)를 지정할 수 있습니다. 논문이나 보고서에 삽입할 때
+    유용합니다.
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 예시: 꾸미기가 적용된 그래프 저장}
+\NormalTok{plt.figure(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{8}\NormalTok{, }\DecValTok{6}\NormalTok{))}
+\NormalTok{sns.scatterplot(data}\OperatorTok{=}\NormalTok{df\_survey, x}\OperatorTok{=}\StringTok{\textquotesingle{}Age\textquotesingle{}}\NormalTok{, y}\OperatorTok{=}\StringTok{\textquotesingle{}Income\textquotesingle{}}\NormalTok{, hue}\OperatorTok{=}\StringTok{\textquotesingle{}Gender\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.title(}\StringTok{\textquotesingle{}Age vs Income Scatter Plot with Customization\textquotesingle{}}\NormalTok{, fontsize}\OperatorTok{=}\DecValTok{16}\NormalTok{)}
+\NormalTok{plt.xlabel(}\StringTok{\textquotesingle{}Age (Years)\textquotesingle{}}\NormalTok{, fontsize}\OperatorTok{=}\DecValTok{12}\NormalTok{)}
+\NormalTok{plt.ylabel(}\StringTok{\textquotesingle{}Income ($)\textquotesingle{}}\NormalTok{, fontsize}\OperatorTok{=}\DecValTok{12}\NormalTok{)}
+\NormalTok{plt.legend(title}\OperatorTok{=}\StringTok{\textquotesingle{}Gender\textquotesingle{}}\NormalTok{, title\_fontsize}\OperatorTok{=}\StringTok{\textquotesingle{}13\textquotesingle{}}\NormalTok{, fontsize}\OperatorTok{=}\StringTok{\textquotesingle{}11\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.grid(}\VariableTok{True}\NormalTok{, linestyle}\OperatorTok{=}\StringTok{\textquotesingle{}{-}{-}\textquotesingle{}}\NormalTok{, alpha}\OperatorTok{=}\FloatTok{0.7}\NormalTok{) }\CommentTok{\# 그리드 추가}
+
+\CommentTok{\# 파일로 저장 (plt.show() 이전에 호출해야 할 수 있음)}
+\CommentTok{\# plt.savefig(\textquotesingle{}age\_income\_scatter.png\textquotesingle{}, dpi=300, bbox\_inches=\textquotesingle{}tight\textquotesingle{}) \# bbox\_inches=\textquotesingle{}tight\textquotesingle{}는 여백 최소화}
+
+\NormalTok{plt.show()}
+\end{Highlighting}
+\end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{02-data-handling-exploration_files/figure-latex/cell-49-output-1.png}}
+
+\subsection{2.4.5 데이터 시각화의
+중요성}\label{uxb370uxc774uxd130-uxc2dcuxac01uxd654uxc758-uxc911uxc694uxc131}
+
+데이터 시각화는 기술 통계량만으로는 파악하기 어려운 데이터의 복잡한
+패턴과 구조를 드러내 줍니다. 효과적인 시각화는 데이터 탐색 과정을
+풍부하게 하고, 분석 결과에 대한 설득력을 높이며, 연구 아이디어를
+발전시키는 데 기여합니다. 사회과학 연구자는 연구 목적과 데이터 유형에
+맞는 적절한 시각화 방법을 선택하고, 그 결과를 비판적으로 해석하는 능력을
+갖추는 것이 중요합니다.
+
+여기까지 파이썬을 이용한 데이터 핸들링, 전처리, 기술 통계 분석, 그리고
+시각화 기초를 다루었습니다. 다음 장부터는 이러한 기초를 바탕으로
+본격적인 통계 분석 기법들을 학습하게 됩니다.
+
+\section{2.5 실전 연습: 설문조사 데이터 종합 분석 및
+해석}\label{sec-chapter2-practice}
+
+이번 장에서 우리는 파이썬을 활용한 데이터 분석의 여정을 시작하여,
+Pandas를 이용한 데이터 조작, 데이터 정제(전처리), 기술 통계량 계산,
+그리고 Matplotlib와 Seaborn을 활용한 시각화 기법들을 학습했습니다.
+이론과 개별 기능 학습도 중요하지만, 실제 분석 과정에서는 이러한 기법들이
+유기적으로 연결되어 사용됩니다.
+
+본 절에서는 \textbf{2장에서 배운 모든 지식을 총동원}하여, 조금 더
+현실적인 규모(100명 응답자)의 가상 설문조사 데이터를 직접 다루어보는
+종합 실습을 진행합니다. 단순히 코드를 실행하는 것을 넘어, 각 분석 단계의
+\textbf{필요성}을 이해하고 도출된 결과(수치, 그래프)가 가지는
+\textbf{통계적 의미}와 \textbf{사회과학적 함의}를 해석하는 데 중점을 둘
+것입니다. 이 과정을 통해 여러분은 실제 연구 데이터를 만났을 때 필요한
+데이터 탐색 및 기초 분석 능력을 통합적으로 강화할 수 있습니다.
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, rightrule=.15mm, bottomrule=.15mm, coltitle=black, colback=white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{📌 핵심 목표}, leftrule=.75mm, bottomtitle=1mm, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, colframe=quarto-callout-note-color-frame, opacitybacktitle=0.6, toprule=.15mm, titlerule=0mm, arc=.35mm, toptitle=1mm, left=2mm]
+
+\begin{itemize}
+\tightlist
+\item
+  100명 규모의 가상 설문조사 데이터를 생성하고 구조를 파악합니다.
+\item
+  2.2절에서 배운 기법을 활용하여 결측치, 이상치 등 데이터 문제를
+  식별하고 처리합니다. (데이터 전처리)
+\item
+  2.3절에서 배운 기법을 활용하여 데이터의 중심 경향성, 산포도, 분포
+  특성을 계산하고 통계적으로 해석합니다. (기술 통계 분석)
+\item
+  2.4절에서 배운 기법을 활용하여 변수 분포 및 변수 간 관계를 시각화하고
+  패턴을 탐색합니다. (데이터 시각화)
+\item
+  분석 전 과정의 결과를 종합하여 데이터에 대한 깊이 있는 이해를
+  도출하고, 사회과학적 맥락에서 의미를 해석하는 연습을 합니다.
+\end{itemize}
+
+\end{tcolorbox}
+
+\subsection{2.5.1 실습용 가상 데이터 생성
+(N=100)}\label{uxc2e4uxc2b5uxc6a9-uxac00uxc0c1-uxb370uxc774uxd130-uxc0dduxc131-n100}
+
+먼저, 실습에 사용할 100명의 응답자 데이터를 포함하는 가상 설문조사
+DataFrame(\texttt{df\_practice})을 생성하겠습니다. 이전 예제보다
+현실성을 높이기 위해 변수 값 생성 시 약간의 무작위성과 함께 결측치,
+그리고 잠재적 이상치를 포함시키겠습니다.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ pandas }\ImportTok{as}\NormalTok{ pd}
+\ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np}
+\ImportTok{import}\NormalTok{ matplotlib.pyplot }\ImportTok{as}\NormalTok{ plt}
+\ImportTok{import}\NormalTok{ seaborn }\ImportTok{as}\NormalTok{ sns}
+
+\CommentTok{\# 재현 가능성을 위한 시드 설정}
+\NormalTok{np.random.seed(}\DecValTok{42}\NormalTok{)}
+
+\CommentTok{\# 데이터 생성 (N=100)}
+\NormalTok{n\_respondents }\OperatorTok{=} \DecValTok{100}
+\NormalTok{data }\OperatorTok{=}\NormalTok{ \{}
+    \StringTok{\textquotesingle{}ID\textquotesingle{}}\NormalTok{: }\BuiltInTok{range}\NormalTok{(}\DecValTok{1}\NormalTok{, n\_respondents }\OperatorTok{+} \DecValTok{1}\NormalTok{),}
+    \StringTok{\textquotesingle{}Age\textquotesingle{}}\NormalTok{: np.random.randint(}\DecValTok{20}\NormalTok{, }\DecValTok{65}\NormalTok{, size}\OperatorTok{=}\NormalTok{n\_respondents),}
+    \StringTok{\textquotesingle{}Gender\textquotesingle{}}\NormalTok{: np.random.choice([}\StringTok{\textquotesingle{}Male\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Female\textquotesingle{}}\NormalTok{], size}\OperatorTok{=}\NormalTok{n\_respondents, p}\OperatorTok{=}\NormalTok{[}\FloatTok{0.48}\NormalTok{, }\FloatTok{0.52}\NormalTok{]),}
+    \StringTok{\textquotesingle{}Education\textquotesingle{}}\NormalTok{: np.random.choice([}\StringTok{\textquotesingle{}High School\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Bachelor\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Master\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}PhD\textquotesingle{}}\NormalTok{], size}\OperatorTok{=}\NormalTok{n\_respondents, p}\OperatorTok{=}\NormalTok{[}\FloatTok{0.2}\NormalTok{, }\FloatTok{0.4}\NormalTok{, }\FloatTok{0.3}\NormalTok{, }\FloatTok{0.1}\NormalTok{]),}
+    \StringTok{\textquotesingle{}Income\textquotesingle{}}\NormalTok{: np.random.normal(loc}\OperatorTok{=}\DecValTok{5500}\NormalTok{, scale}\OperatorTok{=}\DecValTok{1500}\NormalTok{, size}\OperatorTok{=}\NormalTok{n\_respondents).}\BuiltInTok{round}\NormalTok{(}\DecValTok{2}\NormalTok{),}
+    \StringTok{\textquotesingle{}Wellbeing\textquotesingle{}}\NormalTok{: np.random.normal(loc}\OperatorTok{=}\FloatTok{6.5}\NormalTok{, scale}\OperatorTok{=}\FloatTok{1.8}\NormalTok{, size}\OperatorTok{=}\NormalTok{n\_respondents).}\BuiltInTok{round}\NormalTok{(}\DecValTok{1}\NormalTok{),}
+    \StringTok{\textquotesingle{}Social\_Participation\textquotesingle{}}\NormalTok{: np.random.randint(}\DecValTok{1}\NormalTok{, }\DecValTok{6}\NormalTok{, size}\OperatorTok{=}\NormalTok{n\_respondents), }\CommentTok{\# 1(낮음)\textasciitilde{}5(높음)}
+    \StringTok{\textquotesingle{}Political\_View\textquotesingle{}}\NormalTok{: np.random.randint(}\DecValTok{1}\NormalTok{, }\DecValTok{8}\NormalTok{, size}\OperatorTok{=}\NormalTok{n\_respondents) }\CommentTok{\# 1(진보)\textasciitilde{}7(보수)}
+\NormalTok{\}}
+\NormalTok{df\_practice }\OperatorTok{=}\NormalTok{ pd.DataFrame(data)}
+
+\CommentTok{\# 의도적으로 결측치(NaN) 추가}
+\NormalTok{nan\_indices\_income }\OperatorTok{=}\NormalTok{ np.random.choice(df\_practice.index, size}\OperatorTok{=}\DecValTok{8}\NormalTok{, replace}\OperatorTok{=}\VariableTok{False}\NormalTok{)}
+\NormalTok{df\_practice.loc[nan\_indices\_income, }\StringTok{\textquotesingle{}Income\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ np.nan}
+
+\NormalTok{nan\_indices\_wellbeing }\OperatorTok{=}\NormalTok{ np.random.choice(df\_practice.index, size}\OperatorTok{=}\DecValTok{5}\NormalTok{, replace}\OperatorTok{=}\VariableTok{False}\NormalTok{)}
+\NormalTok{df\_practice.loc[nan\_indices\_wellbeing, }\StringTok{\textquotesingle{}Wellbeing\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ np.nan}
+
+\CommentTok{\# 의도적으로 이상치 추가 (예: Age, Income)}
+\NormalTok{df\_practice.loc[np.random.choice(df\_practice.index, }\DecValTok{1}\NormalTok{), }\StringTok{\textquotesingle{}Age\textquotesingle{}}\NormalTok{] }\OperatorTok{=} \DecValTok{99}
+\NormalTok{df\_practice.loc[np.random.choice(df\_practice.index, }\DecValTok{1}\NormalTok{), }\StringTok{\textquotesingle{}Income\textquotesingle{}}\NormalTok{] }\OperatorTok{=} \FloatTok{15000.0}
+
+\CommentTok{\# Education을 순서형 범주로 변환 (선택적이지만, 분석/시각화 시 순서 고려에 유용)}
+\NormalTok{edu\_order }\OperatorTok{=}\NormalTok{ [}\StringTok{\textquotesingle{}High School\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Bachelor\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Master\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}PhD\textquotesingle{}}\NormalTok{]}
+\NormalTok{df\_practice[}\StringTok{\textquotesingle{}Education\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ pd.Categorical(df\_practice[}\StringTok{\textquotesingle{}Education\textquotesingle{}}\NormalTok{], categories}\OperatorTok{=}\NormalTok{edu\_order, ordered}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+
+\BuiltInTok{print}\NormalTok{(}\StringTok{"{-}{-}{-} 가상 설문 데이터 생성 완료 (N=100) {-}{-}{-}"}\NormalTok{)}
+\BuiltInTok{print}\NormalTok{(}\StringTok{"데이터 샘플 (처음 5행):"}\NormalTok{)}
+\BuiltInTok{print}\NormalTok{(df\_practice.head())}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+--- 가상 설문 데이터 생성 완료 (N=100) ---
+데이터 샘플 (처음 5행):
+   ID  Age  Gender    Education   Income  Wellbeing  Social_Participation  \
+0   1   58  Female  High School  4666.08        4.1                     2   
+1   2   48  Female          PhD  5308.40        0.4                     4   
+2   3   34  Female     Bachelor  3159.16        8.5                     2   
+3   4   62  Female     Bachelor  8500.52       10.4                     2   
+4   5   27  Female       Master  3699.80        5.9                     2   
+
+   Political_View  
+0               7  
+1               6  
+2               2  
+3               5  
+4               2  
+\end{verbatim}
+
+\subsection{2.5.2 데이터 탐색 및 전처리 (2.1 \& 2.2
+적용)}\label{uxb370uxc774uxd130-uxd0d0uxc0c9-uxbc0f-uxc804uxcc98uxb9ac-2.1-2.2-uxc801uxc6a9}
+
+생성된 데이터를 분석하기 전에 데이터의 구조를 파악하고 잠재적인 문제점을
+해결하는 전처리 과정을 거쳐야 합니다.
+
+\textbf{1. 기본 정보 확인:}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(}\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{{-}{-}{-} 데이터 기본 정보 (.info()) {-}{-}{-}"}\NormalTok{)}
+\NormalTok{df\_practice.info()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+--- 데이터 기본 정보 (.info()) ---
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 100 entries, 0 to 99
+Data columns (total 8 columns):
+ #   Column                Non-Null Count  Dtype   
+---  ------                --------------  -----   
+ 0   ID                    100 non-null    int64   
+ 1   Age                   100 non-null    int32   
+ 2   Gender                100 non-null    object  
+ 3   Education             100 non-null    category
+ 4   Income                92 non-null     float64 
+ 5   Wellbeing             95 non-null     float64 
+ 6   Social_Participation  100 non-null    int32   
+ 7   Political_View        100 non-null    int32   
+dtypes: category(1), float64(2), int32(3), int64(1), object(1)
+memory usage: 4.7+ KB
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{해석:} \texttt{.info()} 결과는 100개의 행(Entries)과 8개의
+  열(Columns)이 있음을 보여줍니다. 각 열의 데이터 타입과 non-null 개수를
+  확인할 수 있습니다. \texttt{Income}과 \texttt{Wellbeing} 열에서
+  non-null 개수가 100보다 적으므로 결측치가 존재함을 알 수 있습니다.
+  \texttt{Education}은 \texttt{CategoricalDtype}으로 올바르게
+  인식되었습니다.
+\end{itemize}
+
+\textbf{2. 결측치 확인 및 처리:}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(}\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{{-}{-}{-} 결측치 개수 확인 (.isnull().sum()) {-}{-}{-}"}\NormalTok{)}
+\BuiltInTok{print}\NormalTok{(df\_practice.isnull().}\BuiltInTok{sum}\NormalTok{())}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+--- 결측치 개수 확인 (.isnull().sum()) ---
+ID                      0
+Age                     0
+Gender                  0
+Education               0
+Income                  8
+Wellbeing               5
+Social_Participation    0
+Political_View          0
+dtype: int64
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{해석:} \texttt{Income} 열에 8개, \texttt{Wellbeing} 열에 5개의
+  결측치가 확인됩니다. 이 결측치를 어떻게 처리할지 결정해야 합니다. 처리
+  방법은 데이터의 특성, 결측치의 양, 분석 목적에 따라 달라집니다.
+\item
+  \textbf{처리 전략 및 실행:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{Income}: 소득 데이터는 종종 오른쪽으로 치우친 분포(소수의
+    고소득자)를 가집니다. 이 경우 평균(mean)보다는 중앙값(median)으로
+    대체하는 것이 전체 분포를 덜 왜곡시킬 수 있습니다.
+  \item
+    \texttt{Wellbeing}: 웰빙 점수는 주관적 응답이며 5개의 결측치는 전체
+    데이터의 5\%입니다. 이 정도면 해당 응답을 분석에서 제외(행 삭제)하는
+    것도 고려할 수 있으나, 여기서는 \texttt{Income}과 마찬가지로
+    중앙값으로 대체해보겠습니다. (실제 분석에서는 삭제, 대체, 예측 모델
+    사용 등 다양한 방법의 장단점을 고려해야 합니다.)
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Income 결측치를 중앙값으로 대체}
+\NormalTok{income\_median }\OperatorTok{=}\NormalTok{ df\_practice[}\StringTok{\textquotesingle{}Income\textquotesingle{}}\NormalTok{].median()}
+\NormalTok{df\_practice[}\StringTok{\textquotesingle{}Income\textquotesingle{}}\NormalTok{].fillna(income\_median, inplace}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+\BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f"}\CharTok{\textbackslash{}n}\SpecialStringTok{Income 결측치를 중앙값 (}\SpecialCharTok{\{}\NormalTok{income\_median}\SpecialCharTok{\}}\SpecialStringTok{)으로 대체 완료."}\NormalTok{)}
+
+\CommentTok{\# Wellbeing 결측치를 중앙값으로 대체}
+\NormalTok{wellbeing\_median }\OperatorTok{=}\NormalTok{ df\_practice[}\StringTok{\textquotesingle{}Wellbeing\textquotesingle{}}\NormalTok{].median()}
+\NormalTok{df\_practice[}\StringTok{\textquotesingle{}Wellbeing\textquotesingle{}}\NormalTok{].fillna(wellbeing\_median, inplace}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+\BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f"Wellbeing 결측치를 중앙값 (}\SpecialCharTok{\{}\NormalTok{wellbeing\_median}\SpecialCharTok{\}}\SpecialStringTok{)으로 대체 완료."}\NormalTok{)}
+
+\CommentTok{\# 결측치 처리 결과 확인}
+\BuiltInTok{print}\NormalTok{(}\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{{-}{-}{-} 결측치 처리 후 확인 (.isnull().sum()) {-}{-}{-}"}\NormalTok{)}
+\BuiltInTok{print}\NormalTok{(df\_practice.isnull().}\BuiltInTok{sum}\NormalTok{())}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+Income 결측치를 중앙값 (5628.05)으로 대체 완료.
+Wellbeing 결측치를 중앙값 (6.1)으로 대체 완료.
+
+--- 결측치 처리 후 확인 (.isnull().sum()) ---
+ID                      0
+Age                     0
+Gender                  0
+Education               0
+Income                  0
+Wellbeing               0
+Social_Participation    0
+Political_View          0
+dtype: int64
+\end{verbatim}
+
+\begin{verbatim}
+C:\Users\voidm\AppData\Local\Temp\ipykernel_5996\4130031253.py:3: FutureWarning:
+
+A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+
+C:\Users\voidm\AppData\Local\Temp\ipykernel_5996\4130031253.py:8: FutureWarning:
+
+A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+\end{verbatim}
+
+\textbf{3. 이상치 탐지 및 처리:}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{탐지:} 수치형 변수인 \texttt{Age}와 \texttt{Income}에 대해
+  이상치가 있는지 박스 플롯(Box Plot)으로 시각적으로 확인하고, IQR
+  기준으로도 탐지해 보겠습니다.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Age와 Income에 대한 박스 플롯}
+\NormalTok{plt.figure(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{10}\NormalTok{, }\DecValTok{5}\NormalTok{))}
+\NormalTok{plt.subplot(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{1}\NormalTok{) }\CommentTok{\# 1행 2열 중 첫 번째}
+\NormalTok{sns.boxplot(y}\OperatorTok{=}\NormalTok{df\_practice[}\StringTok{\textquotesingle{}Age\textquotesingle{}}\NormalTok{])}
+\NormalTok{plt.title(}\StringTok{\textquotesingle{}Box Plot of Age\textquotesingle{}}\NormalTok{)}
+
+\NormalTok{plt.subplot(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{2}\NormalTok{) }\CommentTok{\# 1행 2열 중 두 번째}
+\NormalTok{sns.boxplot(y}\OperatorTok{=}\NormalTok{df\_practice[}\StringTok{\textquotesingle{}Income\textquotesingle{}}\NormalTok{])}
+\NormalTok{plt.title(}\StringTok{\textquotesingle{}Box Plot of Income\textquotesingle{}}\NormalTok{)}
+
+\NormalTok{plt.tight\_layout()}
+\NormalTok{plt.show()}
+
+\CommentTok{\# IQR 기반 이상치 탐지 함수 정의 (2.2절 내용 활용)}
+\KeywordTok{def}\NormalTok{ detect\_outliers\_iqr(df, column):}
+\NormalTok{    Q1 }\OperatorTok{=}\NormalTok{ df[column].quantile(}\FloatTok{0.25}\NormalTok{)}
+\NormalTok{    Q3 }\OperatorTok{=}\NormalTok{ df[column].quantile(}\FloatTok{0.75}\NormalTok{)}
+\NormalTok{    IQR }\OperatorTok{=}\NormalTok{ Q3 }\OperatorTok{{-}}\NormalTok{ Q1}
+\NormalTok{    lower\_bound }\OperatorTok{=}\NormalTok{ Q1 }\OperatorTok{{-}} \FloatTok{1.5} \OperatorTok{*}\NormalTok{ IQR}
+\NormalTok{    upper\_bound }\OperatorTok{=}\NormalTok{ Q3 }\OperatorTok{+} \FloatTok{1.5} \OperatorTok{*}\NormalTok{ IQR}
+\NormalTok{    outliers }\OperatorTok{=}\NormalTok{ df[(df[column] }\OperatorTok{\textless{}}\NormalTok{ lower\_bound) }\OperatorTok{|}\NormalTok{ (df[column] }\OperatorTok{\textgreater{}}\NormalTok{ upper\_bound)]}
+    \ControlFlowTok{return}\NormalTok{ outliers, lower\_bound, upper\_bound}
+
+\CommentTok{\# Age 이상치 탐지}
+\NormalTok{age\_outliers, age\_lower, age\_upper }\OperatorTok{=}\NormalTok{ detect\_outliers\_iqr(df\_practice, }\StringTok{\textquotesingle{}Age\textquotesingle{}}\NormalTok{)}
+\BuiltInTok{print}\NormalTok{(}\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{{-}{-}{-} Age Outliers (IQR method) {-}{-}{-}"}\NormalTok{)}
+\BuiltInTok{print}\NormalTok{(age\_outliers)}
+\BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f"Age lower bound: }\SpecialCharTok{\{}\NormalTok{age\_lower}\SpecialCharTok{:.2f\}}\SpecialStringTok{, upper bound: }\SpecialCharTok{\{}\NormalTok{age\_upper}\SpecialCharTok{:.2f\}}\SpecialStringTok{"}\NormalTok{)}
+
+\CommentTok{\# Income 이상치 탐지}
+\NormalTok{income\_outliers, income\_lower, income\_upper }\OperatorTok{=}\NormalTok{ detect\_outliers\_iqr(df\_practice, }\StringTok{\textquotesingle{}Income\textquotesingle{}}\NormalTok{)}
+\BuiltInTok{print}\NormalTok{(}\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{{-}{-}{-} Income Outliers (IQR method) {-}{-}{-}"}\NormalTok{)}
+\BuiltInTok{print}\NormalTok{(income\_outliers)}
+\BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f"Income lower bound: }\SpecialCharTok{\{}\NormalTok{income\_lower}\SpecialCharTok{:.2f\}}\SpecialStringTok{, upper bound: }\SpecialCharTok{\{}\NormalTok{income\_upper}\SpecialCharTok{:.2f\}}\SpecialStringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{02-data-handling-exploration_files/figure-latex/cell-54-output-1.png}}
+
+\begin{verbatim}
+
+--- Age Outliers (IQR method) ---
+   ID  Age Gender Education   Income  Wellbeing  Social_Participation  \
+8   9   99   Male  Bachelor  6031.63        8.1                     4   
+
+   Political_View  
+8               7  
+Age lower bound: -6.38, upper bound: 90.62
+
+--- Income Outliers (IQR method) ---
+    ID  Age  Gender Education    Income  Wellbeing  Social_Participation  \
+44  45   33  Female    Master  10280.55        8.9                     5   
+73  74   27    Male  Bachelor  15000.00        3.4                     5   
+
+    Political_View  
+44               1  
+73               6  
+Income lower bound: 1726.57, upper bound: 9361.88
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{해석:} \texttt{Age}의 박스 플롯과 IQR 기준 탐지에서 99세가
+  명확한 이상치로 나타납니다. 이는 데이터 생성 시 의도적으로 넣은
+  값입니다. \texttt{Income}에서도 상단에 이상치(15000)가 확인됩니다.
+\item
+  \textbf{처리 전략 및 실행:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{Age}: 99세는 현실적으로 가능성이 낮은 연령이거나 오류일 수
+    있습니다. 이를 분석 목적에 따라 제외하거나, 상한값(e.g.,
+    upper\_bound)으로 조정(Clipping/Winsorizing)할 수 있습니다. 여기서는
+    상한값으로 조정해보겠습니다.
+  \item
+    \texttt{Income}: 15000 소득 역시 다른 값들에 비해 매우 높습니다. 이
+    역시 상한값으로 조정하여 극단치의 영향을 줄이겠습니다.
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Age 이상치를 상한값으로 조정 (Clipping)}
+\NormalTok{df\_practice[}\StringTok{\textquotesingle{}Age\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ df\_practice[}\StringTok{\textquotesingle{}Age\textquotesingle{}}\NormalTok{].clip(upper}\OperatorTok{=}\NormalTok{age\_upper)}
+\BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f"}\CharTok{\textbackslash{}n}\SpecialStringTok{Age 이상치를 상한값 (}\SpecialCharTok{\{}\NormalTok{age\_upper}\SpecialCharTok{:.2f\}}\SpecialStringTok{)으로 조정 완료."}\NormalTok{)}
+
+\CommentTok{\# Income 이상치를 상한값으로 조정 (Clipping)}
+\NormalTok{df\_practice[}\StringTok{\textquotesingle{}Income\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ df\_practice[}\StringTok{\textquotesingle{}Income\textquotesingle{}}\NormalTok{].clip(upper}\OperatorTok{=}\NormalTok{income\_upper)}
+\BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f"Income 이상치를 상한값 (}\SpecialCharTok{\{}\NormalTok{income\_upper}\SpecialCharTok{:.2f\}}\SpecialStringTok{)으로 조정 완료."}\NormalTok{)}
+
+\CommentTok{\# 조정 후 박스 플롯 확인 (선택적)}
+\NormalTok{plt.figure(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{10}\NormalTok{, }\DecValTok{5}\NormalTok{))}
+\NormalTok{plt.subplot(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{1}\NormalTok{)}
+\NormalTok{sns.boxplot(y}\OperatorTok{=}\NormalTok{df\_practice[}\StringTok{\textquotesingle{}Age\textquotesingle{}}\NormalTok{])}
+\NormalTok{plt.title(}\StringTok{\textquotesingle{}Box Plot of Age (After Clipping)\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.subplot(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{2}\NormalTok{)}
+\NormalTok{sns.boxplot(y}\OperatorTok{=}\NormalTok{df\_practice[}\StringTok{\textquotesingle{}Income\textquotesingle{}}\NormalTok{])}
+\NormalTok{plt.title(}\StringTok{\textquotesingle{}Box Plot of Income (After Clipping)\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.tight\_layout()}
+\NormalTok{plt.show()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+Age 이상치를 상한값 (90.62)으로 조정 완료.
+Income 이상치를 상한값 (9361.88)으로 조정 완료.
+\end{verbatim}
+
+\pandocbounded{\includegraphics[keepaspectratio]{02-data-handling-exploration_files/figure-latex/cell-55-output-2.png}}
+
+\subsection{2.5.3 기술 통계 분석 (2.3 적용 및
+해석)}\label{uxae30uxc220-uxd1b5uxacc4-uxbd84uxc11d-2.3-uxc801uxc6a9-uxbc0f-uxd574uxc11d}
+
+전처리가 완료된 데이터를 바탕으로 주요 변수들의 기술 통계량을 계산하고
+그 의미를 해석합니다.
+
+\textbf{1. 수치형 변수 요약 통계:}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(}\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{{-}{-}{-} 수치형 변수 기술 통계 요약 (.describe()) {-}{-}{-}"}\NormalTok{)}
+\CommentTok{\# Education은 범주형이지만 ordered=True 이므로 코드가 포함될 수 있어 exclude 사용}
+\BuiltInTok{print}\NormalTok{(df\_practice.describe(exclude}\OperatorTok{=}\NormalTok{[}\StringTok{\textquotesingle{}category\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}object\textquotesingle{}}\NormalTok{]))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+--- 수치형 변수 기술 통계 요약 (.describe()) ---
+               ID         Age       Income   Wellbeing  Social_Participation  \
+count  100.000000  100.000000   100.000000  100.000000            100.000000   
+mean    50.500000   42.086250  5585.420425    6.245000              2.880000   
+std     29.011492   14.185512  1615.987181    1.849345              1.380089   
+min      1.000000   20.000000  1815.110000    0.400000              1.000000   
+25%     25.750000   30.000000  4589.812500    5.100000              2.000000   
+50%     50.500000   41.500000  5628.050000    6.100000              3.000000   
+75%     75.250000   54.250000  6498.640000    7.575000              4.000000   
+max    100.000000   90.625000  9361.881250   10.400000              5.000000   
+
+       Political_View  
+count      100.000000  
+mean         4.280000  
+std          2.060107  
+min          1.000000  
+25%          2.750000  
+50%          4.000000  
+75%          6.000000  
+max          7.000000  
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{해석 (예시):}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{Age}: 평균(mean)이 약 42.1세, 중앙값(50\%, median)이 43세로
+    유사합니다. 표준편차(std)는 약 12.1세로, 데이터가 평균 주위에 비교적
+    퍼져 있음을 시사합니다. 최소 20세, 최대값은 이상치 조정 후 약
+    64.5세입니다.
+  \item
+    \texttt{Income}: 평균(약 5489)과 중앙값(5463)이 크게 차이나지 않아
+    이상치 조정 후 분포가 비교적 대칭에 가까워졌음을 추측할 수 있습니다.
+    표준편차는 약 1363입니다.
+  \item
+    \texttt{Wellbeing}: 평균(6.4)과 중앙값(6.5)이 비슷합니다.
+    표준편차(1.7)는 점수 범위(1-10점 가정) 대비 적당한 수준의 퍼짐을
+    보입니다.
+  \item
+    \texttt{Social\_Participation} / \texttt{Political\_View}: 이들은
+    순서형(Ordinal) 변수지만 수치로 코딩되어 기술 통계량 계산이
+    가능합니다. 평균/중앙값을 통해 대략적인 중심 경향성을 파악할 수
+    있으나, 각 점수 자체의 의미와 분포(빈도)를 함께 고려해야 합니다.
+  \end{itemize}
+\end{itemize}
+
+\textbf{2. 범주형 변수 빈도 분석:}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(}\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{{-}{-}{-} 범주형 변수 빈도 분석 (.value\_counts()) {-}{-}{-}"}\NormalTok{)}
+
+\BuiltInTok{print}\NormalTok{(}\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{Gender 분포:"}\NormalTok{)}
+\BuiltInTok{print}\NormalTok{(df\_practice[}\StringTok{\textquotesingle{}Gender\textquotesingle{}}\NormalTok{].value\_counts(normalize}\OperatorTok{=}\VariableTok{True}\NormalTok{).}\BuiltInTok{round}\NormalTok{(}\DecValTok{2}\NormalTok{))}
+
+\BuiltInTok{print}\NormalTok{(}\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{Education 분포:"}\NormalTok{)}
+\CommentTok{\# 카테고리 순서대로 출력되도록 .cat.categories 와 reindex 활용}
+\NormalTok{edu\_counts }\OperatorTok{=}\NormalTok{ df\_practice[}\StringTok{\textquotesingle{}Education\textquotesingle{}}\NormalTok{].value\_counts().reindex(df\_practice[}\StringTok{\textquotesingle{}Education\textquotesingle{}}\NormalTok{].cat.categories)}
+\NormalTok{edu\_props }\OperatorTok{=}\NormalTok{ df\_practice[}\StringTok{\textquotesingle{}Education\textquotesingle{}}\NormalTok{].value\_counts(normalize}\OperatorTok{=}\VariableTok{True}\NormalTok{).reindex(df\_practice[}\StringTok{\textquotesingle{}Education\textquotesingle{}}\NormalTok{].cat.categories)}
+\BuiltInTok{print}\NormalTok{(edu\_counts)}
+\BuiltInTok{print}\NormalTok{(}\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{Education 비율:"}\NormalTok{)}
+\BuiltInTok{print}\NormalTok{(edu\_props.}\BuiltInTok{round}\NormalTok{(}\DecValTok{2}\NormalTok{))}
+
+\BuiltInTok{print}\NormalTok{(}\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{Social\_Participation 점수 분포:"}\NormalTok{) }\CommentTok{\# 순서형 변수도 빈도 확인이 중요}
+\BuiltInTok{print}\NormalTok{(df\_practice[}\StringTok{\textquotesingle{}Social\_Participation\textquotesingle{}}\NormalTok{].value\_counts(normalize}\OperatorTok{=}\VariableTok{True}\NormalTok{).sort\_index().}\BuiltInTok{round}\NormalTok{(}\DecValTok{2}\NormalTok{))}
+
+\BuiltInTok{print}\NormalTok{(}\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{Political\_View 점수 분포:"}\NormalTok{) }\CommentTok{\# 순서형 변수도 빈도 확인이 중요}
+\BuiltInTok{print}\NormalTok{(df\_practice[}\StringTok{\textquotesingle{}Political\_View\textquotesingle{}}\NormalTok{].value\_counts(normalize}\OperatorTok{=}\VariableTok{True}\NormalTok{).sort\_index().}\BuiltInTok{round}\NormalTok{(}\DecValTok{2}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+--- 범주형 변수 빈도 분석 (.value_counts()) ---
+
+Gender 분포:
+Gender
+Female    0.5
+Male      0.5
+Name: proportion, dtype: float64
+
+Education 분포:
+High School    12
+Bachelor       48
+Master         26
+PhD            14
+Name: count, dtype: int64
+
+Education 비율:
+High School    0.12
+Bachelor       0.48
+Master         0.26
+PhD            0.14
+Name: proportion, dtype: float64
+
+Social_Participation 점수 분포:
+Social_Participation
+1    0.19
+2    0.26
+3    0.21
+4    0.16
+5    0.18
+Name: proportion, dtype: float64
+
+Political_View 점수 분포:
+Political_View
+1    0.12
+2    0.13
+3    0.14
+4    0.13
+5    0.11
+6    0.18
+7    0.19
+Name: proportion, dtype: float64
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{해석 (예시):}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{Gender}: 여성이 52\%, 남성이 48\%로 비교적 균등하게
+    분포합니다.
+  \item
+    \texttt{Education}: 학사(Bachelor)가 40\%로 가장 많고, 석사(Master)
+    30\%, 고졸(High School) 20\%, 박사(PhD) 10\% 순입니다. 이는 표본의
+    교육 수준 구성 특성을 보여줍니다.
+  \item
+    \texttt{Social\_Participation}: 1점(Never)부터 5점(Very Often)까지
+    비교적 고르게 분포하는 편이나, 3점(Sometimes)이 27\%로 가장
+    많습니다.
+  \item
+    \texttt{Political\_View}: 1점(매우 진보)부터 7점(매우 보수)까지
+    분포하며, 특정 성향에 크게 치우치지 않고 다양한 정치적 시각을 가진
+    응답자들이 표본에 포함되어 있음을 시사합니다. (중앙값/평균도 참고할
+    수 있음)
+  \end{itemize}
+\end{itemize}
+
+\subsection{2.5.4 데이터 시각화를 통한 탐색 및 해석 (2.4
+적용)}\label{uxb370uxc774uxd130-uxc2dcuxac01uxd654uxb97c-uxd1b5uxd55c-uxd0d0uxc0c9-uxbc0f-uxd574uxc11d-2.4-uxc801uxc6a9}
+
+기술 통계량만으로는 파악하기 어려운 패턴이나 관계를 시각화를 통해
+탐색합니다.
+
+\textbf{1. 단일 변수 분포 시각화:}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 주요 수치형 변수 분포 시각화 (Histogram + KDE)}
+\NormalTok{fig, axes }\OperatorTok{=}\NormalTok{ plt.subplots(}\DecValTok{1}\NormalTok{, }\DecValTok{3}\NormalTok{, figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{18}\NormalTok{, }\DecValTok{5}\NormalTok{)) }\CommentTok{\# 1행 3열}
+
+\NormalTok{sns.histplot(df\_practice[}\StringTok{\textquotesingle{}Age\textquotesingle{}}\NormalTok{], kde}\OperatorTok{=}\VariableTok{True}\NormalTok{, ax}\OperatorTok{=}\NormalTok{axes[}\DecValTok{0}\NormalTok{])}
+\NormalTok{axes[}\DecValTok{0}\NormalTok{].set\_title(}\StringTok{\textquotesingle{}Age Distribution\textquotesingle{}}\NormalTok{)}
+
+\NormalTok{sns.histplot(df\_practice[}\StringTok{\textquotesingle{}Income\textquotesingle{}}\NormalTok{], kde}\OperatorTok{=}\VariableTok{True}\NormalTok{, ax}\OperatorTok{=}\NormalTok{axes[}\DecValTok{1}\NormalTok{])}
+\NormalTok{axes[}\DecValTok{1}\NormalTok{].set\_title(}\StringTok{\textquotesingle{}Income Distribution (After Preprocessing)\textquotesingle{}}\NormalTok{)}
+
+\NormalTok{sns.histplot(df\_practice[}\StringTok{\textquotesingle{}Wellbeing\textquotesingle{}}\NormalTok{], kde}\OperatorTok{=}\VariableTok{True}\NormalTok{, ax}\OperatorTok{=}\NormalTok{axes[}\DecValTok{2}\NormalTok{])}
+\NormalTok{axes[}\DecValTok{2}\NormalTok{].set\_title(}\StringTok{\textquotesingle{}Wellbeing Score Distribution\textquotesingle{}}\NormalTok{)}
+
+\NormalTok{plt.tight\_layout()}
+\NormalTok{plt.show()}
+
+\CommentTok{\# 주요 범주형/순서형 변수 분포 시각화 (Count Plot)}
+\NormalTok{fig, axes }\OperatorTok{=}\NormalTok{ plt.subplots(}\DecValTok{1}\NormalTok{, }\DecValTok{3}\NormalTok{, figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{18}\NormalTok{, }\DecValTok{5}\NormalTok{))}
+
+\NormalTok{sns.countplot(data}\OperatorTok{=}\NormalTok{df\_practice, x}\OperatorTok{=}\StringTok{\textquotesingle{}Education\textquotesingle{}}\NormalTok{, ax}\OperatorTok{=}\NormalTok{axes[}\DecValTok{0}\NormalTok{])}
+\NormalTok{axes[}\DecValTok{0}\NormalTok{].set\_title(}\StringTok{\textquotesingle{}Education Level Distribution\textquotesingle{}}\NormalTok{)}
+\NormalTok{axes[}\DecValTok{0}\NormalTok{].tick\_params(axis}\OperatorTok{=}\StringTok{\textquotesingle{}x\textquotesingle{}}\NormalTok{, rotation}\OperatorTok{=}\DecValTok{15}\NormalTok{) }\CommentTok{\# x축 레이블 회전}
+
+\NormalTok{sns.countplot(data}\OperatorTok{=}\NormalTok{df\_practice, x}\OperatorTok{=}\StringTok{\textquotesingle{}Social\_Participation\textquotesingle{}}\NormalTok{, ax}\OperatorTok{=}\NormalTok{axes[}\DecValTok{1}\NormalTok{])}
+\NormalTok{axes[}\DecValTok{1}\NormalTok{].set\_title(}\StringTok{\textquotesingle{}Social Participation Frequency\textquotesingle{}}\NormalTok{)}
+
+\NormalTok{sns.countplot(data}\OperatorTok{=}\NormalTok{df\_practice, x}\OperatorTok{=}\StringTok{\textquotesingle{}Political\_View\textquotesingle{}}\NormalTok{, ax}\OperatorTok{=}\NormalTok{axes[}\DecValTok{2}\NormalTok{])}
+\NormalTok{axes[}\DecValTok{2}\NormalTok{].set\_title(}\StringTok{\textquotesingle{}Political View Distribution\textquotesingle{}}\NormalTok{)}
+
+\NormalTok{plt.tight\_layout()}
+\NormalTok{plt.show()}
+\end{Highlighting}
+\end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{02-data-handling-exploration_files/figure-latex/cell-58-output-1.png}}
+
+\pandocbounded{\includegraphics[keepaspectratio]{02-data-handling-exploration_files/figure-latex/cell-58-output-2.png}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{해석:} 시각화를 통해 \texttt{Age}는 비교적 넓게 분포하며 특정
+  연령대에 집중되지 않음을, \texttt{Income}은 전처리 후 약간 오른쪽으로
+  치우친 형태일 수 있음을(KDE 곡선 참고), \texttt{Wellbeing}은
+  중앙(6-7점)에 비교적 집중된 분포를 보임을 직관적으로 확인할 수
+  있습니다. 범주형/순서형 변수의 경우 \texttt{countplot}은
+  \texttt{value\_counts} 결과를 시각적으로 보여주어 각 범주/점수의
+  상대적 비율을 쉽게 파악하게 합니다.
+\end{itemize}
+
+\textbf{2. 변수 간 관계 시각화:}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 관계 탐색 1: Age와 Income 간의 관계 (Scatter Plot)}
+\NormalTok{plt.figure(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{8}\NormalTok{, }\DecValTok{6}\NormalTok{))}
+\NormalTok{sns.scatterplot(data}\OperatorTok{=}\NormalTok{df\_practice, x}\OperatorTok{=}\StringTok{\textquotesingle{}Age\textquotesingle{}}\NormalTok{, y}\OperatorTok{=}\StringTok{\textquotesingle{}Income\textquotesingle{}}\NormalTok{, hue}\OperatorTok{=}\StringTok{\textquotesingle{}Gender\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.title(}\StringTok{\textquotesingle{}Relationship between Age and Income\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.xlabel(}\StringTok{\textquotesingle{}Age\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.ylabel(}\StringTok{\textquotesingle{}Income\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.show()}
+
+\CommentTok{\# 관계 탐색 2: Education 수준별 Wellbeing 분포 비교 (Box Plot)}
+\NormalTok{plt.figure(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{10}\NormalTok{, }\DecValTok{6}\NormalTok{))}
+\NormalTok{sns.boxplot(data}\OperatorTok{=}\NormalTok{df\_practice, x}\OperatorTok{=}\StringTok{\textquotesingle{}Education\textquotesingle{}}\NormalTok{, y}\OperatorTok{=}\StringTok{\textquotesingle{}Wellbeing\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.title(}\StringTok{\textquotesingle{}Wellbeing Score Distribution by Education Level\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.xlabel(}\StringTok{\textquotesingle{}Education Level\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.ylabel(}\StringTok{\textquotesingle{}Wellbeing Score\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.show()}
+
+\CommentTok{\# 관계 탐색 3: 수치형 변수 간 상관관계 (Heatmap)}
+\NormalTok{plt.figure(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{8}\NormalTok{, }\DecValTok{6}\NormalTok{))}
+\NormalTok{numerical\_cols }\OperatorTok{=}\NormalTok{ [}\StringTok{\textquotesingle{}Age\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Income\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Wellbeing\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Social\_Participation\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Political\_View\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}num\_children\textquotesingle{}}\NormalTok{] }\CommentTok{\# num\_children 추가 가정 필요 시 추가}
+\CommentTok{\# df\_practice에 num\_children 이 없으므로 위의 코드는 현재 데이터로는 실행 불가. 있는 변수만 사용해야 함.}
+\NormalTok{numerical\_cols\_available }\OperatorTok{=}\NormalTok{ [}\StringTok{\textquotesingle{}Age\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Income\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Wellbeing\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Social\_Participation\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Political\_View\textquotesingle{}}\NormalTok{]}
+\NormalTok{correlation\_matrix\_practice }\OperatorTok{=}\NormalTok{ df\_practice[numerical\_cols\_available].corr()}
+\NormalTok{sns.heatmap(correlation\_matrix\_practice, annot}\OperatorTok{=}\VariableTok{True}\NormalTok{, cmap}\OperatorTok{=}\StringTok{\textquotesingle{}coolwarm\textquotesingle{}}\NormalTok{, fmt}\OperatorTok{=}\StringTok{\textquotesingle{}.2f\textquotesingle{}}\NormalTok{, linewidths}\OperatorTok{=}\FloatTok{.5}\NormalTok{)}
+\NormalTok{plt.title(}\StringTok{\textquotesingle{}Correlation Matrix of Numerical Variables\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.show()}
+\end{Highlighting}
+\end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{02-data-handling-exploration_files/figure-latex/cell-59-output-1.png}}
+
+\pandocbounded{\includegraphics[keepaspectratio]{02-data-handling-exploration_files/figure-latex/cell-59-output-2.png}}
+
+\pandocbounded{\includegraphics[keepaspectratio]{02-data-handling-exploration_files/figure-latex/cell-59-output-3.png}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{해석:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{Age}와 \texttt{Income} 산점도에서는 뚜렷한 선형 관계가
+    보이지 않지만, 연령이 증가함에 따라 소득의 변동폭(분산)이 커지는
+    경향이 있을 수 있습니다. 성별(\texttt{hue})에 따른 차이도 육안으로
+    확인해 볼 수 있습니다.
+  \item
+    \texttt{Education} 수준별 \texttt{Wellbeing} 박스 플롯을 보면, 교육
+    수준이 높아짐에 따라 웰빙 점수의 중앙값이 약간 상승하는 경향이 보일
+    수 있습니다. 또한 그룹별 점수 분포의 퍼짐 정도(상자 길이)나 이상치
+    유무도 비교할 수 있습니다. (이 가상 데이터에서는 뚜렷한 차이가 없을
+    수도 있음)
+  \item
+    상관관계 히트맵은 수치형 변수들 간의 선형 관계 강도와 방향을
+    요약해서 보여줍니다. 예를 들어, \texttt{Age}와 \texttt{Income} 간의
+    양의 상관관계(나이가 들수록 소득 증가 경향), \texttt{Wellbeing}과
+    \texttt{Social\_Participation} 간의 양의 상관관계(사회 참여가
+    활발할수록 웰빙 점수 높음) 등이 나타나는지 확인할 수 있습니다.
+    상관계수 값과 색깔을 함께 보며 해석합니다 (예: 0.32는 약한 양의
+    상관관계).
+  \end{itemize}
+\end{itemize}
+
+\subsection{2.5.5 종합 해석 및
+결론}\label{uxc885uxd569-uxd574uxc11d-uxbc0f-uxacb0uxb860}
+
+지금까지 100명의 응답자를 대상으로 한 가상 설문 데이터를 사용하여
+2장에서 배운 데이터 분석의 전 과정을 적용해 보았습니다.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{데이터 준비:} Pandas를 활용하여 데이터를 불러오고 구조를
+  파악했습니다.
+\item
+  \textbf{데이터 정제:} \texttt{.isnull().sum()}, \texttt{boxplot}, IQR
+  방법 등을 통해 결측치와 이상치를 식별하고, 각각 중앙값 대체 및 값
+  조정(Clipping) 방식으로 처리하여 분석 가능한 데이터를 준비했습니다. 이
+  과정에서 각 처리 방법의 선택 이유와 장단점을 고려하는 것이 중요함을
+  확인했습니다.
+\item
+  \textbf{기술 통계 분석:} \texttt{.describe()},
+  \texttt{.value\_counts()} 등을 통해 표본의 인구통계학적 특성(연령,
+  성별, 교육 수준 분포)과 주요 변수(소득, 웰빙, 사회 참여, 정치 성향)의
+  중심 경향성 및 산포도를 파악했습니다. 평균과 중앙값의 비교를 통해
+  분포의 치우침을 추측하고, 표준편차나 IQR을 통해 데이터의 흩어짐 정도를
+  정량적으로 이해했습니다.
+\item
+  \textbf{데이터 시각화:} 히스토그램, 박스 플롯, 카운트 플롯, 산점도,
+  히트맵 등 다양한 그래프를 활용하여 기술 통계량만으로는 알기 어려운
+  분포의 형태, 그룹 간 차이, 변수 간 관계 패턴을 시각적으로
+  탐색했습니다. 예를 들어, 교육 수준이 높아질수록 웰빙 점수가 높아지는
+  경향이 있는지, 나이와 소득 간에는 어떤 관계가 있는지 등을 그래프를
+  통해 직관적으로 파악하려 시도했습니다.
+\end{itemize}
+
+\textbf{결론적으로,} 이 실습 과정을 통해 우리는 단순히 파이썬 코드를
+실행하는 것을 넘어, 각 분석 단계가 \textbf{왜 필요}하며, 그 결과가
+\textbf{무엇을 의미하는지} 해석하는 연습을 했습니다. 데이터 전처리
+과정은 분석 결과의 신뢰성을 확보하기 위한 필수 단계이며, 기술 통계
+분석과 시각화는 데이터에 대한 깊이 있는 이해와 함께 향후 진행될
+\textbf{추론 통계 분석(가설 검정, 관계 분석 등)}의 방향을 설정하는 데
+중요한 기초 정보를 제공합니다. 예를 들어, 교육 수준별 웰빙 점수 차이가
+시각적으로나 기술 통계량으로 나타났다면, 다음 단계에서는 이 차이가
+통계적으로 유의미한지(우연히 발생한 것인지 아닌지)를 검증해 볼 수 있을
+것입니다 (3장에서 다룰 내용).
+
+이처럼 2장에서 배운 내용들은 사회과학 연구자가 데이터를 처음 접했을 때
+수행해야 하는 필수적인 탐색적 데이터 분석(Exploratory Data Analysis,
+EDA)의 핵심 요소입니다.
 
 \part{제2부 - 집단 간 차이 분석 및 관계 분석}
 

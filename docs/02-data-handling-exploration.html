@@ -383,6 +383,23 @@ window.Quarto = {
   <li><a href="#모든-변수-요약-.describe-메서드-활용" id="toc-모든-변수-요약-.describe-메서드-활용" class="nav-link" data-scroll-target="#모든-변수-요약-.describe-메서드-활용"><span class="header-section-number">2.3.6</span> 2.3.5 모든 변수 요약: <code>.describe()</code> 메서드 활용</a></li>
   <li><a href="#기술-통계-분석의-중요성" id="toc-기술-통계-분석의-중요성" class="nav-link" data-scroll-target="#기술-통계-분석의-중요성"><span class="header-section-number">2.3.7</span> 2.3.6 기술 통계 분석의 중요성</a></li>
   </ul></li>
+  <li><a href="#sec-visualization" id="toc-sec-visualization" class="nav-link" data-scroll-target="#sec-visualization"><span class="header-section-number">2.4</span> 2.4 데이터 시각화: Matplotlib와 Seaborn 활용</a>
+  <ul class="collapse">
+  <li><a href="#시각화-라이브러리-준비" id="toc-시각화-라이브러리-준비" class="nav-link" data-scroll-target="#시각화-라이브러리-준비"><span class="header-section-number">2.4.1</span> 시각화 라이브러리 준비</a></li>
+  <li><a href="#단일-변수-시각화-univariate-visualization" id="toc-단일-변수-시각화-univariate-visualization" class="nav-link" data-scroll-target="#단일-변수-시각화-univariate-visualization"><span class="header-section-number">2.4.2</span> 2.4.1 단일 변수 시각화 (Univariate Visualization)</a></li>
+  <li><a href="#이변량-시각화-bivariate-visualization" id="toc-이변량-시각화-bivariate-visualization" class="nav-link" data-scroll-target="#이변량-시각화-bivariate-visualization"><span class="header-section-number">2.4.3</span> 2.4.2 이변량 시각화 (Bivariate Visualization)</a></li>
+  <li><a href="#다변수-시각화-간략-소개-brief-introduction-to-multivariate-visualization" id="toc-다변수-시각화-간략-소개-brief-introduction-to-multivariate-visualization" class="nav-link" data-scroll-target="#다변수-시각화-간략-소개-brief-introduction-to-multivariate-visualization"><span class="header-section-number">2.4.4</span> 2.4.3 다변수 시각화 간략 소개 (Brief Introduction to Multivariate Visualization)</a></li>
+  <li><a href="#그래프-꾸미기-및-저장-customization-and-saving-plots" id="toc-그래프-꾸미기-및-저장-customization-and-saving-plots" class="nav-link" data-scroll-target="#그래프-꾸미기-및-저장-customization-and-saving-plots"><span class="header-section-number">2.4.5</span> 2.4.4 그래프 꾸미기 및 저장 (Customization and Saving Plots)</a></li>
+  <li><a href="#데이터-시각화의-중요성" id="toc-데이터-시각화의-중요성" class="nav-link" data-scroll-target="#데이터-시각화의-중요성"><span class="header-section-number">2.4.6</span> 2.4.5 데이터 시각화의 중요성</a></li>
+  </ul></li>
+  <li><a href="#sec-chapter2-practice" id="toc-sec-chapter2-practice" class="nav-link" data-scroll-target="#sec-chapter2-practice"><span class="header-section-number">2.5</span> 2.5 실전 연습: 설문조사 데이터 종합 분석 및 해석</a>
+  <ul class="collapse">
+  <li><a href="#실습용-가상-데이터-생성-n100" id="toc-실습용-가상-데이터-생성-n100" class="nav-link" data-scroll-target="#실습용-가상-데이터-생성-n100"><span class="header-section-number">2.5.1</span> 2.5.1 실습용 가상 데이터 생성 (N=100)</a></li>
+  <li><a href="#데이터-탐색-및-전처리-2.1-2.2-적용" id="toc-데이터-탐색-및-전처리-2.1-2.2-적용" class="nav-link" data-scroll-target="#데이터-탐색-및-전처리-2.1-2.2-적용"><span class="header-section-number">2.5.2</span> 2.5.2 데이터 탐색 및 전처리 (2.1 &amp; 2.2 적용)</a></li>
+  <li><a href="#기술-통계-분석-2.3-적용-및-해석" id="toc-기술-통계-분석-2.3-적용-및-해석" class="nav-link" data-scroll-target="#기술-통계-분석-2.3-적용-및-해석"><span class="header-section-number">2.5.3</span> 2.5.3 기술 통계 분석 (2.3 적용 및 해석)</a></li>
+  <li><a href="#데이터-시각화를-통한-탐색-및-해석-2.4-적용" id="toc-데이터-시각화를-통한-탐색-및-해석-2.4-적용" class="nav-link" data-scroll-target="#데이터-시각화를-통한-탐색-및-해석-2.4-적용"><span class="header-section-number">2.5.4</span> 2.5.4 데이터 시각화를 통한 탐색 및 해석 (2.4 적용)</a></li>
+  <li><a href="#종합-해석-및-결론" id="toc-종합-해석-및-결론" class="nav-link" data-scroll-target="#종합-해석-및-결론"><span class="header-section-number">2.5.5</span> 2.5.5 종합 해석 및 결론</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -449,7 +466,7 @@ window.Quarto = {
 <li>각 내부 리스트는 DataFrame의 한 행을 나타냅니다.</li>
 </ul></li>
 </ul>
-<div id="187f7714" class="cell" data-execution_count="1">
+<div id="d8fc39c1" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> [[<span class="st">'Alice'</span>, <span class="dv">25</span>, <span class="st">'Female'</span>], [<span class="st">'Bob'</span>, <span class="dv">30</span>, <span class="st">'Male'</span>], [<span class="st">'Charlie'</span>, <span class="dv">28</span>, <span class="st">'Male'</span>]]</span>
@@ -469,7 +486,7 @@ window.Quarto = {
 <li>딕셔너리의 키(Key)는 DataFrame의 열 이름이 되고, 값(Value)은 열 데이터가 됩니다.</li>
 </ul></li>
 </ul>
-<div id="c5a30b86" class="cell" data-execution_count="2">
+<div id="a5cd0083" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> {<span class="st">'Name'</span>: [<span class="st">'Alice'</span>, <span class="st">'Bob'</span>, <span class="st">'Charlie'</span>], <span class="st">'Age'</span>: [<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">28</span>], <span class="st">'Gender'</span>: [<span class="st">'Female'</span>, <span class="st">'Male'</span>, <span class="st">'Male'</span>]}</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> pd.DataFrame(data)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(df)</span>
@@ -488,7 +505,7 @@ window.Quarto = {
 <li><code>pd.read_csv()</code> 함수를 사용합니다.</li>
 </ul></li>
 </ul>
-<div id="cbf53e0b" class="cell" data-execution_count="3">
+<div id="92156915" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> pd.read_csv(<span class="st">'data.csv'</span>) <span class="co"># data.csv 파일로부터 DataFrame 생성</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -541,7 +558,7 @@ window.Quarto = {
 <li>기본적으로 처음 5행을 표시하며, 괄호 안에 숫자를 넣어 표시할 행 수를 지정할 수 있습니다.</li>
 </ul></li>
 </ul>
-<div id="971bc048" class="cell" data-execution_count="4">
+<div id="a2d00031" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(df.head()) <span class="co"># 처음 5행 표시</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(df.head(<span class="dv">10</span>)) <span class="co"># 처음 10행 표시</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -561,7 +578,7 @@ window.Quarto = {
 <li>DataFrame의 구조, 열 이름, 데이터 유형, 결측치 개수 등을 요약하여 표시합니다.</li>
 </ul></li>
 </ul>
-<div id="250c5575" class="cell" data-execution_count="5">
+<div id="04a082f4" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(df.info())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
@@ -583,7 +600,7 @@ None</code></pre>
 <li>수치형 열에 대한 기술 통계량(평균, 표준편차, 최소값, 최대값, 사분위수 등)을 요약하여 표시합니다.</li>
 </ul></li>
 </ul>
-<div id="d3060579" class="cell" data-execution_count="6">
+<div id="be05d6eb" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(df.describe())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>             Age
@@ -639,7 +656,7 @@ max    30.000000</code></pre>
 <li>열 이름을 사용하여 열을 선택합니다.</li>
 </ul></li>
 </ul>
-<div id="626292c7" class="cell" data-execution_count="7">
+<div id="e35b8c8f" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(df[<span class="st">'Name'</span>]) <span class="co"># 'Name' 열 선택</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(df[[<span class="st">'Name'</span>, <span class="st">'Age'</span>]]) <span class="co"># 'Name'과 'Age' 열 선택</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -659,7 +676,7 @@ Name: Name, dtype: object
 <li>행과 열의 레이블을 사용하여 데이터에 접근합니다.</li>
 </ul></li>
 </ul>
-<div id="96d12f2c" class="cell" data-execution_count="8">
+<div id="da340459" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(df.loc[<span class="dv">0</span>]) <span class="co"># 0번 행 선택</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(df.loc[<span class="dv">0</span>:<span class="dv">2</span>, <span class="st">'Name'</span>]) <span class="co"># 0번부터 2번 행까지, 'Name' 열 선택</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(df.loc[:, [<span class="st">'Name'</span>, <span class="st">'Age'</span>]]) <span class="co"># 모든 행, 'Name'과 'Age' 열 선택</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -684,7 +701,7 @@ Name: Name, dtype: object
 <li>행과 열의 정수 인덱스를 사용하여 데이터에 접근합니다.</li>
 </ul></li>
 </ul>
-<div id="64801c65" class="cell" data-execution_count="9">
+<div id="c53a9814" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(df.iloc[<span class="dv">0</span>]) <span class="co"># 0번 행 선택</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(df.iloc[<span class="dv">0</span>:<span class="dv">2</span>, <span class="dv">0</span>]) <span class="co"># 0번부터 2번 행까지, 0번 열 선택</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(df.iloc[:, [<span class="dv">0</span>, <span class="dv">1</span>]]) <span class="co"># 모든 행, 0번과 1번 열 선택</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -741,21 +758,21 @@ Name: Name, dtype: object
 <li><p><strong>(시각 자료 예시:</strong> DataFrame 데이터 조작 방법을 보여주는 그림. 새로운 열 추가, 열 삭제, 데이터 필터링, 정렬 등을 수행하는 과정을 간략하게 보여주는 그림)</p></li>
 <li><p><strong>새로운 열 추가:</strong></p></li>
 </ul>
-<div id="30f8b1b8" class="cell" data-execution_count="10">
+<div id="d2a7228c" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>    df[<span class="st">'Salary'</span>] <span class="op">=</span> [<span class="dv">50000</span>, <span class="dv">60000</span>, <span class="dv">55000</span>] <span class="co"># 'Salary' 열 추가</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    df[<span class="st">'Age_Plus_10'</span>] <span class="op">=</span> df[<span class="st">'Age'</span>] <span class="op">+</span> <span class="dv">10</span> <span class="co"># 'Age' 열을 이용하여 'Age_Plus_10' 열 추가</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li><strong>데이터 필터링:</strong></li>
 </ul>
-<div id="3516b906" class="cell" data-execution_count="11">
+<div id="4b144110" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>    df_filtered <span class="op">=</span> df[df[<span class="st">'Age'</span>] <span class="op">&gt;</span> <span class="dv">28</span>] <span class="co"># 'Age' 열이 28보다 큰 행만 선택</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    df_filtered <span class="op">=</span> df[(df[<span class="st">'Age'</span>] <span class="op">&gt;</span> <span class="dv">25</span>) <span class="op">&amp;</span> (df[<span class="st">'Gender'</span>] <span class="op">==</span> <span class="st">'Male'</span>)] <span class="co"># 'Age' 열이 25보다 크고 'Gender' 열이 'Male'인 행만 선택</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li><strong>데이터 정렬:</strong></li>
 </ul>
-<div id="a7d6da6f" class="cell" data-execution_count="12">
+<div id="18a082e8" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>    df_sorted <span class="op">=</span> df.sort_values(by<span class="op">=</span><span class="st">'Age'</span>, ascending<span class="op">=</span><span class="va">True</span>) <span class="co"># 'Age' 열을 기준으로 오름차순 정렬</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    df_sorted <span class="op">=</span> df.sort_values(by<span class="op">=</span>[<span class="st">'Gender'</span>, <span class="st">'Age'</span>], ascending<span class="op">=</span>[<span class="va">True</span>, <span class="va">False</span>]) <span class="co"># 'Gender' 열을 기준으로 오름차순 정렬 후, 'Age' 열을 기준으로 내림차순 정렬</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -798,7 +815,7 @@ Name: Name, dtype: object
 <ul>
 <li><strong>열 삭제:</strong></li>
 </ul>
-<div id="a3fa901b" class="cell" data-execution_count="13">
+<div id="89227b98" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">'Gender'</span>]) <span class="co"># 'Gender' 열 삭제</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -826,7 +843,7 @@ Name: Name, dtype: object
 </ul></li>
 </ul></li>
 </ul>
-<div id="d2811d65" class="cell" data-execution_count="14">
+<div id="8c7dbaa5" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>    <span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 예시 DataFrame 생성</span></span>
@@ -852,7 +869,7 @@ dtype: int64</code></pre>
     * `dropna()` 함수를 사용하여 결측치를 포함하는 행 또는 열을 삭제할 수 있습니다.
     * `axis` 매개변수를 사용하여 행(0) 또는 열(1) 삭제를 지정할 수 있습니다.
     * `how` 매개변수를 사용하여 모든 값이 결측치인 경우(`'all'`) 또는 하나라도 결측치가 있는 경우(`'any'`)를 지정할 수 있습니다.</code></pre>
-<div id="d097318a" class="cell" data-execution_count="15">
+<div id="5d640db7" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>    df_dropped_row <span class="op">=</span> df.dropna(axis<span class="op">=</span><span class="dv">0</span>)</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    df_dropped_col <span class="op">=</span> df.dropna(axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    df_dropped_all <span class="op">=</span> df.dropna(axis<span class="op">=</span><span class="dv">0</span>, how<span class="op">=</span><span class="st">'all'</span>)</span>
@@ -879,7 +896,7 @@ Index: [0, 1, 2, 3, 4]
     * `value` 매개변수를 사용하여 대체할 값을 지정할 수 있습니다.
     * `method` 매개변수를 사용하여 이전 값(`'ffill'`) 또는 다음 값(`'bfill'`)으로 대체할 수 있습니다.
     * `mean()`, `median()`, `mode()` 등 통계 함수를 사용하여 대체값을 계산할 수 있습니다.</code></pre>
-<div id="48173a01" class="cell" data-execution_count="16">
+<div id="b4ab0f30" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>    df_filled_0 <span class="op">=</span> df.fillna(<span class="dv">0</span>)</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    df_filled_mean <span class="op">=</span> df.fillna(df.mean(numeric_only<span class="op">=</span><span class="va">True</span>))</span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    df_filled_ffill <span class="op">=</span> df.fillna(method<span class="op">=</span><span class="st">'ffill'</span>)</span>
@@ -907,7 +924,7 @@ Index: [0, 1, 2, 3, 4]
 4  5.0  10.0  e</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>C:\Users\voidm\AppData\Local\Temp\ipykernel_6684\912558651.py:3: FutureWarning:
+<pre><code>C:\Users\voidm\AppData\Local\Temp\ipykernel_34244\912558651.py:3: FutureWarning:
 
 DataFrame.fillna with 'method' is deprecated and will raise in a future version. Use obj.ffill() or obj.bfill() instead.
 </code></pre>
@@ -931,7 +948,7 @@ DataFrame.fillna with 'method' is deprecated and will raise in a future version.
 </ul></li>
 </ul></li>
 </ul>
-<div id="88ec9abc" class="cell" data-execution_count="17">
+<div id="9b15e33a" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>    <span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>    <span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -956,7 +973,7 @@ DataFrame.fillna with 'method' is deprecated and will raise in a future version.
 </div>
 </div>
 <pre><code>    * **통계적 방법:** Z-점수, 사분위 범위(Interquartile Range, IQR) 등을 사용하여 이상치를 탐지할 수 있습니다.</code></pre>
-<div id="599ac374" class="cell" data-execution_count="18">
+<div id="38c41a22" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>    Q1 <span class="op">=</span> df[<span class="st">'B'</span>].quantile(<span class="fl">0.25</span>)</span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>    Q3 <span class="op">=</span> df[<span class="st">'B'</span>].quantile(<span class="fl">0.75</span>)</span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    IQR <span class="op">=</span> Q3 <span class="op">-</span> Q1</span>
@@ -974,7 +991,7 @@ Index: []</code></pre>
     * **삭제:** 이상치를 포함하는 행 또는 열을 삭제합니다.
     * **대체:** 이상치를 특정 값(평균, 중앙값, 최빈값 등)으로 대체하거나, 상한/하한 값으로 제한합니다.
     * **변환:** 로그 변환, 제곱근 변환 등을 통해 이상치의 영향을 줄입니다.</code></pre>
-<div id="bae17834" class="cell" data-execution_count="19">
+<div id="e7a3d31e" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>    df_clipped <span class="op">=</span> df.copy()</span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>    df_clipped[<span class="st">'B'</span>] <span class="op">=</span> df_clipped[<span class="st">'B'</span>].clip(lower<span class="op">=</span>lower_bound, upper<span class="op">=</span>upper_bound)</span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(df_clipped)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1008,7 +1025,7 @@ Index: []</code></pre>
 <span class="math inline">\(Z = \frac{X - \mu}{\sigma}\)</span></li>
 </ul></li>
 </ul>
-<div id="82aaafd5" class="cell" data-execution_count="20">
+<div id="0a0c1572" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>    <span class="im">from</span> sklearn.preprocessing <span class="im">import</span> StandardScaler</span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>    scaler <span class="op">=</span> StandardScaler()</span>
@@ -1026,7 +1043,7 @@ Index: []</code></pre>
 <pre><code>    * **정규화(Normalization):** 변수의 값을 0과 1 사이의 범위로 변환합니다.
 
     $X_{scaled} = \frac{X - X_{min}}{X_{max} - X_{min}}$</code></pre>
-<div id="c1b73f72" class="cell" data-execution_count="21">
+<div id="46871025" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>    <span class="im">from</span> sklearn.preprocessing <span class="im">import</span> MinMaxScaler</span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>    scaler <span class="op">=</span> MinMaxScaler()</span>
@@ -1044,7 +1061,7 @@ Index: []</code></pre>
 <pre><code>* **분포 변환(Distribution Transformation):**
     * 변수의 분포를 변경하여 특정 분석 방법에 적합하도록 만듭니다.
     * **로그 변환(Log Transformation):** 오른쪽으로 꼬리가 긴 분포(Right-Skewed Distribution)를 정규 분포에 가깝게 만듭니다.</code></pre>
-<div id="560692aa" class="cell" data-execution_count="22">
+<div id="beb14c0e" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>    <span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>    df_log <span class="op">=</span> df.copy()</span>
@@ -1060,7 +1077,7 @@ Index: []</code></pre>
 </div>
 </div>
 <pre><code>    * **제곱근 변환(Square Root Transformation):** 로그 변환과 유사한 효과를 가지며, 0을 포함하는 데이터에 적용할 수 있습니다.</code></pre>
-<div id="9ee46d81" class="cell" data-execution_count="23">
+<div id="16e5bd14" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>    df_sqrt <span class="op">=</span> df.copy()</span>
 <span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>    df_sqrt[<span class="st">'B_sqrt'</span>] <span class="op">=</span> np.sqrt(df_sqrt[<span class="st">'B'</span>][df_sqrt[<span class="st">'B'</span>] <span class="op">&gt;=</span> <span class="dv">0</span>]) <span class="co"># 음수 값을 제외하고 제곱근 변환</span></span>
 <span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(df_sqrt[[<span class="st">'B'</span>, <span class="st">'B_sqrt'</span>]].head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1076,7 +1093,7 @@ Index: []</code></pre>
 <pre><code>* **범주형 변수 처리:**
     * 범주형 변수를 분석에 활용하기 위해 수치형 변수로 변환합니다.
     * **더미 변수화(Dummy Variable Encoding):** 각 범주를 0 또는 1로 표현하는 새로운 변수를 생성합니다.</code></pre>
-<div id="5935838a" class="cell" data-execution_count="24">
+<div id="83fa1a09" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>    df_encoded <span class="op">=</span> pd.get_dummies(df, columns<span class="op">=</span>[<span class="st">'C'</span>], drop_first<span class="op">=</span><span class="va">True</span>) <span class="co"># 'C' 열을 더미 변수화 (첫 번째 범주 제외)</span></span>
 <span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(df_encoded.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1089,7 +1106,7 @@ Index: []</code></pre>
 </div>
 </div>
 <pre><code>    * **원-핫 인코딩(One-Hot Encoding):** 더미 변수화와 유사하지만, 첫 번째 범주를 제외하지 않습니다.</code></pre>
-<div id="0d752604" class="cell" data-execution_count="25">
+<div id="088f84f4" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>    df_onehot <span class="op">=</span> pd.get_dummies(df, columns<span class="op">=</span>[<span class="st">'C'</span>]) <span class="co"># 'C' 열을 원-핫 인코딩</span></span>
 <span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(df_onehot.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1133,7 +1150,7 @@ Index: []</code></pre>
 <section id="가상-데이터-생성" class="level3" data-number="2.3.1">
 <h3 data-number="2.3.1" class="anchored" data-anchor-id="가상-데이터-생성"><span class="header-section-number">2.3.1</span> 가상 데이터 생성</h3>
 <p>기술 통계 분석 실습을 위해 가상의 설문조사 응답 데이터를 담은 Pandas DataFrame을 생성해 보겠습니다. 이 데이터는 ‘ID’, ‘Age’, ‘Gender’, ‘EducationLevel’, ‘SatisfactionScore’, ‘Income’ 열을 포함합니다.</p>
-<div id="1a4b7062" class="cell" data-execution_count="26">
+<div id="a27ded49" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1192,7 +1209,7 @@ None</code></pre>
 <li>Pandas에서는 <code>.mean()</code> 메서드를 사용합니다.</li>
 </ul></li>
 </ul>
-<div id="881c299a" class="cell" data-execution_count="27">
+<div id="f985559e" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Age와 Income 열의 평균 계산</span></span>
 <span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>    mean_age <span class="op">=</span> df_survey[<span class="st">'Age'</span>].mean()</span>
 <span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a>    mean_income <span class="op">=</span> df_survey[<span class="st">'Income'</span>].mean()</span>
@@ -1216,7 +1233,7 @@ None</code></pre>
 <li>Pandas에서는 <code>.median()</code> 메서드를 사용합니다.</li>
 </ul></li>
 </ul>
-<div id="0fc50097" class="cell" data-execution_count="28">
+<div id="e0e0fa9c" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb63"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Age와 Income 열의 중앙값 계산</span></span>
 <span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>    median_age <span class="op">=</span> df_survey[<span class="st">'Age'</span>].median()</span>
 <span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a>    median_income <span class="op">=</span> df_survey[<span class="st">'Income'</span>].median()</span>
@@ -1245,7 +1262,7 @@ None</code></pre>
 <li>Pandas에서는 <code>.mode()</code> 메서드를 사용합니다. <code>.mode()</code>는 최빈값이 여러 개일 경우 모든 값을 Series 형태로 반환합니다.</li>
 </ul></li>
 </ul>
-<div id="e7705d88" class="cell" data-execution_count="29">
+<div id="d65895f7" class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Gender와 EducationLevel 열의 최빈값 계산</span></span>
 <span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>    mode_gender <span class="op">=</span> df_survey[<span class="st">'Gender'</span>].mode()</span>
 <span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a>    mode_education <span class="op">=</span> df_survey[<span class="st">'EducationLevel'</span>].mode()</span>
@@ -1318,7 +1335,7 @@ Name: SatisfactionScore, dtype: float64</code></pre>
 <li>Pandas에서는 <code>.max()</code>와 <code>.min()</code>을 이용하여 계산합니다.</li>
 </ul></li>
 </ul>
-<div id="11ad666c" class="cell" data-execution_count="30">
+<div id="184295a2" class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb67"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Age의 범위 계산</span></span>
 <span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>    range_age <span class="op">=</span> df_survey[<span class="st">'Age'</span>].<span class="bu">max</span>() <span class="op">-</span> df_survey[<span class="st">'Age'</span>].<span class="bu">min</span>()</span>
 <span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"나이 범위: </span><span class="sc">{</span>range_age<span class="sc">}</span><span class="ss"> (최소: </span><span class="sc">{</span>df_survey[<span class="st">'Age'</span>]<span class="sc">.</span><span class="bu">min</span>()<span class="sc">}</span><span class="ss">, 최대: </span><span class="sc">{</span>df_survey[<span class="st">'Age'</span>]<span class="sc">.</span><span class="bu">max</span>()<span class="sc">}</span><span class="ss">)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1334,7 +1351,7 @@ Name: SatisfactionScore, dtype: float64</code></pre>
 <li>Pandas에서는 <code>.var()</code> (분산)와 <code>.std()</code> (표준편차) 메서드를 사용합니다. 기본적으로 표본 분산/표준편차 (n-1로 나눔, <code>ddof=1</code>)를 계산합니다.</li>
 </ul></li>
 </ul>
-<div id="2e1b37e9" class="cell" data-execution_count="31">
+<div id="0e71e44a" class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb69"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Age와 Income의 분산 및 표준편차 계산</span></span>
 <span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>    var_age <span class="op">=</span> df_survey[<span class="st">'Age'</span>].var()</span>
 <span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a>    std_age <span class="op">=</span> df_survey[<span class="st">'Age'</span>].std()</span>
@@ -1364,7 +1381,7 @@ Name: SatisfactionScore, dtype: float64</code></pre>
 <li>Pandas에서는 <code>.quantile()</code> 메서드를 사용하여 특정 분위수를 계산할 수 있습니다. (예: <code>df['col'].quantile(0.25)</code>는 Q1)</li>
 </ul></li>
 </ul>
-<div id="fa55c31e" class="cell" data-execution_count="32">
+<div id="44b1a3cc" class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb71"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Income의 사분위수 및 IQR 계산</span></span>
 <span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a>    Q1_income <span class="op">=</span> df_survey[<span class="st">'Income'</span>].quantile(<span class="fl">0.25</span>)</span>
 <span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a>    Q2_income <span class="op">=</span> df_survey[<span class="st">'Income'</span>].quantile(<span class="fl">0.50</span>) <span class="co"># 중앙값과 동일</span></span>
@@ -1454,7 +1471,7 @@ Name: SatisfactionScore, dtype: float64</code></pre>
 <li>Pandas에서는 <code>.kurt()</code> 또는 <code>.kurtosis()</code> 메서드를 사용합니다.</li>
 </ul></li>
 </ul>
-<div id="3d913d38" class="cell" data-execution_count="33">
+<div id="5ff949d4" class="cell" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb73"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Age와 Income의 왜도 및 첨도 계산</span></span>
 <span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a>    skew_age <span class="op">=</span> df_survey[<span class="st">'Age'</span>].skew()</span>
 <span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a>    kurt_age <span class="op">=</span> df_survey[<span class="st">'Age'</span>].kurt()</span>
@@ -1480,7 +1497,7 @@ Name: SatisfactionScore, dtype: float64</code></pre>
 <li>Pandas에서는 <code>.value_counts()</code> 메서드를 사용하여 쉽게 생성할 수 있습니다.</li>
 </ul></li>
 </ul>
-<div id="84c6afb7" class="cell" data-execution_count="34">
+<div id="a7b73e4e" class="cell" data-execution_count="34">
 <div class="sourceCode cell-code" id="cb76"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Gender와 EducationLevel의 빈도표 생성</span></span>
 <span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a>    freq_gender <span class="op">=</span> df_survey[<span class="st">'Gender'</span>].value_counts()</span>
 <span id="cb76-3"><a href="#cb76-3" aria-hidden="true" tabindex="-1"></a>    freq_education <span class="op">=</span> df_survey[<span class="st">'EducationLevel'</span>].value_counts()</span>
@@ -1512,7 +1529,7 @@ Name: count, dtype: int64</code></pre>
 <li><code>.value_counts(normalize=True)</code>를 사용하면 비율을 계산할 수 있습니다.</li>
 </ul></li>
 </ul>
-<div id="e3fb0a01" class="cell" data-execution_count="35">
+<div id="bfab2499" class="cell" data-execution_count="35">
 <div class="sourceCode cell-code" id="cb78"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Gender와 EducationLevel의 비율 계산</span></span>
 <span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>    prop_gender <span class="op">=</span> df_survey[<span class="st">'Gender'</span>].value_counts(normalize<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a>    prop_education <span class="op">=</span> df_survey[<span class="st">'EducationLevel'</span>].value_counts(normalize<span class="op">=</span><span class="va">True</span>)</span>
@@ -1579,7 +1596,7 @@ Name: proportion, dtype: object</code></pre>
 <section id="모든-변수-요약-.describe-메서드-활용" class="level3" data-number="2.3.6">
 <h3 data-number="2.3.6" class="anchored" data-anchor-id="모든-변수-요약-.describe-메서드-활용"><span class="header-section-number">2.3.6</span> 2.3.5 모든 변수 요약: <code>.describe()</code> 메서드 활용</h3>
 <p>Pandas의 <code>.describe()</code> 메서드는 DataFrame의 수치형 변수에 대한 주요 기술 통계량(개수, 평균, 표준편차, 최소값, 사분위수, 최댓값)을 한 번에 계산하여 보여줍니다. 이는 데이터 탐색 초기 단계에서 매우 유용합니다.</p>
-<div id="e160379a" class="cell" data-execution_count="36">
+<div id="d6d71755" class="cell" data-execution_count="36">
 <div class="sourceCode cell-code" id="cb80"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 수치형 변수에 대한 기술 통계 요약</span></span>
 <span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a>numeric_summary <span class="op">=</span> df_survey.describe()</span>
 <span id="cb80-3"><a href="#cb80-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"수치형 변수 요약 통계:"</span>)</span>
@@ -1598,7 +1615,7 @@ max    10.00000  45.000000          10.000000  9000.000000</code></pre>
 </div>
 </div>
 <p><code>include='all'</code> 옵션을 사용하면 수치형 변수뿐만 아니라 범주형 변수에 대한 요약 정보(개수, 고유값 개수, 최빈값, 최빈값 빈도)도 함께 확인할 수 있습니다.</p>
-<div id="e0735375" class="cell" data-execution_count="37">
+<div id="ea5c94e3" class="cell" data-execution_count="37">
 <div class="sourceCode cell-code" id="cb82"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 모든 변수에 대한 기술 통계 요약 (범주형 포함)</span></span>
 <span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a>all_summary <span class="op">=</span> df_survey.describe(include<span class="op">=</span><span class="st">'all'</span>)</span>
 <span id="cb82-3"><a href="#cb82-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">모든 변수 요약 통계:"</span>)</span>
@@ -1638,7 +1655,967 @@ max     9000.000000  </code></pre>
 <section id="기술-통계-분석의-중요성" class="level3" data-number="2.3.7">
 <h3 data-number="2.3.7" class="anchored" data-anchor-id="기술-통계-분석의-중요성"><span class="header-section-number">2.3.7</span> 2.3.6 기술 통계 분석의 중요성</h3>
 <p>기술 통계 분석은 복잡한 데이터를 이해하기 쉬운 형태로 요약하고, 데이터의 숨겨진 패턴이나 특징을 발견하는 첫걸음입니다. 사회과학 연구에서 연구 가설을 설정하거나, 분석 방법을 선택하거나, 분석 결과를 해석하는 데 있어 데이터의 기본적인 특성을 파악하는 것은 필수적입니다. Pandas를 활용한 기술 통계 분석은 이러한 과정을 효율적이고 체계적으로 수행할 수 있도록 돕습니다. 다음 절에서는 이러한 데이터를 시각적으로 탐색하는 방법에 대해 알아보겠습니다.</p>
-<hr>
+</section>
+</section>
+<section id="sec-visualization" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="sec-visualization"><span class="header-section-number">2.4</span> 2.4 데이터 시각화: Matplotlib와 Seaborn 활용</h2>
+<p>기술 통계 분석을 통해 데이터의 요약된 수치를 파악했다면, <strong>데이터 시각화(Data Visualization)</strong>는 이러한 정보를 그래프 형태로 표현하여 데이터의 패턴, 추세, 관계, 이상치 등을 직관적으로 이해하도록 돕는 과정입니다. 사회과학 연구에서 시각화는 데이터를 탐색하는 강력한 도구일 뿐만 아니라, 연구 결과를 효과적으로 전달하는 데 필수적입니다.</p>
+<p>본 절에서는 파이썬의 대표적인 시각화 라이브러리인 <strong>Matplotlib</strong>와 이를 기반으로 더 사용하기 쉽고 미려한 그래프를 제공하는 <strong>Seaborn</strong>을 활용하여 다양한 종류의 그래프를 생성하고 해석하는 방법을 학습합니다.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+📌 핵심 요약
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>데이터 시각화는 데이터의 패턴과 관계를 직관적으로 파악하고 결과를 효과적으로 전달하는 데 중요합니다. Matplotlib와 Seaborn 라이브러리를 사용하여 히스토그램, KDE 플롯, 박스 플롯, 카운트 플롯(단일 변수 시각화), 산점도, 라인 플롯, 비교 박스 플롯/바이올린 플롯, 비교 막대 플롯(다변수 관계 시각화) 등을 그리는 방법을 배웁니다. 또한, Pair Plot과 Heatmap을 이용한 다변수 탐색 및 그래프 꾸미기 기초를 익힙니다.</p>
+</div>
+</div>
+<section id="시각화-라이브러리-준비" class="level3" data-number="2.4.1">
+<h3 data-number="2.4.1" class="anchored" data-anchor-id="시각화-라이브러리-준비"><span class="header-section-number">2.4.1</span> 시각화 라이브러리 준비</h3>
+<p>시각화를 위해 Matplotlib의 <code>pyplot</code> 모듈과 Seaborn 라이브러리를 임포트합니다. Seaborn의 스타일을 설정하면 더 보기 좋은 그래프를 쉽게 그릴 수 있습니다.</p>
+<div id="bb597cd3" class="cell" data-execution_count="38">
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb84-3"><a href="#cb84-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb84-4"><a href="#cb84-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np <span class="co"># 이전 섹션의 데이터 생성 코드 재실행 (혹은 저장된 데이터 로드)</span></span>
+<span id="cb84-5"><a href="#cb84-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb84-6"><a href="#cb84-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 이전 섹션(2.3)에서 사용한 df_survey 데이터가 메모리에 없다면 재생성</span></span>
+<span id="cb84-7"><a href="#cb84-7" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {</span>
+<span id="cb84-8"><a href="#cb84-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'ID'</span>: <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">11</span>),</span>
+<span id="cb84-9"><a href="#cb84-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Age'</span>: [<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">28</span>, <span class="dv">35</span>, <span class="dv">42</span>, <span class="dv">29</span>, <span class="dv">31</span>, <span class="dv">45</span>, <span class="dv">22</span>, <span class="dv">38</span>],</span>
+<span id="cb84-10"><a href="#cb84-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Gender'</span>: [<span class="st">'Female'</span>, <span class="st">'Male'</span>, <span class="st">'Male'</span>, <span class="st">'Female'</span>, <span class="st">'Male'</span>, <span class="st">'Female'</span>, <span class="st">'Male'</span>, <span class="st">'Female'</span>, <span class="st">'Female'</span>, <span class="st">'Male'</span>],</span>
+<span id="cb84-11"><a href="#cb84-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">'EducationLevel'</span>: [<span class="st">'Bachelor'</span>, <span class="st">'Master'</span>, <span class="st">'Bachelor'</span>, <span class="st">'PhD'</span>, <span class="st">'Master'</span>, <span class="st">'Bachelor'</span>, <span class="st">'Master'</span>, <span class="st">'PhD'</span>, <span class="st">'High School'</span>, <span class="st">'Master'</span>],</span>
+<span id="cb84-12"><a href="#cb84-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">'SatisfactionScore'</span>: [<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">6</span>, <span class="dv">9</span>, <span class="dv">7</span>, np.nan, <span class="dv">8</span>, <span class="dv">10</span>, <span class="dv">5</span>, <span class="dv">7</span>], <span class="co"># 결측치(NaN) 포함</span></span>
+<span id="cb84-13"><a href="#cb84-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Income'</span>: [<span class="dv">5000</span>, <span class="dv">6000</span>, <span class="dv">5500</span>, <span class="dv">7500</span>, <span class="dv">8000</span>, <span class="dv">5200</span>, <span class="dv">6100</span>, <span class="dv">9000</span>, <span class="dv">4000</span>, <span class="dv">7000</span>]</span>
+<span id="cb84-14"><a href="#cb84-14" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb84-15"><a href="#cb84-15" aria-hidden="true" tabindex="-1"></a>df_survey <span class="op">=</span> pd.DataFrame(data)</span>
+<span id="cb84-16"><a href="#cb84-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb84-17"><a href="#cb84-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Seaborn 스타일 설정 (예: 'whitegrid', 'darkgrid', 'ticks' 등)</span></span>
+<span id="cb84-18"><a href="#cb84-18" aria-hidden="true" tabindex="-1"></a>sns.set_style(<span class="st">'whitegrid'</span>)</span>
+<span id="cb84-19"><a href="#cb84-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb84-20"><a href="#cb84-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Matplotlib 한글 폰트 설정 (Windows/Mac/Linux 환경에 맞게 설정 필요)</span></span>
+<span id="cb84-21"><a href="#cb84-21" aria-hidden="true" tabindex="-1"></a><span class="co"># 예시 (Windows - Malgun Gothic):</span></span>
+<span id="cb84-22"><a href="#cb84-22" aria-hidden="true" tabindex="-1"></a><span class="co"># plt.rcParams['font.family'] = 'Malgun Gothic'</span></span>
+<span id="cb84-23"><a href="#cb84-23" aria-hidden="true" tabindex="-1"></a><span class="co"># 예시 (Mac - AppleGothic):</span></span>
+<span id="cb84-24"><a href="#cb84-24" aria-hidden="true" tabindex="-1"></a><span class="co"># plt.rcParams['font.family'] = 'AppleGothic'</span></span>
+<span id="cb84-25"><a href="#cb84-25" aria-hidden="true" tabindex="-1"></a><span class="co"># plt.rcParams['axes.unicode_minus'] = False # 마이너스 부호 깨짐 방지</span></span>
+<span id="cb84-26"><a href="#cb84-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb84-27"><a href="#cb84-27" aria-hidden="true" tabindex="-1"></a><span class="co"># (참고) Jupyter Notebook 환경에서는 %matplotlib inline 매직 명령어로 그래프가 출력됨</span></span>
+<span id="cb84-28"><a href="#cb84-28" aria-hidden="true" tabindex="-1"></a><span class="co"># 별도 환경에서는 plt.show()를 호출해야 그래프가 나타남</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>참고:</strong> 시스템에 따라 한글 폰트 설정이 필요할 수 있습니다. 사용 중인 운영체제에 맞는 폰트 이름을 <code>plt.rcParams['font.family']</code>에 지정해야 그래프의 제목이나 축 레이블에 한글이 깨지지 않고 표시됩니다.</p>
+</section>
+<section id="단일-변수-시각화-univariate-visualization" class="level3" data-number="2.4.2">
+<h3 data-number="2.4.2" class="anchored" data-anchor-id="단일-변수-시각화-univariate-visualization"><span class="header-section-number">2.4.2</span> 2.4.1 단일 변수 시각화 (Univariate Visualization)</h3>
+<p>단일 변수 시각화는 개별 변수의 분포 특성(분포 형태, 중심 경향성, 산포도 등)을 파악하는 데 사용됩니다.</p>
+<ul>
+<li><strong>히스토그램 (Histogram):</strong>
+<ul>
+<li>연속형 변수의 분포를 시각화하는 가장 기본적인 방법입니다. 데이터 범위를 여러 구간(bin)으로 나누고 각 구간에 속하는 데이터의 빈도(frequency)를 막대로 나타냅니다.</li>
+<li>Seaborn의 <code>histplot()</code> 또는 <code>displot(kind='hist')</code> 함수를 사용하면 편리합니다.</li>
+</ul></li>
+</ul>
+<div id="bb378ff6" class="cell" data-execution_count="39">
+<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Age 변수의 히스토그램</span></span>
+<span id="cb85-2"><a href="#cb85-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>)) <span class="co"># 그래프 크기 조절</span></span>
+<span id="cb85-3"><a href="#cb85-3" aria-hidden="true" tabindex="-1"></a>sns.histplot(data<span class="op">=</span>df_survey, x<span class="op">=</span><span class="st">'Age'</span>, bins<span class="op">=</span><span class="dv">5</span>, kde<span class="op">=</span><span class="va">True</span>) <span class="co"># kde=True는 밀도 곡선 추가</span></span>
+<span id="cb85-4"><a href="#cb85-4" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Age Distribution Histogram'</span>)</span>
+<span id="cb85-5"><a href="#cb85-5" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Age'</span>)</span>
+<span id="cb85-6"><a href="#cb85-6" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Frequency'</span>)</span>
+<span id="cb85-7"><a href="#cb85-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb85-8"><a href="#cb85-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb85-9"><a href="#cb85-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Income 변수의 히스토그램</span></span>
+<span id="cb85-10"><a href="#cb85-10" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span>
+<span id="cb85-11"><a href="#cb85-11" aria-hidden="true" tabindex="-1"></a>sns.histplot(data<span class="op">=</span>df_survey, x<span class="op">=</span><span class="st">'Income'</span>, kde<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb85-12"><a href="#cb85-12" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Income Distribution Histogram'</span>)</span>
+<span id="cb85-13"><a href="#cb85-13" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Income'</span>)</span>
+<span id="cb85-14"><a href="#cb85-14" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Frequency'</span>)</span>
+<span id="cb85-15"><a href="#cb85-15" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02-data-handling-exploration_files/figure-html/cell-40-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02-data-handling-exploration_files/figure-html/cell-40-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<pre><code>* **해석:** 히스토그램을 통해 데이터가 어떤 값 범위에 집중되어 있는지, 분포가 대칭적인지, 치우쳐 있는지(왜도) 등을 시각적으로 확인할 수 있습니다. `bins` 개수에 따라 모양이 달라질 수 있으므로 적절한 값 설정이 중요합니다.</code></pre>
+<ul>
+<li><strong>커널 밀도 추정 플롯 (Kernel Density Estimate Plot, KDE Plot):</strong>
+<ul>
+<li>히스토그램을 부드러운 곡선 형태로 나타낸 것으로, 변수의 확률 밀도 함수(Probability Density Function)를 추정하여 시각화합니다.</li>
+<li>Seaborn의 <code>kdeplot()</code> 또는 <code>displot(kind='kde')</code> 함수를 사용합니다.</li>
+</ul></li>
+</ul>
+<div id="b5d52c94" class="cell" data-execution_count="40">
+<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Age 변수의 KDE 플롯</span></span>
+<span id="cb87-2"><a href="#cb87-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span>
+<span id="cb87-3"><a href="#cb87-3" aria-hidden="true" tabindex="-1"></a>sns.kdeplot(data<span class="op">=</span>df_survey, x<span class="op">=</span><span class="st">'Age'</span>, fill<span class="op">=</span><span class="va">True</span>) <span class="co"># fill=True는 곡선 아래 영역 채우기</span></span>
+<span id="cb87-4"><a href="#cb87-4" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Age Distribution KDE Plot'</span>)</span>
+<span id="cb87-5"><a href="#cb87-5" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Age'</span>)</span>
+<span id="cb87-6"><a href="#cb87-6" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Density'</span>)</span>
+<span id="cb87-7"><a href="#cb87-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02-data-handling-exploration_files/figure-html/cell-41-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<pre><code>* **해석:** KDE 플롯은 히스토그램보다 분포의 형태를 더 매끄럽게 보여주지만, `bins` 설정이 없는 대신 대역폭(bandwidth) 파라미터에 따라 곡선의 평활도(smoothness)가 달라질 수 있습니다.</code></pre>
+<ul>
+<li><strong>박스 플롯 (Box Plot):</strong>
+<ul>
+<li>데이터의 사분위수(Q1, Q2/중앙값, Q3), 최소/최대값(IQR 기준), 이상치를 시각적으로 표현합니다. 데이터의 분포와 이상치 존재 여부를 빠르게 파악하는 데 유용합니다 (2.2.2절, 2.3.2절 참고).</li>
+<li>Seaborn의 <code>boxplot()</code> 함수를 사용합니다.</li>
+</ul></li>
+</ul>
+<div id="60392266" class="cell" data-execution_count="41">
+<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Income 변수의 박스 플롯</span></span>
+<span id="cb89-2"><a href="#cb89-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">6</span>))</span>
+<span id="cb89-3"><a href="#cb89-3" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data<span class="op">=</span>df_survey, y<span class="op">=</span><span class="st">'Income'</span>) <span class="co"># y축에 변수 지정 시 세로 박스 플롯</span></span>
+<span id="cb89-4"><a href="#cb89-4" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Income Distribution Box Plot'</span>)</span>
+<span id="cb89-5"><a href="#cb89-5" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Income'</span>)</span>
+<span id="cb89-6"><a href="#cb89-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb89-7"><a href="#cb89-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb89-8"><a href="#cb89-8" aria-hidden="true" tabindex="-1"></a><span class="co"># SatisfactionScore 변수의 박스 플롯 (NaN 값은 자동으로 제외됨)</span></span>
+<span id="cb89-9"><a href="#cb89-9" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">6</span>))</span>
+<span id="cb89-10"><a href="#cb89-10" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data<span class="op">=</span>df_survey, y<span class="op">=</span><span class="st">'SatisfactionScore'</span>)</span>
+<span id="cb89-11"><a href="#cb89-11" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Satisfaction Score Distribution Box Plot'</span>)</span>
+<span id="cb89-12"><a href="#cb89-12" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Satisfaction Score'</span>)</span>
+<span id="cb89-13"><a href="#cb89-13" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02-data-handling-exploration_files/figure-html/cell-42-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02-data-handling-exploration_files/figure-html/cell-42-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<pre><code>* **해석:** 상자의 하단/상단 선은 각각 Q1/Q3, 상자 안의 선은 중앙값(Q2)을 나타냅니다. 상자 길이는 IQR입니다. 상자 밖의 선(whisker)은 보통 IQR의 1.5배 범위 내의 데이터를 나타내며, 그 밖의 점들은 이상치(outlier)로 간주됩니다.</code></pre>
+<ul>
+<li><strong>카운트 플롯 (Count Plot):</strong>
+<ul>
+<li>범주형 변수의 각 범주별 빈도를 막대 그래프로 시각화합니다.</li>
+<li>Seaborn의 <code>countplot()</code> 함수를 사용합니다.</li>
+</ul></li>
+</ul>
+<div id="231a05e9" class="cell" data-execution_count="42">
+<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Gender 변수의 카운트 플롯</span></span>
+<span id="cb91-2"><a href="#cb91-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">5</span>))</span>
+<span id="cb91-3"><a href="#cb91-3" aria-hidden="true" tabindex="-1"></a>sns.countplot(data<span class="op">=</span>df_survey, x<span class="op">=</span><span class="st">'Gender'</span>, palette<span class="op">=</span><span class="st">'viridis'</span>) <span class="co"># palette로 색상 지정</span></span>
+<span id="cb91-4"><a href="#cb91-4" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Gender Count Plot'</span>)</span>
+<span id="cb91-5"><a href="#cb91-5" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Gender'</span>)</span>
+<span id="cb91-6"><a href="#cb91-6" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Count'</span>)</span>
+<span id="cb91-7"><a href="#cb91-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb91-8"><a href="#cb91-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb91-9"><a href="#cb91-9" aria-hidden="true" tabindex="-1"></a><span class="co"># EducationLevel 변수의 카운트 플롯</span></span>
+<span id="cb91-10"><a href="#cb91-10" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span>
+<span id="cb91-11"><a href="#cb91-11" aria-hidden="true" tabindex="-1"></a>sns.countplot(data<span class="op">=</span>df_survey, y<span class="op">=</span><span class="st">'EducationLevel'</span>, order<span class="op">=</span>df_survey[<span class="st">'EducationLevel'</span>].value_counts().index) <span class="co"># 빈도순 정렬</span></span>
+<span id="cb91-12"><a href="#cb91-12" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Education Level Count Plot'</span>)</span>
+<span id="cb91-13"><a href="#cb91-13" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Count'</span>)</span>
+<span id="cb91-14"><a href="#cb91-14" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Education Level'</span>)</span>
+<span id="cb91-15"><a href="#cb91-15" aria-hidden="true" tabindex="-1"></a>plt.tight_layout() <span class="co"># 레이블 잘림 방지</span></span>
+<span id="cb91-16"><a href="#cb91-16" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>C:\Users\voidm\AppData\Local\Temp\ipykernel_34244\3407003983.py:3: FutureWarning:
+
+
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02-data-handling-exploration_files/figure-html/cell-43-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02-data-handling-exploration_files/figure-html/cell-43-output-3.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<pre><code>* **해석:** 각 막대의 길이는 해당 범주의 빈도를 나타냅니다. 범주별 상대적인 크기를 쉽게 비교할 수 있습니다.</code></pre>
+</section>
+<section id="이변량-시각화-bivariate-visualization" class="level3" data-number="2.4.3">
+<h3 data-number="2.4.3" class="anchored" data-anchor-id="이변량-시각화-bivariate-visualization"><span class="header-section-number">2.4.3</span> 2.4.2 이변량 시각화 (Bivariate Visualization)</h3>
+<p>이변량 시각화는 두 변수 간의 관계를 탐색하는 데 사용됩니다. 변수의 종류(연속형/범주형)에 따라 적합한 그래프 유형이 다릅니다.</p>
+<ul>
+<li><strong>산점도 (Scatter Plot):</strong>
+<ul>
+<li>두 연속형 변수 간의 관계를 시각화하는 데 가장 널리 사용됩니다. 각 데이터 포인트를 2차원 평면 위에 점으로 나타냅니다.</li>
+<li>변수 간 선형 관계, 비선형 관계, 군집, 이상치 등을 파악할 수 있습니다.</li>
+<li>Seaborn의 <code>scatterplot()</code> 또는 <code>relplot(kind='scatter')</code> 함수를 사용합니다.</li>
+</ul></li>
+</ul>
+<div id="bc1965a5" class="cell" data-execution_count="43">
+<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Age와 Income 간의 산점도</span></span>
+<span id="cb94-2"><a href="#cb94-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
+<span id="cb94-3"><a href="#cb94-3" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data<span class="op">=</span>df_survey, x<span class="op">=</span><span class="st">'Age'</span>, y<span class="op">=</span><span class="st">'Income'</span>, hue<span class="op">=</span><span class="st">'Gender'</span>, style<span class="op">=</span><span class="st">'EducationLevel'</span>, s<span class="op">=</span><span class="dv">100</span>) <span class="co"># hue/style/size로 추가 변수 표현 가능</span></span>
+<span id="cb94-4"><a href="#cb94-4" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Scatter Plot of Age vs Income'</span>)</span>
+<span id="cb94-5"><a href="#cb94-5" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Age'</span>)</span>
+<span id="cb94-6"><a href="#cb94-6" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Income'</span>)</span>
+<span id="cb94-7"><a href="#cb94-7" aria-hidden="true" tabindex="-1"></a>plt.legend(bbox_to_anchor<span class="op">=</span>(<span class="fl">1.05</span>, <span class="dv">1</span>), loc<span class="op">=</span><span class="st">'upper left'</span>) <span class="co"># 범례 위치 조정</span></span>
+<span id="cb94-8"><a href="#cb94-8" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb94-9"><a href="#cb94-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02-data-handling-exploration_files/figure-html/cell-44-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<pre><code>* **해석:** 점들의 분포 패턴을 통해 두 변수 간의 관계 방향(양의 관계, 음의 관계)과 강도를 추측할 수 있습니다. `hue`, `style`, `size` 등의 옵션을 활용하면 추가적인 범주형 또는 연속형 변수의 정보를 함께 표현할 수 있습니다 (다변량 시각화의 기초).</code></pre>
+<ul>
+<li><strong>라인 플롯 (Line Plot):</strong>
+<ul>
+<li>주로 시간의 흐름에 따른 연속형 변수의 변화 추세를 시각화하는 데 사용됩니다. (현재 <code>df_survey</code> 데이터는 시계열이 아니므로 예시는 생략하지만, 개념 설명)</li>
+<li>x축이 순서(시간, 단계 등)를 나타내는 경우 유용합니다.</li>
+<li>Seaborn의 <code>lineplot()</code> 또는 <code>relplot(kind='line')</code> 함수를 사용합니다.</li>
+<li><strong>사용 예시:</strong> 연도별 평균 소득 변화, 실험 단계별 반응 시간 변화 등.</li>
+</ul></li>
+<li><strong>비교 박스 플롯 / 바이올린 플롯 (Box Plot / Violin Plot for Comparison):</strong>
+<ul>
+<li>범주형 변수의 각 범주에 따른 연속형 변수의 분포를 비교할 때 유용합니다.</li>
+<li><strong>박스 플롯:</strong> 여러 그룹의 분포를 사분위수 기준으로 간결하게 비교합니다.</li>
+<li><strong>바이올린 플롯:</strong> 박스 플롯에 KDE(커널 밀도 추정)를 결합하여 분포의 형태까지 함께 보여줍니다.</li>
+<li>Seaborn의 <code>boxplot()</code>, <code>violinplot()</code> 함수를 사용합니다.</li>
+</ul></li>
+</ul>
+<div id="2218900c" class="cell" data-execution_count="44">
+<div class="sourceCode cell-code" id="cb96"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="co"># EducationLevel 별 Income 분포 비교 (박스 플롯)</span></span>
+<span id="cb96-2"><a href="#cb96-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb96-3"><a href="#cb96-3" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data<span class="op">=</span>df_survey, x<span class="op">=</span><span class="st">'EducationLevel'</span>, y<span class="op">=</span><span class="st">'Income'</span>, order<span class="op">=</span>[<span class="st">'High School'</span>, <span class="st">'Bachelor'</span>, <span class="st">'Master'</span>, <span class="st">'PhD'</span>]) <span class="co"># 순서 지정</span></span>
+<span id="cb96-4"><a href="#cb96-4" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Income Distribution by Education Level (Box Plot)'</span>)</span>
+<span id="cb96-5"><a href="#cb96-5" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Education Level'</span>)</span>
+<span id="cb96-6"><a href="#cb96-6" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Income'</span>)</span>
+<span id="cb96-7"><a href="#cb96-7" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">15</span>) <span class="co"># x축 레이블 회전</span></span>
+<span id="cb96-8"><a href="#cb96-8" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb96-9"><a href="#cb96-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb96-10"><a href="#cb96-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb96-11"><a href="#cb96-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Gender 별 SatisfactionScore 분포 비교 (바이올린 플롯)</span></span>
+<span id="cb96-12"><a href="#cb96-12" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
+<span id="cb96-13"><a href="#cb96-13" aria-hidden="true" tabindex="-1"></a>sns.violinplot(data<span class="op">=</span>df_survey.dropna(subset<span class="op">=</span>[<span class="st">'SatisfactionScore'</span>]), x<span class="op">=</span><span class="st">'Gender'</span>, y<span class="op">=</span><span class="st">'SatisfactionScore'</span>, inner<span class="op">=</span><span class="st">'quartile'</span>) <span class="co"># inner='quartile'은 사분위수 표시</span></span>
+<span id="cb96-14"><a href="#cb96-14" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Satisfaction Score Distribution by Gender (Violin Plot)'</span>)</span>
+<span id="cb96-15"><a href="#cb96-15" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Gender'</span>)</span>
+<span id="cb96-16"><a href="#cb96-16" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Satisfaction Score'</span>)</span>
+<span id="cb96-17"><a href="#cb96-17" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02-data-handling-exploration_files/figure-html/cell-45-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02-data-handling-exploration_files/figure-html/cell-45-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<pre><code>* **해석:** 그룹 간 중심 경향성(중앙값), 퍼짐 정도(IQR, 바이올린의 폭), 이상치 유무 등을 비교하여 집단 간 차이를 시각적으로 탐색할 수 있습니다.</code></pre>
+<ul>
+<li><strong>비교 막대 플롯 (Bar Plot for Comparison):</strong>
+<ul>
+<li>범주형 변수의 각 범주에 따른 연속형 변수의 <strong>대표값(기본값: 평균)</strong>을 막대로 비교하여 시각화합니다. 막대 위의 선(오차 막대)은 보통 신뢰 구간(Confidence Interval)을 나타냅니다.</li>
+<li>Seaborn의 <code>barplot()</code> 함수를 사용합니다. <code>estimator</code> 인자를 통해 평균 외 다른 통계량(중앙값 등)을 지정할 수 있습니다.</li>
+</ul></li>
+</ul>
+<div id="a572105d" class="cell" data-execution_count="45">
+<div class="sourceCode cell-code" id="cb98"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="co"># EducationLevel 별 평균 Income 비교 (막대 플롯)</span></span>
+<span id="cb98-2"><a href="#cb98-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb98-3"><a href="#cb98-3" aria-hidden="true" tabindex="-1"></a><span class="co"># np.mean 대신 다른 estimator 사용 가능 (예: estimator=np.median)</span></span>
+<span id="cb98-4"><a href="#cb98-4" aria-hidden="true" tabindex="-1"></a>sns.barplot(data<span class="op">=</span>df_survey, x<span class="op">=</span><span class="st">'EducationLevel'</span>, y<span class="op">=</span><span class="st">'Income'</span>, order<span class="op">=</span>[<span class="st">'High School'</span>, <span class="st">'Bachelor'</span>, <span class="st">'Master'</span>, <span class="st">'PhD'</span>], ci<span class="op">=</span><span class="st">'sd'</span>) <span class="co"># ci='sd'는 표준편차 표시</span></span>
+<span id="cb98-5"><a href="#cb98-5" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Average Income by Education Level (Bar Plot)'</span>)</span>
+<span id="cb98-6"><a href="#cb98-6" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Education Level'</span>)</span>
+<span id="cb98-7"><a href="#cb98-7" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Average Income'</span>)</span>
+<span id="cb98-8"><a href="#cb98-8" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">15</span>)</span>
+<span id="cb98-9"><a href="#cb98-9" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb98-10"><a href="#cb98-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>C:\Users\voidm\AppData\Local\Temp\ipykernel_34244\1340021530.py:4: FutureWarning:
+
+
+
+The `ci` parameter is deprecated. Use `errorbar='sd'` for the same effect.
+
+</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02-data-handling-exploration_files/figure-html/cell-46-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<pre><code>* **해석:** 그룹 간 평균값의 차이를 직관적으로 비교할 수 있습니다. 오차 막대를 통해 값의 불확실성(분산 정도)도 함께 고려해야 합니다. (`countplot`은 단순히 빈도를 세는 반면, `barplot`은 y축 변수의 통계량을 계산하여 보여준다는 차이가 있습니다.)</code></pre>
+</section>
+<section id="다변수-시각화-간략-소개-brief-introduction-to-multivariate-visualization" class="level3" data-number="2.4.4">
+<h3 data-number="2.4.4" class="anchored" data-anchor-id="다변수-시각화-간략-소개-brief-introduction-to-multivariate-visualization"><span class="header-section-number">2.4.4</span> 2.4.3 다변수 시각화 간략 소개 (Brief Introduction to Multivariate Visualization)</h3>
+<p>세 개 이상의 변수 간 관계를 동시에 탐색하기 위한 시각화 기법입니다.</p>
+<ul>
+<li><strong>Pair Plot:</strong>
+<ul>
+<li>데이터프레임 내 여러 수치형 변수들 간의 모든 쌍(pair)에 대한 산점도를 그리고, 대각선에는 각 변수의 분포(히스토그램 또는 KDE)를 보여줍니다. 변수 간 관계를 전반적으로 빠르게 파악하는 데 매우 유용합니다.</li>
+<li>Seaborn의 <code>pairplot()</code> 함수를 사용합니다.</li>
+</ul></li>
+</ul>
+<div id="13c0f964" class="cell" data-execution_count="46">
+<div class="sourceCode cell-code" id="cb101"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb101-1"><a href="#cb101-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Age, SatisfactionScore, Income 변수 간 Pair Plot</span></span>
+<span id="cb101-2"><a href="#cb101-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 결측치가 있으면 오류 발생 가능하므로 제거하거나 처리 후 사용</span></span>
+<span id="cb101-3"><a href="#cb101-3" aria-hidden="true" tabindex="-1"></a>sns.pairplot(df_survey.dropna(subset<span class="op">=</span>[<span class="st">'SatisfactionScore'</span>])[[<span class="st">'Age'</span>, <span class="st">'SatisfactionScore'</span>, <span class="st">'Income'</span>]], diag_kind<span class="op">=</span><span class="st">'kde'</span>, corner<span class="op">=</span><span class="va">True</span>) <span class="co"># corner=True는 중복되는 위쪽 삼각형 제외</span></span>
+<span id="cb101-4"><a href="#cb101-4" aria-hidden="true" tabindex="-1"></a>plt.suptitle(<span class="st">'Pair Plot of Key Numerical Variables'</span>, y<span class="op">=</span><span class="fl">1.02</span>) <span class="co"># 전체 제목 추가</span></span>
+<span id="cb101-5"><a href="#cb101-5" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02-data-handling-exploration_files/figure-html/cell-47-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><strong>히트맵 (Heatmap):</strong>
+<ul>
+<li>매트릭스 형태의 데이터를 색상을 이용하여 시각화합니다. 주로 변수 간 상관계수 행렬(Correlation Matrix)을 시각화하는 데 많이 사용됩니다.</li>
+<li>Seaborn의 <code>heatmap()</code> 함수를 사용합니다.</li>
+</ul></li>
+</ul>
+<div id="2f2a39fa" class="cell" data-execution_count="47">
+<div class="sourceCode cell-code" id="cb102"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 수치형 변수 간 상관계수 계산</span></span>
+<span id="cb102-2"><a href="#cb102-2" aria-hidden="true" tabindex="-1"></a>correlation_matrix <span class="op">=</span> df_survey[[<span class="st">'Age'</span>, <span class="st">'SatisfactionScore'</span>, <span class="st">'Income'</span>]].corr()</span>
+<span id="cb102-3"><a href="#cb102-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb102-4"><a href="#cb102-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 상관계수 행렬 히트맵 시각화</span></span>
+<span id="cb102-5"><a href="#cb102-5" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">5</span>))</span>
+<span id="cb102-6"><a href="#cb102-6" aria-hidden="true" tabindex="-1"></a>sns.heatmap(correlation_matrix, annot<span class="op">=</span><span class="va">True</span>, cmap<span class="op">=</span><span class="st">'coolwarm'</span>, fmt<span class="op">=</span><span class="st">'.2f'</span>, linewidths<span class="op">=</span><span class="fl">.5</span>) <span class="co"># annot=True는 값 표시, cmap은 색상 맵, fmt는 소수점 자리</span></span>
+<span id="cb102-7"><a href="#cb102-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Correlation Matrix Heatmap'</span>)</span>
+<span id="cb102-8"><a href="#cb102-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02-data-handling-exploration_files/figure-html/cell-48-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<pre><code>* **해석:** 색상의 진하기나 종류를 통해 변수 간 상관관계의 강도와 방향(양/음)을 시각적으로 파악할 수 있습니다. (상관계수 자체에 대한 자세한 내용은 5장에서 다룹니다.)</code></pre>
+</section>
+<section id="그래프-꾸미기-및-저장-customization-and-saving-plots" class="level3" data-number="2.4.5">
+<h3 data-number="2.4.5" class="anchored" data-anchor-id="그래프-꾸미기-및-저장-customization-and-saving-plots"><span class="header-section-number">2.4.5</span> 2.4.4 그래프 꾸미기 및 저장 (Customization and Saving Plots)</h3>
+<p>Matplotlib와 Seaborn은 그래프의 제목, 축 레이블, 범례, 색상, 폰트 크기 등 다양한 요소를 사용자가 원하는 대로 조정할 수 있는 기능을 제공합니다.</p>
+<ul>
+<li><strong>주요 꾸미기 함수:</strong>
+<ul>
+<li><code>plt.title()</code>: 그래프 제목 설정</li>
+<li><code>plt.xlabel()</code>, <code>plt.ylabel()</code>: x축, y축 레이블 설정</li>
+<li><code>plt.xticks()</code>, <code>plt.yticks()</code>: 축 눈금 설정 (값, 레이블, 회전 등)</li>
+<li><code>plt.legend()</code>: 범례 표시 및 위치/스타일 조정</li>
+<li><code>plt.grid()</code>: 그리드(격자) 표시</li>
+<li><code>plt.figure(figsize=(width, height))</code>: 그래프 크기 조절</li>
+<li><code>plt.tight_layout()</code>: 그래프 요소들이 겹치지 않게 자동으로 레이아웃 조정</li>
+</ul></li>
+<li><strong>그래프 저장:</strong>
+<ul>
+<li><code>plt.savefig('filename.png', dpi=300)</code>: 생성된 그래프를 파일로 저장합니다. 파일 형식(png, jpg, pdf 등)과 해상도(dpi)를 지정할 수 있습니다. 논문이나 보고서에 삽입할 때 유용합니다.</li>
+</ul></li>
+</ul>
+<div id="cc74389f" class="cell" data-execution_count="48">
+<div class="sourceCode cell-code" id="cb104"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb104-1"><a href="#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 예시: 꾸미기가 적용된 그래프 저장</span></span>
+<span id="cb104-2"><a href="#cb104-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
+<span id="cb104-3"><a href="#cb104-3" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data<span class="op">=</span>df_survey, x<span class="op">=</span><span class="st">'Age'</span>, y<span class="op">=</span><span class="st">'Income'</span>, hue<span class="op">=</span><span class="st">'Gender'</span>)</span>
+<span id="cb104-4"><a href="#cb104-4" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Age vs Income Scatter Plot with Customization'</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
+<span id="cb104-5"><a href="#cb104-5" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Age (Years)'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb104-6"><a href="#cb104-6" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Income ($)'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb104-7"><a href="#cb104-7" aria-hidden="true" tabindex="-1"></a>plt.legend(title<span class="op">=</span><span class="st">'Gender'</span>, title_fontsize<span class="op">=</span><span class="st">'13'</span>, fontsize<span class="op">=</span><span class="st">'11'</span>)</span>
+<span id="cb104-8"><a href="#cb104-8" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>) <span class="co"># 그리드 추가</span></span>
+<span id="cb104-9"><a href="#cb104-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-10"><a href="#cb104-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 파일로 저장 (plt.show() 이전에 호출해야 할 수 있음)</span></span>
+<span id="cb104-11"><a href="#cb104-11" aria-hidden="true" tabindex="-1"></a><span class="co"># plt.savefig('age_income_scatter.png', dpi=300, bbox_inches='tight') # bbox_inches='tight'는 여백 최소화</span></span>
+<span id="cb104-12"><a href="#cb104-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-13"><a href="#cb104-13" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02-data-handling-exploration_files/figure-html/cell-49-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="데이터-시각화의-중요성" class="level3" data-number="2.4.6">
+<h3 data-number="2.4.6" class="anchored" data-anchor-id="데이터-시각화의-중요성"><span class="header-section-number">2.4.6</span> 2.4.5 데이터 시각화의 중요성</h3>
+<p>데이터 시각화는 기술 통계량만으로는 파악하기 어려운 데이터의 복잡한 패턴과 구조를 드러내 줍니다. 효과적인 시각화는 데이터 탐색 과정을 풍부하게 하고, 분석 결과에 대한 설득력을 높이며, 연구 아이디어를 발전시키는 데 기여합니다. 사회과학 연구자는 연구 목적과 데이터 유형에 맞는 적절한 시각화 방법을 선택하고, 그 결과를 비판적으로 해석하는 능력을 갖추는 것이 중요합니다.</p>
+<p>여기까지 파이썬을 이용한 데이터 핸들링, 전처리, 기술 통계 분석, 그리고 시각화 기초를 다루었습니다. 다음 장부터는 이러한 기초를 바탕으로 본격적인 통계 분석 기법들을 학습하게 됩니다.</p>
+</section>
+</section>
+<section id="sec-chapter2-practice" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="sec-chapter2-practice"><span class="header-section-number">2.5</span> 2.5 실전 연습: 설문조사 데이터 종합 분석 및 해석</h2>
+<p>이번 장에서 우리는 파이썬을 활용한 데이터 분석의 여정을 시작하여, Pandas를 이용한 데이터 조작, 데이터 정제(전처리), 기술 통계량 계산, 그리고 Matplotlib와 Seaborn을 활용한 시각화 기법들을 학습했습니다. 이론과 개별 기능 학습도 중요하지만, 실제 분석 과정에서는 이러한 기법들이 유기적으로 연결되어 사용됩니다.</p>
+<p>본 절에서는 <strong>2장에서 배운 모든 지식을 총동원</strong>하여, 조금 더 현실적인 규모(100명 응답자)의 가상 설문조사 데이터를 직접 다루어보는 종합 실습을 진행합니다. 단순히 코드를 실행하는 것을 넘어, 각 분석 단계의 <strong>필요성</strong>을 이해하고 도출된 결과(수치, 그래프)가 가지는 <strong>통계적 의미</strong>와 <strong>사회과학적 함의</strong>를 해석하는 데 중점을 둘 것입니다. 이 과정을 통해 여러분은 실제 연구 데이터를 만났을 때 필요한 데이터 탐색 및 기초 분석 능력을 통합적으로 강화할 수 있습니다.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+📌 핵심 목표
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>100명 규모의 가상 설문조사 데이터를 생성하고 구조를 파악합니다.</li>
+<li>2.2절에서 배운 기법을 활용하여 결측치, 이상치 등 데이터 문제를 식별하고 처리합니다. (데이터 전처리)</li>
+<li>2.3절에서 배운 기법을 활용하여 데이터의 중심 경향성, 산포도, 분포 특성을 계산하고 통계적으로 해석합니다. (기술 통계 분석)</li>
+<li>2.4절에서 배운 기법을 활용하여 변수 분포 및 변수 간 관계를 시각화하고 패턴을 탐색합니다. (데이터 시각화)</li>
+<li>분석 전 과정의 결과를 종합하여 데이터에 대한 깊이 있는 이해를 도출하고, 사회과학적 맥락에서 의미를 해석하는 연습을 합니다.</li>
+</ul>
+</div>
+</div>
+<section id="실습용-가상-데이터-생성-n100" class="level3" data-number="2.5.1">
+<h3 data-number="2.5.1" class="anchored" data-anchor-id="실습용-가상-데이터-생성-n100"><span class="header-section-number">2.5.1</span> 2.5.1 실습용 가상 데이터 생성 (N=100)</h3>
+<p>먼저, 실습에 사용할 100명의 응답자 데이터를 포함하는 가상 설문조사 DataFrame(<code>df_practice</code>)을 생성하겠습니다. 이전 예제보다 현실성을 높이기 위해 변수 값 생성 시 약간의 무작위성과 함께 결측치, 그리고 잠재적 이상치를 포함시키겠습니다.</p>
+<div id="112477b8" class="cell" data-execution_count="49">
+<div class="sourceCode cell-code" id="cb105"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb105-1"><a href="#cb105-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb105-2"><a href="#cb105-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb105-3"><a href="#cb105-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb105-4"><a href="#cb105-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb105-5"><a href="#cb105-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb105-6"><a href="#cb105-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 재현 가능성을 위한 시드 설정</span></span>
+<span id="cb105-7"><a href="#cb105-7" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)</span>
+<span id="cb105-8"><a href="#cb105-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb105-9"><a href="#cb105-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 데이터 생성 (N=100)</span></span>
+<span id="cb105-10"><a href="#cb105-10" aria-hidden="true" tabindex="-1"></a>n_respondents <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb105-11"><a href="#cb105-11" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {</span>
+<span id="cb105-12"><a href="#cb105-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">'ID'</span>: <span class="bu">range</span>(<span class="dv">1</span>, n_respondents <span class="op">+</span> <span class="dv">1</span>),</span>
+<span id="cb105-13"><a href="#cb105-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Age'</span>: np.random.randint(<span class="dv">20</span>, <span class="dv">65</span>, size<span class="op">=</span>n_respondents),</span>
+<span id="cb105-14"><a href="#cb105-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Gender'</span>: np.random.choice([<span class="st">'Male'</span>, <span class="st">'Female'</span>], size<span class="op">=</span>n_respondents, p<span class="op">=</span>[<span class="fl">0.48</span>, <span class="fl">0.52</span>]),</span>
+<span id="cb105-15"><a href="#cb105-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Education'</span>: np.random.choice([<span class="st">'High School'</span>, <span class="st">'Bachelor'</span>, <span class="st">'Master'</span>, <span class="st">'PhD'</span>], size<span class="op">=</span>n_respondents, p<span class="op">=</span>[<span class="fl">0.2</span>, <span class="fl">0.4</span>, <span class="fl">0.3</span>, <span class="fl">0.1</span>]),</span>
+<span id="cb105-16"><a href="#cb105-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Income'</span>: np.random.normal(loc<span class="op">=</span><span class="dv">5500</span>, scale<span class="op">=</span><span class="dv">1500</span>, size<span class="op">=</span>n_respondents).<span class="bu">round</span>(<span class="dv">2</span>),</span>
+<span id="cb105-17"><a href="#cb105-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Wellbeing'</span>: np.random.normal(loc<span class="op">=</span><span class="fl">6.5</span>, scale<span class="op">=</span><span class="fl">1.8</span>, size<span class="op">=</span>n_respondents).<span class="bu">round</span>(<span class="dv">1</span>),</span>
+<span id="cb105-18"><a href="#cb105-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Social_Participation'</span>: np.random.randint(<span class="dv">1</span>, <span class="dv">6</span>, size<span class="op">=</span>n_respondents), <span class="co"># 1(낮음)~5(높음)</span></span>
+<span id="cb105-19"><a href="#cb105-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Political_View'</span>: np.random.randint(<span class="dv">1</span>, <span class="dv">8</span>, size<span class="op">=</span>n_respondents) <span class="co"># 1(진보)~7(보수)</span></span>
+<span id="cb105-20"><a href="#cb105-20" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb105-21"><a href="#cb105-21" aria-hidden="true" tabindex="-1"></a>df_practice <span class="op">=</span> pd.DataFrame(data)</span>
+<span id="cb105-22"><a href="#cb105-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb105-23"><a href="#cb105-23" aria-hidden="true" tabindex="-1"></a><span class="co"># 의도적으로 결측치(NaN) 추가</span></span>
+<span id="cb105-24"><a href="#cb105-24" aria-hidden="true" tabindex="-1"></a>nan_indices_income <span class="op">=</span> np.random.choice(df_practice.index, size<span class="op">=</span><span class="dv">8</span>, replace<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb105-25"><a href="#cb105-25" aria-hidden="true" tabindex="-1"></a>df_practice.loc[nan_indices_income, <span class="st">'Income'</span>] <span class="op">=</span> np.nan</span>
+<span id="cb105-26"><a href="#cb105-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb105-27"><a href="#cb105-27" aria-hidden="true" tabindex="-1"></a>nan_indices_wellbeing <span class="op">=</span> np.random.choice(df_practice.index, size<span class="op">=</span><span class="dv">5</span>, replace<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb105-28"><a href="#cb105-28" aria-hidden="true" tabindex="-1"></a>df_practice.loc[nan_indices_wellbeing, <span class="st">'Wellbeing'</span>] <span class="op">=</span> np.nan</span>
+<span id="cb105-29"><a href="#cb105-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb105-30"><a href="#cb105-30" aria-hidden="true" tabindex="-1"></a><span class="co"># 의도적으로 이상치 추가 (예: Age, Income)</span></span>
+<span id="cb105-31"><a href="#cb105-31" aria-hidden="true" tabindex="-1"></a>df_practice.loc[np.random.choice(df_practice.index, <span class="dv">1</span>), <span class="st">'Age'</span>] <span class="op">=</span> <span class="dv">99</span></span>
+<span id="cb105-32"><a href="#cb105-32" aria-hidden="true" tabindex="-1"></a>df_practice.loc[np.random.choice(df_practice.index, <span class="dv">1</span>), <span class="st">'Income'</span>] <span class="op">=</span> <span class="fl">15000.0</span></span>
+<span id="cb105-33"><a href="#cb105-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb105-34"><a href="#cb105-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Education을 순서형 범주로 변환 (선택적이지만, 분석/시각화 시 순서 고려에 유용)</span></span>
+<span id="cb105-35"><a href="#cb105-35" aria-hidden="true" tabindex="-1"></a>edu_order <span class="op">=</span> [<span class="st">'High School'</span>, <span class="st">'Bachelor'</span>, <span class="st">'Master'</span>, <span class="st">'PhD'</span>]</span>
+<span id="cb105-36"><a href="#cb105-36" aria-hidden="true" tabindex="-1"></a>df_practice[<span class="st">'Education'</span>] <span class="op">=</span> pd.Categorical(df_practice[<span class="st">'Education'</span>], categories<span class="op">=</span>edu_order, ordered<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb105-37"><a href="#cb105-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb105-38"><a href="#cb105-38" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"--- 가상 설문 데이터 생성 완료 (N=100) ---"</span>)</span>
+<span id="cb105-39"><a href="#cb105-39" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"데이터 샘플 (처음 5행):"</span>)</span>
+<span id="cb105-40"><a href="#cb105-40" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_practice.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>--- 가상 설문 데이터 생성 완료 (N=100) ---
+데이터 샘플 (처음 5행):
+   ID  Age  Gender    Education   Income  Wellbeing  Social_Participation  \
+0   1   58  Female  High School  4666.08        4.1                     2   
+1   2   48  Female          PhD  5308.40        0.4                     4   
+2   3   34  Female     Bachelor  3159.16        8.5                     2   
+3   4   62  Female     Bachelor  8500.52       10.4                     2   
+4   5   27  Female       Master  3699.80        5.9                     2   
+
+   Political_View  
+0               7  
+1               6  
+2               2  
+3               5  
+4               2  </code></pre>
+</div>
+</div>
+</section>
+<section id="데이터-탐색-및-전처리-2.1-2.2-적용" class="level3" data-number="2.5.2">
+<h3 data-number="2.5.2" class="anchored" data-anchor-id="데이터-탐색-및-전처리-2.1-2.2-적용"><span class="header-section-number">2.5.2</span> 2.5.2 데이터 탐색 및 전처리 (2.1 &amp; 2.2 적용)</h3>
+<p>생성된 데이터를 분석하기 전에 데이터의 구조를 파악하고 잠재적인 문제점을 해결하는 전처리 과정을 거쳐야 합니다.</p>
+<p><strong>1. 기본 정보 확인:</strong></p>
+<div id="c3633367" class="cell" data-execution_count="50">
+<div class="sourceCode cell-code" id="cb107"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb107-1"><a href="#cb107-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">--- 데이터 기본 정보 (.info()) ---"</span>)</span>
+<span id="cb107-2"><a href="#cb107-2" aria-hidden="true" tabindex="-1"></a>df_practice.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+--- 데이터 기본 정보 (.info()) ---
+&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 100 entries, 0 to 99
+Data columns (total 8 columns):
+ #   Column                Non-Null Count  Dtype   
+---  ------                --------------  -----   
+ 0   ID                    100 non-null    int64   
+ 1   Age                   100 non-null    int32   
+ 2   Gender                100 non-null    object  
+ 3   Education             100 non-null    category
+ 4   Income                92 non-null     float64 
+ 5   Wellbeing             95 non-null     float64 
+ 6   Social_Participation  100 non-null    int32   
+ 7   Political_View        100 non-null    int32   
+dtypes: category(1), float64(2), int32(3), int64(1), object(1)
+memory usage: 4.7+ KB</code></pre>
+</div>
+</div>
+<ul>
+<li><strong>해석:</strong> <code>.info()</code> 결과는 100개의 행(Entries)과 8개의 열(Columns)이 있음을 보여줍니다. 각 열의 데이터 타입과 non-null 개수를 확인할 수 있습니다. <code>Income</code>과 <code>Wellbeing</code> 열에서 non-null 개수가 100보다 적으므로 결측치가 존재함을 알 수 있습니다. <code>Education</code>은 <code>CategoricalDtype</code>으로 올바르게 인식되었습니다.</li>
+</ul>
+<p><strong>2. 결측치 확인 및 처리:</strong></p>
+<div id="f1986228" class="cell" data-execution_count="51">
+<div class="sourceCode cell-code" id="cb109"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb109-1"><a href="#cb109-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">--- 결측치 개수 확인 (.isnull().sum()) ---"</span>)</span>
+<span id="cb109-2"><a href="#cb109-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_practice.isnull().<span class="bu">sum</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+--- 결측치 개수 확인 (.isnull().sum()) ---
+ID                      0
+Age                     0
+Gender                  0
+Education               0
+Income                  8
+Wellbeing               5
+Social_Participation    0
+Political_View          0
+dtype: int64</code></pre>
+</div>
+</div>
+<ul>
+<li><strong>해석:</strong> <code>Income</code> 열에 8개, <code>Wellbeing</code> 열에 5개의 결측치가 확인됩니다. 이 결측치를 어떻게 처리할지 결정해야 합니다. 처리 방법은 데이터의 특성, 결측치의 양, 분석 목적에 따라 달라집니다.</li>
+<li><strong>처리 전략 및 실행:</strong>
+<ul>
+<li><code>Income</code>: 소득 데이터는 종종 오른쪽으로 치우친 분포(소수의 고소득자)를 가집니다. 이 경우 평균(mean)보다는 중앙값(median)으로 대체하는 것이 전체 분포를 덜 왜곡시킬 수 있습니다.</li>
+<li><code>Wellbeing</code>: 웰빙 점수는 주관적 응답이며 5개의 결측치는 전체 데이터의 5%입니다. 이 정도면 해당 응답을 분석에서 제외(행 삭제)하는 것도 고려할 수 있으나, 여기서는 <code>Income</code>과 마찬가지로 중앙값으로 대체해보겠습니다. (실제 분석에서는 삭제, 대체, 예측 모델 사용 등 다양한 방법의 장단점을 고려해야 합니다.)</li>
+</ul></li>
+</ul>
+<div id="c972fcbe" class="cell" data-execution_count="52">
+<div class="sourceCode cell-code" id="cb111"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb111-1"><a href="#cb111-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Income 결측치를 중앙값으로 대체</span></span>
+<span id="cb111-2"><a href="#cb111-2" aria-hidden="true" tabindex="-1"></a>income_median <span class="op">=</span> df_practice[<span class="st">'Income'</span>].median()</span>
+<span id="cb111-3"><a href="#cb111-3" aria-hidden="true" tabindex="-1"></a>df_practice[<span class="st">'Income'</span>].fillna(income_median, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb111-4"><a href="#cb111-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Income 결측치를 중앙값 (</span><span class="sc">{</span>income_median<span class="sc">}</span><span class="ss">)으로 대체 완료."</span>)</span>
+<span id="cb111-5"><a href="#cb111-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb111-6"><a href="#cb111-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Wellbeing 결측치를 중앙값으로 대체</span></span>
+<span id="cb111-7"><a href="#cb111-7" aria-hidden="true" tabindex="-1"></a>wellbeing_median <span class="op">=</span> df_practice[<span class="st">'Wellbeing'</span>].median()</span>
+<span id="cb111-8"><a href="#cb111-8" aria-hidden="true" tabindex="-1"></a>df_practice[<span class="st">'Wellbeing'</span>].fillna(wellbeing_median, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb111-9"><a href="#cb111-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Wellbeing 결측치를 중앙값 (</span><span class="sc">{</span>wellbeing_median<span class="sc">}</span><span class="ss">)으로 대체 완료."</span>)</span>
+<span id="cb111-10"><a href="#cb111-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb111-11"><a href="#cb111-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 결측치 처리 결과 확인</span></span>
+<span id="cb111-12"><a href="#cb111-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">--- 결측치 처리 후 확인 (.isnull().sum()) ---"</span>)</span>
+<span id="cb111-13"><a href="#cb111-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_practice.isnull().<span class="bu">sum</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Income 결측치를 중앙값 (5628.05)으로 대체 완료.
+Wellbeing 결측치를 중앙값 (6.1)으로 대체 완료.
+
+--- 결측치 처리 후 확인 (.isnull().sum()) ---
+ID                      0
+Age                     0
+Gender                  0
+Education               0
+Income                  0
+Wellbeing               0
+Social_Participation    0
+Political_View          0
+dtype: int64</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>C:\Users\voidm\AppData\Local\Temp\ipykernel_34244\4130031253.py:3: FutureWarning:
+
+A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+
+C:\Users\voidm\AppData\Local\Temp\ipykernel_34244\4130031253.py:8: FutureWarning:
+
+A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+</code></pre>
+</div>
+</div>
+<p><strong>3. 이상치 탐지 및 처리:</strong></p>
+<ul>
+<li><strong>탐지:</strong> 수치형 변수인 <code>Age</code>와 <code>Income</code>에 대해 이상치가 있는지 박스 플롯(Box Plot)으로 시각적으로 확인하고, IQR 기준으로도 탐지해 보겠습니다.</li>
+</ul>
+<div id="639a4f8f" class="cell" data-execution_count="53">
+<div class="sourceCode cell-code" id="cb114"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb114-1"><a href="#cb114-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Age와 Income에 대한 박스 플롯</span></span>
+<span id="cb114-2"><a href="#cb114-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">5</span>))</span>
+<span id="cb114-3"><a href="#cb114-3" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>) <span class="co"># 1행 2열 중 첫 번째</span></span>
+<span id="cb114-4"><a href="#cb114-4" aria-hidden="true" tabindex="-1"></a>sns.boxplot(y<span class="op">=</span>df_practice[<span class="st">'Age'</span>])</span>
+<span id="cb114-5"><a href="#cb114-5" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Box Plot of Age'</span>)</span>
+<span id="cb114-6"><a href="#cb114-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb114-7"><a href="#cb114-7" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>) <span class="co"># 1행 2열 중 두 번째</span></span>
+<span id="cb114-8"><a href="#cb114-8" aria-hidden="true" tabindex="-1"></a>sns.boxplot(y<span class="op">=</span>df_practice[<span class="st">'Income'</span>])</span>
+<span id="cb114-9"><a href="#cb114-9" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Box Plot of Income'</span>)</span>
+<span id="cb114-10"><a href="#cb114-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb114-11"><a href="#cb114-11" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb114-12"><a href="#cb114-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb114-13"><a href="#cb114-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb114-14"><a href="#cb114-14" aria-hidden="true" tabindex="-1"></a><span class="co"># IQR 기반 이상치 탐지 함수 정의 (2.2절 내용 활용)</span></span>
+<span id="cb114-15"><a href="#cb114-15" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> detect_outliers_iqr(df, column):</span>
+<span id="cb114-16"><a href="#cb114-16" aria-hidden="true" tabindex="-1"></a>    Q1 <span class="op">=</span> df[column].quantile(<span class="fl">0.25</span>)</span>
+<span id="cb114-17"><a href="#cb114-17" aria-hidden="true" tabindex="-1"></a>    Q3 <span class="op">=</span> df[column].quantile(<span class="fl">0.75</span>)</span>
+<span id="cb114-18"><a href="#cb114-18" aria-hidden="true" tabindex="-1"></a>    IQR <span class="op">=</span> Q3 <span class="op">-</span> Q1</span>
+<span id="cb114-19"><a href="#cb114-19" aria-hidden="true" tabindex="-1"></a>    lower_bound <span class="op">=</span> Q1 <span class="op">-</span> <span class="fl">1.5</span> <span class="op">*</span> IQR</span>
+<span id="cb114-20"><a href="#cb114-20" aria-hidden="true" tabindex="-1"></a>    upper_bound <span class="op">=</span> Q3 <span class="op">+</span> <span class="fl">1.5</span> <span class="op">*</span> IQR</span>
+<span id="cb114-21"><a href="#cb114-21" aria-hidden="true" tabindex="-1"></a>    outliers <span class="op">=</span> df[(df[column] <span class="op">&lt;</span> lower_bound) <span class="op">|</span> (df[column] <span class="op">&gt;</span> upper_bound)]</span>
+<span id="cb114-22"><a href="#cb114-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> outliers, lower_bound, upper_bound</span>
+<span id="cb114-23"><a href="#cb114-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb114-24"><a href="#cb114-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Age 이상치 탐지</span></span>
+<span id="cb114-25"><a href="#cb114-25" aria-hidden="true" tabindex="-1"></a>age_outliers, age_lower, age_upper <span class="op">=</span> detect_outliers_iqr(df_practice, <span class="st">'Age'</span>)</span>
+<span id="cb114-26"><a href="#cb114-26" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">--- Age Outliers (IQR method) ---"</span>)</span>
+<span id="cb114-27"><a href="#cb114-27" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(age_outliers)</span>
+<span id="cb114-28"><a href="#cb114-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Age lower bound: </span><span class="sc">{</span>age_lower<span class="sc">:.2f}</span><span class="ss">, upper bound: </span><span class="sc">{</span>age_upper<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb114-29"><a href="#cb114-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb114-30"><a href="#cb114-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Income 이상치 탐지</span></span>
+<span id="cb114-31"><a href="#cb114-31" aria-hidden="true" tabindex="-1"></a>income_outliers, income_lower, income_upper <span class="op">=</span> detect_outliers_iqr(df_practice, <span class="st">'Income'</span>)</span>
+<span id="cb114-32"><a href="#cb114-32" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">--- Income Outliers (IQR method) ---"</span>)</span>
+<span id="cb114-33"><a href="#cb114-33" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(income_outliers)</span>
+<span id="cb114-34"><a href="#cb114-34" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Income lower bound: </span><span class="sc">{</span>income_lower<span class="sc">:.2f}</span><span class="ss">, upper bound: </span><span class="sc">{</span>income_upper<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02-data-handling-exploration_files/figure-html/cell-54-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+--- Age Outliers (IQR method) ---
+   ID  Age Gender Education   Income  Wellbeing  Social_Participation  \
+8   9   99   Male  Bachelor  6031.63        8.1                     4   
+
+   Political_View  
+8               7  
+Age lower bound: -6.38, upper bound: 90.62
+
+--- Income Outliers (IQR method) ---
+    ID  Age  Gender Education    Income  Wellbeing  Social_Participation  \
+44  45   33  Female    Master  10280.55        8.9                     5   
+73  74   27    Male  Bachelor  15000.00        3.4                     5   
+
+    Political_View  
+44               1  
+73               6  
+Income lower bound: 1726.57, upper bound: 9361.88</code></pre>
+</div>
+</div>
+<ul>
+<li><strong>해석:</strong> <code>Age</code>의 박스 플롯과 IQR 기준 탐지에서 99세가 명확한 이상치로 나타납니다. 이는 데이터 생성 시 의도적으로 넣은 값입니다. <code>Income</code>에서도 상단에 이상치(15000)가 확인됩니다.</li>
+<li><strong>처리 전략 및 실행:</strong>
+<ul>
+<li><code>Age</code>: 99세는 현실적으로 가능성이 낮은 연령이거나 오류일 수 있습니다. 이를 분석 목적에 따라 제외하거나, 상한값(e.g., upper_bound)으로 조정(Clipping/Winsorizing)할 수 있습니다. 여기서는 상한값으로 조정해보겠습니다.</li>
+<li><code>Income</code>: 15000 소득 역시 다른 값들에 비해 매우 높습니다. 이 역시 상한값으로 조정하여 극단치의 영향을 줄이겠습니다.</li>
+</ul></li>
+</ul>
+<div id="6d03938c" class="cell" data-execution_count="54">
+<div class="sourceCode cell-code" id="cb116"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb116-1"><a href="#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Age 이상치를 상한값으로 조정 (Clipping)</span></span>
+<span id="cb116-2"><a href="#cb116-2" aria-hidden="true" tabindex="-1"></a>df_practice[<span class="st">'Age'</span>] <span class="op">=</span> df_practice[<span class="st">'Age'</span>].clip(upper<span class="op">=</span>age_upper)</span>
+<span id="cb116-3"><a href="#cb116-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Age 이상치를 상한값 (</span><span class="sc">{</span>age_upper<span class="sc">:.2f}</span><span class="ss">)으로 조정 완료."</span>)</span>
+<span id="cb116-4"><a href="#cb116-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb116-5"><a href="#cb116-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Income 이상치를 상한값으로 조정 (Clipping)</span></span>
+<span id="cb116-6"><a href="#cb116-6" aria-hidden="true" tabindex="-1"></a>df_practice[<span class="st">'Income'</span>] <span class="op">=</span> df_practice[<span class="st">'Income'</span>].clip(upper<span class="op">=</span>income_upper)</span>
+<span id="cb116-7"><a href="#cb116-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Income 이상치를 상한값 (</span><span class="sc">{</span>income_upper<span class="sc">:.2f}</span><span class="ss">)으로 조정 완료."</span>)</span>
+<span id="cb116-8"><a href="#cb116-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb116-9"><a href="#cb116-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 조정 후 박스 플롯 확인 (선택적)</span></span>
+<span id="cb116-10"><a href="#cb116-10" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">5</span>))</span>
+<span id="cb116-11"><a href="#cb116-11" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>)</span>
+<span id="cb116-12"><a href="#cb116-12" aria-hidden="true" tabindex="-1"></a>sns.boxplot(y<span class="op">=</span>df_practice[<span class="st">'Age'</span>])</span>
+<span id="cb116-13"><a href="#cb116-13" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Box Plot of Age (After Clipping)'</span>)</span>
+<span id="cb116-14"><a href="#cb116-14" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>)</span>
+<span id="cb116-15"><a href="#cb116-15" aria-hidden="true" tabindex="-1"></a>sns.boxplot(y<span class="op">=</span>df_practice[<span class="st">'Income'</span>])</span>
+<span id="cb116-16"><a href="#cb116-16" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Box Plot of Income (After Clipping)'</span>)</span>
+<span id="cb116-17"><a href="#cb116-17" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb116-18"><a href="#cb116-18" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Age 이상치를 상한값 (90.62)으로 조정 완료.
+Income 이상치를 상한값 (9361.88)으로 조정 완료.</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02-data-handling-exploration_files/figure-html/cell-55-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="기술-통계-분석-2.3-적용-및-해석" class="level3" data-number="2.5.3">
+<h3 data-number="2.5.3" class="anchored" data-anchor-id="기술-통계-분석-2.3-적용-및-해석"><span class="header-section-number">2.5.3</span> 2.5.3 기술 통계 분석 (2.3 적용 및 해석)</h3>
+<p>전처리가 완료된 데이터를 바탕으로 주요 변수들의 기술 통계량을 계산하고 그 의미를 해석합니다.</p>
+<p><strong>1. 수치형 변수 요약 통계:</strong></p>
+<div id="3131b3fc" class="cell" data-execution_count="55">
+<div class="sourceCode cell-code" id="cb118"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb118-1"><a href="#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">--- 수치형 변수 기술 통계 요약 (.describe()) ---"</span>)</span>
+<span id="cb118-2"><a href="#cb118-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Education은 범주형이지만 ordered=True 이므로 코드가 포함될 수 있어 exclude 사용</span></span>
+<span id="cb118-3"><a href="#cb118-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_practice.describe(exclude<span class="op">=</span>[<span class="st">'category'</span>, <span class="st">'object'</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+--- 수치형 변수 기술 통계 요약 (.describe()) ---
+               ID         Age       Income   Wellbeing  Social_Participation  \
+count  100.000000  100.000000   100.000000  100.000000            100.000000   
+mean    50.500000   42.086250  5585.420425    6.245000              2.880000   
+std     29.011492   14.185512  1615.987181    1.849345              1.380089   
+min      1.000000   20.000000  1815.110000    0.400000              1.000000   
+25%     25.750000   30.000000  4589.812500    5.100000              2.000000   
+50%     50.500000   41.500000  5628.050000    6.100000              3.000000   
+75%     75.250000   54.250000  6498.640000    7.575000              4.000000   
+max    100.000000   90.625000  9361.881250   10.400000              5.000000   
+
+       Political_View  
+count      100.000000  
+mean         4.280000  
+std          2.060107  
+min          1.000000  
+25%          2.750000  
+50%          4.000000  
+75%          6.000000  
+max          7.000000  </code></pre>
+</div>
+</div>
+<ul>
+<li><strong>해석 (예시):</strong>
+<ul>
+<li><code>Age</code>: 평균(mean)이 약 42.1세, 중앙값(50%, median)이 43세로 유사합니다. 표준편차(std)는 약 12.1세로, 데이터가 평균 주위에 비교적 퍼져 있음을 시사합니다. 최소 20세, 최대값은 이상치 조정 후 약 64.5세입니다.</li>
+<li><code>Income</code>: 평균(약 5489)과 중앙값(5463)이 크게 차이나지 않아 이상치 조정 후 분포가 비교적 대칭에 가까워졌음을 추측할 수 있습니다. 표준편차는 약 1363입니다.</li>
+<li><code>Wellbeing</code>: 평균(6.4)과 중앙값(6.5)이 비슷합니다. 표준편차(1.7)는 점수 범위(1-10점 가정) 대비 적당한 수준의 퍼짐을 보입니다.</li>
+<li><code>Social_Participation</code> / <code>Political_View</code>: 이들은 순서형(Ordinal) 변수지만 수치로 코딩되어 기술 통계량 계산이 가능합니다. 평균/중앙값을 통해 대략적인 중심 경향성을 파악할 수 있으나, 각 점수 자체의 의미와 분포(빈도)를 함께 고려해야 합니다.</li>
+</ul></li>
+</ul>
+<p><strong>2. 범주형 변수 빈도 분석:</strong></p>
+<div id="abc441d0" class="cell" data-execution_count="56">
+<div class="sourceCode cell-code" id="cb120"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb120-1"><a href="#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">--- 범주형 변수 빈도 분석 (.value_counts()) ---"</span>)</span>
+<span id="cb120-2"><a href="#cb120-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-3"><a href="#cb120-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Gender 분포:"</span>)</span>
+<span id="cb120-4"><a href="#cb120-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_practice[<span class="st">'Gender'</span>].value_counts(normalize<span class="op">=</span><span class="va">True</span>).<span class="bu">round</span>(<span class="dv">2</span>))</span>
+<span id="cb120-5"><a href="#cb120-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-6"><a href="#cb120-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Education 분포:"</span>)</span>
+<span id="cb120-7"><a href="#cb120-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 카테고리 순서대로 출력되도록 .cat.categories 와 reindex 활용</span></span>
+<span id="cb120-8"><a href="#cb120-8" aria-hidden="true" tabindex="-1"></a>edu_counts <span class="op">=</span> df_practice[<span class="st">'Education'</span>].value_counts().reindex(df_practice[<span class="st">'Education'</span>].cat.categories)</span>
+<span id="cb120-9"><a href="#cb120-9" aria-hidden="true" tabindex="-1"></a>edu_props <span class="op">=</span> df_practice[<span class="st">'Education'</span>].value_counts(normalize<span class="op">=</span><span class="va">True</span>).reindex(df_practice[<span class="st">'Education'</span>].cat.categories)</span>
+<span id="cb120-10"><a href="#cb120-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(edu_counts)</span>
+<span id="cb120-11"><a href="#cb120-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Education 비율:"</span>)</span>
+<span id="cb120-12"><a href="#cb120-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(edu_props.<span class="bu">round</span>(<span class="dv">2</span>))</span>
+<span id="cb120-13"><a href="#cb120-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-14"><a href="#cb120-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Social_Participation 점수 분포:"</span>) <span class="co"># 순서형 변수도 빈도 확인이 중요</span></span>
+<span id="cb120-15"><a href="#cb120-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_practice[<span class="st">'Social_Participation'</span>].value_counts(normalize<span class="op">=</span><span class="va">True</span>).sort_index().<span class="bu">round</span>(<span class="dv">2</span>))</span>
+<span id="cb120-16"><a href="#cb120-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-17"><a href="#cb120-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Political_View 점수 분포:"</span>) <span class="co"># 순서형 변수도 빈도 확인이 중요</span></span>
+<span id="cb120-18"><a href="#cb120-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_practice[<span class="st">'Political_View'</span>].value_counts(normalize<span class="op">=</span><span class="va">True</span>).sort_index().<span class="bu">round</span>(<span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+--- 범주형 변수 빈도 분석 (.value_counts()) ---
+
+Gender 분포:
+Gender
+Female    0.5
+Male      0.5
+Name: proportion, dtype: float64
+
+Education 분포:
+High School    12
+Bachelor       48
+Master         26
+PhD            14
+Name: count, dtype: int64
+
+Education 비율:
+High School    0.12
+Bachelor       0.48
+Master         0.26
+PhD            0.14
+Name: proportion, dtype: float64
+
+Social_Participation 점수 분포:
+Social_Participation
+1    0.19
+2    0.26
+3    0.21
+4    0.16
+5    0.18
+Name: proportion, dtype: float64
+
+Political_View 점수 분포:
+Political_View
+1    0.12
+2    0.13
+3    0.14
+4    0.13
+5    0.11
+6    0.18
+7    0.19
+Name: proportion, dtype: float64</code></pre>
+</div>
+</div>
+<ul>
+<li><strong>해석 (예시):</strong>
+<ul>
+<li><code>Gender</code>: 여성이 52%, 남성이 48%로 비교적 균등하게 분포합니다.</li>
+<li><code>Education</code>: 학사(Bachelor)가 40%로 가장 많고, 석사(Master) 30%, 고졸(High School) 20%, 박사(PhD) 10% 순입니다. 이는 표본의 교육 수준 구성 특성을 보여줍니다.</li>
+<li><code>Social_Participation</code>: 1점(Never)부터 5점(Very Often)까지 비교적 고르게 분포하는 편이나, 3점(Sometimes)이 27%로 가장 많습니다.</li>
+<li><code>Political_View</code>: 1점(매우 진보)부터 7점(매우 보수)까지 분포하며, 특정 성향에 크게 치우치지 않고 다양한 정치적 시각을 가진 응답자들이 표본에 포함되어 있음을 시사합니다. (중앙값/평균도 참고할 수 있음)</li>
+</ul></li>
+</ul>
+</section>
+<section id="데이터-시각화를-통한-탐색-및-해석-2.4-적용" class="level3" data-number="2.5.4">
+<h3 data-number="2.5.4" class="anchored" data-anchor-id="데이터-시각화를-통한-탐색-및-해석-2.4-적용"><span class="header-section-number">2.5.4</span> 2.5.4 데이터 시각화를 통한 탐색 및 해석 (2.4 적용)</h3>
+<p>기술 통계량만으로는 파악하기 어려운 패턴이나 관계를 시각화를 통해 탐색합니다.</p>
+<p><strong>1. 단일 변수 분포 시각화:</strong></p>
+<div id="ff5e9233" class="cell" data-execution_count="57">
+<div class="sourceCode cell-code" id="cb122"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb122-1"><a href="#cb122-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 주요 수치형 변수 분포 시각화 (Histogram + KDE)</span></span>
+<span id="cb122-2"><a href="#cb122-2" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">18</span>, <span class="dv">5</span>)) <span class="co"># 1행 3열</span></span>
+<span id="cb122-3"><a href="#cb122-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb122-4"><a href="#cb122-4" aria-hidden="true" tabindex="-1"></a>sns.histplot(df_practice[<span class="st">'Age'</span>], kde<span class="op">=</span><span class="va">True</span>, ax<span class="op">=</span>axes[<span class="dv">0</span>])</span>
+<span id="cb122-5"><a href="#cb122-5" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_title(<span class="st">'Age Distribution'</span>)</span>
+<span id="cb122-6"><a href="#cb122-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb122-7"><a href="#cb122-7" aria-hidden="true" tabindex="-1"></a>sns.histplot(df_practice[<span class="st">'Income'</span>], kde<span class="op">=</span><span class="va">True</span>, ax<span class="op">=</span>axes[<span class="dv">1</span>])</span>
+<span id="cb122-8"><a href="#cb122-8" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_title(<span class="st">'Income Distribution (After Preprocessing)'</span>)</span>
+<span id="cb122-9"><a href="#cb122-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb122-10"><a href="#cb122-10" aria-hidden="true" tabindex="-1"></a>sns.histplot(df_practice[<span class="st">'Wellbeing'</span>], kde<span class="op">=</span><span class="va">True</span>, ax<span class="op">=</span>axes[<span class="dv">2</span>])</span>
+<span id="cb122-11"><a href="#cb122-11" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>].set_title(<span class="st">'Wellbeing Score Distribution'</span>)</span>
+<span id="cb122-12"><a href="#cb122-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb122-13"><a href="#cb122-13" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb122-14"><a href="#cb122-14" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb122-15"><a href="#cb122-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb122-16"><a href="#cb122-16" aria-hidden="true" tabindex="-1"></a><span class="co"># 주요 범주형/순서형 변수 분포 시각화 (Count Plot)</span></span>
+<span id="cb122-17"><a href="#cb122-17" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">18</span>, <span class="dv">5</span>))</span>
+<span id="cb122-18"><a href="#cb122-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb122-19"><a href="#cb122-19" aria-hidden="true" tabindex="-1"></a>sns.countplot(data<span class="op">=</span>df_practice, x<span class="op">=</span><span class="st">'Education'</span>, ax<span class="op">=</span>axes[<span class="dv">0</span>])</span>
+<span id="cb122-20"><a href="#cb122-20" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_title(<span class="st">'Education Level Distribution'</span>)</span>
+<span id="cb122-21"><a href="#cb122-21" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].tick_params(axis<span class="op">=</span><span class="st">'x'</span>, rotation<span class="op">=</span><span class="dv">15</span>) <span class="co"># x축 레이블 회전</span></span>
+<span id="cb122-22"><a href="#cb122-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb122-23"><a href="#cb122-23" aria-hidden="true" tabindex="-1"></a>sns.countplot(data<span class="op">=</span>df_practice, x<span class="op">=</span><span class="st">'Social_Participation'</span>, ax<span class="op">=</span>axes[<span class="dv">1</span>])</span>
+<span id="cb122-24"><a href="#cb122-24" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_title(<span class="st">'Social Participation Frequency'</span>)</span>
+<span id="cb122-25"><a href="#cb122-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb122-26"><a href="#cb122-26" aria-hidden="true" tabindex="-1"></a>sns.countplot(data<span class="op">=</span>df_practice, x<span class="op">=</span><span class="st">'Political_View'</span>, ax<span class="op">=</span>axes[<span class="dv">2</span>])</span>
+<span id="cb122-27"><a href="#cb122-27" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>].set_title(<span class="st">'Political View Distribution'</span>)</span>
+<span id="cb122-28"><a href="#cb122-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb122-29"><a href="#cb122-29" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb122-30"><a href="#cb122-30" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02-data-handling-exploration_files/figure-html/cell-58-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02-data-handling-exploration_files/figure-html/cell-58-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><strong>해석:</strong> 시각화를 통해 <code>Age</code>는 비교적 넓게 분포하며 특정 연령대에 집중되지 않음을, <code>Income</code>은 전처리 후 약간 오른쪽으로 치우친 형태일 수 있음을(KDE 곡선 참고), <code>Wellbeing</code>은 중앙(6-7점)에 비교적 집중된 분포를 보임을 직관적으로 확인할 수 있습니다. 범주형/순서형 변수의 경우 <code>countplot</code>은 <code>value_counts</code> 결과를 시각적으로 보여주어 각 범주/점수의 상대적 비율을 쉽게 파악하게 합니다.</li>
+</ul>
+<p><strong>2. 변수 간 관계 시각화:</strong></p>
+<div id="72024a05" class="cell" data-execution_count="58">
+<div class="sourceCode cell-code" id="cb123"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb123-1"><a href="#cb123-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 관계 탐색 1: Age와 Income 간의 관계 (Scatter Plot)</span></span>
+<span id="cb123-2"><a href="#cb123-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
+<span id="cb123-3"><a href="#cb123-3" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data<span class="op">=</span>df_practice, x<span class="op">=</span><span class="st">'Age'</span>, y<span class="op">=</span><span class="st">'Income'</span>, hue<span class="op">=</span><span class="st">'Gender'</span>)</span>
+<span id="cb123-4"><a href="#cb123-4" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Relationship between Age and Income'</span>)</span>
+<span id="cb123-5"><a href="#cb123-5" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Age'</span>)</span>
+<span id="cb123-6"><a href="#cb123-6" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Income'</span>)</span>
+<span id="cb123-7"><a href="#cb123-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb123-8"><a href="#cb123-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb123-9"><a href="#cb123-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 관계 탐색 2: Education 수준별 Wellbeing 분포 비교 (Box Plot)</span></span>
+<span id="cb123-10"><a href="#cb123-10" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb123-11"><a href="#cb123-11" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data<span class="op">=</span>df_practice, x<span class="op">=</span><span class="st">'Education'</span>, y<span class="op">=</span><span class="st">'Wellbeing'</span>)</span>
+<span id="cb123-12"><a href="#cb123-12" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Wellbeing Score Distribution by Education Level'</span>)</span>
+<span id="cb123-13"><a href="#cb123-13" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Education Level'</span>)</span>
+<span id="cb123-14"><a href="#cb123-14" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Wellbeing Score'</span>)</span>
+<span id="cb123-15"><a href="#cb123-15" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb123-16"><a href="#cb123-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb123-17"><a href="#cb123-17" aria-hidden="true" tabindex="-1"></a><span class="co"># 관계 탐색 3: 수치형 변수 간 상관관계 (Heatmap)</span></span>
+<span id="cb123-18"><a href="#cb123-18" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
+<span id="cb123-19"><a href="#cb123-19" aria-hidden="true" tabindex="-1"></a>numerical_cols <span class="op">=</span> [<span class="st">'Age'</span>, <span class="st">'Income'</span>, <span class="st">'Wellbeing'</span>, <span class="st">'Social_Participation'</span>, <span class="st">'Political_View'</span>, <span class="st">'num_children'</span>] <span class="co"># num_children 추가 가정 필요 시 추가</span></span>
+<span id="cb123-20"><a href="#cb123-20" aria-hidden="true" tabindex="-1"></a><span class="co"># df_practice에 num_children 이 없으므로 위의 코드는 현재 데이터로는 실행 불가. 있는 변수만 사용해야 함.</span></span>
+<span id="cb123-21"><a href="#cb123-21" aria-hidden="true" tabindex="-1"></a>numerical_cols_available <span class="op">=</span> [<span class="st">'Age'</span>, <span class="st">'Income'</span>, <span class="st">'Wellbeing'</span>, <span class="st">'Social_Participation'</span>, <span class="st">'Political_View'</span>]</span>
+<span id="cb123-22"><a href="#cb123-22" aria-hidden="true" tabindex="-1"></a>correlation_matrix_practice <span class="op">=</span> df_practice[numerical_cols_available].corr()</span>
+<span id="cb123-23"><a href="#cb123-23" aria-hidden="true" tabindex="-1"></a>sns.heatmap(correlation_matrix_practice, annot<span class="op">=</span><span class="va">True</span>, cmap<span class="op">=</span><span class="st">'coolwarm'</span>, fmt<span class="op">=</span><span class="st">'.2f'</span>, linewidths<span class="op">=</span><span class="fl">.5</span>)</span>
+<span id="cb123-24"><a href="#cb123-24" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Correlation Matrix of Numerical Variables'</span>)</span>
+<span id="cb123-25"><a href="#cb123-25" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02-data-handling-exploration_files/figure-html/cell-59-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02-data-handling-exploration_files/figure-html/cell-59-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02-data-handling-exploration_files/figure-html/cell-59-output-3.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><strong>해석:</strong>
+<ul>
+<li><code>Age</code>와 <code>Income</code> 산점도에서는 뚜렷한 선형 관계가 보이지 않지만, 연령이 증가함에 따라 소득의 변동폭(분산)이 커지는 경향이 있을 수 있습니다. 성별(<code>hue</code>)에 따른 차이도 육안으로 확인해 볼 수 있습니다.</li>
+<li><code>Education</code> 수준별 <code>Wellbeing</code> 박스 플롯을 보면, 교육 수준이 높아짐에 따라 웰빙 점수의 중앙값이 약간 상승하는 경향이 보일 수 있습니다. 또한 그룹별 점수 분포의 퍼짐 정도(상자 길이)나 이상치 유무도 비교할 수 있습니다. (이 가상 데이터에서는 뚜렷한 차이가 없을 수도 있음)</li>
+<li>상관관계 히트맵은 수치형 변수들 간의 선형 관계 강도와 방향을 요약해서 보여줍니다. 예를 들어, <code>Age</code>와 <code>Income</code> 간의 양의 상관관계(나이가 들수록 소득 증가 경향), <code>Wellbeing</code>과 <code>Social_Participation</code> 간의 양의 상관관계(사회 참여가 활발할수록 웰빙 점수 높음) 등이 나타나는지 확인할 수 있습니다. 상관계수 값과 색깔을 함께 보며 해석합니다 (예: 0.32는 약한 양의 상관관계).</li>
+</ul></li>
+</ul>
+</section>
+<section id="종합-해석-및-결론" class="level3" data-number="2.5.5">
+<h3 data-number="2.5.5" class="anchored" data-anchor-id="종합-해석-및-결론"><span class="header-section-number">2.5.5</span> 2.5.5 종합 해석 및 결론</h3>
+<p>지금까지 100명의 응답자를 대상으로 한 가상 설문 데이터를 사용하여 2장에서 배운 데이터 분석의 전 과정을 적용해 보았습니다.</p>
+<ul>
+<li><strong>데이터 준비:</strong> Pandas를 활용하여 데이터를 불러오고 구조를 파악했습니다.</li>
+<li><strong>데이터 정제:</strong> <code>.isnull().sum()</code>, <code>boxplot</code>, IQR 방법 등을 통해 결측치와 이상치를 식별하고, 각각 중앙값 대체 및 값 조정(Clipping) 방식으로 처리하여 분석 가능한 데이터를 준비했습니다. 이 과정에서 각 처리 방법의 선택 이유와 장단점을 고려하는 것이 중요함을 확인했습니다.</li>
+<li><strong>기술 통계 분석:</strong> <code>.describe()</code>, <code>.value_counts()</code> 등을 통해 표본의 인구통계학적 특성(연령, 성별, 교육 수준 분포)과 주요 변수(소득, 웰빙, 사회 참여, 정치 성향)의 중심 경향성 및 산포도를 파악했습니다. 평균과 중앙값의 비교를 통해 분포의 치우침을 추측하고, 표준편차나 IQR을 통해 데이터의 흩어짐 정도를 정량적으로 이해했습니다.</li>
+<li><strong>데이터 시각화:</strong> 히스토그램, 박스 플롯, 카운트 플롯, 산점도, 히트맵 등 다양한 그래프를 활용하여 기술 통계량만으로는 알기 어려운 분포의 형태, 그룹 간 차이, 변수 간 관계 패턴을 시각적으로 탐색했습니다. 예를 들어, 교육 수준이 높아질수록 웰빙 점수가 높아지는 경향이 있는지, 나이와 소득 간에는 어떤 관계가 있는지 등을 그래프를 통해 직관적으로 파악하려 시도했습니다.</li>
+</ul>
+<p><strong>결론적으로,</strong> 이 실습 과정을 통해 우리는 단순히 파이썬 코드를 실행하는 것을 넘어, 각 분석 단계가 <strong>왜 필요</strong>하며, 그 결과가 <strong>무엇을 의미하는지</strong> 해석하는 연습을 했습니다. 데이터 전처리 과정은 분석 결과의 신뢰성을 확보하기 위한 필수 단계이며, 기술 통계 분석과 시각화는 데이터에 대한 깊이 있는 이해와 함께 향후 진행될 <strong>추론 통계 분석(가설 검정, 관계 분석 등)</strong>의 방향을 설정하는 데 중요한 기초 정보를 제공합니다. 예를 들어, 교육 수준별 웰빙 점수 차이가 시각적으로나 기술 통계량으로 나타났다면, 다음 단계에서는 이 차이가 통계적으로 유의미한지(우연히 발생한 것인지 아닌지)를 검증해 볼 수 있을 것입니다 (3장에서 다룰 내용).</p>
+<p>이처럼 2장에서 배운 내용들은 사회과학 연구자가 데이터를 처음 접했을 때 수행해야 하는 필수적인 탐색적 데이터 분석(Exploratory Data Analysis, EDA)의 핵심 요소입니다.</p>
 
 
 </section>
