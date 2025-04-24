@@ -1,0 +1,101 @@
+,ID,Age,Gender,Education,Income,Wellbeing,Social_Participation,Political_View
+0,1,58.0,Female,High School,4666.08,4.1,2,7
+1,2,48.0,Female,PhD,5308.4,0.4,4,6
+2,3,34.0,Female,Bachelor,3159.16,8.5,2,2
+3,4,62.0,Female,Bachelor,8500.52,10.4,2,5
+4,5,27.0,Female,Master,3699.8,5.9,2,2
+5,6,40.0,Female,Master,7302.07,6.9,3,6
+6,7,58.0,Female,Master,5724.75,7.1,3,3
+7,8,38.0,Male,Bachelor,5711.36,9.5,2,3
+8,9,90.625,Male,Bachelor,6031.63,8.1,4,7
+9,10,30.0,Male,Master,2679.53,7.4,1,3
+10,11,30.0,Female,Bachelor,6949.59,6.6,4,7
+11,12,43.0,Female,High School,4733.58,6.6,5,7
+12,13,55.0,Female,PhD,7315.6,3.9,3,6
+13,14,59.0,Male,Bachelor,5273.15,5.8,1,3
+14,15,43.0,Female,Bachelor,4938.22,8.1,1,7
+15,16,22.0,Male,PhD,3563.18,6.1,5,4
+16,17,41.0,Female,PhD,4351.74,6.6,5,5
+17,18,21.0,Female,Bachelor,6133.47,4.4,2,2
+18,19,43.0,Female,Master,3538.13,7.3,3,2
+19,20,63.0,Male,High School,2514.1,3.9,3,6
+20,21,49.0,Male,Bachelor,4213.68,6.1,4,3
+21,22,57.0,Male,Master,6760.01,6.2,2,3
+22,23,21.0,Female,Master,8171.94,3.4,2,7
+23,24,40.0,Male,Master,4483.88,8.4,2,1
+24,25,52.0,Male,Bachelor,5628.05,6.2,2,7
+25,26,31.0,Male,Master,4985.31,9.8,3,5
+26,27,41.0,Female,Master,5775.78,9.2,3,4
+27,28,63.0,Male,PhD,6366.85,4.9,2,2
+28,29,44.0,Female,Master,8701.96,5.1,4,7
+29,30,46.0,Female,Master,5840.27,4.4,1,1
+30,31,61.0,Male,Bachelor,7983.19,3.6,1,1
+31,32,47.0,Female,Bachelor,4805.61,5.7,4,7
+32,33,35.0,Female,PhD,5629.85,9.1,2,6
+33,34,34.0,Male,PhD,4610.68,3.1,3,2
+34,35,63.0,Female,Bachelor,4479.99,8.0,1,6
+35,36,22.0,Female,Bachelor,5104.89,7.9,5,4
+36,37,56.0,Female,Bachelor,5079.02,7.5,5,1
+37,38,26.0,Female,Bachelor,4594.04,7.8,4,1
+38,39,40.0,Female,PhD,4676.12,4.5,2,5
+39,40,28.0,Male,High School,7145.19,7.9,1,4
+40,41,58.0,Male,High School,8669.67,5.5,2,1
+41,42,37.0,Male,Bachelor,4752.39,2.1,1,4
+42,43,23.0,Male,High School,5013.41,6.6,4,2
+43,44,44.0,Male,Bachelor,6286.91,5.0,4,3
+44,45,33.0,Female,Master,9361.881249999999,8.9,5,1
+45,46,28.0,Male,Master,5626.25,6.0,2,5
+46,47,45.0,Male,Bachelor,6958.95,6.6,5,2
+47,48,21.0,Male,Bachelor,7816.71,7.2,2,7
+48,49,39.0,Female,Bachelor,6016.1,6.0,5,4
+49,50,47.0,Male,Master,6889.35,6.3,3,7
+50,51,26.0,Female,Bachelor,6411.76,8.0,3,6
+51,52,63.0,Male,Bachelor,5628.05,4.6,3,2
+52,53,27.0,Male,PhD,3948.4,5.2,3,7
+53,54,54.0,Male,Bachelor,5628.05,4.8,1,1
+54,55,33.0,Male,PhD,6221.83,9.1,3,4
+55,56,36.0,Female,Bachelor,6200.59,5.2,4,3
+56,57,55.0,Female,Bachelor,7205.53,6.2,4,2
+57,58,59.0,Female,Master,6170.34,5.4,1,1
+58,59,23.0,Male,Master,5628.05,5.9,3,5
+59,60,21.0,Male,Master,6386.97,6.1,3,6
+60,61,25.0,Male,Bachelor,4175.38,6.1,3,4
+61,62,61.0,Male,Bachelor,4450.93,4.6,5,2
+62,63,23.0,Female,Bachelor,5628.05,4.1,2,2
+63,64,48.0,Male,Master,5332.87,5.5,5,3
+64,65,37.0,Male,High School,3184.41,5.1,2,3
+65,66,45.0,Male,PhD,7175.34,4.1,3,5
+66,67,63.0,Male,Bachelor,3766.73,5.9,3,6
+67,68,53.0,Female,Bachelor,7855.17,3.5,5,5
+68,69,29.0,Female,Master,3812.57,6.1,5,1
+69,70,55.0,Male,Master,7422.88,3.8,2,1
+70,71,33.0,Female,PhD,5457.37,5.3,4,5
+71,72,50.0,Male,Bachelor,2925.36,5.8,2,6
+72,73,34.0,Female,Bachelor,3935.56,9.5,5,5
+73,74,27.0,Male,Bachelor,9361.881249999999,3.4,5,6
+74,75,33.0,Male,PhD,6172.97,6.8,1,6
+75,76,42.0,Male,High School,5381.9,8.4,5,7
+76,77,59.0,Female,Bachelor,2174.86,5.9,1,4
+77,78,40.0,Female,High School,7584.35,4.4,4,6
+78,79,35.0,Female,Bachelor,8305.64,6.3,2,3
+79,80,64.0,Male,Bachelor,8032.03,9.2,2,6
+80,81,37.0,Female,Bachelor,4577.13,5.4,1,6
+81,82,43.0,Female,Bachelor,6074.2,9.1,2,6
+82,83,45.0,Male,Master,6238.21,7.0,5,7
+83,84,44.0,Male,PhD,3208.82,8.7,3,7
+84,85,64.0,Male,High School,5628.05,6.9,1,1
+85,86,60.0,Female,Bachelor,7106.56,5.6,2,7
+86,87,48.0,Male,Master,6646.72,9.4,1,3
+87,88,34.0,Female,Bachelor,3833.25,6.9,1,3
+88,89,64.0,Male,Bachelor,4206.08,6.8,3,7
+89,90,20.0,Female,Bachelor,6685.89,8.0,5,5
+90,91,44.0,Female,Bachelor,6449.28,8.2,1,4
+91,92,26.0,Male,Master,2118.76,8.0,2,7
+92,93,28.0,Female,High School,1815.11,4.1,4,6
+93,94,43.0,Female,Master,5385.2,5.4,1,2
+94,95,20.0,Female,Bachelor,4615.52,5.3,1,4
+95,96,63.0,Male,Bachelor,5052.55,5.1,3,4
+96,97,27.0,Male,Bachelor,5628.05,4.9,5,3
+97,98,43.0,Female,Bachelor,5628.05,5.3,4,4
+98,99,30.0,Female,Master,5655.35,6.1,2,7
+99,100,36.0,Male,High School,5901.45,7.4,4,6

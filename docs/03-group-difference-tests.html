@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>group-difference-tests – 사회과학 연구자를 위한 파이썬 기반 통계 분석</title>
+<title>3&nbsp; 제3장 집단 간 평균 차이 검증 – 사회과학 연구자를 위한 파이썬 기반 통계 분석</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -70,11 +105,40 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar floating fullcontent quarto-light">
+<body class="nav-sidebar floating quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -83,7 +147,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03-group-difference-tests.html">제2부 - 집단 간 차이 분석 및 관계 분석</a></li><li class="breadcrumb-item"><a href="./03-group-difference-tests.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">03-group-difference-tests.html</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03-group-difference-tests.html">제2부 - 집단 간 차이 분석 및 관계 분석</a></li><li class="breadcrumb-item"><a href="./03-group-difference-tests.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">제3장 집단 간 평균 차이 검증</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -138,7 +202,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./02-data-handling-exploration.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">파이썬을 이용한 데이터 핸들링 및 탐색: Pandas DataFrame 기초</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">제 2장 파이썬을 이용한 데이터 핸들링 및 탐색</span></span></a>
   </div>
 </li>
       </ul>
@@ -155,7 +219,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./03-group-difference-tests.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">03-group-difference-tests.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">제3장 집단 간 평균 차이 검증</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -288,15 +352,377 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-independent-t-test" id="toc-sec-independent-t-test" class="nav-link active" data-scroll-target="#sec-independent-t-test"><span class="header-section-number">3.1</span> 3.1 독립표본 t-검정: 두 독립 집단의 평균 비교</a>
+  <ul class="collapse">
+  <li><a href="#독립표본-t-검정의-원리-가설-설정과-검정-통계량" id="toc-독립표본-t-검정의-원리-가설-설정과-검정-통계량" class="nav-link" data-scroll-target="#독립표본-t-검정의-원리-가설-설정과-검정-통계량"><span class="header-section-number">3.1.1</span> 3.1.1 독립표본 t-검정의 원리: 가설 설정과 검정 통계량</a></li>
+  <li><a href="#독립표본-t-검정의-가정" id="toc-독립표본-t-검정의-가정" class="nav-link" data-scroll-target="#독립표본-t-검정의-가정"><span class="header-section-number">3.1.2</span> 3.1.2 독립표본 t-검정의 가정</a></li>
+  <li><a href="#파이썬을-이용한-독립표본-t-검정-scipy.stats" id="toc-파이썬을-이용한-독립표본-t-검정-scipy.stats" class="nav-link" data-scroll-target="#파이썬을-이용한-독립표본-t-검정-scipy.stats"><span class="header-section-number">3.1.3</span> 3.1.3 파이썬을 이용한 독립표본 t-검정 (<code>scipy.stats</code>)</a></li>
+  <li><a href="#효과-크기-계산-및-해석-cohens-d" id="toc-효과-크기-계산-및-해석-cohens-d" class="nav-link" data-scroll-target="#효과-크기-계산-및-해석-cohens-d"><span class="header-section-number">3.1.4</span> 3.1.4 효과 크기 계산 및 해석 (Cohen’s d)</a></li>
+  <li><a href="#결과-보고" id="toc-결과-보고" class="nav-link" data-scroll-target="#결과-보고"><span class="header-section-number">3.1.5</span> 3.1.5 결과 보고</a></li>
+  <li><a href="#요약-및-다음-단계" id="toc-요약-및-다음-단계" class="nav-link" data-scroll-target="#요약-및-다음-단계"><span class="header-section-number">3.1.6</span> 3.1.6 요약 및 다음 단계</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03-group-difference-tests.html">제2부 - 집단 간 차이 분석 및 관계 분석</a></li><li class="breadcrumb-item"><a href="./03-group-difference-tests.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">03-group-difference-tests.html</span></a></li></ol></nav></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03-group-difference-tests.html">제2부 - 집단 간 차이 분석 및 관계 분석</a></li><li class="breadcrumb-item"><a href="./03-group-difference-tests.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">제3장 집단 간 평균 차이 검증</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">제3장 집단 간 평균 차이 검증</span></h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
+</header>
 
+
+<section id="sec-independent-t-test" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="sec-independent-t-test"><span class="header-section-number">3.1</span> 3.1 독립표본 t-검정: 두 독립 집단의 평균 비교</h2>
+<p>앞선 2장에서는 데이터를 준비하고 탐색하는 기본적인 기술을 익혔습니다. 이제부터는 수집된 데이터를 바탕으로 구체적인 연구 질문에 답하는 통계적 추론의 세계로 나아갑니다. 제3부에서는 여러 집단 간의 차이나 변수 간의 관계를 통계적으로 검증하는 방법들을 다룹니다.</p>
+<p>그 첫 번째 단계로, 사회과학 연구에서 매우 빈번하게 사용되는 <strong>독립표본 t-검정(Independent Samples t-test)</strong>에 대해 알아봅니다. 이 검정은 서로 <strong>독립적인 두 집단</strong> 간에 특정 <strong>연속형 변수의 평균</strong>에 통계적으로 유의미한 차이가 있는지를 확인하고자 할 때 사용됩니다.</p>
+<p>예를 들어, 다음과 같은 연구 질문에 답하기 위해 독립표본 t-검정을 사용할 수 있습니다.</p>
+<ul>
+<li>성별(남성 vs 여성)에 따라 평균 소득에 차이가 있는가?</li>
+<li>특정 정책 지지 집단과 반대 집단 간에 평균 정부 신뢰도 점수에 차이가 있는가?</li>
+<li>실험 처치를 받은 집단(실험집단)과 받지 않은 집단(통제집단) 간에 평균 문제 해결 능력 점수에 차이가 있는가?</li>
+</ul>
+<p>독립표본 t-검정은 관찰된 두 표본 평균 간의 차이가 단순히 우연(표본 추출 오차)에 의한 것인지, 아니면 실제 모집단에서도 의미 있는 차이가 존재한다고 볼 수 있는지 통계적으로 판단하는 근거를 제공합니다.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+📌 핵심 요약
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>독립표본 t-검정은 서로 독립적인 두 집단 간의 연속형 변수 평균 차이를 통계적으로 검증하는 방법입니다. 이 절에서는 t-검정의 기본 원리(가설 설정, t-통계량, p-값), 주요 가정(독립성, 정규성, 등분산성), 파이썬 <code>scipy.stats</code> 라이브러리를 이용한 구현 방법, 가정 검토(Shapiro-Wilk, Levene 검정), Welch’s t-검정의 활용, 결과 해석, 효과 크기(Cohen’s d) 계산 및 해석, 그리고 결과 보고 방법까지 학습합니다.</p>
+</div>
+</div>
+<section id="독립표본-t-검정의-원리-가설-설정과-검정-통계량" class="level3" data-number="3.1.1">
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="독립표본-t-검정의-원리-가설-설정과-검정-통계량"><span class="header-section-number">3.1.1</span> 3.1.1 독립표본 t-검정의 원리: 가설 설정과 검정 통계량</h3>
+<p>독립표본 t-검정은 가설 검증의 틀 안에서 이루어집니다.</p>
+<ul>
+<li><strong>가설 설정:</strong>
+<ul>
+<li><strong>귀무가설 (Null Hypothesis, <span class="math inline">\(H_0\)</span>):</strong> 두 집단의 모집단 평균은 같다 (<span class="math inline">\(H_0: \mu_1 = \mu_2\)</span> 또는 <span class="math inline">\(H_0: \mu_1 - \mu_2 = 0\)</span>). 즉, 우리가 표본에서 관찰한 평균 차이는 우연에 의한 것이다.</li>
+<li><strong>대립가설 (Alternative Hypothesis, <span class="math inline">\(H_1\)</span>):</strong> 두 집단의 모집단 평균은 다르다 (<span class="math inline">\(H_1: \mu_1 \neq \mu_2\)</span>). 이 가설은 연구자가 입증하고자 하는 내용으로, 표본 평균 차이가 우연이라고 보기에는 너무 크다는 것을 의미합니다. 이는 <strong>양측 검정(Two-tailed test)</strong>에 해당합니다.
+<ul>
+<li>만약 연구자가 특정 방향의 차이(예: 집단 1이 집단 2보다 평균이 클 것이다)를 예측한다면 단측 검정(<span class="math inline">\(H_1: \mu_1 &gt; \mu_2\)</span> 또는 <span class="math inline">\(H_1: \mu_1 &lt; \mu_2\)</span>)을 설정할 수도 있지만, 특별한 근거가 없다면 일반적으로 양측 검정을 사용합니다.</li>
+</ul></li>
+</ul></li>
+<li><strong>검정 통계량 (Test Statistic, t-value):</strong>
+<ul>
+<li>t-검정은 두 표본 평균 간의 차이를 표준 오차(Standard Error)로 나눈 값인 <strong>t-통계량</strong>을 계산합니다. 이는 관찰된 평균 차이가 그룹 내 변동성(오차)에 비해 얼마나 큰지를 나타내는 표준화된 값입니다.</li>
+<li>개념적으로 t-값은 다음과 같이 표현될 수 있습니다: <span class="math inline">\(t = \frac{(\text{두 표본 평균의 차이}) - (\text{귀무가설 하에서의 평균 차이, 보통 0})}{(\text{두 평균 차이의 표준 오차})}\)</span> <span class="math inline">\(t = \frac{(\bar{x}_1 - \bar{x}_2)}{SE_{(\bar{x}_1 - \bar{x}_2)}}\)</span></li>
+<li>t-값의 절댓값이 클수록 두 집단 간 평균 차이가 우연히 발생했을 가능성이 작아집니다.</li>
+</ul></li>
+<li><strong>p-값 (p-value):</strong>
+<ul>
+<li>p-값은 <strong>귀무가설(<span class="math inline">\(H_0\)</span>)이 참이라고 가정할 때</strong>, 우리가 표본에서 계산한 t-통계량 값 또는 그보다 더 극단적인 값이 관찰될 확률입니다.</li>
+<li>p-값이 매우 작다(예: 0.05 미만)는 것은, 귀무가설이 맞다면 현재와 같은 표본 결과가 나타나기 매우 어렵다는 것을 의미합니다.</li>
+</ul></li>
+<li><strong>의사 결정:</strong>
+<ul>
+<li>미리 설정한 <strong>유의수준(Significance level, <span class="math inline">\(\alpha\)</span>)</strong>과 p-값을 비교하여 귀무가설 기각 여부를 결정합니다. 사회과학에서는 보통 <span class="math inline">\(\alpha = 0.05\)</span> (5%)를 사용합니다.</li>
+<li><strong>p-값 &lt; <span class="math inline">\(\alpha\)</span> :</strong> 귀무가설(<span class="math inline">\(H_0\)</span>)을 기각하고 대립가설(<span class="math inline">\(H_1\)</span>)을 채택합니다. 즉, 두 집단 간 평균에 통계적으로 유의미한 차이가 있다고 결론 내립니다.</li>
+<li><strong>p-값 <span class="math inline">\(\ge\)</span> <span class="math inline">\(\alpha\)</span> :</strong> 귀무가설(<span class="math inline">\(H_0\)</span>)을 기각하지 못합니다(채택하는 것이 아님). 즉, 두 집단 간 평균 차이가 통계적으로 유의미하다는 충분한 근거를 찾지 못했다고 결론 내립니다.</li>
+</ul></li>
+</ul>
+</section>
+<section id="독립표본-t-검정의-가정" class="level3" data-number="3.1.2">
+<h3 data-number="3.1.2" class="anchored" data-anchor-id="독립표본-t-검정의-가정"><span class="header-section-number">3.1.2</span> 3.1.2 독립표본 t-검정의 가정</h3>
+<p>독립표본 t-검정 결과를 신뢰하기 위해서는 몇 가지 가정이 충족되어야 합니다.</p>
+<ol type="1">
+<li><strong>독립성 (Independence of Observations):</strong> 한 집단 내의 관측치들은 서로 독립적이어야 하며, 두 집단 간의 관측치들도 서로 독립적이어야 합니다. 이는 주로 연구 설계 및 표본 추출 방법과 관련됩니다. (예: 무작위 할당, 무작위 표본 추출)</li>
+<li><strong>정규성 (Normality):</strong> 종속변수는 <strong>각 집단별로</strong> 정규분포를 따라야 합니다.
+<ul>
+<li><strong>확인 방법:</strong> 각 집단별 히스토그램, Q-Q 플롯 확인(2.4절), 또는 정규성 검정(예: Shapiro-Wilk test) 수행.</li>
+<li><strong>견고성(Robustness):</strong> 표본 크기가 충분히 크면(예: 각 집단별 30 이상), 중심극한정리(Central Limit Theorem)에 의해 t-검정은 정규성 가정 위반에 비교적 덜 민감합니다.</li>
+</ul></li>
+<li><strong>등분산성 (Homogeneity of Variances, Homoscedasticity):</strong> 두 집단의 모집단 분산이 동일해야 합니다.
+<ul>
+<li><strong>확인 방법:</strong> Levene의 등분산 검정(Levene’s test) 수행.</li>
+<li><strong>중요성:</strong> 전통적인 Student’s t-test는 이 가정을 요구하지만, 이 가정이 충족되지 않을 때 사용할 수 있는 <strong>Welch’s t-test</strong>가 있습니다. Welch’s t-test는 등분산성 가정을 요구하지 않으며, 등분산성이 충족될 때에도 Student’s t-test와 유사한 결과를 제공하므로, <strong>많은 경우 Welch’s t-test를 기본으로 사용하는 것이 권장됩니다.</strong></li>
+</ul></li>
+</ol>
+</section>
+<section id="파이썬을-이용한-독립표본-t-검정-scipy.stats" class="level3" data-number="3.1.3">
+<h3 data-number="3.1.3" class="anchored" data-anchor-id="파이썬을-이용한-독립표본-t-검정-scipy.stats"><span class="header-section-number">3.1.3</span> 3.1.3 파이썬을 이용한 독립표본 t-검정 (<code>scipy.stats</code>)</h3>
+<p>파이썬의 <code>scipy.stats</code> 모듈은 독립표본 t-검정을 수행하는 <code>ttest_ind</code> 함수를 제공합니다. 2.5절에서 사용한 <code>df_practice</code> 데이터를 이용하여 성별(<code>Gender</code>)에 따른 소득(<code>Income</code>) 평균 차이가 있는지 검정해 보겠습니다.</p>
+<p><strong>1. 데이터 준비:</strong> 먼저, 비교할 두 집단(남성, 여성)의 <code>Income</code> 데이터를 각각 추출합니다.</p>
+<div id="e3c17766" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats <span class="co"># t-test 및 관련 검정 함수 포함</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt <span class="co"># 가정 검토 시각화용 (선택적)</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns <span class="co"># 가정 검토 시각화용 (선택적)</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># CSV 파일로부터 데이터 불러오기</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 파일 경로는 실제 파일 위치에 맞게 수정해야 합니다.</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># csv_filepath = 'path/to/your/data_process.csv' # 실제 파일 경로로 수정</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    csv_filepath <span class="op">=</span> <span class="st">'data_process.csv'</span> <span class="co"># 2.5절에서 저장한 파일과 동일 디렉토리에 있다고 가정</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    df_processed <span class="op">=</span> pd.read_csv(csv_filepath, index_col<span class="op">=</span><span class="dv">0</span>) <span class="co"># index_col=0 추가</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"데이터 불러오기 성공!"</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">--- 불러온 데이터 확인 (처음 5행) ---"</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(df_processed.head())</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 데이터 타입 확인 (CSV 로딩 후 타입 변경 가능성 있음)</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">--- 불러온 데이터 정보 확인 ---"</span>)</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    df_processed.info()</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Education 변수 순서형 범주 타입 재지정 (필요시)</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> pd.api.types.is_categorical_dtype(df_processed[<span class="st">'Education'</span>]) <span class="kw">or</span> <span class="kw">not</span> df_processed[<span class="st">'Education'</span>].cat.ordered:</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Education 변수 타입을 순서형 범주(Ordered Categorical)로 재지정합니다."</span>)</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>        edu_order <span class="op">=</span> [<span class="st">'High School'</span>, <span class="st">'Bachelor'</span>, <span class="st">'Master'</span>, <span class="st">'PhD'</span>]</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>        df_processed[<span class="st">'Education'</span>] <span class="op">=</span> pd.Categorical(df_processed[<span class="st">'Education'</span>], categories<span class="op">=</span>edu_order, ordered<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>        df_processed.info() <span class="co"># 타입 변경 확인</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">FileNotFoundError</span>:</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"오류: '</span><span class="sc">{</span>csv_filepath<span class="sc">}</span><span class="ss">' 파일을 찾을 수 없습니다."</span>)</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"2.5절에서 'data_process.csv' 파일이 정상적으로 저장되었는지, 파일 경로가 올바른지 확인해주세요."</span>)</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 예제 진행을 위해 중단 (실제 사용 시에는 파일 로딩 필수)</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    <span class="cf">raise</span> <span class="co"># 오류 발생시키고 중단</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="co"># 성별에 따른 Income 데이터 분리 (이제 df_processed 사용)</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>male_income <span class="op">=</span> df_processed[df_processed[<span class="st">'Gender'</span>] <span class="op">==</span> <span class="st">'Male'</span>][<span class="st">'Income'</span>]</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>female_income <span class="op">=</span> df_processed[df_processed[<span class="st">'Gender'</span>] <span class="op">==</span> <span class="st">'Female'</span>][<span class="st">'Income'</span>]</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Male Income 데이터 개수: </span><span class="sc">{</span><span class="bu">len</span>(male_income)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Female Income 데이터 개수: </span><span class="sc">{</span><span class="bu">len</span>(female_income)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>데이터 불러오기 성공!
+
+--- 불러온 데이터 확인 (처음 5행) ---
+   ID   Age  Gender    Education   Income  Wellbeing  Social_Participation  \
+0   1  58.0  Female  High School  4666.08        4.1                     2   
+1   2  48.0  Female          PhD  5308.40        0.4                     4   
+2   3  34.0  Female     Bachelor  3159.16        8.5                     2   
+3   4  62.0  Female     Bachelor  8500.52       10.4                     2   
+4   5  27.0  Female       Master  3699.80        5.9                     2   
+
+   Political_View  
+0               7  
+1               6  
+2               2  
+3               5  
+4               2  
+
+--- 불러온 데이터 정보 확인 ---
+&lt;class 'pandas.core.frame.DataFrame'&gt;
+Index: 100 entries, 0 to 99
+Data columns (total 8 columns):
+ #   Column                Non-Null Count  Dtype  
+---  ------                --------------  -----  
+ 0   ID                    100 non-null    int64  
+ 1   Age                   100 non-null    float64
+ 2   Gender                100 non-null    object 
+ 3   Education             100 non-null    object 
+ 4   Income                100 non-null    float64
+ 5   Wellbeing             100 non-null    float64
+ 6   Social_Participation  100 non-null    int64  
+ 7   Political_View        100 non-null    int64  
+dtypes: float64(3), int64(3), object(2)
+memory usage: 7.0+ KB
+
+Education 변수 타입을 순서형 범주(Ordered Categorical)로 재지정합니다.
+&lt;class 'pandas.core.frame.DataFrame'&gt;
+Index: 100 entries, 0 to 99
+Data columns (total 8 columns):
+ #   Column                Non-Null Count  Dtype   
+---  ------                --------------  -----   
+ 0   ID                    100 non-null    int64   
+ 1   Age                   100 non-null    float64 
+ 2   Gender                100 non-null    object  
+ 3   Education             100 non-null    category
+ 4   Income                100 non-null    float64 
+ 5   Wellbeing             100 non-null    float64 
+ 6   Social_Participation  100 non-null    int64   
+ 7   Political_View        100 non-null    int64   
+dtypes: category(1), float64(3), int64(3), object(1)
+memory usage: 6.5+ KB
+
+Male Income 데이터 개수: 50
+Female Income 데이터 개수: 50</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>C:\Users\voidm\AppData\Local\Temp\ipykernel_31808\1887977693.py:23: DeprecationWarning:
+
+is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, pd.CategoricalDtype) instead
+</code></pre>
+</div>
+</div>
+<p><strong>2. 가정 검토 (선택적이지만 권장):</strong></p>
+<ul>
+<li><strong>정규성 검토 (Shapiro-Wilk Test):</strong> 각 집단의 <code>Income</code> 데이터가 정규분포를 따르는지 확인합니다. 귀무가설(<span class="math inline">\(H_0\)</span>)은 ’데이터가 정규분포를 따른다’입니다.</li>
+</ul>
+<div id="1b31f560" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 남성 Income 정규성 검정</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    shapiro_male <span class="op">=</span> stats.shapiro(male_income)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Shapiro-Wilk Test (Male Income): Statistic=</span><span class="sc">{</span>shapiro_male<span class="sc">.</span>statistic<span class="sc">:.3f}</span><span class="ss">, p-value=</span><span class="sc">{</span>shapiro_male<span class="sc">.</span>pvalue<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 여성 Income 정규성 검정</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    shapiro_female <span class="op">=</span> stats.shapiro(female_income)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Shapiro-Wilk Test (Female Income): Statistic=</span><span class="sc">{</span>shapiro_female<span class="sc">.</span>statistic<span class="sc">:.3f}</span><span class="ss">, p-value=</span><span class="sc">{</span>shapiro_female<span class="sc">.</span>pvalue<span class="sc">:.3f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Shapiro-Wilk Test (Male Income): Statistic=0.990, p-value=0.953
+Shapiro-Wilk Test (Female Income): Statistic=0.989, p-value=0.931</code></pre>
+</div>
+</div>
+<pre><code>* **해석:** 만약 p-값이 유의수준(예: 0.05)보다 크면, 정규분포를 따른다는 귀무가설을 기각할 수 없으므로 정규성 가정을 만족한다고 볼 수 있습니다. 만약 p-값이 0.05보다 작으면 정규성 가정이 위배될 수 있으나, 표본 크기가 충분히 크다면(예: 각 그룹 30 이상) t-검정은 여전히 사용 가능할 수 있습니다. 시각적 확인(히스토그램, Q-Q 플롯)을 병행하는 것이 좋습니다.</code></pre>
+<ul>
+<li><strong>등분산성 검토 (Levene’s Test):</strong> 두 집단의 분산이 동일한지 확인합니다. 귀무가설(<span class="math inline">\(H_0\)</span>)은 ’두 집단의 분산은 같다’입니다.</li>
+</ul>
+<div id="d0c23dc8" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 등분산성 검정 (Levene's Test)</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    levene_test <span class="op">=</span> stats.levene(male_income, female_income)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Levene's Test for Equal Variances: Statistic=</span><span class="sc">{</span>levene_test<span class="sc">.</span>statistic<span class="sc">:.3f}</span><span class="ss">, p-value=</span><span class="sc">{</span>levene_test<span class="sc">.</span>pvalue<span class="sc">:.3f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Levene's Test for Equal Variances: Statistic=0.013, p-value=0.910</code></pre>
+</div>
+</div>
+<pre><code>* **해석:** 만약 p-값이 유의수준(예: 0.05)보다 크면, 등분산성 가정을 만족한다고 볼 수 있습니다 (`equal_var=True` 사용 가능). 만약 p-값이 0.05보다 작으면 등분산성 가정이 위배되므로 `equal_var=False` (Welch's t-test)를 사용해야 합니다.</code></pre>
+<p><strong>3. t-검정 수행:</strong></p>
+<p><code>scipy.stats.ttest_ind()</code> 함수를 사용합니다. <code>equal_var</code> 파라미터 설정이 중요합니다. Levene 검정 결과와 관계없이, 일반적으로 <strong><code>equal_var=False</code> (Welch’s t-test)를 사용하는 것이 더 안전하고 권장됩니다.</strong></p>
+<div id="6eac38c6" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 독립표본 t-검정 수행 (Welch's t-test 권장)</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Levene 검정 p-값이 0.05보다 크더라도 Welch's 사용 가능</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>t_statistic, p_value <span class="op">=</span> stats.ttest_ind(male_income, female_income, equal_var<span class="op">=</span><span class="va">False</span>) <span class="co"># Welch's t-test</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">--- Independent Samples t-test (Welch's) Results ---"</span>)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"T-statistic: </span><span class="sc">{</span>t_statistic<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"P-value: </span><span class="sc">{</span>p_value<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 참고: 만약 등분산성 가정이 충족되고 Student's t-test를 원한다면:</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="co"># t_stat_student, p_val_student = stats.ttest_ind(male_income, female_income, equal_var=True)</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="co"># print("\n--- Student's t-test Results (if assumptions met) ---")</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="co"># print(f"T-statistic: {t_stat_student:.3f}, P-value: {p_val_student:.3f}")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+--- Independent Samples t-test (Welch's) Results ---
+T-statistic: -0.475
+P-value: 0.636</code></pre>
+</div>
+</div>
+<p><strong>4. 결과 해석:</strong></p>
+<p>계산된 t-통계량과 p-값을 바탕으로 결론을 내립니다. 유의수준 <span class="math inline">\(\alpha = 0.05\)</span>를 기준으로 판단합니다.</p>
+<ul>
+<li><strong>해석 (예시 결과 기반):</strong> 만약 위 코드 실행 결과 <code>p_value</code>가 0.05보다 작게 나왔다면 (예: <code>p_value = 0.021</code>), 다음과 같이 해석합니다.
+<ul>
+<li>“독립표본 t-검정(Welch’s) 결과, 성별에 따른 평균 소득에는 통계적으로 유의미한 차이가 있는 것으로 나타났다 (t = [t-값], p = 0.021). 유의수준 0.05에서 귀무가설(‘남성과 여성의 평균 소득은 같다’)을 기각한다.”</li>
+</ul></li>
+<li>만약 <code>p_value</code>가 0.05보다 크거나 같게 나왔다면 (예: <code>p_value = 0.350</code>), 다음과 같이 해석합니다.
+<ul>
+<li>“독립표본 t-검정(Welch’s) 결과, 성별에 따른 평균 소득 차이는 통계적으로 유의미하지 않았다 (t = [t-값], p = 0.350). 유의수준 0.05에서 귀무가설(‘남성과 여성의 평균 소득은 같다’)을 기각할 충분한 근거를 찾지 못했다.”</li>
+</ul></li>
+</ul>
+<p><strong>중요:</strong> 통계적 유의성은 ’차이가 존재한다/하지 않는다’는 증거의 강도를 말해줄 뿐, 그 차이가 <strong>실질적으로 얼마나 크고 중요한지</strong>는 별도로 평가해야 합니다. 이를 위해 <strong>효과 크기(Effect Size)</strong>를 확인합니다.</p>
+</section>
+<section id="효과-크기-계산-및-해석-cohens-d" class="level3" data-number="3.1.4">
+<h3 data-number="3.1.4" class="anchored" data-anchor-id="효과-크기-계산-및-해석-cohens-d"><span class="header-section-number">3.1.4</span> 3.1.4 효과 크기 계산 및 해석 (Cohen’s d)</h3>
+<p>효과 크기는 두 집단 간 평균 차이의 <strong>크기(magnitude)</strong>를 나타내는 표준화된 지표입니다. 표본 크기에 영향을 덜 받으며, 결과의 실질적인 중요성을 평가하는 데 도움을 줍니다. t-검정에서는 <strong>Cohen’s d</strong>가 널리 사용됩니다.</p>
+<ul>
+<li><p><strong>Cohen’s d 정의:</strong> 두 집단 평균의 차이를 합동 표준편차(pooled standard deviation)로 나눈 값입니다. <span class="math inline">\(d = \frac{|\bar{x}_1 - \bar{x}_2|}{s_p}\)</span> (여기서 <span class="math inline">\(s_p\)</span>는 두 집단의 표준편차를 고려한 합동 표준편차입니다. Welch’s t-test의 경우 약간 다른 방식으로 계산될 수 있으나, 개념은 유사합니다.)</p></li>
+<li><p><strong>Cohen’s d 해석 기준 (일반적 가이드라인):</strong></p>
+<ul>
+<li><span class="math inline">\(|d| \approx 0.2\)</span>: 작은 효과 크기</li>
+<li><span class="math inline">\(|d| \approx 0.5\)</span>: 중간 효과 크기</li>
+<li><span class="math inline">\(|d| \approx 0.8\)</span>: 큰 효과 크기</li>
+</ul></li>
+<li><p><strong>파이썬으로 Cohen’s d 계산 (수동 계산 예시):</strong></p></li>
+</ul>
+<div id="3a0f415b" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Cohen's d 계산 함수 (Welch's t-test에 근사)</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> cohens_d(group1, group2):</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>        <span class="co"># 그룹별 평균, 표준편차, 샘플 사이즈</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>        mean1, mean2 <span class="op">=</span> np.mean(group1), np.mean(group2)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>        std1, std2 <span class="op">=</span> np.std(group1, ddof<span class="op">=</span><span class="dv">1</span>), np.std(group2, ddof<span class="op">=</span><span class="dv">1</span>) <span class="co"># ddof=1 for sample std dev</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>        n1, n2 <span class="op">=</span> <span class="bu">len</span>(group1), <span class="bu">len</span>(group2)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>        <span class="co"># 합동 표준편차 (Welch's t-test는 분산이 다르다고 가정하므로, 약간의 근사 사용)</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>        <span class="co"># 간단하게는 전체 샘플의 표준편차 또는 더 복잡한 공식을 사용할 수 있으나, 여기서는 근사치로 계산</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>        <span class="co"># (정확한 Welch's d 계산은 복잡할 수 있음)</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>        <span class="co"># 평균 표준편차 사용 (간단한 근사)</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>        <span class="co"># pooled_std = np.sqrt((std1**2 + std2**2) / 2)</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>        <span class="co"># 또는 더 일반적인 합동 표준편차 (등분산 가정 시)</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>        pooled_std <span class="op">=</span> np.sqrt(((n1 <span class="op">-</span> <span class="dv">1</span>) <span class="op">*</span> std1<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> (n2 <span class="op">-</span> <span class="dv">1</span>) <span class="op">*</span> std2<span class="op">**</span><span class="dv">2</span>) <span class="op">/</span> (n1 <span class="op">+</span> n2 <span class="op">-</span> <span class="dv">2</span>))</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>        d <span class="op">=</span> (mean1 <span class="op">-</span> mean2) <span class="op">/</span> pooled_std</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">abs</span>(d) <span class="co"># 효과 크기는 보통 절댓값으로 표현</span></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Income by Gender Cohen's d 계산</span></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>    d_income_gender <span class="op">=</span> cohens_d(male_income, female_income)</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Cohen's d for Income difference between Genders: </span><span class="sc">{</span>d_income_gender<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 해석 (예시)</span></span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> d_income_gender <span class="op">&lt;</span> <span class="fl">0.2</span>:</span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>      effect_size_interpretation <span class="op">=</span> <span class="st">"매우 작음 (trivial)"</span></span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> d_income_gender <span class="op">&lt;</span> <span class="fl">0.5</span>:</span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>      effect_size_interpretation <span class="op">=</span> <span class="st">"작음 (small)"</span></span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> d_income_gender <span class="op">&lt;</span> <span class="fl">0.8</span>:</span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a>      effect_size_interpretation <span class="op">=</span> <span class="st">"중간 (medium)"</span></span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a>      effect_size_interpretation <span class="op">=</span> <span class="st">"큼 (large)"</span></span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"효과 크기 해석: </span><span class="sc">{</span>effect_size_interpretation<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Cohen's d for Income difference between Genders: 0.095
+효과 크기 해석: 매우 작음 (trivial)</code></pre>
+</div>
+</div>
+<pre><code>**참고:** `pingouin`과 같은 다른 통계 라이브러리는 `pg.ttest()` 함수 내에서 Cohen's d를 직접 계산해주는 기능을 제공하기도 합니다.</code></pre>
+</section>
+<section id="결과-보고" class="level3" data-number="3.1.5">
+<h3 data-number="3.1.5" class="anchored" data-anchor-id="결과-보고"><span class="header-section-number">3.1.5</span> 3.1.5 결과 보고</h3>
+<p>t-검정 결과를 논문이나 보고서에 제시할 때는 다음과 같은 정보들을 포함하는 것이 일반적입니다 (APA 스타일 등 참고).</p>
+<ol type="1">
+<li>비교 대상인 두 집단.</li>
+<li>비교 대상인 종속변수.</li>
+<li>각 집단의 평균(M)과 표준편차(SD).</li>
+<li>사용한 t-검정의 종류 (예: 독립표본 t-검정, Welch’s t-검정).</li>
+<li>t-통계량 값과 자유도(degree of freedom, df). <code>scipy.stats.ttest_ind</code>는 Welch’s t-test의 경우 정확한 자유도를 반환하지 않지만, 다른 라이브러리나 수동 계산을 통해 얻을 수 있습니다. 여기서는 생략하거나 t-값만 제시할 수 있습니다. (참고: <code>pingouin</code> 라이브러리는 df를 제공합니다.)</li>
+<li>p-값 (정확한 값 또는 &lt; .05, &lt; .01 등으로 표기).</li>
+<li>효과 크기 (예: Cohen’s d).</li>
+</ol>
+<ul>
+<li><strong>보고 예시 (위 예시 결과가 유의미했다고 가정):</strong> “성별에 따른 평균 소득 차이를 분석하기 위해 독립표본 t-검정(Welch’s)을 실시하였다. 분석 결과, 남성 집단(M = [남성평균], SD = [남성표준편차])의 평균 소득이 여성 집단(M = [여성평균], SD = [여성표준편차])보다 통계적으로 유의미하게 높은 것으로 나타났다 (t ≈ [t-값], p = [p-값]). 이 차이의 효과 크기는 Cohen’s d = [d-값]로, [작은/중간/큰] 수준의 효과에 해당한다.”</li>
+</ul>
+</section>
+<section id="요약-및-다음-단계" class="level3" data-number="3.1.6">
+<h3 data-number="3.1.6" class="anchored" data-anchor-id="요약-및-다음-단계"><span class="header-section-number">3.1.6</span> 3.1.6 요약 및 다음 단계</h3>
+<p>이번 절에서는 서로 독립적인 두 집단 간의 평균 차이를 검증하는 강력한 도구인 독립표본 t-검정에 대해 배웠습니다. 가설 설정부터 파이썬 코드 구현, 가정 검토, 결과 해석, 효과 크기 계산, 그리고 결과 보고 방법까지 전 과정을 살펴보았습니다.</p>
+<p><strong>핵심 사항:</strong></p>
+<ul>
+<li>독립표본 t-검정은 <strong>두 독립 집단</strong>의 <strong>연속형 변수 평균</strong> 비교에 사용됩니다.</li>
+<li><strong>가정(독립성, 정규성, 등분산성)</strong>을 확인하는 것이 중요하며, 특히 등분산성 가정이 충족되지 않을 경우 <strong>Welch’s t-test (<code>equal_var=False</code>)</strong> 사용이 권장됩니다.</li>
+<li><strong>p-값</strong>은 통계적 유의성을 판단하는 기준이며, <strong>효과 크기(Cohen’s d)</strong>는 차이의 실제적인 크기를 나타냅니다. 두 가지 모두 해석에 중요합니다.</li>
+</ul>
+<p><strong>한계점:</strong> 독립표본 t-검정은 비교 집단이 <strong>두 개</strong>일 경우에만 사용할 수 있습니다. 또한, 평균 비교 외에 다른 정보(예: 분포 형태)는 고려하지 않습니다.</p>
+<p>다음 절(3.2)에서는 <strong>동일한 집단</strong>에서 얻어진 두 측정값(예: 사전-사후 점수)의 평균 차이를 비교하는 <strong>대응표본 t-검정(Paired Samples t-test)</strong>에 대해 알아보겠습니다.</p>
+
+
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -700,8 +1126,8 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./02-data-handling-exploration.html" class="pagination-link" aria-label="파이썬을 이용한 데이터 핸들링 및 탐색: Pandas DataFrame 기초">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">파이썬을 이용한 데이터 핸들링 및 탐색: Pandas DataFrame 기초</span></span>
+      <a href="./02-data-handling-exploration.html" class="pagination-link" aria-label="제 2장  파이썬을 이용한 데이터 핸들링 및 탐색">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">제 2장 파이썬을 이용한 데이터 핸들링 및 탐색</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
