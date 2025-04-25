@@ -33,9 +33,10 @@ book:
         - 14-conjoint-analysis.qmd # 제14장 파일명
         - 15-time-series-analysis.qmd # 제15장 파일명
   appendices:
-    - appendix-libraries.qmd # 부록 - 주요 파이썬 라이브러리 함수 요약
-    - appendix-glossary.qmd # 부록 - 통계 용어 해설
-    - appendix-exercises.qmd # 부록 - 연습문제 및 해답
+    - 3a_sub.qmd #t 분포 해설 
+    # - appendix-libraries.qmd # 부록 - 주요 파이썬 라이브러리 함수 요약
+    # - appendix-glossary.qmd # 부록 - 통계 용어 해설
+    # - appendix-exercises.qmd # 부록 - 연습문제 및 해답
 
 format:
   html:

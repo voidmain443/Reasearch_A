@@ -329,20 +329,8 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./appendix-libraries.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">appendix-libraries.html</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./appendix-glossary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">appendix-glossary.html</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./appendix-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">appendix-exercises.html</span></span></a>
+  <a href="./3a_sub.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">t-분포의 통계적 기초</span></span></a>
   </div>
 </li>
       </ul>
@@ -467,7 +455,7 @@ window.Quarto = {
 <h3 data-number="3.1.3" class="anchored" data-anchor-id="파이썬을-이용한-독립표본-t-검정-scipy.stats"><span class="header-section-number">3.1.3</span> 3.1.3 파이썬을 이용한 독립표본 t-검정 (<code>scipy.stats</code>)</h3>
 <p>파이썬의 <code>scipy.stats</code> 모듈은 독립표본 t-검정을 수행하는 <code>ttest_ind</code> 함수를 제공합니다. 2.5절에서 사용한 <code>df_practice</code> 데이터를 이용하여 성별(<code>Gender</code>)에 따른 소득(<code>Income</code>) 평균 차이가 있는지 검정해 보겠습니다.</p>
 <p><strong>1. 데이터 준비:</strong> 먼저, 비교할 두 집단(남성, 여성)의 <code>Income</code> 데이터를 각각 추출합니다.</p>
-<div id="e3c17766" class="cell" data-execution_count="1">
+<div id="3677d0a7" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats <span class="co"># t-test 및 관련 검정 함수 포함</span></span>
@@ -564,7 +552,7 @@ Male Income 데이터 개수: 50
 Female Income 데이터 개수: 50</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>C:\Users\voidm\AppData\Local\Temp\ipykernel_31808\1887977693.py:23: DeprecationWarning:
+<pre><code>C:\Users\voidm\AppData\Local\Temp\ipykernel_31700\1887977693.py:23: DeprecationWarning:
 
 is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, pd.CategoricalDtype) instead
 </code></pre>
@@ -574,7 +562,7 @@ is_categorical_dtype is deprecated and will be removed in a future version. Use 
 <ul>
 <li><strong>정규성 검토 (Shapiro-Wilk Test):</strong> 각 집단의 <code>Income</code> 데이터가 정규분포를 따르는지 확인합니다. 귀무가설(<span class="math inline">\(H_0\)</span>)은 ’데이터가 정규분포를 따른다’입니다.</li>
 </ul>
-<div id="1b31f560" class="cell" data-execution_count="2">
+<div id="3d88614f" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 남성 Income 정규성 검정</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    shapiro_male <span class="op">=</span> stats.shapiro(male_income)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Shapiro-Wilk Test (Male Income): Statistic=</span><span class="sc">{</span>shapiro_male<span class="sc">.</span>statistic<span class="sc">:.3f}</span><span class="ss">, p-value=</span><span class="sc">{</span>shapiro_male<span class="sc">.</span>pvalue<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
@@ -591,7 +579,7 @@ Shapiro-Wilk Test (Female Income): Statistic=0.989, p-value=0.931</code></pre>
 <ul>
 <li><strong>등분산성 검토 (Levene’s Test):</strong> 두 집단의 분산이 동일한지 확인합니다. 귀무가설(<span class="math inline">\(H_0\)</span>)은 ’두 집단의 분산은 같다’입니다.</li>
 </ul>
-<div id="d0c23dc8" class="cell" data-execution_count="3">
+<div id="5c0405b8" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 등분산성 검정 (Levene's Test)</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    levene_test <span class="op">=</span> stats.levene(male_income, female_income)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Levene's Test for Equal Variances: Statistic=</span><span class="sc">{</span>levene_test<span class="sc">.</span>statistic<span class="sc">:.3f}</span><span class="ss">, p-value=</span><span class="sc">{</span>levene_test<span class="sc">.</span>pvalue<span class="sc">:.3f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -603,7 +591,7 @@ Levene's Test for Equal Variances: Statistic=0.013, p-value=0.910</code></pre>
 <pre><code>* **해석:** 만약 p-값이 유의수준(예: 0.05)보다 크면, 등분산성 가정을 만족한다고 볼 수 있습니다 (`equal_var=True` 사용 가능). 만약 p-값이 0.05보다 작으면 등분산성 가정이 위배되므로 `equal_var=False` (Welch's t-test)를 사용해야 합니다.</code></pre>
 <p><strong>3. t-검정 수행:</strong></p>
 <p><code>scipy.stats.ttest_ind()</code> 함수를 사용합니다. <code>equal_var</code> 파라미터 설정이 중요합니다. Levene 검정 결과와 관계없이, 일반적으로 <strong><code>equal_var=False</code> (Welch’s t-test)를 사용하는 것이 더 안전하고 권장됩니다.</strong></p>
-<div id="6eac38c6" class="cell" data-execution_count="4">
+<div id="02003aa4" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 독립표본 t-검정 수행 (Welch's t-test 권장)</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Levene 검정 p-값이 0.05보다 크더라도 Welch's 사용 가능</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>t_statistic, p_value <span class="op">=</span> stats.ttest_ind(male_income, female_income, equal_var<span class="op">=</span><span class="va">False</span>) <span class="co"># Welch's t-test</span></span>
@@ -650,7 +638,7 @@ P-value: 0.636</code></pre>
 </ul></li>
 <li><p><strong>파이썬으로 Cohen’s d 계산 (수동 계산 예시):</strong></p></li>
 </ul>
-<div id="3a0f415b" class="cell" data-execution_count="5">
+<div id="0ea08dab" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Cohen's d 계산 함수 (Welch's t-test에 근사)</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> cohens_d(group1, group2):</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>        <span class="co"># 그룹별 평균, 표준편차, 샘플 사이즈</span></span>
